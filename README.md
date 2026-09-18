@@ -9,7 +9,7 @@ npm run dev
 
 - `npm run build` : vérification TypeScript et production du site statique dans `dist/`.
 - `npm run preview` : aperçu du build.
-- `npm test` : quinze tests de parcours dans Chrome via Playwright.
+- `npm test` : seize tests de parcours dans Chrome via Playwright.
 - `npm run deploy` : reconstruit le site et remplace la branche `gh-pages`.
 
 Le site est publié sur https://seifharboub.github.io/safe-lounge/ (GitHub Pages, branche `gh-pages`).
@@ -62,6 +62,11 @@ Le ruban est dupliqué par script jusqu’à dépasser la largeur de la fenêtre
 Les animations respectent la préférence système de réduction des mouvements et peuvent être mises en pause dans le pied de page. La préférence est mémorisée localement. Navigation clavier dans les catégories, dialogues natifs accessibles, retour du focus et touche Échap.
 
 ## Mobile
+
+Les flèches `↗ ▶ ↓ ↑` portent toutes le sélecteur U+FE0E. Sans lui, iOS bascule sur la police
+d’emoji couleur partout où la police en place n’a pas le glyphe — le menu mobile est en Fraunces,
+qui n’en a pas, et les flèches devenaient des carrés bleus. Un test le vérifie sur le DOM rendu,
+y compris le balisage écrit par le script.
 
 Le téléphone est la cible principale. Aucun texte ne descend sous 9 px en dessous de 1024 px, aucun lien ni bouton n’offre moins de 36 px à toucher — les liens de texte gardent leur taille, c’est un pseudo-élément qui élargit la zone tactile —, et rien ne déborde à 360, 390 ni 430 px. Trois tests couvrent ces trois règles.
 

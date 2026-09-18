@@ -267,3 +267,29 @@ test('mobile : chaque lien et bouton reste confortable au doigt', async ({ page 
   });
   expect(cramped).toEqual([]);
 });
+
+test('les flèches restent des glyphes texte, jamais des emoji', async ({ page }) => {
+  await page.setViewportSize({width:390,height:844});
+  await page.goto('/');
+  await page.getByRole('button',{name:'Ouvrir la navigation'}).click();
+  await page.locator('#tab-hookah').click();
+  await page.locator('.dish-card').first().click();
+  // Every arrow, including those written by the script, must carry U+FE0E:
+  // without it iOS falls back to the colour emoji font wherever the serif has
+  // no glyph, and the arrow turns into a blue square.
+  const bare = await page.evaluate(() => {
+    const found: string[] = [];
+    const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    for (let node = walk.nextNode(); node; node = walk.nextNode()) {
+      const text = node.textContent || '';
+      for (let i = 0; i < text.length; i += 1) {
+        if ('↗▶↓↑'.includes(text[i]) && text[i + 1] !== '︎') {
+          found.push(`${(node.parentElement?.className || node.parentElement?.tagName || '?')} « ${text.trim().slice(0,24)} »`);
+        }
+      }
+    }
+    return [...new Set(found)];
+  });
+  expect(bare).toEqual([]);
+  await expect(page.locator('#tab-hookah span').first()).toHaveText('Hookah');
+});

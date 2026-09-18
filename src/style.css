@@ -6,7 +6,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:0}
 [tabindex="-1"]:focus{outline:none}
-body{margin:0}
+body{margin:0;font-variant-emoji:text}
 body.dialog-open{overflow:hidden}
 a{color:inherit;text-decoration:none}
 button,input{font:inherit}
@@ -315,6 +315,7 @@ footer>span{color:#625b61}
 .mobile-nav:not([hidden]){display:flex;flex-direction:column;position:absolute;top:90px;left:4%;right:4%;z-index:24;padding:15px 22px;background:var(--cream);border:1px solid #150b1930;border-radius:5px;box-shadow:0 20px 40px #150b1940}
 .mobile-nav>a{display:flex;justify-content:space-between;font-family:Fraunces,serif;font-size:25px;letter-spacing:-1px;padding:15px 0;border-bottom:1px solid #150b191a}
 .mobile-nav>a:last-child{border:0}
+.mobile-nav>a>span{font-family:Satoshi,'Helvetica Neue',Arial,sans-serif;font-size:21px;line-height:1.2}
 .hero{padding:115px 6% 0}
 .hero-topline>span{display:none}
 .hero-topline .eyebrow{font-size:7px;letter-spacing:1px}

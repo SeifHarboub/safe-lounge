@@ -1,586 +1,586 @@
 [
-  {
-    "id": "salades",
-    "label": "Salades",
-    "description": "De la fraîcheur dans l’assiette.",
-    "source": "https://lesafelounge.com/salades",
-    "items": [
-      {
-        "id": "salades-1",
-        "name": "Original burrata",
-        "description": "l’originale burrata, olives de Ligurie, tomates cerises, sauce basilic, crème balsamique",
-        "extra": "",
-        "price": 9,
-        "image": "/assets/menu/burrata-1.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/burrata-1.jpg"
-      },
-      {
-        "id": "salades-2",
-        "name": "César",
-        "description": "Salade, tomates cerises, filet de poulet frit gourmand, croûtons à l’ail et aux fines herbes, sauce César",
-        "extra": "",
-        "price": 10,
-        "image": "/assets/menu/cesar.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/cesar.jpg"
-      }
-    ]
-  },
-  {
-    "id": "pates",
-    "label": "Pâtes fraîches",
-    "description": "Préparées à la minute.",
-    "source": "https://lesafelounge.com/pates",
-    "items": [
-      {
-        "id": "pates-1",
-        "name": "Arrabiata",
-        "description": "Sauce tomate maison, piment, huile d’olive, basilic",
-        "extra": "",
-        "price": 10,
-        "image": "/assets/menu/arrabiata.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/arrabiata.jpg"
-      },
-      {
-        "id": "pates-2",
-        "name": "Sicilienne",
-        "description": "Sauce tomate maison, thon, olives de Ligurie, basilic",
-        "extra": "",
-        "price": 11,
-        "image": "/assets/menu/sicilienne.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/sicilienne.jpg"
-      },
-      {
-        "id": "pates-3",
-        "name": "Carbonara",
-        "description": "Crème, lardons au bois de hêtre, parmesan râpé, jaune d’oeuf",
-        "extra": "",
-        "price": 11,
-        "image": "/assets/menu/carbonara.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/carbonara.jpg"
-      },
-      {
-        "id": "pates-4",
-        "name": "Formaggi",
-        "description": "Crème, gorgonzola, copeaux de parmesan",
-        "extra": "",
-        "price": 12,
-        "image": "/assets/menu/formaggi2-1.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/formaggi2-1.jpg"
-      },
-      {
-        "id": "pates-5",
-        "name": "Forestière",
-        "description": "Crème, poulet, champignons frais de Paris",
-        "extra": "",
-        "price": 13,
-        "image": "/assets/menu/forestiere2.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/forestiere2.jpg"
-      },
-      {
-        "id": "pates-6",
-        "name": "Tartufo",
-        "description": "Crème de truffe, champignons frais de Paris, copeaux de parmesan",
-        "extra": "",
-        "price": 14,
-        "image": "/assets/menu/tartufo.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/tartufo.jpg"
-      },
-      {
-        "id": "pates-7",
-        "name": "Saumon",
-        "description": "Sauce rosée maison, saumon, basilic",
-        "extra": "",
-        "price": 15,
-        "image": "/assets/menu/saumon.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/saumon.jpg"
-      }
-    ]
-  },
-  {
-    "id": "pizzas",
-    "label": "Pizzas",
-    "description": "Traditionnelles, cuites sur pierre.",
-    "source": "https://lesafelounge.com/pizzas",
-    "items": [
-      {
-        "id": "pizzas-1",
-        "name": "Mama margherita",
-        "description": "Sauce tomate maison, mozzarella fior di latte, olives de Ligurie, sauce basilic",
-        "extra": "",
-        "price": 11,
-        "image": "/assets/menu/margherita2.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/12/margherita2.jpg"
-      },
-      {
-        "id": "pizzas-2",
-        "name": "Classica queen",
-        "description": "Sauce tomate maison, mozzarella fior di latte, jambon, champignons frais de Paris",
-        "extra": "",
-        "price": 12,
-        "image": "/assets/menu/classica2.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/classica2.jpg"
-      },
-      {
-        "id": "pizzas-3",
-        "name": "Sugar pepperoni",
-        "description": "Sauce tomate maison à la barbecue, mozzarella fior di latte, pepperoni de boeuf",
-        "extra": "",
-        "price": 12,
-        "image": "/assets/menu/PEPERONI.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/PEPERONI.jpg"
-      },
-      {
-        "id": "pizzas-4",
-        "name": "Tic & tac",
-        "description": "Crème, mozzarella fior di latte, chèvre, miel, cerneaux de noix",
-        "extra": "",
-        "price": 13,
-        "image": "/assets/menu/tictac-1.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/tictac-1.jpg"
-      },
-      {
-        "id": "pizzas-5",
-        "name": "Marmithon",
-        "description": "Sauce tomate maison, mozzarella fior di latte, thon, oignons confits, olives de Ligurie, sauce basilic",
-        "extra": "",
-        "price": 13,
-        "image": "/assets/menu/marmithon-1.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/marmithon-1.jpg"
-      },
-      {
-        "id": "pizzas-6",
-        "name": "Paysanne",
-        "description": "Crème, mozzarella fior di latte, lardons fumés au bois de hêtre, pommes de terres marinées, oignons confits, sauce persillade",
-        "extra": "",
-        "price": 13,
-        "image": "/assets/menu/paysanne2.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/paysanne2.jpg"
-      },
-      {
-        "id": "pizzas-7",
-        "name": "Tutti formaggi",
-        "description": "Crème, mozzarella fior di latte, chèvre, gorgonzola, copeaux de parmesan",
-        "extra": "",
-        "price": 14,
-        "image": "/assets/menu/tictac-2.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/tictac-2.jpg"
-      },
-      {
-        "id": "pizzas-8",
-        "name": "Vieille fermière",
-        "description": "Crème, mozzarella fior di latte, poulet rôti, champignons frais de Paris, oignons confits",
-        "extra": "",
-        "price": 14,
-        "image": "/assets/menu/vieillefermiere.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/vieillefermiere.jpg"
-      },
-      {
-        "id": "pizzas-9",
-        "name": "Western",
-        "description": "Sauce moutarde douce à la crème, mozzarella fior di latte, poulet rôti, oignons confits, sauce persillade",
-        "extra": "",
-        "price": 14,
-        "image": "/assets/menu/western2.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/western2.jpg"
-      },
-      {
-        "id": "pizzas-10",
-        "name": "Pizz’arabia",
-        "description": "Sauce tomate maison, mozzarella fior di latte, merguez artisanale, poivrons marinés, oeuf, oignons confits, sauce persillade",
-        "extra": "",
-        "price": 14,
-        "image": "/assets/menu/pizzarabia.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/pizzarabia.jpg"
-      },
-      {
-        "id": "pizzas-11",
-        "name": "Tartuffe mafia",
-        "description": "Crème de truffe, champignons frais de Paris, burrata, tomates cerises, copeaux de parmesan, sauce basilic, crème balsamique",
-        "extra": "",
-        "price": 15,
-        "image": "/assets/menu/tartufo-2.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/tartufo-2.jpg"
-      },
-      {
-        "id": "pizzas-12",
-        "name": "Burratella lov’",
-        "description": "Sauce tomate maison, mozzarella fior di latte, jambon, burrata, copeaux de parmesan, tomates cerises, sauce basilic, crème balsamique",
-        "extra": "",
-        "price": 16,
-        "image": "/assets/menu/burrata2.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/burrata2.jpg"
-      }
-    ]
-  },
-  {
-    "id": "burgers",
-    "label": "Burgers",
-    "description": "Servis avec des frites allumettes croustillantes.",
-    "source": "https://lesafelounge.com/burgers",
-    "items": [
-      {
-        "id": "burgers-1",
-        "name": "Fishhh",
-        "description": "Pain potato bun moelleux, filet de colin d’Alaska gourmand, double cheddar fondue, salade iceberg croquante, sauce tartare onctueuse",
-        "extra": "",
-        "price": 12,
-        "image": "/assets/menu/fish.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2025/11/fish.jpg"
-      },
-      {
-        "id": "burgers-2",
-        "name": "Creamy",
-        "description": "Pain potato bun moelleux, filet de poulet frit gourmand, double cheddar fondue, salade iceberg croquante, sauce creamy mayonnaise",
-        "extra": "",
-        "price": 13,
-        "image": "/assets/menu/creamy-1.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2025/11/creamy-1.jpg"
-      },
-      {
-        "id": "burgers-3",
-        "name": "Biggie",
-        "description": "Pain potato bun moelleux, filet de poulet frit gourmand, double cheddar fondue, salade iceberg croquante, sauce classic burger",
-        "extra": "",
-        "price": 13,
-        "image": "/assets/menu/biggie-1.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2025/11/biggie-1.jpg"
-      },
-      {
-        "id": "burgers-4",
-        "name": "Bbq’ raclette",
-        "description": "Pain potato bun moelleux, filet de poulet frit gourmand, double raclette fondue, salade iceberg croquante, sauce classic BBQ",
-        "extra": "",
-        "price": 14,
-        "image": "/assets/menu/raclette.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2025/11/raclette.jpg"
-      },
-      {
-        "id": "burgers-5",
-        "name": "Smokey bacon",
-        "description": "pain potato bun moelleux, filet de poulet frit gourmand, bacon de veau grillé au goût fumé, double cheddar fondue, salade iceberg croquante, sauce smokey onctueuse",
-        "extra": "",
-        "price": 14,
-        "image": "/assets/menu/smokey.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2025/11/smokey.jpg"
-      }
-    ]
-  },
-  {
-    "id": "desserts",
-    "label": "Desserts",
-    "description": "Une dernière touche de gourmandise.",
-    "source": "https://lesafelounge.com/desserts",
-    "items": [
-      {
-        "id": "desserts-1",
-        "name": "Fondant chocolat",
-        "description": "L’indémodable mi-cuit de la maison",
-        "extra": "Boule vanille +2€",
-        "price": 7,
-        "image": "/assets/menu/fondant.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/fondant.jpg"
-      },
-      {
-        "id": "desserts-2",
-        "name": "Original tiramisu coffee",
-        "description": "Le tiramisu originel qui respecte la tradition",
-        "extra": "",
-        "price": 8,
-        "image": "/assets/menu/tira-cafe2.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/tira-cafe2.jpg"
-      },
-      {
-        "id": "desserts-3",
-        "name": "Tiramisu nutella-spéculoos",
-        "description": "Pour les plus gourmands, toujours plus",
-        "extra": "",
-        "price": 9,
-        "image": "/assets/menu/speculoos2.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/speculoos2.jpg"
-      },
-      {
-        "id": "desserts-4",
-        "name": "Tiramisu pistachio",
-        "description": "Le bonheur à l’état pur",
-        "extra": "",
-        "price": 9,
-        "image": "/assets/menu/pistache.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/pistache.jpg"
-      },
-      {
-        "id": "desserts-5",
-        "name": "Bowl de fruits",
-        "description": "Fruits frais de saison, pause fraicheur garantie",
-        "extra": "",
-        "price": 10,
-        "image": "/assets/menu/fruits-1.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/fruits-1.jpg"
-      },
-      {
-        "id": "desserts-6",
-        "name": "Brioche perdue",
-        "description": "Les gros goinfres la connaissent",
-        "extra": "",
-        "price": 11,
-        "image": "/assets/menu/brioche.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/brioche.jpg"
-      }
-    ]
-  },
-  {
-    "id": "crepes",
-    "label": "Crêpes sucrées",
-    "description": "Pour prolonger le plaisir.",
-    "source": "https://lesafelounge.com/crepes",
-    "items": [
-      {
-        "id": "crepes-1",
-        "name": "Beurre sucré",
-        "description": "La simplicité délicieuse à l’état pur",
-        "extra": "",
-        "price": 7,
-        "image": "/assets/menu/beurre.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/beurre.jpg"
-      },
-      {
-        "id": "crepes-2",
-        "name": "Nutella",
-        "description": "Gourmande et décadente, prête à vous faire fondre de plaisir",
-        "extra": "",
-        "price": 8,
-        "image": "/assets/menu/nutella.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/nutella.jpg"
-      },
-      {
-        "id": "crepes-3",
-        "name": "Crème spéculoos",
-        "description": "Pour les fans de spéculoos",
-        "extra": "",
-        "price": 8,
-        "image": "/assets/menu/speculoos.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/speculoos.jpg"
-      },
-      {
-        "id": "crepes-4",
-        "name": "Chocolat blanc",
-        "description": "Nappée d’une ganache au chocolat blanc fondant en bouche",
-        "extra": "",
-        "price": 8,
-        "image": "/assets/menu/blanc2.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/blanc2.jpg"
-      },
-      {
-        "id": "crepes-5",
-        "name": "Caramel beurre salé",
-        "description": "Une explosion de saveurs sucrées-salées en chaque bouchée",
-        "extra": "",
-        "price": 8,
-        "image": "/assets/menu/caramel-beurre-sale.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/caramel-beurre-sale.jpg"
-      },
-      {
-        "id": "crepes-6",
-        "name": "Crème bueno",
-        "description": "Si bon qu’on en deviendrait méchant",
-        "extra": "",
-        "price": 8,
-        "image": "/assets/menu/bueno.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/bueno.jpg"
-      }
-    ]
-  },
-  {
-    "id": "milkshakes",
-    "label": "Milkshakes",
-    "description": "Une pause tout en douceur.",
-    "source": "https://lesafelounge.com/milkshakes",
-    "items": [
-      {
-        "id": "milkshakes-1",
-        "name": "Vanille",
-        "description": "",
-        "extra": "",
-        "price": 8,
-        "image": "/assets/menu/milkvanille.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/12/milkvanille.jpg"
-      },
-      {
-        "id": "milkshakes-2",
-        "name": "Bueno",
-        "description": "",
-        "extra": "",
-        "price": 9,
-        "image": "/assets/menu/milkbueno.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/12/milkbueno.jpg"
-      },
-      {
-        "id": "milkshakes-3",
-        "name": "Speculoos",
-        "description": "",
-        "extra": "",
-        "price": 9,
-        "image": "/assets/menu/milkspeculos.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/12/milkspeculos.jpg"
-      },
-      {
-        "id": "milkshakes-4",
-        "name": "Oreo",
-        "description": "",
-        "extra": "",
-        "price": 9,
-        "image": "/assets/menu/milkoreo.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/12/milkoreo.jpg"
-      }
-    ]
-  },
-  {
-    "id": "mocktails",
-    "label": "Mocktails",
-    "description": "Des mélanges fruités, sans alcool.",
-    "source": "https://lesafelounge.com/mocktails",
-    "items": [
-      {
-        "id": "mocktails-1",
-        "name": "Virgin mojito",
-        "description": "Limonade, Menthe Fraîche, Citron Vert, Sucre de Canne",
-        "extra": "",
-        "price": 8,
-        "image": "/assets/menu/mojito.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/12/mojito.jpg"
-      },
-      {
-        "id": "mocktails-2",
-        "name": "Mojito fraise",
-        "description": "Limonade, Menthe Fraîche, Citron Vert, Sucre de Canne, Fraise",
-        "extra": "",
-        "price": 9,
-        "image": "/assets/menu/mojitofraise.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/12/mojitofraise.jpg"
-      },
-      {
-        "id": "mocktails-3",
-        "name": "Mojito framboise",
-        "description": "Limonade, Menthe Fraîche, Citron Vert, Sucre de Canne, Framboise",
-        "extra": "",
-        "price": 9,
-        "image": "/assets/menu/mojitoframboise.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/12/mojitoframboise.jpg"
-      },
-      {
-        "id": "mocktails-4",
-        "name": "Coco loco",
-        "description": "Ananas, Coco",
-        "extra": "",
-        "price": 10,
-        "image": "/assets/menu/cocoloco.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/12/cocoloco.jpg"
-      },
-      {
-        "id": "mocktails-5",
-        "name": "Amor amor",
-        "description": "Passion, Ananas, Mangue, Vanille, Grenadine",
-        "extra": "",
-        "price": 10,
-        "image": "/assets/menu/amoreamore.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/12/amoreamore.jpg"
-      },
-      {
-        "id": "mocktails-6",
-        "name": "Passion lemonade",
-        "description": "Passion, Limonade, Grenadine",
-        "extra": "",
-        "price": 10,
-        "image": "/assets/menu/passionlemonade.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/12/passionlemonade.jpg"
-      },
-      {
-        "id": "mocktails-7",
-        "name": "Tropical sunset",
-        "description": "Pomme, Mangue, Vanille, Framboise",
-        "extra": "",
-        "price": 10,
-        "image": "/assets/menu/tropicalsunset.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/12/tropicalsunset.jpg"
-      }
-    ]
-  },
-  {
-    "id": "boissons",
-    "label": "Boissons",
-    "description": "Boissons chaudes et rafraîchissements.",
-    "source": "https://lesafelounge.com/boissons",
-    "items": [
-      {
-        "id": "boissons-1",
-        "name": "Café",
-        "description": "",
-        "extra": "",
-        "price": 3,
-        "image": "/assets/menu/cafe.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2026/01/cafe.jpg"
-      },
-      {
-        "id": "boissons-2",
-        "name": "Café crème",
-        "description": "",
-        "extra": "",
-        "price": 4,
-        "image": "/assets/menu/cafecreme.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2026/01/cafecreme.jpg"
-      },
-      {
-        "id": "boissons-3",
-        "name": "Thé",
-        "description": "",
-        "extra": "",
-        "price": 5,
-        "image": "/assets/menu/the.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2026/01/the.jpg"
-      },
-      {
-        "id": "boissons-4",
-        "name": "Chocolat chaud",
-        "description": "",
-        "extra": "",
-        "price": 5,
-        "image": "/assets/menu/ch.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2026/01/ch.jpg"
-      },
-      {
-        "id": "boissons-5",
-        "name": "Coca-cola, coca-cola zéro, coca-cola cherry, oasis tropical, fuze tea, sprite, orangina, san pellegrino, vittel",
-        "description": "",
-        "extra": "",
-        "price": 5,
-        "image": null,
-        "sourceImage": null
-      }
-    ]
-  },
-  {
-    "id": "hookah",
-    "label": "Chichas",
-    "description": "Les formules du lounge.",
-    "source": "https://lesafelounge.com/hookah",
-    "items": [
-      {
-        "id": "hookah-1",
-        "name": "Hookah & drink",
-        "description": "",
-        "extra": "",
-        "price": 20,
-        "image": "/assets/menu/hookah1.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/hookah1.jpg"
-      },
-      {
-        "id": "hookah-2",
-        "name": "Hookah & mocktail ou milkshake",
-        "description": "",
-        "extra": "",
-        "price": 25,
-        "image": "/assets/menu/hookah2.jpg",
-        "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/hookah2.jpg"
-      }
-    ]
-  }
+ {
+  "id": "salades",
+  "label": "Salades",
+  "description": "De la fraîcheur dans l’assiette.",
+  "source": "https://lesafelounge.com/salades",
+  "items": [
+   {
+    "id": "salades-1",
+    "name": "Original burrata",
+    "description": "l’originale burrata, olives de Ligurie, tomates cerises, sauce basilic, crème balsamique",
+    "extra": "",
+    "price": 9,
+    "image": "/assets/menu/burrata-1.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/burrata-1.jpg"
+   },
+   {
+    "id": "salades-2",
+    "name": "César",
+    "description": "Salade, tomates cerises, filet de poulet frit gourmand, croûtons à l’ail et aux fines herbes, sauce César",
+    "extra": "",
+    "price": 10,
+    "image": "/assets/menu/cesar.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/cesar.jpg"
+   }
+  ]
+ },
+ {
+  "id": "pates",
+  "label": "Pâtes fraîches",
+  "description": "Préparées à la minute.",
+  "source": "https://lesafelounge.com/pates",
+  "items": [
+   {
+    "id": "pates-1",
+    "name": "Arrabiata",
+    "description": "Sauce tomate maison, piment, huile d’olive, basilic",
+    "extra": "",
+    "price": 10,
+    "image": "/assets/menu/arrabiata.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/arrabiata.jpg"
+   },
+   {
+    "id": "pates-2",
+    "name": "Sicilienne",
+    "description": "Sauce tomate maison, thon, olives de Ligurie, basilic",
+    "extra": "",
+    "price": 11,
+    "image": "/assets/menu/sicilienne.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/sicilienne.jpg"
+   },
+   {
+    "id": "pates-3",
+    "name": "Carbonara",
+    "description": "Crème, lardons au bois de hêtre, parmesan râpé, jaune d’oeuf",
+    "extra": "",
+    "price": 11,
+    "image": "/assets/menu/carbonara.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/carbonara.jpg"
+   },
+   {
+    "id": "pates-4",
+    "name": "Formaggi",
+    "description": "Crème, gorgonzola, copeaux de parmesan",
+    "extra": "",
+    "price": 12,
+    "image": "/assets/menu/formaggi2-1.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/formaggi2-1.jpg"
+   },
+   {
+    "id": "pates-5",
+    "name": "Forestière",
+    "description": "Crème, poulet, champignons frais de Paris",
+    "extra": "",
+    "price": 13,
+    "image": "/assets/menu/forestiere2.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/forestiere2.jpg"
+   },
+   {
+    "id": "pates-6",
+    "name": "Tartufo",
+    "description": "Crème de truffe, champignons frais de Paris, copeaux de parmesan",
+    "extra": "",
+    "price": 14,
+    "image": "/assets/menu/tartufo.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/tartufo.jpg"
+   },
+   {
+    "id": "pates-7",
+    "name": "Saumon",
+    "description": "Sauce rosée maison, saumon, basilic",
+    "extra": "",
+    "price": 15,
+    "image": "/assets/menu/saumon.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/saumon.jpg"
+   }
+  ]
+ },
+ {
+  "id": "pizzas",
+  "label": "Pizzas",
+  "description": "Traditionnelles, cuites sur pierre.",
+  "source": "https://lesafelounge.com/pizzas",
+  "items": [
+   {
+    "id": "pizzas-1",
+    "name": "Mama margherita",
+    "description": "Sauce tomate maison, mozzarella fior di latte, olives de Ligurie, sauce basilic",
+    "extra": "",
+    "price": 11,
+    "image": "/assets/menu/margherita2.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/12/margherita2.jpg"
+   },
+   {
+    "id": "pizzas-2",
+    "name": "Classica queen",
+    "description": "Sauce tomate maison, mozzarella fior di latte, jambon, champignons frais de Paris",
+    "extra": "",
+    "price": 12,
+    "image": "/assets/menu/classica2.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/classica2.jpg"
+   },
+   {
+    "id": "pizzas-3",
+    "name": "Sugar pepperoni",
+    "description": "Sauce tomate maison à la barbecue, mozzarella fior di latte, pepperoni de boeuf",
+    "extra": "",
+    "price": 12,
+    "image": "/assets/menu/PEPERONI.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/PEPERONI.jpg"
+   },
+   {
+    "id": "pizzas-4",
+    "name": "Tic & tac",
+    "description": "Crème, mozzarella fior di latte, chèvre, miel, cerneaux de noix",
+    "extra": "",
+    "price": 13,
+    "image": "/assets/menu/tictac-1.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/tictac-1.jpg"
+   },
+   {
+    "id": "pizzas-5",
+    "name": "Marmithon",
+    "description": "Sauce tomate maison, mozzarella fior di latte, thon, oignons confits, olives de Ligurie, sauce basilic",
+    "extra": "",
+    "price": 13,
+    "image": "/assets/menu/marmithon-1.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/marmithon-1.jpg"
+   },
+   {
+    "id": "pizzas-6",
+    "name": "Paysanne",
+    "description": "Crème, mozzarella fior di latte, lardons fumés au bois de hêtre, pommes de terres marinées, oignons confits, sauce persillade",
+    "extra": "",
+    "price": 13,
+    "image": "/assets/menu/paysanne2.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/paysanne2.jpg"
+   },
+   {
+    "id": "pizzas-7",
+    "name": "Tutti formaggi",
+    "description": "Crème, mozzarella fior di latte, chèvre, gorgonzola, copeaux de parmesan",
+    "extra": "",
+    "price": 14,
+    "image": "/assets/menu/tictac-2.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/tictac-2.jpg"
+   },
+   {
+    "id": "pizzas-8",
+    "name": "Vieille fermière",
+    "description": "Crème, mozzarella fior di latte, poulet rôti, champignons frais de Paris, oignons confits",
+    "extra": "",
+    "price": 14,
+    "image": "/assets/menu/vieillefermiere.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/vieillefermiere.jpg"
+   },
+   {
+    "id": "pizzas-9",
+    "name": "Western",
+    "description": "Sauce moutarde douce à la crème, mozzarella fior di latte, poulet rôti, oignons confits, sauce persillade",
+    "extra": "",
+    "price": 14,
+    "image": "/assets/menu/western2.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/western2.jpg"
+   },
+   {
+    "id": "pizzas-10",
+    "name": "Pizz’arabia",
+    "description": "Sauce tomate maison, mozzarella fior di latte, merguez artisanale, poivrons marinés, oeuf, oignons confits, sauce persillade",
+    "extra": "",
+    "price": 14,
+    "image": "/assets/menu/pizzarabia.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/pizzarabia.jpg"
+   },
+   {
+    "id": "pizzas-11",
+    "name": "Tartuffe mafia",
+    "description": "Crème de truffe, champignons frais de Paris, burrata, tomates cerises, copeaux de parmesan, sauce basilic, crème balsamique",
+    "extra": "",
+    "price": 15,
+    "image": "/assets/menu/tartufo-2.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/tartufo-2.jpg"
+   },
+   {
+    "id": "pizzas-12",
+    "name": "Burratella lov’",
+    "description": "Sauce tomate maison, mozzarella fior di latte, jambon, burrata, copeaux de parmesan, tomates cerises, sauce basilic, crème balsamique",
+    "extra": "",
+    "price": 16,
+    "image": "/assets/menu/burrata2.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/burrata2.jpg"
+   }
+  ]
+ },
+ {
+  "id": "burgers",
+  "label": "Burgers",
+  "description": "Servis avec des frites allumettes croustillantes.",
+  "source": "https://lesafelounge.com/burgers",
+  "items": [
+   {
+    "id": "burgers-1",
+    "name": "Fishhh",
+    "description": "Pain potato bun moelleux, filet de colin d’Alaska gourmand, double cheddar fondue, salade iceberg croquante, sauce tartare onctueuse",
+    "extra": "",
+    "price": 12,
+    "image": "/assets/menu/fish.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2025/11/fish.jpg"
+   },
+   {
+    "id": "burgers-2",
+    "name": "Creamy",
+    "description": "Pain potato bun moelleux, filet de poulet frit gourmand, double cheddar fondue, salade iceberg croquante, sauce creamy mayonnaise",
+    "extra": "",
+    "price": 13,
+    "image": "/assets/menu/creamy-1.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2025/11/creamy-1.jpg"
+   },
+   {
+    "id": "burgers-3",
+    "name": "Biggie",
+    "description": "Pain potato bun moelleux, filet de poulet frit gourmand, double cheddar fondue, salade iceberg croquante, sauce classic burger",
+    "extra": "",
+    "price": 13,
+    "image": "/assets/menu/biggie-1.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2025/11/biggie-1.jpg"
+   },
+   {
+    "id": "burgers-4",
+    "name": "Bbq’ raclette",
+    "description": "Pain potato bun moelleux, filet de poulet frit gourmand, double raclette fondue, salade iceberg croquante, sauce classic BBQ",
+    "extra": "",
+    "price": 14,
+    "image": "/assets/menu/raclette.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2025/11/raclette.jpg"
+   },
+   {
+    "id": "burgers-5",
+    "name": "Smokey bacon",
+    "description": "pain potato bun moelleux, filet de poulet frit gourmand, bacon de veau grillé au goût fumé, double cheddar fondue, salade iceberg croquante, sauce smokey onctueuse",
+    "extra": "",
+    "price": 14,
+    "image": "/assets/menu/smokey.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2025/11/smokey.jpg"
+   }
+  ]
+ },
+ {
+  "id": "desserts",
+  "label": "Desserts",
+  "description": "Une dernière touche de gourmandise.",
+  "source": "https://lesafelounge.com/desserts",
+  "items": [
+   {
+    "id": "desserts-1",
+    "name": "Fondant chocolat",
+    "description": "L’indémodable mi-cuit de la maison",
+    "extra": "Boule vanille +2€",
+    "price": 7,
+    "image": "/assets/menu/fondant.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/fondant.jpg"
+   },
+   {
+    "id": "desserts-2",
+    "name": "Original tiramisu coffee",
+    "description": "Le tiramisu originel qui respecte la tradition",
+    "extra": "",
+    "price": 8,
+    "image": "/assets/menu/tira-cafe2.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/tira-cafe2.jpg"
+   },
+   {
+    "id": "desserts-3",
+    "name": "Tiramisu nutella-spéculoos",
+    "description": "Pour les plus gourmands, toujours plus",
+    "extra": "",
+    "price": 9,
+    "image": "/assets/menu/speculoos2.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/speculoos2.jpg"
+   },
+   {
+    "id": "desserts-4",
+    "name": "Tiramisu pistachio",
+    "description": "Le bonheur à l’état pur",
+    "extra": "",
+    "price": 9,
+    "image": "/assets/menu/pistache.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/pistache.jpg"
+   },
+   {
+    "id": "desserts-5",
+    "name": "Bowl de fruits",
+    "description": "Fruits frais de saison, pause fraicheur garantie",
+    "extra": "",
+    "price": 10,
+    "image": "/assets/menu/fruits-1.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/fruits-1.jpg"
+   },
+   {
+    "id": "desserts-6",
+    "name": "Brioche perdue",
+    "description": "Les gros goinfres la connaissent",
+    "extra": "",
+    "price": 11,
+    "image": "/assets/menu/brioche.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/brioche.jpg"
+   }
+  ]
+ },
+ {
+  "id": "crepes",
+  "label": "Crêpes sucrées",
+  "description": "Pour prolonger le plaisir.",
+  "source": "https://lesafelounge.com/crepes",
+  "items": [
+   {
+    "id": "crepes-1",
+    "name": "Beurre sucré",
+    "description": "La simplicité délicieuse à l’état pur",
+    "extra": "",
+    "price": 7,
+    "image": "/assets/menu/beurre.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/beurre.jpg"
+   },
+   {
+    "id": "crepes-2",
+    "name": "Nutella",
+    "description": "Gourmande et décadente, prête à vous faire fondre de plaisir",
+    "extra": "",
+    "price": 8,
+    "image": "/assets/menu/nutella.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/nutella.jpg"
+   },
+   {
+    "id": "crepes-3",
+    "name": "Crème spéculoos",
+    "description": "Pour les fans de spéculoos",
+    "extra": "",
+    "price": 8,
+    "image": "/assets/menu/speculoos.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/speculoos.jpg"
+   },
+   {
+    "id": "crepes-4",
+    "name": "Chocolat blanc",
+    "description": "Nappée d’une ganache au chocolat blanc fondant en bouche",
+    "extra": "",
+    "price": 8,
+    "image": "/assets/menu/blanc2.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/blanc2.jpg"
+   },
+   {
+    "id": "crepes-5",
+    "name": "Caramel beurre salé",
+    "description": "Une explosion de saveurs sucrées-salées en chaque bouchée",
+    "extra": "",
+    "price": 8,
+    "image": "/assets/menu/caramel-beurre-sale.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/caramel-beurre-sale.jpg"
+   },
+   {
+    "id": "crepes-6",
+    "name": "Crème bueno",
+    "description": "Si bon qu’on en deviendrait méchant",
+    "extra": "",
+    "price": 8,
+    "image": "/assets/menu/bueno.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/bueno.jpg"
+   }
+  ]
+ },
+ {
+  "id": "milkshakes",
+  "label": "Milkshakes",
+  "description": "Une pause tout en douceur.",
+  "source": "https://lesafelounge.com/milkshakes",
+  "items": [
+   {
+    "id": "milkshakes-1",
+    "name": "Vanille",
+    "description": "",
+    "extra": "",
+    "price": 8,
+    "image": "/assets/menu/milkvanille.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/12/milkvanille.jpg"
+   },
+   {
+    "id": "milkshakes-2",
+    "name": "Bueno",
+    "description": "",
+    "extra": "",
+    "price": 9,
+    "image": "/assets/menu/milkbueno.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/12/milkbueno.jpg"
+   },
+   {
+    "id": "milkshakes-3",
+    "name": "Speculoos",
+    "description": "",
+    "extra": "",
+    "price": 9,
+    "image": "/assets/menu/milkspeculos.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/12/milkspeculos.jpg"
+   },
+   {
+    "id": "milkshakes-4",
+    "name": "Oreo",
+    "description": "",
+    "extra": "",
+    "price": 9,
+    "image": "/assets/menu/milkoreo.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/12/milkoreo.jpg"
+   }
+  ]
+ },
+ {
+  "id": "mocktails",
+  "label": "Mocktails",
+  "description": "Des mélanges fruités, sans alcool.",
+  "source": "https://lesafelounge.com/mocktails",
+  "items": [
+   {
+    "id": "mocktails-1",
+    "name": "Virgin mojito",
+    "description": "Limonade, Menthe Fraîche, Citron Vert, Sucre de Canne",
+    "extra": "",
+    "price": 8,
+    "image": "/assets/menu/mojito.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/12/mojito.jpg"
+   },
+   {
+    "id": "mocktails-2",
+    "name": "Mojito fraise",
+    "description": "Limonade, Menthe Fraîche, Citron Vert, Sucre de Canne, Fraise",
+    "extra": "",
+    "price": 9,
+    "image": "/assets/menu/mojitofraise.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/12/mojitofraise.jpg"
+   },
+   {
+    "id": "mocktails-3",
+    "name": "Mojito framboise",
+    "description": "Limonade, Menthe Fraîche, Citron Vert, Sucre de Canne, Framboise",
+    "extra": "",
+    "price": 9,
+    "image": "/assets/menu/mojitoframboise.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/12/mojitoframboise.jpg"
+   },
+   {
+    "id": "mocktails-4",
+    "name": "Coco loco",
+    "description": "Ananas, Coco",
+    "extra": "",
+    "price": 10,
+    "image": "/assets/menu/cocoloco.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/12/cocoloco.jpg"
+   },
+   {
+    "id": "mocktails-5",
+    "name": "Amor amor",
+    "description": "Passion, Ananas, Mangue, Vanille, Grenadine",
+    "extra": "",
+    "price": 10,
+    "image": "/assets/menu/amoreamore.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/12/amoreamore.jpg"
+   },
+   {
+    "id": "mocktails-6",
+    "name": "Passion lemonade",
+    "description": "Passion, Limonade, Grenadine",
+    "extra": "",
+    "price": 10,
+    "image": "/assets/menu/passionlemonade.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/12/passionlemonade.jpg"
+   },
+   {
+    "id": "mocktails-7",
+    "name": "Tropical sunset",
+    "description": "Pomme, Mangue, Vanille, Framboise",
+    "extra": "",
+    "price": 10,
+    "image": "/assets/menu/tropicalsunset.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/12/tropicalsunset.jpg"
+   }
+  ]
+ },
+ {
+  "id": "boissons",
+  "label": "Boissons",
+  "description": "Boissons chaudes et rafraîchissements.",
+  "source": "https://lesafelounge.com/boissons",
+  "items": [
+   {
+    "id": "boissons-1",
+    "name": "Café",
+    "description": "",
+    "extra": "",
+    "price": 3,
+    "image": "/assets/menu/cafe.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2026/01/cafe.jpg"
+   },
+   {
+    "id": "boissons-2",
+    "name": "Café crème",
+    "description": "",
+    "extra": "",
+    "price": 4,
+    "image": "/assets/menu/cafecreme.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2026/01/cafecreme.jpg"
+   },
+   {
+    "id": "boissons-3",
+    "name": "Thé",
+    "description": "",
+    "extra": "",
+    "price": 5,
+    "image": "/assets/menu/the.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2026/01/the.jpg"
+   },
+   {
+    "id": "boissons-4",
+    "name": "Chocolat chaud",
+    "description": "",
+    "extra": "",
+    "price": 5,
+    "image": "/assets/menu/ch.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2026/01/ch.jpg"
+   },
+   {
+    "id": "boissons-5",
+    "name": "Coca-cola, coca-cola zéro, coca-cola cherry, oasis tropical, fuze tea, sprite, orangina, san pellegrino, vittel",
+    "description": "",
+    "extra": "",
+    "price": 5,
+    "image": null,
+    "sourceImage": null
+   }
+  ]
+ },
+ {
+  "id": "hookah",
+  "label": "Hookah",
+  "description": "Les formules du lounge.",
+  "source": "https://lesafelounge.com/hookah",
+  "items": [
+   {
+    "id": "hookah-1",
+    "name": "Hookah & drink",
+    "description": "",
+    "extra": "",
+    "price": 20,
+    "image": "/assets/menu/hookah1.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/hookah1.jpg"
+   },
+   {
+    "id": "hookah-2",
+    "name": "Hookah & mocktail ou milkshake",
+    "description": "",
+    "extra": "",
+    "price": 25,
+    "image": "/assets/menu/hookah2.jpg",
+    "sourceImage": "https://lesafelounge.com/wp-content/uploads/2024/04/hookah2.jpg"
+   }
+  ]
+ }
 ]

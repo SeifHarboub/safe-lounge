@@ -33,7 +33,7 @@ export function initMedia(initialMotionPaused: boolean) {
     const playing = !preview.paused;
     previewToggle.setAttribute('aria-pressed',String(playing));
     previewToggle.setAttribute('aria-label',playing ? 'Mettre l’aperçu vidéo en pause' : 'Lire l’aperçu vidéo');
-    previewToggle.innerHTML = `<span aria-hidden="true">${playing ? 'Ⅱ' : '▶'}</span>`;
+    previewToggle.innerHTML = `<span aria-hidden="true">${playing ? 'Ⅱ' : '▶︎'}</span>`;
   }
   preview.addEventListener('play',updatePreviewControl);
   preview.addEventListener('pause',updatePreviewControl);
