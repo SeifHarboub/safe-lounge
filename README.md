@@ -10,6 +10,15 @@ npm run dev
 - `npm run build` : vérification TypeScript et production du site statique dans `dist/`.
 - `npm run preview` : aperçu du build.
 - `npm test` : quinze tests de parcours dans Chrome via Playwright.
+- `npm run deploy` : reconstruit le site et remplace la branche `gh-pages`.
+
+Le site est publié sur https://seifharboub.github.io/safe-lounge/ (GitHub Pages, branche `gh-pages`).
+Les sources restent sur `main`, la branche `gh-pages` ne contient que le site construit.
+
+Les chemins d’assets construits à l’exécution — photos de la carte, plats de l’accueil, desserts,
+vidéos — passent par `asset()` dans `src/asset.ts`, qui applique `import.meta.env.BASE_URL`.
+Vite ne réécrit que les chemins présents dans le HTML et le CSS : sans ce détour, tout ce qui est
+construit en JavaScript tomberait en 404 sous un sous-dossier. `BASE_PATH` fixe cette base au build.
 
 ## Contenu et sources
 
