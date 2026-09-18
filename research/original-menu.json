@@ -1,0 +1,968 @@
+[
+  {
+    "slug": "salades",
+    "text": " \nMENU\nNos Salades\nORIGINAL BURRATA\n\nl’originale burrata, olives de Ligurie, tomates cerises, sauce basilic, crème balsamique\n\n9€\nCÉSAR\n\nSalade, tomates cerises, filet de poulet frit gourmand, croûtons à l’ail et aux fines herbes, sauce César\n\n10€\nFAIT MAISON\n\nTous nos plats sont faits maison, élaborés avec soin à partir des meilleurs produits disponibles\n\nAllergènes",
+    "images": [
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2023/07/Sans-titre-1-copie.png",
+        "alt": "Le Safe Lounge"
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/burrata-1.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/cesar.jpg",
+        "alt": ""
+      }
+    ],
+    "backgrounds": [],
+    "modules": [
+      {
+        "text": "Nos Salades",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_0  et_pb_text_align_center et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h2>Nos Salades</h2></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_0\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img fetchpriority=\"high\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/burrata-1.jpg\" alt=\"\" title=\"burrata\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/burrata-1.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/burrata-1-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/burrata-1-480x480.jpg 480w\" sizes=\"(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-346\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "ORIGINAL BURRATA\n\nl’originale burrata, olives de Ligurie, tomates cerises, sauce basilic, crème balsamique\n\n9€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>ORIGINAL BURRATA</h3>\n<p>l’originale burrata, olives de Ligurie, tomates cerises, sauce basilic, crème balsamique</p>\n<h4>9€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_1\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/cesar.jpg\" alt=\"\" title=\"cesar\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/cesar.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/cesar-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/cesar-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-344\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "CÉSAR\n\nSalade, tomates cerises, filet de poulet frit gourmand, croûtons à l’ail et aux fines herbes, sauce César\n\n10€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_2  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>CÉSAR</h3>\n<p>Salade, tomates cerises, filet de poulet frit gourmand, croûtons à l’ail et aux fines herbes, sauce César</p>\n<h4>10€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_divider et_pb_divider_0 et_pb_divider_position_ et_pb_space\"><div class=\"et_pb_divider_internal\"></div></div>"
+      },
+      {
+        "text": "FAIT MAISON\n\nTous nos plats sont faits maison, élaborés avec soin à partir des meilleurs produits disponibles",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_3  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>FAIT MAISON</h3>\n<p>Tous nos plats sont faits maison, élaborés avec soin à partir des meilleurs produits disponibles</p>\n<h4></h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "Allergènes",
+        "html": "<div class=\"et_pb_button_module_wrapper et_pb_button_0_wrapper et_pb_button_alignment_center et_pb_module \">\n\t\t\t\t<a class=\"et_pb_button et_pb_button_0 et_pb_bg_layout_light\" href=\"https://lesafelounge.com/allergenes\">Allergènes</a>\n\t\t\t</div>"
+      }
+    ]
+  },
+  {
+    "slug": "pates",
+    "text": " \nMENU\nNos Pâtes Fraîches\nfaites à la minute\nARRABIATA\n\nSauce tomate maison, piment, huile d’olive, basilic\n\n10€\nSICILIENNE\n\nSauce tomate maison, thon, olives de Ligurie, basilic\n\n11€\nCARBONARA\n\nCrème, lardons au bois de hêtre, parmesan râpé, jaune d’oeuf\n\n11€\nFORMAGGI\n\nCrème, gorgonzola, copeaux de parmesan\n\n12€\nFORESTIÈRE\n\nCrème, poulet, champignons frais de Paris\n\n13€\nTARTUFO\n\nCrème de truffe, champignons frais de Paris, copeaux de parmesan\n\n14€\nSAUMON\n\nSauce rosée maison, saumon, basilic\n\n15€\nFAIT MAISON\n\nTous nos plats sont faits maison, élaborés avec soin à partir des meilleurs produits disponibles\n\nAllergènes",
+    "images": [
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2023/07/Sans-titre-1-copie.png",
+        "alt": "Le Safe Lounge"
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/arrabiata.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/sicilienne.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/carbonara.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/formaggi2-1.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/forestiere2.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/tartufo.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/saumon.jpg",
+        "alt": ""
+      }
+    ],
+    "backgrounds": [],
+    "modules": [
+      {
+        "text": "Nos Pâtes Fraîches",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_0  et_pb_text_align_center et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h2>Nos Pâtes Fraîches</h2></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "faites à la minute",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_center et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h2>faites à la minute</h2></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_0\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img fetchpriority=\"high\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/arrabiata.jpg\" alt=\"\" title=\"arrabiata\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/arrabiata.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/arrabiata-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/arrabiata-480x480.jpg 480w\" sizes=\"(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-348\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "ARRABIATA\n\nSauce tomate maison, piment, huile d’olive, basilic\n\n10€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_2  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>ARRABIATA</h3>\n<p>Sauce tomate maison, piment, huile d’olive, basilic</p>\n<h4>10€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_1\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/sicilienne.jpg\" alt=\"\" title=\"sicilienne\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/sicilienne.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/sicilienne-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/sicilienne-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-356\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "SICILIENNE\n\nSauce tomate maison, thon, olives de Ligurie, basilic\n\n11€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_3  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>SICILIENNE</h3>\n<p>Sauce tomate maison, thon, olives de Ligurie, basilic</p>\n<h4>11€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_2\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/carbonara.jpg\" alt=\"\" title=\"carbonara\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/carbonara.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/carbonara-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/carbonara-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-358\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "CARBONARA\n\nCrème, lardons au bois de hêtre, parmesan râpé, jaune d’oeuf\n\n11€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_4  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>CARBONARA</h3>\n<p>Crème, lardons au bois de hêtre, parmesan râpé, jaune d’oeuf</p>\n<h4>11€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_3\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/formaggi2-1.jpg\" alt=\"\" title=\"formaggi2\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/formaggi2-1.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/formaggi2-1-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/formaggi2-1-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-425\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "FORMAGGI\n\nCrème, gorgonzola, copeaux de parmesan\n\n12€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_5  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>FORMAGGI</h3>\n<p>Crème, gorgonzola, copeaux de parmesan</p>\n<h4>12€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_4\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/forestiere2.jpg\" alt=\"\" title=\"forestiere2\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/forestiere2.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/forestiere2-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/forestiere2-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-426\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "FORESTIÈRE\n\nCrème, poulet, champignons frais de Paris\n\n13€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_6  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>FORESTIÈRE</h3>\n<p>Crème, poulet, champignons frais de Paris</p>\n<h4>13€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_5\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/tartufo.jpg\" alt=\"\" title=\"tartufo\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/tartufo.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/tartufo-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/tartufo-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-357\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "TARTUFO\n\nCrème de truffe, champignons frais de Paris, copeaux de parmesan\n\n14€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_7  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>TARTUFO</h3>\n<p>Crème de truffe, champignons frais de Paris, copeaux de parmesan</p>\n<h4>14€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_6\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/saumon.jpg\" alt=\"\" title=\"saumon\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/saumon.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/saumon-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/saumon-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-351\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "SAUMON\n\nSauce rosée maison, saumon, basilic\n\n15€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_8  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>SAUMON</h3>\n<p>Sauce rosée maison, saumon, basilic</p>\n<h4>15€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_divider et_pb_divider_0 et_pb_divider_position_ et_pb_space\"><div class=\"et_pb_divider_internal\"></div></div>"
+      },
+      {
+        "text": "FAIT MAISON\n\nTous nos plats sont faits maison, élaborés avec soin à partir des meilleurs produits disponibles",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_9  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>FAIT MAISON</h3>\n<p>Tous nos plats sont faits maison, élaborés avec soin à partir des meilleurs produits disponibles</p>\n<h4></h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "Allergènes",
+        "html": "<div class=\"et_pb_button_module_wrapper et_pb_button_0_wrapper et_pb_button_alignment_center et_pb_module \">\n\t\t\t\t<a class=\"et_pb_button et_pb_button_0 et_pb_bg_layout_light\" href=\"https://lesafelounge.com/allergenes\">Allergènes</a>\n\t\t\t</div>"
+      }
+    ]
+  },
+  {
+    "slug": "pizzas",
+    "text": " \nMENU\nNos Pizzas Traditionnelles\ncuites sur pierre\nMAMA MARGHERITA\n\nSauce tomate maison, mozzarella fior di latte, olives de Ligurie, sauce basilic\n\n11€\nCLASSICA QUEEN\n\nSauce tomate maison, mozzarella fior di latte, jambon, champignons frais de Paris\n\n12€\nSUGAR PEPPERONI\n\nSauce tomate maison à la barbecue, mozzarella fior di latte, pepperoni de boeuf\n\n12€\nTIC & TAC\n\nCrème, mozzarella fior di latte, chèvre, miel, cerneaux de noix\n\n13€\nMARMITHON\n\nSauce tomate maison, mozzarella fior di latte, thon, oignons confits, olives de Ligurie, sauce basilic\n\n13€\nPAYSANNE\n\nCrème, mozzarella fior di latte, lardons fumés au bois de hêtre, pommes de terres marinées, oignons confits, sauce persillade\n\n13€\nTUTTI FORMAGGI\n\nCrème, mozzarella fior di latte, chèvre, gorgonzola, copeaux de parmesan\n\n14€\nVIEILLE FERMIÈRE\n\nCrème, mozzarella fior di latte, poulet rôti, champignons frais de Paris, oignons confits\n\n14€\nWESTERN\n\nSauce moutarde douce à la crème, mozzarella fior di latte, poulet rôti, oignons confits, sauce persillade\n\n14€\nPIZZ’ARABIA\n\nSauce tomate maison, mozzarella fior di latte, merguez artisanale, poivrons marinés, oeuf, oignons confits, sauce persillade\n\n14€\nTARTUFFE MAFIA\n\nCrème de truffe, champignons frais de Paris, burrata, tomates cerises, copeaux de parmesan, sauce basilic, crème balsamique\n\n15€\nBURRATELLA LOV’\n\nSauce tomate maison, mozzarella fior di latte, jambon, burrata, copeaux de parmesan, tomates cerises, sauce basilic, crème balsamique\n\n16€\nFAIT MAISON\n\nTous nos plats sont faits maison, élaborés avec soin à partir des meilleurs produits disponibles\n\nAllergènes",
+    "images": [
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2023/07/Sans-titre-1-copie.png",
+        "alt": "Le Safe Lounge"
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/12/margherita2.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/classica2.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/PEPERONI.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/tictac-1.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/marmithon-1.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/paysanne2.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/tictac-2.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/vieillefermiere.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/western2.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/pizzarabia.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/tartufo-2.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/burrata2.jpg",
+        "alt": ""
+      }
+    ],
+    "backgrounds": [],
+    "modules": [
+      {
+        "text": "Nos Pizzas Traditionnelles",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_0  et_pb_text_align_center et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h2>Nos Pizzas Traditionnelles</h2></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "cuites sur pierre",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_center et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h2>cuites sur pierre</h2></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_0\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img fetchpriority=\"high\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/12/margherita2.jpg\" alt=\"\" title=\"margherita2\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/12/margherita2.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/12/margherita2-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/12/margherita2-480x480.jpg 480w\" sizes=\"(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-453\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "MAMA MARGHERITA\n\nSauce tomate maison, mozzarella fior di latte, olives de Ligurie, sauce basilic\n\n11€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_2  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>MAMA MARGHERITA</h3>\n<p>Sauce tomate maison, mozzarella fior di latte, olives de Ligurie, sauce basilic</p>\n<h4>11€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_1\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/classica2.jpg\" alt=\"\" title=\"classica2\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/classica2.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/classica2-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/classica2-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-420\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "CLASSICA QUEEN\n\nSauce tomate maison, mozzarella fior di latte, jambon, champignons frais de Paris\n\n12€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_3  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>CLASSICA QUEEN</h3>\n<p>Sauce tomate maison, mozzarella fior di latte, jambon, champignons frais de Paris</p>\n<h4>12€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_2\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/PEPERONI.jpg\" alt=\"\" title=\"PEPERONI\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/PEPERONI.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/PEPERONI-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/PEPERONI-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-437\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "SUGAR PEPPERONI\n\nSauce tomate maison à la barbecue, mozzarella fior di latte, pepperoni de boeuf\n\n12€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_4  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>SUGAR PEPPERONI</h3>\n<p>Sauce tomate maison à la barbecue, mozzarella fior di latte, pepperoni de boeuf</p>\n<h4>12€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_3\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/tictac-1.jpg\" alt=\"\" title=\"tictac\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/tictac-1.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/tictac-1-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/tictac-1-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-412\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "TIC & TAC\n\nCrème, mozzarella fior di latte, chèvre, miel, cerneaux de noix\n\n13€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_5  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>TIC &amp; TAC</h3>\n<p>Crème, mozzarella fior di latte, chèvre, miel, cerneaux de noix</p>\n<h4>13€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_4\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/marmithon-1.jpg\" alt=\"\" title=\"marmithon\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/marmithon-1.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/marmithon-1-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/marmithon-1-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-414\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "MARMITHON\n\nSauce tomate maison, mozzarella fior di latte, thon, oignons confits, olives de Ligurie, sauce basilic\n\n13€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_6  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>MARMITHON</h3>\n<p>Sauce tomate maison, mozzarella fior di latte, thon, oignons confits, olives de Ligurie, sauce basilic</p>\n<h4>13€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_5\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/paysanne2.jpg\" alt=\"\" title=\"paysanne2\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/paysanne2.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/paysanne2-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/paysanne2-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-417\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "PAYSANNE\n\nCrème, mozzarella fior di latte, lardons fumés au bois de hêtre, pommes de terres marinées, oignons confits, sauce persillade\n\n13€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_7  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>PAYSANNE</h3>\n<p>Crème, mozzarella fior di latte, lardons fumés au bois de hêtre, pommes de terres marinées, oignons confits, sauce persillade</p>\n<h4>13€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_6\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/tictac-2.jpg\" alt=\"\" title=\"tic&amp;tac\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/tictac-2.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/tictac-2-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/tictac-2-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-416\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "TUTTI FORMAGGI\n\nCrème, mozzarella fior di latte, chèvre, gorgonzola, copeaux de parmesan\n\n14€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_8  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>TUTTI FORMAGGI</h3>\n<p>Crème, mozzarella fior di latte, chèvre, gorgonzola, copeaux de parmesan</p>\n<h4>14€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_7\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/vieillefermiere.jpg\" alt=\"\" title=\"vieillefermiere\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/vieillefermiere.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/vieillefermiere-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/vieillefermiere-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-365\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "VIEILLE FERMIÈRE\n\nCrème, mozzarella fior di latte, poulet rôti, champignons frais de Paris, oignons confits\n\n14€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_9  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>VIEILLE FERMIÈRE</h3>\n<p>Crème, mozzarella fior di latte, poulet rôti, champignons frais de Paris, oignons confits</p>\n<h4>14€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_8\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/western2.jpg\" alt=\"\" title=\"western2\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/western2.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/western2-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/western2-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-418\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "WESTERN\n\nSauce moutarde douce à la crème, mozzarella fior di latte, poulet rôti, oignons confits, sauce persillade\n\n14€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_10  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>WESTERN</h3>\n<p>Sauce moutarde douce à la crème, mozzarella fior di latte, poulet rôti, oignons confits, sauce persillade</p>\n<h4>14€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_9\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/pizzarabia.jpg\" alt=\"\" title=\"pizzarabia\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/pizzarabia.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/pizzarabia-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/pizzarabia-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-370\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "PIZZ’ARABIA\n\nSauce tomate maison, mozzarella fior di latte, merguez artisanale, poivrons marinés, oeuf, oignons confits, sauce persillade\n\n14€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_11  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>PIZZ’ARABIA</h3>\n<p>Sauce tomate maison, mozzarella fior di latte, merguez artisanale, poivrons marinés, oeuf, oignons confits, sauce persillade</p>\n<h4>14€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_10\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/tartufo-2.jpg\" alt=\"\" title=\"tartufo\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/tartufo-2.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/tartufo-2-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/tartufo-2-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-415\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "TARTUFFE MAFIA\n\nCrème de truffe, champignons frais de Paris, burrata, tomates cerises, copeaux de parmesan, sauce basilic, crème balsamique\n\n15€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_12  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>TARTUFFE MAFIA</h3>\n<p>Crème de truffe, champignons frais de Paris, burrata, tomates cerises, copeaux de parmesan, sauce basilic, crème balsamique</p>\n<h4>15€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_11\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/burrata2.jpg\" alt=\"\" title=\"burrata2\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/burrata2.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/burrata2-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/burrata2-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-419\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "BURRATELLA LOV’\n\nSauce tomate maison, mozzarella fior di latte, jambon, burrata, copeaux de parmesan, tomates cerises, sauce basilic, crème balsamique\n\n16€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_13  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>BURRATELLA LOV’</h3>\n<p>Sauce tomate maison, mozzarella fior di latte, jambon, burrata, copeaux de parmesan, tomates cerises, sauce basilic, crème balsamique</p>\n<h4>16€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_divider et_pb_divider_0 et_pb_divider_position_ et_pb_space\"><div class=\"et_pb_divider_internal\"></div></div>"
+      },
+      {
+        "text": "FAIT MAISON\n\nTous nos plats sont faits maison, élaborés avec soin à partir des meilleurs produits disponibles",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_14  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>FAIT MAISON</h3>\n<p>Tous nos plats sont faits maison, élaborés avec soin à partir des meilleurs produits disponibles</p>\n<h4></h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "Allergènes",
+        "html": "<div class=\"et_pb_button_module_wrapper et_pb_button_0_wrapper et_pb_button_alignment_center et_pb_module \">\n\t\t\t\t<a class=\"et_pb_button et_pb_button_0 et_pb_bg_layout_light\" href=\"https://lesafelounge.com/allergenes\">Allergènes</a>\n\t\t\t</div>"
+      }
+    ]
+  },
+  {
+    "slug": "burgers",
+    "text": " \nMENU\nNos Burgers Gourmets\ngourmands et savoureux\nFISHHH\n\nPain potato bun moelleux, filet de colin d’Alaska gourmand, double cheddar fondue, salade iceberg croquante, sauce tartare onctueuse\n\n12€\nCREAMY\n\nPain potato bun moelleux, filet de poulet frit gourmand, double cheddar fondue, salade iceberg croquante, sauce creamy mayonnaise\n\n13€\nBIGGIE\n\nPain potato bun moelleux, filet de poulet frit gourmand, double cheddar fondue, salade iceberg croquante, sauce classic burger\n\n13€\nBBQ’ RACLETTE\n\nPain potato bun moelleux, filet de poulet frit gourmand, double raclette fondue, salade iceberg croquante, sauce classic BBQ\n\n14€\nSMOKEY BACON\n\npain potato bun moelleux, filet de poulet frit gourmand, bacon de veau grillé au goût fumé, double cheddar fondue, salade iceberg croquante, sauce smokey onctueuse\n\n14€\nSERVI AVEC FRITES ALLUMETTES CROUSTILLANTES\n\n \n\nFAIT MAISON\n\nTous nos plats sont faits maison, élaborés avec soin à partir des meilleurs produits disponibles\n\nAllergènes",
+    "images": [
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2023/07/Sans-titre-1-copie.png",
+        "alt": "Le Safe Lounge"
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2025/11/fish.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2025/11/creamy-1.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2025/11/biggie-1.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2025/11/raclette.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2025/11/smokey.jpg",
+        "alt": ""
+      }
+    ],
+    "backgrounds": [],
+    "modules": [
+      {
+        "text": "Nos Burgers Gourmets",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_0  et_pb_text_align_center et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h2>Nos Burgers Gourmets</h2></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "gourmands et savoureux",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_center et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h2>gourmands et savoureux</h2></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_0\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img fetchpriority=\"high\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2025/11/fish.jpg\" alt=\"\" title=\"fish\" srcset=\"https://lesafelounge.com/wp-content/uploads/2025/11/fish.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2025/11/fish-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2025/11/fish-480x480.jpg 480w\" sizes=\"(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-559\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "FISHHH\n\nPain potato bun moelleux, filet de colin d’Alaska gourmand, double cheddar fondue, salade iceberg croquante, sauce tartare onctueuse\n\n12€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_2  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>Fishhh</h3>\n<p>Pain potato bun moelleux, filet de colin d’Alaska gourmand, double cheddar fondue, salade iceberg croquante, sauce tartare onctueuse</p>\n<h4>12€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_1\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2025/11/creamy-1.jpg\" alt=\"\" title=\"creamy\" srcset=\"https://lesafelounge.com/wp-content/uploads/2025/11/creamy-1.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2025/11/creamy-1-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2025/11/creamy-1-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-556\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "CREAMY\n\nPain potato bun moelleux, filet de poulet frit gourmand, double cheddar fondue, salade iceberg croquante, sauce creamy mayonnaise\n\n13€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_3  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>creamy</h3>\n<p>Pain potato bun moelleux, filet de poulet frit gourmand, double cheddar fondue, salade iceberg croquante, sauce creamy mayonnaise</p>\n<h4>13€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_2\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2025/11/biggie-1.jpg\" alt=\"\" title=\"biggie\" srcset=\"https://lesafelounge.com/wp-content/uploads/2025/11/biggie-1.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2025/11/biggie-1-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2025/11/biggie-1-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-558\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "BIGGIE\n\nPain potato bun moelleux, filet de poulet frit gourmand, double cheddar fondue, salade iceberg croquante, sauce classic burger\n\n13€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_4  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>biggie</h3>\n<p>Pain potato bun moelleux, filet de poulet frit gourmand, double cheddar fondue, salade iceberg croquante, sauce classic burger</p>\n<h4>13€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_3\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2025/11/raclette.jpg\" alt=\"\" title=\"raclette\" srcset=\"https://lesafelounge.com/wp-content/uploads/2025/11/raclette.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2025/11/raclette-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2025/11/raclette-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-560\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "BBQ’ RACLETTE\n\nPain potato bun moelleux, filet de poulet frit gourmand, double raclette fondue, salade iceberg croquante, sauce classic BBQ\n\n14€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_5  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>BBQ’ RACLETTE</h3>\n<p>Pain potato bun moelleux, filet de poulet frit gourmand, double raclette fondue, salade iceberg croquante, sauce classic BBQ</p>\n<h4>14€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_4\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2025/11/smokey.jpg\" alt=\"\" title=\"smokey\" srcset=\"https://lesafelounge.com/wp-content/uploads/2025/11/smokey.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2025/11/smokey-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2025/11/smokey-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-561\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "SMOKEY BACON\n\npain potato bun moelleux, filet de poulet frit gourmand, bacon de veau grillé au goût fumé, double cheddar fondue, salade iceberg croquante, sauce smokey onctueuse\n\n14€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_6  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>smokey bacon</h3>\n<p>pain potato bun moelleux, filet de poulet frit gourmand, bacon de veau grillé au goût fumé, double cheddar fondue, salade iceberg croquante, sauce smokey onctueuse</p>\n<h4>14€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "SERVI AVEC FRITES ALLUMETTES CROUSTILLANTES\n\n ",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_7  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>Servi avec frites allumettes croustillantes</h3>\n<p>&nbsp;</p>\n<h4></h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_divider et_pb_divider_0 et_pb_divider_position_ et_pb_space\"><div class=\"et_pb_divider_internal\"></div></div>"
+      },
+      {
+        "text": "FAIT MAISON\n\nTous nos plats sont faits maison, élaborés avec soin à partir des meilleurs produits disponibles",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_8  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>FAIT MAISON</h3>\n<p>Tous nos plats sont faits maison, élaborés avec soin à partir des meilleurs produits disponibles</p>\n<h4></h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "Allergènes",
+        "html": "<div class=\"et_pb_button_module_wrapper et_pb_button_0_wrapper et_pb_button_alignment_center et_pb_module \">\n\t\t\t\t<a class=\"et_pb_button et_pb_button_0 et_pb_bg_layout_light\" href=\"https://lesafelounge.com/allergenes\">Allergènes</a>\n\t\t\t</div>"
+      }
+    ]
+  },
+  {
+    "slug": "desserts",
+    "text": " \nMENU\nNos Desserts\nFONDANT CHOCOLAT\n\nL’indémodable mi-cuit de la maison\n\n7€\n\nBoule vanille +2€\n\nORIGINAL TIRAMISU COFFEE\n\nLe tiramisu originel qui respecte la tradition\n\n8€\nTIRAMISU NUTELLA-SPÉCULOOS\n\nPour les plus gourmands, toujours plus\n\n9€\nTIRAMISU PISTACHIO\n\nLe bonheur à l’état pur\n\n9€\nBOWL DE FRUITS\n\nFruits frais de saison, pause fraicheur garantie\n\n10€\nBRIOCHE PERDUE\n\nLes gros goinfres la connaissent\n\n11€\nFAIT MAISON\n\nTous nos plats sont faits maison, élaborés avec soin à partir des meilleurs produits disponibles\n\nAllergènes",
+    "images": [
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2023/07/Sans-titre-1-copie.png",
+        "alt": "Le Safe Lounge"
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/fondant.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/tira-cafe2.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/speculoos2.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/pistache.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/fruits-1.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/brioche.jpg",
+        "alt": ""
+      }
+    ],
+    "backgrounds": [],
+    "modules": [
+      {
+        "text": "Nos Desserts",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_0  et_pb_text_align_center et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h2>Nos Desserts</h2></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_0\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img fetchpriority=\"high\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/fondant.jpg\" alt=\"\" title=\"fondant\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/fondant.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/fondant-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/fondant-480x480.jpg 480w\" sizes=\"(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-379\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "FONDANT CHOCOLAT\n\nL’indémodable mi-cuit de la maison\n\n7€\n\nBoule vanille +2€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>FONDANT CHOCOLAT</h3>\n<p>L’indémodable mi-cuit de la maison</p>\n<h4>7€</h4>\n<p>Boule vanille +2€</p></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_1\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/tira-cafe2.jpg\" alt=\"\" title=\"tira cafe2\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/tira-cafe2.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/tira-cafe2-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/tira-cafe2-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-428\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "ORIGINAL TIRAMISU COFFEE\n\nLe tiramisu originel qui respecte la tradition\n\n8€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_2  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>ORIGINAL TIRAMISU COFFEE</h3>\n<p>Le tiramisu originel qui respecte la tradition</p>\n<h4>8€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_2\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/speculoos2.jpg\" alt=\"\" title=\"speculoos2\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/speculoos2.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/speculoos2-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/speculoos2-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-429\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "TIRAMISU NUTELLA-SPÉCULOOS\n\nPour les plus gourmands, toujours plus\n\n9€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_3  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>TIRAMISU NUTELLA-SPÉCULOOS</h3>\n<p>Pour les plus gourmands, toujours plus</p>\n<h4>9€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_3\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/pistache.jpg\" alt=\"\" title=\"pistache\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/pistache.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/pistache-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/pistache-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-430\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "TIRAMISU PISTACHIO\n\nLe bonheur à l’état pur\n\n9€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_4  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>TIRAMISU PISTACHIO</h3>\n<p>Le bonheur à l’état pur</p>\n<h4>9€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_4\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/fruits-1.jpg\" alt=\"\" title=\"fruits\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/fruits-1.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/fruits-1-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/fruits-1-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-382\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "BOWL DE FRUITS\n\nFruits frais de saison, pause fraicheur garantie\n\n10€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_5  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>BOWL DE FRUITS</h3>\n<p>Fruits frais de saison, pause fraicheur garantie</p>\n<h4>10€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_5\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/brioche.jpg\" alt=\"\" title=\"brioche\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/brioche.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/brioche-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/brioche-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-380\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "BRIOCHE PERDUE\n\nLes gros goinfres la connaissent\n\n11€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_6  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>BRIOCHE PERDUE</h3>\n<p>Les gros goinfres la connaissent</p>\n<h4>11€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_divider et_pb_divider_0 et_pb_divider_position_ et_pb_space\"><div class=\"et_pb_divider_internal\"></div></div>"
+      },
+      {
+        "text": "FAIT MAISON\n\nTous nos plats sont faits maison, élaborés avec soin à partir des meilleurs produits disponibles",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_7  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>FAIT MAISON</h3>\n<p>Tous nos plats sont faits maison, élaborés avec soin à partir des meilleurs produits disponibles</p>\n<h4></h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "Allergènes",
+        "html": "<div class=\"et_pb_button_module_wrapper et_pb_button_0_wrapper et_pb_button_alignment_center et_pb_module \">\n\t\t\t\t<a class=\"et_pb_button et_pb_button_0 et_pb_bg_layout_light\" href=\"https://lesafelounge.com/allergenes\">Allergènes</a>\n\t\t\t</div>"
+      }
+    ]
+  },
+  {
+    "slug": "crepes",
+    "text": " \nMENU\nNos Crêpes Sucrées\nBEURRE SUCRÉ\n\nLa simplicité délicieuse à l’état pur\n\n7€\nNUTELLA\n\nGourmande et décadente, prête à vous faire fondre de plaisir\n\n8€\nCRÈME SPÉCULOOS\n\nPour les fans de spéculoos\n\n8€\nCHOCOLAT BLANC\n\nNappée d’une ganache au chocolat blanc fondant en bouche\n\n8€\nCARAMEL BEURRE SALÉ\n\nUne explosion de saveurs sucrées-salées en chaque bouchée\n\n8€\nCRÈME BUENO\n\nSi bon qu’on en deviendrait méchant\n\n8€\nFAIT MAISON\n\nTous nos plats sont faits maison, élaborés avec soin à partir des meilleurs produits disponibles\n\nAllergènes",
+    "images": [
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2023/07/Sans-titre-1-copie.png",
+        "alt": "Le Safe Lounge"
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/beurre.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/nutella.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/speculoos.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/blanc2.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/caramel-beurre-sale.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/bueno.jpg",
+        "alt": ""
+      }
+    ],
+    "backgrounds": [],
+    "modules": [
+      {
+        "text": "Nos Crêpes Sucrées",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_0  et_pb_text_align_center et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h2>Nos Crêpes Sucrées</h2></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_0\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img fetchpriority=\"high\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/beurre.jpg\" alt=\"\" title=\"beurre\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/beurre.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/beurre-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/beurre-480x480.jpg 480w\" sizes=\"(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-391\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "BEURRE SUCRÉ\n\nLa simplicité délicieuse à l’état pur\n\n7€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>BEURRE SUCRÉ</h3>\n<p>La simplicité délicieuse à l’état pur</p>\n<h4>7€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_1\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/nutella.jpg\" alt=\"\" title=\"nutella\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/nutella.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/nutella-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/nutella-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-384\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "NUTELLA\n\nGourmande et décadente, prête à vous faire fondre de plaisir\n\n8€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_2  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>Nutella</h3>\n<p>Gourmande et décadente, prête à vous faire fondre de plaisir</p>\n<h4>8€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_2\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/speculoos.jpg\" alt=\"\" title=\"speculoos\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/speculoos.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/speculoos-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/speculoos-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-386\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "CRÈME SPÉCULOOS\n\nPour les fans de spéculoos\n\n8€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_3  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>CRÈME SPÉCULOOS</h3>\n<p>Pour les fans de spéculoos</p>\n<h4>8€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_3\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/blanc2.jpg\" alt=\"\" title=\"blanc2\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/blanc2.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/blanc2-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/blanc2-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-431\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "CHOCOLAT BLANC\n\nNappée d’une ganache au chocolat blanc fondant en bouche\n\n8€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_4  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>CHOCOLAT BLANC</h3>\n<p>Nappée d’une ganache au chocolat blanc fondant en bouche</p>\n<h4>8€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_4\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/caramel-beurre-sale.jpg\" alt=\"\" title=\"caramel beurre salé\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/caramel-beurre-sale.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/caramel-beurre-sale-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/caramel-beurre-sale-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-385\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "CARAMEL BEURRE SALÉ\n\nUne explosion de saveurs sucrées-salées en chaque bouchée\n\n8€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_5  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>CARAMEL BEURRE SALÉ</h3>\n<p>Une explosion de saveurs sucrées-salées en chaque bouchée</p>\n<h4>8€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_5\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/bueno.jpg\" alt=\"\" title=\"bueno\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/bueno.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/bueno-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/bueno-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-387\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "CRÈME BUENO\n\nSi bon qu’on en deviendrait méchant\n\n8€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_6  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>CRÈME BUENO</h3>\n<p>Si bon qu’on en deviendrait méchant</p>\n<h4>8€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_divider et_pb_divider_0 et_pb_divider_position_ et_pb_space\"><div class=\"et_pb_divider_internal\"></div></div>"
+      },
+      {
+        "text": "FAIT MAISON\n\nTous nos plats sont faits maison, élaborés avec soin à partir des meilleurs produits disponibles",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_7  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>FAIT MAISON</h3>\n<p>Tous nos plats sont faits maison, élaborés avec soin à partir des meilleurs produits disponibles</p>\n<h4></h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "Allergènes",
+        "html": "<div class=\"et_pb_button_module_wrapper et_pb_button_0_wrapper et_pb_button_alignment_center et_pb_module \">\n\t\t\t\t<a class=\"et_pb_button et_pb_button_0 et_pb_bg_layout_light\" href=\"https://lesafelounge.com/allergenes\">Allergènes</a>\n\t\t\t</div>"
+      }
+    ]
+  },
+  {
+    "slug": "milkshakes",
+    "text": " \nMENU\nNos Milkshakes\nVANILLE\n8€\nBUENO\n9€\nSPECULOOS\n9€\nOREO\n9€\nFAIT MAISON\n\nTous nos plats sont faits maison, élaborés avec soin à partir des meilleurs produits disponibles\n\nAllergènes",
+    "images": [
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2023/07/Sans-titre-1-copie.png",
+        "alt": "Le Safe Lounge"
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/12/milkvanille.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/12/milkbueno.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/12/milkspeculos.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/12/milkoreo.jpg",
+        "alt": ""
+      }
+    ],
+    "backgrounds": [],
+    "modules": [
+      {
+        "text": "Nos Milkshakes",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_0  et_pb_text_align_center et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h2>Nos Milkshakes</h2></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_0\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img fetchpriority=\"high\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/12/milkvanille.jpg\" alt=\"\" title=\"milkvanille\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/12/milkvanille.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/12/milkvanille-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/12/milkvanille-480x480.jpg 480w\" sizes=\"(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-479\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "VANILLE\n8€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>vanille</h3>\n<h4>8€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_1\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/12/milkbueno.jpg\" alt=\"\" title=\"milkbueno\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/12/milkbueno.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/12/milkbueno-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/12/milkbueno-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-480\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "BUENO\n9€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_2  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>bueno</h3>\n<h4>9€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_2\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/12/milkspeculos.jpg\" alt=\"\" title=\"milkspeculos\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/12/milkspeculos.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/12/milkspeculos-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/12/milkspeculos-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-481\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "SPECULOOS\n9€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_3  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>speculoos</h3>\n<h4>9€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_3\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/12/milkoreo.jpg\" alt=\"\" title=\"milkoreo\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/12/milkoreo.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/12/milkoreo-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/12/milkoreo-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-482\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "OREO\n9€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_4  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>oreo</h3>\n<h4>9€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_divider et_pb_divider_0 et_pb_divider_position_ et_pb_space\"><div class=\"et_pb_divider_internal\"></div></div>"
+      },
+      {
+        "text": "FAIT MAISON\n\nTous nos plats sont faits maison, élaborés avec soin à partir des meilleurs produits disponibles",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_5  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>FAIT MAISON</h3>\n<p>Tous nos plats sont faits maison, élaborés avec soin à partir des meilleurs produits disponibles</p>\n<h4></h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "Allergènes",
+        "html": "<div class=\"et_pb_button_module_wrapper et_pb_button_0_wrapper et_pb_button_alignment_center et_pb_module \">\n\t\t\t\t<a class=\"et_pb_button et_pb_button_0 et_pb_bg_layout_light\" href=\"https://lesafelounge.com/allergenes\">Allergènes</a>\n\t\t\t</div>"
+      }
+    ]
+  },
+  {
+    "slug": "mocktails",
+    "text": " \nMENU\nNos Mocktails\nVIRGIN MOJITO\n\nLimonade, Menthe Fraîche, Citron Vert, Sucre de Canne\n\n8€\nMOJITO FRAISE\n\nLimonade, Menthe Fraîche, Citron Vert, Sucre de Canne, Fraise 9€\n\nMOJITO FRAMBOISE\n\nLimonade, Menthe Fraîche, Citron Vert, Sucre de Canne, Framboise\n\n9€\nCOCO LOCO\n\nAnanas, Coco\n\n10€\nAMOR AMOR\n\nPassion, Ananas, Mangue, Vanille, Grenadine\n\n10€\nPASSION LEMONADE\n\nPassion, Limonade, Grenadine\n\n10€\nTROPICAL SUNSET\n\nPomme, Mangue, Vanille, Framboise\n\n10€\nFAIT MAISON\n\nTous nos plats sont faits maison, élaborés avec soin à partir des meilleurs produits disponibles\n\nAllergènes",
+    "images": [
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2023/07/Sans-titre-1-copie.png",
+        "alt": "Le Safe Lounge"
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/12/mojito.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/12/mojitofraise.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/12/mojitoframboise.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/12/cocoloco.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/12/amoreamore.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/12/passionlemonade.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/12/tropicalsunset.jpg",
+        "alt": ""
+      }
+    ],
+    "backgrounds": [],
+    "modules": [
+      {
+        "text": "Nos Mocktails",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_0  et_pb_text_align_center et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h2>Nos Mocktails</h2></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_0\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img fetchpriority=\"high\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/12/mojito.jpg\" alt=\"\" title=\"mojito\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/12/mojito.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/12/mojito-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/12/mojito-480x480.jpg 480w\" sizes=\"(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-462\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "VIRGIN MOJITO\n\nLimonade, Menthe Fraîche, Citron Vert, Sucre de Canne\n\n8€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>VIRGIN MOJITO</h3>\n<p>Limonade, Menthe Fraîche, Citron Vert, Sucre de Canne</p>\n<h4>8€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_1\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/12/mojitofraise.jpg\" alt=\"\" title=\"mojitofraise\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/12/mojitofraise.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/12/mojitofraise-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/12/mojitofraise-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-464\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "MOJITO FRAISE\n\nLimonade, Menthe Fraîche, Citron Vert, Sucre de Canne, Fraise 9€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_2  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>MOJITO FRAISE</h3>\n<p>Limonade, Menthe Fraîche, Citron Vert, Sucre de Canne, Fraise 9€</p></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_2\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/12/mojitoframboise.jpg\" alt=\"\" title=\"mojitoframboise\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/12/mojitoframboise.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/12/mojitoframboise-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/12/mojitoframboise-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-465\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "MOJITO FRAMBOISE\n\nLimonade, Menthe Fraîche, Citron Vert, Sucre de Canne, Framboise\n\n9€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_3  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>MOJITO FRAmboise</h3>\n<p>Limonade, Menthe Fraîche, Citron Vert, Sucre de Canne, Framboise</p>\n<h4>9€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_3\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/12/cocoloco.jpg\" alt=\"\" title=\"cocoloco\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/12/cocoloco.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/12/cocoloco-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/12/cocoloco-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-467\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "COCO LOCO\n\nAnanas, Coco\n\n10€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_4  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>COCO LOCO</h3>\n<p>Ananas, Coco</p>\n<h4>10€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_4\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/12/amoreamore.jpg\" alt=\"\" title=\"amoreamore\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/12/amoreamore.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/12/amoreamore-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/12/amoreamore-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-468\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "AMOR AMOR\n\nPassion, Ananas, Mangue, Vanille, Grenadine\n\n10€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_5  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>AMOR AMOR</h3>\n<p>Passion, Ananas, Mangue, Vanille, Grenadine</p>\n<h4>10€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_5\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/12/passionlemonade.jpg\" alt=\"\" title=\"passionlemonade\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/12/passionlemonade.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/12/passionlemonade-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/12/passionlemonade-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-470\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "PASSION LEMONADE\n\nPassion, Limonade, Grenadine\n\n10€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_6  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>PASSION LEMONADE</h3>\n<p>Passion, Limonade, Grenadine</p>\n<h4>10€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_6\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/12/tropicalsunset.jpg\" alt=\"\" title=\"tropicalsunset\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/12/tropicalsunset.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/12/tropicalsunset-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/12/tropicalsunset-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-471\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "TROPICAL SUNSET\n\nPomme, Mangue, Vanille, Framboise\n\n10€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_7  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>tropical sunset</h3>\n<p>Pomme, Mangue, Vanille, Framboise</p>\n<h4>10€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_divider et_pb_divider_0 et_pb_divider_position_ et_pb_space\"><div class=\"et_pb_divider_internal\"></div></div>"
+      },
+      {
+        "text": "FAIT MAISON\n\nTous nos plats sont faits maison, élaborés avec soin à partir des meilleurs produits disponibles",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_8  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>FAIT MAISON</h3>\n<p>Tous nos plats sont faits maison, élaborés avec soin à partir des meilleurs produits disponibles</p>\n<h4></h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "Allergènes",
+        "html": "<div class=\"et_pb_button_module_wrapper et_pb_button_0_wrapper et_pb_button_alignment_center et_pb_module \">\n\t\t\t\t<a class=\"et_pb_button et_pb_button_0 et_pb_bg_layout_light\" href=\"https://lesafelounge.com/allergenes\">Allergènes</a>\n\t\t\t</div>"
+      }
+    ]
+  },
+  {
+    "slug": "boissons",
+    "text": " \nMENU\nNos Boissons\nHOT DRINKS\nCAFÉ \n3€\nCAFÉ CRÈME\n4€\nTHÉ\n5€\nCHOCOLAT CHAUD\n5€\nDRINKS\nCOCA-COLA, COCA-COLA ZÉRO, COCA-COLA CHERRY, OASIS TROPICAL, FUZE TEA, SPRITE, ORANGINA, SAN PELLEGRINO, VITTEL\n5€\nFAIT MAISON\n\nTous nos plats sont faits maison, élaborés avec soin à partir des meilleurs produits disponibles\n\nAllergènes",
+    "images": [
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2023/07/Sans-titre-1-copie.png",
+        "alt": "Le Safe Lounge"
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2026/01/cafe.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2026/01/cafecreme.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2026/01/the.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2026/01/ch.jpg",
+        "alt": ""
+      }
+    ],
+    "backgrounds": [],
+    "modules": [
+      {
+        "text": "Nos Boissons",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_0  et_pb_text_align_center et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h2>Nos Boissons</h2></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "HOT DRINKS",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3><em>HOT DRINKS</em></h3></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_0\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img fetchpriority=\"high\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2026/01/cafe.jpg\" alt=\"\" title=\"café\" srcset=\"https://lesafelounge.com/wp-content/uploads/2026/01/cafe.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2026/01/cafe-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2026/01/cafe-480x480.jpg 480w\" sizes=\"(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-565\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "CAFÉ \n3€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_2  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>CAFÉ&nbsp;</h3>\n<h4>3€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_1\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2026/01/cafecreme.jpg\" alt=\"\" title=\"cafécreme\" srcset=\"https://lesafelounge.com/wp-content/uploads/2026/01/cafecreme.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2026/01/cafecreme-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2026/01/cafecreme-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-567\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "CAFÉ CRÈME\n4€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_3  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>CAFÉ CRÈME</h3>\n<h4>4€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_2\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2026/01/the.jpg\" alt=\"\" title=\"thé\" srcset=\"https://lesafelounge.com/wp-content/uploads/2026/01/the.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2026/01/the-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2026/01/the-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-569\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "THÉ\n5€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_4  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>THÉ</h3>\n<h4>5€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_3\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2026/01/ch.jpg\" alt=\"\" title=\"ch\" srcset=\"https://lesafelounge.com/wp-content/uploads/2026/01/ch.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2026/01/ch-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2026/01/ch-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-571\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "CHOCOLAT CHAUD\n5€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_5  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>CHOCOLAT CHAUD</h3>\n<h4>5€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "DRINKS",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_6  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3><em>DRINKS</em></h3></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "COCA-COLA, COCA-COLA ZÉRO, COCA-COLA CHERRY, OASIS TROPICAL, FUZE TEA, SPRITE, ORANGINA, SAN PELLEGRINO, VITTEL\n5€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_7  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>COCA-COLA, COCA-COLA ZÉRO, COCA-COLA CHERRY, OASIS TROPICAL, FUZE TEA, SPRITE, ORANGINA, SAN PELLEGRINO, VITTEL</h3>\n<h4>5€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_divider et_pb_divider_0 et_pb_divider_position_ et_pb_space\"><div class=\"et_pb_divider_internal\"></div></div>"
+      },
+      {
+        "text": "FAIT MAISON\n\nTous nos plats sont faits maison, élaborés avec soin à partir des meilleurs produits disponibles",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_8  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>FAIT MAISON</h3>\n<p>Tous nos plats sont faits maison, élaborés avec soin à partir des meilleurs produits disponibles</p>\n<h4></h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "Allergènes",
+        "html": "<div class=\"et_pb_button_module_wrapper et_pb_button_0_wrapper et_pb_button_alignment_center et_pb_module \">\n\t\t\t\t<a class=\"et_pb_button et_pb_button_0 et_pb_bg_layout_light\" href=\"https://lesafelounge.com/allergenes\">Allergènes</a>\n\t\t\t</div>"
+      }
+    ]
+  },
+  {
+    "slug": "hookah",
+    "text": " \nMENU\nNos Hookah \nHOOKAH & DRINK\n20€\nHOOKAH & MOCKTAIL OU MILKSHAKE\n25€",
+    "images": [
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2023/07/Sans-titre-1-copie.png",
+        "alt": "Le Safe Lounge"
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/hookah1.jpg",
+        "alt": ""
+      },
+      {
+        "src": "https://lesafelounge.com/wp-content/uploads/2024/04/hookah2.jpg",
+        "alt": ""
+      }
+    ],
+    "backgrounds": [],
+    "modules": [
+      {
+        "text": "Nos Hookah ",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_0  et_pb_text_align_center et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h2>Nos Hookah&nbsp;</h2></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_0\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img fetchpriority=\"high\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/hookah1.jpg\" alt=\"\" title=\"hookah1\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/hookah1.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/hookah1-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/hookah1-480x480.jpg 480w\" sizes=\"(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-434\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "HOOKAH & DRINK\n20€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>HOOKAH &amp; DRINK</h3>\n<h4>20€</h4></div>\n\t\t\t</div>"
+      },
+      {
+        "text": "",
+        "html": "<div class=\"et_pb_module et_pb_image et_pb_image_1\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<span class=\"et_pb_image_wrap \"><img loading=\"lazy\" decoding=\"async\" width=\"1080\" height=\"1080\" src=\"https://lesafelounge.com/wp-content/uploads/2024/04/hookah2.jpg\" alt=\"\" title=\"hookah2\" srcset=\"https://lesafelounge.com/wp-content/uploads/2024/04/hookah2.jpg 1080w, https://lesafelounge.com/wp-content/uploads/2024/04/hookah2-980x980.jpg 980w, https://lesafelounge.com/wp-content/uploads/2024/04/hookah2-480x480.jpg 480w\" sizes=\"auto, (min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1080px, 100vw\" class=\"wp-image-435\"></span>\n\t\t\t</div>"
+      },
+      {
+        "text": "HOOKAH & MOCKTAIL OU MILKSHAKE\n25€",
+        "html": "<div class=\"et_pb_module et_pb_text et_pb_text_2  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_light\">\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<div class=\"et_pb_text_inner\"><h3>HOOKAH &amp; MOCKTAIL OU MILKSHAKE</h3>\n<h4>25€</h4></div>\n\t\t\t</div>"
+      }
+    ]
+  }
+]
