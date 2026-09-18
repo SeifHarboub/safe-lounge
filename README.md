@@ -9,7 +9,7 @@ npm run dev
 
 - `npm run build` : vérification TypeScript et production du site statique dans `dist/`.
 - `npm run preview` : aperçu du build.
-- `npm test` : seize tests de parcours dans Chrome via Playwright.
+- `npm test` : dix-huit tests de parcours dans Chrome via Playwright.
 - `npm run deploy` : reconstruit le site et remplace la branche `gh-pages`.
 
 Le site est publié sur https://seifharboub.github.io/safe-lounge/ (GitHub Pages, branche `gh-pages`).
@@ -62,6 +62,11 @@ Le ruban est dupliqué par script jusqu’à dépasser la largeur de la fenêtre
 Les animations respectent la préférence système de réduction des mouvements et peuvent être mises en pause dans le pied de page. La préférence est mémorisée localement. Navigation clavier dans les catégories, dialogues natifs accessibles, retour du focus et touche Échap.
 
 ## Mobile
+
+L’aperçu vidéo de l’accueil devient une barre compacte sur téléphone — vignette, titre, bouton de
+lecture sur une seule ligne — au lieu d’une carte verticale qui mangeait le haut de page ; sur desktop
+la colonne qui l’accueille suit la largeur du navigateur au lieu d’un 295 px figé. Le menu mobile se
+ferme aussi bien au doigt posé à côté que sur la croix.
 
 Les flèches `↗ ▶ ↓ ↑` portent toutes le sélecteur U+FE0E. Sans lui, iOS bascule sur la police
 d’emoji couleur partout où la police en place n’a pas le glyphe — le menu mobile est en Fraunces,

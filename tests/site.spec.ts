@@ -293,3 +293,39 @@ test('les flèches restent des glyphes texte, jamais des emoji', async ({ page }
   expect(bare).toEqual([]);
   await expect(page.locator('#tab-hookah span').first()).toHaveText('Hookah');
 });
+
+test('mobile : le menu se ferme au doigt posé à côté, pas seulement sur la croix', async ({ page }) => {
+  await page.setViewportSize({width:390,height:844});
+  await page.goto('/');
+  const panel = page.locator('#mobile-nav');
+  await page.getByRole('button',{name:'Ouvrir la navigation'}).click();
+  await expect(panel).toBeVisible();
+  await page.mouse.click(200, 700);
+  await expect(panel).toBeHidden();
+  await page.getByRole('button',{name:'Ouvrir la navigation'}).click();
+  await expect(panel).toBeVisible();
+  await page.getByRole('button',{name:'Fermer la navigation'}).click();
+  await expect(panel).toBeHidden();
+});
+
+test('l’aperçu vidéo tient dans une barre sur mobile et s’affiche en grand sur desktop', async ({ page }) => {
+  await page.setViewportSize({width:390,height:844});
+  await page.goto('/');
+  const film = page.locator('.arrival-film');
+  const barre = await film.boundingBox();
+  // Une barre, pas une carte : elle ne doit plus dévorer le haut de page.
+  expect(barre!.height).toBeLessThan(110);
+  // Et elle ne passe pas sous la barre d’actions fixe.
+  const dock = (await page.locator('.mobile-dock').boundingBox())!;
+  expect(barre!.y + barre!.height).toBeLessThanOrEqual(dock.y + 1);
+
+  await page.setViewportSize({width:1440,height:900});
+  await page.goto('/');
+  const fenetre = (await page.locator('.film-window').boundingBox())!;
+  expect(fenetre.width).toBeGreaterThan(340);
+  const hero = (await page.locator('.arrival').boundingBox())!;
+  const repere = (await page.locator('.arrival-scroll').boundingBox())!;
+  const carte = (await page.locator('.arrival-film').boundingBox())!;
+  expect(carte.y).toBeGreaterThan(hero.y);
+  expect(carte.y + carte.height).toBeLessThanOrEqual(repere.y);
+});

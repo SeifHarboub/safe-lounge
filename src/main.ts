@@ -265,6 +265,13 @@ function closeNav() { toggle.setAttribute('aria-expanded','false'); toggle.setAt
 toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Fermer la navigation':'Ouvrir la navigation');mobileNav.hidden=!open;});
 mobileNav.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeNav));
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!mobileNav.hidden){closeNav();toggle.focus();}});
+// A tap anywhere outside the panel closes it, not only the cross.
+document.addEventListener('click',event=>{
+  if (mobileNav.hidden) return;
+  const target = event.target as Element;
+  if (target.closest('#mobile-nav') || target.closest('.nav-toggle')) return;
+  closeNav();
+});
 function syncViewport(){categories.setAttribute('aria-orientation',mobileQuery.matches?'horizontal':'vertical');if(!mobileQuery.matches)closeNav();}
 mobileQuery.addEventListener('change',syncViewport);syncViewport();
 
