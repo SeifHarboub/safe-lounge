@@ -82,35 +82,35 @@
   {
     "id": "frappuccino",
     "label": "Frappuccino",
-    "description": "La nouvelle sélection arrive prochainement.",
+    "description": "",
     "source": "",
     "items": []
   },
   {
     "id": "iced-latte",
     "label": "Iced Latte",
-    "description": "La nouvelle sélection arrive prochainement.",
+    "description": "",
     "source": "",
     "items": []
   },
   {
     "id": "milkshake",
     "label": "Milkshake",
-    "description": "La nouvelle sélection arrive prochainement.",
+    "description": "",
     "source": "",
     "items": []
   },
   {
     "id": "mocktail",
     "label": "Mocktail",
-    "description": "La nouvelle sélection arrive prochainement.",
+    "description": "",
     "source": "",
     "items": []
   },
   {
     "id": "panuozzo",
     "label": "Panuozzo",
-    "description": "La nouvelle sélection arrive prochainement.",
+    "description": "",
     "source": "",
     "items": []
   },
@@ -259,7 +259,7 @@
   {
     "id": "tiramisu",
     "label": "Tiramisu",
-    "description": "La nouvelle sélection arrive prochainement.",
+    "description": "",
     "source": "",
     "items": []
   }

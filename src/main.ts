@@ -33,7 +33,8 @@ function renderMenu(animate = true) {
   const dishes = query ? allDishes.filter(dish => normalize(`${dish.name} ${dish.description} ${menu.find(c => c.id === dish.category)!.label}`).includes(query)) : category.items;
   $('#category-title').textContent = query ? 'Votre envie, à la carte.' : titles[category.id] || category.label;
   $('#category-description').textContent = query ? `Recherche dans toute la carte : « ${search.value.trim()} »` : category.description;
-  $('#result-count').textContent = `${dishes.length} ${dishes.length === 1 ? 'choix' : 'choix'}`;
+  // An empty category says so once, in the box below: no count, no second notice.
+  $('#result-count').textContent = dishes.length ? `${dishes.length} choix` : '';
   $<HTMLButtonElement>('.clear-search').hidden = !query;
   tabs.forEach(tab => { const active = !query && tab.dataset.category === category.id; tab.setAttribute('aria-selected',String(active)); tab.tabIndex = tab.dataset.category === category.id ? 0 : -1; });
   if (query) { panel.removeAttribute('aria-labelledby'); panel.setAttribute('aria-label','Résultats de recherche dans toute la carte'); }
@@ -86,7 +87,7 @@ document.addEventListener('click', event => {
   if (categoryLink) selectCategory(categoryLink.dataset.go!);
   if (target.closest('[data-clear]')) { search.value='';renderMenu();search.focus(); }
   const dishLink = target.closest<HTMLElement>('[data-open]');
-  if (dishLink) openDish(dishLink.dataset.open!);
+  if (dishLink) openDish(dishLink.dataset.open!, (event as MouseEvent).detail > 0);
   const anchor = target.closest<HTMLAnchorElement>('a[href^="#"]');
   const hash = anchor?.getAttribute('href');
   if (!hash || hash.length < 2 || !document.querySelector(hash)) return;
@@ -98,7 +99,10 @@ renderMenu(false);
 
 // Native dialog handles focus trapping, Escape and returning focus to its trigger.
 const dialog = $<HTMLDialogElement>('#dish-dialog');
-function openDish(id: string) {
+// A pointer click has no detail of 0; Enter or Space on the card has.
+let dishOpenedByPointer = false;
+function openDish(id: string, byPointer = false) {
+  dishOpenedByPointer = byPointer;
   const dish = allDishes.find(dish => dish.id === id);
   if (!dish) return;
   const category = menu.find(category => category.id === dish.category)!;
@@ -108,7 +112,12 @@ function openDish(id: string) {
 }
 $('.dialog-close').addEventListener('click', () => dialog.close());
 dialog.addEventListener('click', event => { if (event.target === dialog) {const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();} });
-dialog.addEventListener('close', () => document.body.classList.remove('dialog-open'));
+dialog.addEventListener('close', () => {
+  document.body.classList.remove('dialog-open');
+  // The dialog hands focus back to the card that opened it. For a keyboard user
+  // that ring is the way back; after a click or a tap it is only a stray outline.
+  if (dishOpenedByPointer) (document.activeElement as HTMLElement | null)?.blur();
+});
 
 // The desserts rotate on their own. The progress bar *is*
 // the timer: it is a CSS animation, so pausing it — off screen, behind a dialog,

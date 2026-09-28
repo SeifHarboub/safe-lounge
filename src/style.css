@@ -106,6 +106,7 @@ h1 .italic{font-family:Fraunces,serif;font-style:italic;font-size:1.05em;font-we
 .results-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;border-bottom:1px solid #150b1925;padding-bottom:20px;margin-bottom:24px}
 .results-heading h3{font-size:36px}
 .results-heading p{font-size:15px;line-height:1.7;margin-top:8px;color:#625b61}
+#category-description:empty,#result-count:empty{display:none}
 .results-heading>span{font-size:11px;white-space:nowrap;padding-top:8px;letter-spacing:1px;text-transform:uppercase}
 .dish-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 22px}
 .dish-card{display:block;text-align:left;background:none;padding:0;border:0;min-width:0;align-self:start}

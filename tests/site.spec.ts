@@ -81,6 +81,9 @@ test('une catégorie en attente ne conserve aucun ancien plat', async ({ page })
   await expect(page.locator('#category-title')).toHaveText('Panuozzos');
   await expect(page.locator('#dish-grid')).toContainText('Cette catégorie arrive bientôt.');
   await expect(page.locator('.dish-card')).toHaveCount(0);
+  await expect(page.locator('#category-description')).toBeHidden();
+  await expect(page.locator('#result-count')).toBeHidden();
+  await expect(page.locator('.results-heading')).not.toContainText('arrive prochainement');
 });
 
 test('l’accueil présente les plats en relief, nom posé au-dessus du plat et sans sélecteur', async ({ page }) => {
@@ -194,4 +197,19 @@ test('les itinéraires tiennent sur une ligne avec leurs icônes, même sur tél
   expect(new Set(boxes.map(box => Math.round(box.y))).size).toBe(1);
   const card = (await page.locator('.contact-address').boundingBox())!;
   expect(Math.max(...boxes.map(box => box.right))).toBeLessThanOrEqual(card.x + card.width);
+});
+
+test('fermer la fiche d’un plat ne laisse pas de contour après un clic', async ({ page }) => {
+  await page.goto('/#carte');
+  await page.locator('#tab-pizzas').click();
+  const card = page.locator('.dish-card[data-open="pizzas-malaga"]');
+  await card.click();
+  await page.keyboard.press('Escape');
+  await expect(page.getByRole('dialog')).toBeHidden();
+  expect(await card.evaluate(element => element === document.activeElement)).toBe(false);
+  await card.focus();
+  await page.keyboard.press('Enter');
+  await expect(page.getByRole('dialog')).toBeVisible();
+  await page.keyboard.press('Escape');
+  expect(await card.evaluate(element => element === document.activeElement)).toBe(true);
 });
