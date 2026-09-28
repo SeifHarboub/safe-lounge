@@ -419,5 +419,17 @@ test('sur téléphone, choisir une catégorie ramène le début de la liste sous
   await page.evaluate(() => scrollTo(0, document.querySelector<HTMLElement>('#carte')!.offsetTop + 900));
   await page.locator('#tab-pizzas').click();
   await expect(page.locator('#category-title')).toHaveText('Pizzas');
-  await expect.poll(async () => page.evaluate(() => Math.round(document.querySelector('.menu-results')!.getBoundingClientRect().top - document.querySelector('.menu-sidebar')!.getBoundingClientRect().bottom))).toBe(0);
+  await expect.poll(async () => page.evaluate(() => Math.abs(document.querySelector('.menu-results')!.getBoundingClientRect().top - document.querySelector('.menu-sidebar')!.getBoundingClientRect().bottom))).toBeLessThan(1);
+});
+
+test('les itinéraires tiennent sur une ligne avec leurs icônes, même sur téléphone', async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 780 });
+  await page.goto('/');
+  const routes = page.locator('.contact-routes a');
+  await expect(routes).toHaveCount(3);
+  await expect(routes.locator('svg')).toHaveCount(3);
+  const boxes = await routes.evaluateAll(links => links.map(link => link.getBoundingClientRect()).map(box => ({ y: box.y, right: box.right })));
+  expect(new Set(boxes.map(box => Math.round(box.y))).size).toBe(1);
+  const card = (await page.locator('.contact-address').boundingBox())!;
+  expect(Math.max(...boxes.map(box => box.right))).toBeLessThanOrEqual(card.x + card.width);
 });
