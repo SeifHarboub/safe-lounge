@@ -2,7 +2,6 @@ import './style.css';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import rawMenu from './menu.json';
-import { initMedia } from './media';
 import { initDish3D } from './dish3d';
 import { asset } from './asset';
 
@@ -110,18 +109,17 @@ function autoRotate(bars: HTMLElement[], advance: () => void) {
     if ((event as AnimationEvent).animationName === 'slide-progress') advance();
   }));
 }
-const filmDialog = $<HTMLDialogElement>('#film-dialog');
 const mobileQuery = matchMedia('(max-width: 760px)');
 const holds: (() => void)[] = [];
 function holdWhenOutOfSight(section: Element, holder: Element) {
   let onScreen = false;
-  const refresh = () => holder.classList.toggle('rotation-hold', !onScreen || document.hidden || dialog.open || filmDialog.open);
+  const refresh = () => holder.classList.toggle('rotation-hold', !onScreen || document.hidden || dialog.open);
   new IntersectionObserver(entries => { onScreen = entries[0].isIntersecting; refresh(); }, { threshold: .25 }).observe(section);
   holds.push(refresh);
 }
 const refreshHolds = () => holds.forEach(hold => hold());
 document.addEventListener('visibilitychange', refreshHolds);
-[dialog, filmDialog].forEach(element => element.addEventListener('close', refreshHolds));
+dialog.addEventListener('close', refreshHolds);
 // A dialog opens on a click; the next frame is when its state is readable.
 document.addEventListener('click', () => requestAnimationFrame(refreshHolds));
 
@@ -217,7 +215,7 @@ let railInView = false;
 let ownScrollUntil = 0;
 function railRuns() {
   return canAnimate() && mobileQuery.matches && railInView && !railTakenOver
-    && !document.hidden && !dialog.open && !filmDialog.open && rail.scrollWidth > rail.clientWidth + 4;
+    && !document.hidden && !dialog.open && rail.scrollWidth > rail.clientWidth + 4;
 }
 function showRailCard(index: number) {
   railIndex = index;
@@ -286,7 +284,6 @@ function syncViewport(){categories.setAttribute('aria-orientation',mobileQuery.m
 mobileQuery.addEventListener('change',syncViewport);syncViewport();
 
 // Motion is optional. Scroll-based movement follows the visitor's own pace.
-initMedia();
 let animationContext: gsap.Context | undefined;
 function setupMotion() {
   animationContext?.revert();

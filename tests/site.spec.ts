@@ -361,3 +361,15 @@ test('la page expose un référencement local complet', async ({ page }) => {
   const missingAlt = await page.locator('img:not([alt])').count();
   expect(missingAlt).toBe(0);
 });
+
+test('le lounge met en avant la Wookah en bois et sa chauffe Quasar', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('#lieu')).toHaveCount(0);
+  await expect(page.locator('a[href="#lieu"]')).toHaveCount(0);
+  const lounge = page.locator('#lounge');
+  await expect(lounge.locator('.lounge-specs')).toContainText('Wookah en bois');
+  await expect(lounge.locator('.lounge-specs')).toContainText('Quasar');
+  await expect(lounge.locator('.lounge-picture img')).toHaveAttribute('src', /lounge\/wookah-quasar\.webp$/);
+  await expect(lounge.locator('.lounge-tile img')).toHaveCount(2);
+  await expect(lounge.locator('.lounge-formula')).toHaveCount(2);
+});

@@ -15,8 +15,8 @@ npm run dev
 Le site est publié sur https://seifharboub.github.io/safe-lounge/ (GitHub Pages, branche `gh-pages`).
 Les sources restent sur `main`, la branche `gh-pages` ne contient que le site construit.
 
-Les chemins d’assets construits à l’exécution — photos de la carte, plats de l’accueil, desserts,
-vidéos — passent par `asset()` dans `src/asset.ts`, qui applique `import.meta.env.BASE_URL`.
+Les chemins d’assets construits à l’exécution — photos de la carte, plats de l’accueil, desserts —
+passent par `asset()` dans `src/asset.ts`, qui applique `import.meta.env.BASE_URL`.
 Vite ne réécrit que les chemins présents dans le HTML et le CSS : sans ce détour, tout ce qui est
 construit en JavaScript tomberait en 404 sous un sous-dossier. `BASE_PATH` fixe cette base au build.
 
@@ -63,10 +63,9 @@ Les animations respectent la préférence système de réduction des mouvements 
 
 ## Mobile
 
-L’aperçu vidéo de l’accueil devient une barre compacte sur téléphone — vignette, titre, bouton de
-lecture sur une seule ligne — au lieu d’une carte verticale qui mangeait le haut de page ; sur desktop
-la colonne qui l’accueille suit la largeur du navigateur au lieu d’un 295 px figé. Le menu mobile se
-ferme aussi bien au doigt posé à côté que sur la croix.
+Sur téléphone, le plat en relief passe sous le texte d’accueil et occupe toute la largeur, son étiquette
+au-dessus ; sur desktop, l’étiquette s’aligne à droite sur la hauteur de la première ligne de texte. Le menu
+mobile se ferme aussi bien au doigt posé à côté que sur la croix.
 
 Les flèches `↗ ▶ ↓ ↑` portent toutes le sélecteur U+FE0E. Sans lui, iOS bascule sur la police
 d’emoji couleur partout où la police en place n’a pas le glyphe — le menu mobile est en Fraunces,
@@ -86,25 +85,17 @@ Les dix catégories de la carte s’affichent en pastilles qui reviennent à la 
 - Tests : `tests/site.spec.ts`.
 
 
-## Médias du lieu et Instagram
+## Photos du lieu
 
-Quatre vidéos originales et huit photographies / couvertures de publications du compte officiel `@lesafelounge` ont été téléchargées dans `public/assets/instagram/`. Elles sont servies localement, sans embed ni connexion Instagram. Les vidéos, leur son et leurs sous-titres incrustés sont conservés tels que publiés. Les sources exactes et légendes sont consignées dans `research/instagram/manifest.json`.
-
-L’accueil utilise la photographie du salon en arrière-plan et un aperçu vidéo muet. Celui-ci ne charge qu’à l’approche du viewport, se met en pause hors écran ou lorsque l’onglet est masqué et respecte la réduction des mouvements ainsi que le mode économie de données. Son bouton permet de le lire ou de le mettre en pause. Les autres vidéos ne chargent qu’après ouverture explicite. Le lecteur plein format permet de contrôler le son ; fermer le lecteur arrête et décharge la vidéo.
-
-La section « Votre prochaine bonne adresse » réunit le salon, la façade, l’adresse et les trois vidéos dans une seule grille rectangulaire aux bords alignés. Le panuozzo est montré comme contenu Instagram, sans ajout de prix ni modification de la carte existante. L’adresse vient des légendes des publications ; les horaires proviennent de la biographie du profil consultée le 18 septembre 2026.
-
-La section lounge porte une fumée d’ambiance sur son fond sombre, jamais sur les photographies. C’est une texture `feTurbulence` figée, encodée en data-URI, que trois calques font dériver lentement : le filtre n’est calculé qu’une fois et seules les transformations sont animées, ce qui la garde fluide sur téléphone. Elle disparaît sous une préférence de mouvement réduit et se met en pause avec le bouton d’animations.
-
-Les affiches des vidéos `en-cuisine` et `a-table` sont des images extraites des vidéos locales elles-mêmes (`ffmpeg -ss 32.6` et `-ss 11.1`), et non plus les couvertures Instagram : elles montrent le plat dressé et la table servie. Les sous-titres incrustés restent ceux de la vidéo ; le cadrage CSS de la tuile les laisse hors champ.
-
-La section lounge met en avant les deux photographies de chicha du site officiel (`hookah1.jpg`, `hookah2.jpg`, les visuels des formules à 20 € et 25 €) ; elles ouvrent la fiche de leur formule. La photographie du salon lounge les accompagne. `public/assets/instagram/pizza.jpg` n’est plus affichée mais reste archivée avec les autres médias.
-
-Code du lecteur : `src/media.ts`. Les tests couvrent également le décodage / la lecture, l’arrêt hors écran, la fermeture et le retour du focus.
+Les photographies du salon et de la façade viennent du compte officiel `@lesafelounge` (sources dans `research/instagram/manifest.json`). Elles sont servies en WebP dans `public/assets/instagram/` : le salon en arrière-plan de l’accueil, la façade derrière le contact. Les vidéos Instagram et la section « Votre prochaine bonne adresse » ont été retirées ; elles restent dans l’historique git.
 
 ## Accueil en relief
 
 La vidéo de l’accueil est remplacée par trois plats de la nouvelle carte en relief : Smokey Beef Bacon, Burratella Lov’ et Penne Forestière. Ce sont les photos de la carte, détourées sans retouche, accompagnées d’une carte de profondeur (`public/assets/hero-3d/`). `src/dish3d.ts` déplace chaque pixel selon sa profondeur dans un shader WebGL quand le plat s’incline : il tourne seul, suit la souris sur ordinateur et le doigt sur téléphone. Sans WebGL, ou animations en pause, l’image détourée reste affichée. La fabrication des images est décrite dans `scripts/hero-3d/`.
+
+## Lounge
+
+La section lounge met en avant la chicha réellement servie : une Wookah en bois avec chauffe Quasar. Les trois visuels de `public/assets/lounge/` sont générés à partir des photos d’origine du lounge (`research/lounge-originals/`), en gardant le même modèle ; seuls le décor, la lumière et la fumée changent. Les formules à 20 € et 25 € sont affichées sans fiche : la nouvelle carte ne les contient pas encore.
 
 ## Référencement
 
