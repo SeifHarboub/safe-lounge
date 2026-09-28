@@ -2,14 +2,14 @@
   {
     "id": "burger",
     "label": "Burgers",
-    "description": "Chicken burgers croustillants et smash burgers au bœuf, tous servis avec 200 g de frites.",
+    "description": "Chicken burgers croustillants et smash burgers au bœuf.",
     "source": "SAFE_LOUNGE_BBQ_RACLETTE_200G_FRITES_A4.pdf",
     "items": [
       {
         "id": "burger-bbq-raclette",
         "name": "BBQ’ Raclette",
         "description": "Potato bun moelleux, poulet frit croustillant, raclette fondue, sauce BBQ et salade iceberg.",
-        "extra": "Servi avec 200 g de frites.",
+        "extra": "",
         "price": null,
         "image": "/assets/menu-v2/burger-bbq-raclette.webp",
         "sourceImage": "SAFE_LOUNGE_BBQ_RACLETTE_200G_FRITES_A4.pdf"
@@ -18,7 +18,7 @@
         "id": "burger-chicken-biggie",
         "name": "Chicken Biggie",
         "description": "Potato bun moelleux, poulet frit croustillant, double cheddar fondu, sauce classic burger et salade iceberg.",
-        "extra": "Servi avec 200 g de frites.",
+        "extra": "",
         "price": null,
         "image": "/assets/menu-v2/burger-chicken-biggie.webp",
         "sourceImage": "SAFE_LOUNGE_CHICKEN_BIGGIE_200G_FRITES_A4.pdf"
@@ -27,7 +27,7 @@
         "id": "burger-chicken-creamy",
         "name": "Chicken Creamy",
         "description": "Potato bun moelleux, poulet frit croustillant, double cheddar fondu, mayonnaise et salade iceberg.",
-        "extra": "Servi avec 200 g de frites.",
+        "extra": "",
         "price": null,
         "image": "/assets/menu-v2/burger-chicken-creamy.webp",
         "sourceImage": "SAFE_LOUNGE_CREAMY_200G_FRITES_A4.pdf"
@@ -36,7 +36,7 @@
         "id": "burger-smokey-bacon",
         "name": "Smokey Bacon",
         "description": "Potato bun moelleux, poulet frit croustillant, bacon de bœuf snacké, double cheddar fondu, sauce Smokey Baconnaise et salade iceberg.",
-        "extra": "Servi avec 200 g de frites.",
+        "extra": "",
         "price": null,
         "image": "/assets/menu-v2/burger-smokey-bacon.webp",
         "sourceImage": "SAFE_LOUNGE_SMOKEY_BACON_FINAL_200G_FRITES_A4.pdf"
@@ -45,7 +45,7 @@
         "id": "burger-classic-smash",
         "name": "Classic Smash",
         "description": "Potato bun moelleux, deux steaks smash, double cheddar fondu, ketchup, moutarde et salade iceberg.",
-        "extra": "Servi avec 200 g de frites.",
+        "extra": "",
         "price": null,
         "image": "/assets/menu-v2/burger-classic-smash.webp",
         "sourceImage": "SAFE_LOUNGE_CLASSIC_SMASH_200G_FRITES_A4.pdf"
@@ -54,7 +54,7 @@
         "id": "burger-smokey-beef-bacon",
         "name": "Smokey Beef Bacon",
         "description": "Potato bun moelleux, deux steaks smash, bacon de bœuf snacké, double cheddar fondu, sauce Smoked Beef et salade iceberg.",
-        "extra": "Servi avec 200 g de frites.",
+        "extra": "",
         "price": null,
         "image": "/assets/menu-v2/burger-smokey-beef-bacon.webp",
         "sourceImage": "SAFE_LOUNGE_SMOKEY_BEEF_BACON_200G_FRITES_A4.pdf"
@@ -63,7 +63,7 @@
         "id": "burger-original-smash",
         "name": "Original Smash",
         "description": "Potato bun moelleux, deux steaks smash, double cheddar fondu, sauce Original Smash et salade iceberg.",
-        "extra": "Servi avec 200 g de frites.",
+        "extra": "",
         "price": null,
         "image": "/assets/menu-v2/burger-original-smash.webp",
         "sourceImage": "SAFE_LOUNGE_ORIGINAL_SMASH_200G_FRITES_A4.pdf"
@@ -72,7 +72,7 @@
         "id": "burger-biggie-smash",
         "name": "Biggie Smash",
         "description": "Potato bun moelleux, deux steaks smash, double cheddar fondu, sauce classic burger et salade iceberg.",
-        "extra": "Servi avec 200 g de frites.",
+        "extra": "",
         "price": null,
         "image": "/assets/menu-v2/burger-biggie-smash.webp",
         "sourceImage": "SAFE_LOUNGE_BIGGIE_SMASH_200G_FRITES_A4.pdf"

@@ -17,14 +17,14 @@ test('la nouvelle carte affiche les neuf catégories dans le bon ordre', async (
 
 // Each dish shows its ingredients as a customer reads them, never the recipe steps.
 const dishes: { id: string; tab?: string; name: string; has: string[]; hasNot?: string[] }[] = [
-  { id: 'burger-bbq-raclette', name: 'BBQ’ Raclette', has: ['poulet frit croustillant', 'raclette fondue', 'sauce BBQ', '200 g de frites'] },
-  { id: 'burger-chicken-biggie', name: 'Chicken Biggie', has: ['poulet frit croustillant', 'double cheddar fondu', 'sauce classic burger', '200 g de frites'] },
-  { id: 'burger-chicken-creamy', name: 'Chicken Creamy', has: ['poulet frit croustillant', 'double cheddar fondu', 'mayonnaise', '200 g de frites'] },
-  { id: 'burger-smokey-bacon', name: 'Smokey Bacon', has: ['poulet frit croustillant', 'bacon de bœuf snacké', 'sauce Smokey Baconnaise', '200 g de frites'] },
-  { id: 'burger-classic-smash', name: 'Classic Smash', has: ['deux steaks smash', 'double cheddar fondu', 'ketchup', 'moutarde', '200 g de frites'] },
-  { id: 'burger-smokey-beef-bacon', name: 'Smokey Beef Bacon', has: ['deux steaks smash', 'bacon de bœuf snacké', 'sauce Smoked Beef', '200 g de frites'] },
-  { id: 'burger-original-smash', name: 'Original Smash', has: ['deux steaks smash', 'double cheddar fondu', 'sauce Original Smash', '200 g de frites'], hasNot: ['bacon'] },
-  { id: 'burger-biggie-smash', name: 'Biggie Smash', has: ['deux steaks smash', 'double cheddar fondu', 'sauce classic burger', '200 g de frites'] },
+  { id: 'burger-bbq-raclette', name: 'BBQ’ Raclette', has: ['poulet frit croustillant', 'raclette fondue', 'sauce BBQ'] },
+  { id: 'burger-chicken-biggie', name: 'Chicken Biggie', has: ['poulet frit croustillant', 'double cheddar fondu', 'sauce classic burger'] },
+  { id: 'burger-chicken-creamy', name: 'Chicken Creamy', has: ['poulet frit croustillant', 'double cheddar fondu', 'mayonnaise'] },
+  { id: 'burger-smokey-bacon', name: 'Smokey Bacon', has: ['poulet frit croustillant', 'bacon de bœuf snacké', 'sauce Smokey Baconnaise'] },
+  { id: 'burger-classic-smash', name: 'Classic Smash', has: ['deux steaks smash', 'double cheddar fondu', 'ketchup', 'moutarde'] },
+  { id: 'burger-smokey-beef-bacon', name: 'Smokey Beef Bacon', has: ['deux steaks smash', 'bacon de bœuf snacké', 'sauce Smoked Beef'] },
+  { id: 'burger-original-smash', name: 'Original Smash', has: ['deux steaks smash', 'double cheddar fondu', 'sauce Original Smash'], hasNot: ['bacon'] },
+  { id: 'burger-biggie-smash', name: 'Biggie Smash', has: ['deux steaks smash', 'double cheddar fondu', 'sauce classic burger'] },
   { id: 'pates-spaghetti-sicilienne', tab: 'pates', name: 'Spaghetti Sicilienne', has: ['sauce tomate', 'thon', 'olives', 'parmesan', 'tomate cerise'] },
   { id: 'pates-rigatoni-tartufo', tab: 'pates', name: 'Rigatoni Tartufo', has: ['truffe', 'champignons', 'copeaux de parmesan'] },
   { id: 'pates-spaghetti-merguez', tab: 'pates', name: 'Spaghetti Merguez', has: ['merguez', 'sauce tomate crémeuse', 'olives', 'parmesan'] },
@@ -71,7 +71,7 @@ test('la fiche du burger fonctionne sur mobile', async ({ page }) => {
   const dialog = page.getByRole('dialog');
   await expect(dialog).toBeVisible();
   await expect(dialog).toContainText('BBQ’ Raclette');
-  await expect(dialog).toContainText('Servi avec 200 g de frites.');
+  await expect(dialog).not.toContainText('200 g de frites');
   await expect(dialog.locator('.dialog-price')).toHaveCount(0);
 });
 
@@ -226,4 +226,15 @@ test('les titres de section portent les mots-clés et le contact affiche la bonn
   const data = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent() ?? '{}');
   expect(data.email).toBe('lesafelounge@gmail.com');
   expect(data.geo.latitude).toBeCloseTo(48.8933, 3);
+});
+
+test('changer de catégorie en bas de liste ramène au début de la nouvelle liste', async ({ page }) => {
+  await page.goto('/');
+  await page.evaluate(() => scrollTo(0, document.querySelector<HTMLElement>('#carte')!.offsetTop + 1400));
+  await page.locator('#tab-panuozzo').click();
+  await page.locator('#tab-burger').click();
+  await expect.poll(async () => page.evaluate(() => Math.round(document.querySelector('.menu-results')!.getBoundingClientRect().top))).toBe(24);
+  await expect(page.locator('#category-description')).toBeHidden();
+  await expect(page.locator('.arrival-content')).not.toContainText('La soirée ne fait que commencer');
+  await expect(page.locator('#menu-panel')).not.toContainText('200 g de frites');
 });

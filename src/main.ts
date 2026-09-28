@@ -31,7 +31,8 @@ function renderMenu(animate = true) {
   const category = menu.find(category => category.id === selectedCategory)!;
   const dishes = query ? allDishes.filter(dish => normalize(`${dish.name} ${dish.description} ${menu.find(c => c.id === dish.category)!.label}`).includes(query)) : category.items;
   $('#category-title').textContent = query ? 'Votre envie, à la carte.' : category.label;
-  $('#category-description').textContent = query ? `Recherche dans toute la carte : « ${search.value.trim()} »` : category.description;
+  // Each dish already details its ingredients: a category only says something during a search.
+  $('#category-description').textContent = query ? `Recherche dans toute la carte : « ${search.value.trim()} »` : '';
   // An empty category says so once, in the box below: no count, no second notice.
   $('#result-count').textContent = dishes.length ? `${dishes.length} choix` : '';
   $<HTMLButtonElement>('.clear-search').hidden = !query;
@@ -45,16 +46,20 @@ function renderMenu(animate = true) {
 function selectCategory(id: string) {
   if (!menu.some(category => category.id === id)) return;
   selectedCategory = id; search.value = ''; renderMenu();
-  if (!mobileQuery.matches) return;
-  // On a phone the tabs are one sticky row: centre the chosen tab, and if the
-  // row is stuck at the top, bring the start of the list back under it.
-  const tab = tabs.find(tab => tab.dataset.category === id)!;
   const behavior = canAnimate() ? 'smooth' : 'auto';
-  categories.scrollTo({ left: tab.offsetLeft - (categories.clientWidth - tab.offsetWidth) / 2, behavior });
-  // Two frames: renderMenu's ScrollTrigger refresh would cancel a smooth scroll started now.
+  // On a phone the tabs are one sticky row: centre the chosen tab in it.
+  if (mobileQuery.matches) {
+    const tab = tabs.find(tab => tab.dataset.category === id)!;
+    categories.scrollTo({ left: tab.offsetLeft - (categories.clientWidth - tab.offsetWidth) / 2, behavior });
+  }
+  // A new category starts at its title. When the list was scrolled past, bring
+  // that title back to the top, under the sticky tabs on a phone. Two frames:
+  // renderMenu's ScrollTrigger refresh would cancel a smooth scroll started now,
+  // and a short category can shrink the page and shift the scroll on its own.
   requestAnimationFrame(() => requestAnimationFrame(() => {
-    const offset = $('.menu-results').getBoundingClientRect().top - $('.menu-sidebar').offsetHeight;
-    if (offset < 0) window.scrollTo({ top: window.scrollY + offset, behavior });
+    const top = mobileQuery.matches ? $('.menu-sidebar').offsetHeight : 24;
+    const offset = $('.menu-results').getBoundingClientRect().top - top;
+    if (offset < 0 || offset > innerHeight * .6) window.scrollTo({ top: window.scrollY + offset, behavior });
   }));
 }
 tabs.forEach((tab, index) => {

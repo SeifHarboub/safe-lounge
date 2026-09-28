@@ -66,7 +66,6 @@ h1 .italic{font-family:Fraunces,serif;font-style:italic;font-size:1.05em;font-we
 .menu-section{padding-top:72px;border-top:1px solid #150b1930}
 .menu-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:30px}
 .menu-heading h2 em{color:var(--green)}
-.menu-intro{max-width:480px;margin-top:22px;font-size:17px;line-height:1.8;color:#625b61}
 .menu-search{width:300px;padding-bottom:6px}
 .menu-search>label{display:block;font-size:13px;margin-bottom:12px;color:#625b61}
 .menu-search>div{display:flex;align-items:center;border-bottom:1px solid #150b1960;position:relative;gap:10px}
@@ -118,7 +117,7 @@ h1 .italic{font-family:Fraunces,serif;font-style:italic;font-size:1.05em;font-we
 .menu-section{background:radial-gradient(circle at 85% 12%,#315846 0,transparent 34%),radial-gradient(circle at 12% 88%,#af8dbf14 0,transparent 30%),var(--green);color:var(--cream);border-top:0}
 .menu-section .eyebrow{color:var(--jade)}
 .menu-heading h2 em{color:var(--lilac)}
-.menu-intro,.menu-search>label,.sidebar-top,.sidebar-note p,.results-heading p,.dish-card>p,.menu-service,.category-count{color:#e6e4d8b3}
+.menu-search>label,.sidebar-top,.sidebar-note p,.results-heading p,.dish-card>p,.menu-service,.category-count{color:#e6e4d8b3}
 .menu-search>div{border-bottom-color:#e6e4d866}
 .menu-search input{color:var(--cream)}
 .menu-search input::placeholder{color:#e6e4d880}
@@ -473,7 +472,6 @@ footer>span{width:50%;text-align:right}
 .arrival-content>p:not(.eyebrow){font-size:15px}
 .arrival-place{font-size:13px}
 .arrival-address,.dish3d-caption small{font-size:10px}
-.menu-intro{font-size:15px}
 .menu-search>label{font-size:12px}
 .menu-search input{font-size:16px}
 #categories>button{font-size:14px}
@@ -522,3 +520,5 @@ footer>span,footer>a:not(:first-child){font-size:12px}
 /* Keyword line at the top of a section title: styled as the small label it replaces. */
 h2 .h2-kicker{display:block;margin-bottom:24px;font-family:Satoshi,sans-serif;font-weight:650;letter-spacing:1.5px;line-height:1.5;text-transform:uppercase}
 .contact-title .h2-kicker{margin-bottom:26px}
+/* Replacing the list must not let the browser re-anchor the scroll elsewhere. */
+#menu-panel{overflow-anchor:none}
