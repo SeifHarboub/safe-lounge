@@ -63,8 +63,9 @@ Les animations respectent la préférence système de réduction des mouvements 
 
 ## Mobile
 
-Sur téléphone, le plat en relief passe sous le texte d’accueil et occupe toute la largeur, son étiquette
-au-dessus ; sur desktop, l’étiquette s’aligne à droite sur la hauteur de la première ligne de texte. Le menu
+Sur téléphone, le plat en relief passe sous le texte d’accueil et occupe toute la largeur. Son étiquette
+se pose à 14 px au-dessus du haut réel du plat (`--dish-rise`, calculé depuis les proportions de chaque
+détourage), si bien qu’elle descend pour le burger, plus large que haut, et remonte pour la pizza. Le menu
 mobile se ferme aussi bien au doigt posé à côté que sur la croix.
 
 Les flèches `↗ ▶ ↓ ↑` portent toutes le sélecteur U+FE0E. Sans lui, iOS bascule sur la police
@@ -96,6 +97,8 @@ La vidéo de l’accueil est remplacée par trois plats de la nouvelle carte en 
 ## Lounge
 
 La section lounge met en avant la chicha réellement servie : une Wookah en bois avec chauffe Quasar. Les trois visuels de `public/assets/lounge/` sont générés à partir des photos d’origine du lounge (`research/lounge-originals/`), en gardant le même modèle ; seuls le décor, la lumière et la fumée changent. Les formules à 20 € et 25 € sont affichées sans fiche : la nouvelle carte ne les contient pas encore.
+
+La fumée du fond est photographique : deux plaques de fumée sur fond noir, générées puis converties en calques transparents aux bords fondus (`smoke-tall.webp`, `smoke-wide.webp`). Cinq calques montent ou dérivent en boucle, décalés dans le temps pour qu’une volute soit toujours visible ; sans animation, ils restent affichés, immobiles et plus discrets.
 
 ## Référencement
 

@@ -321,7 +321,7 @@ test('une catégorie en attente ne conserve aucun ancien plat', async ({ page })
   await expect(page.locator('.dish-card')).toHaveCount(0);
 });
 
-test('l’accueil présente les plats en relief, nom au-dessus et sans sélecteur', async ({ page }) => {
+test('l’accueil présente les plats en relief, nom posé au-dessus du plat et sans sélecteur', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('#arrival-video')).toHaveCount(0);
   await expect(page.locator('#assiettes')).toHaveCount(0);
@@ -329,9 +329,12 @@ test('l’accueil présente les plats en relief, nom au-dessus et sans sélecteu
   const caption = page.locator('.dish3d-caption');
   await expect(caption).toContainText('Smokey Beef Bacon');
   await expect(page.locator('.dish3d-still')).toHaveAttribute('src', /hero-3d\/burger-smokey-beef-bacon\.webp$/);
+  // The label rests 14 px above the top of the dish, wherever that top is.
   const captionBox = (await caption.boundingBox())!;
   const stageBox = (await page.locator('.dish3d-stage').boundingBox())!;
-  expect(captionBox.y + captionBox.height).toBeLessThanOrEqual(stageBox.y + 1);
+  const rise = parseFloat(await page.locator('.dish3d-stage').evaluate(stage => getComputedStyle(stage).getPropertyValue('--dish-rise')));
+  const dishTop = stageBox.y + stageBox.height * (1 - rise / 100);
+  expect(Math.abs(captionBox.y + captionBox.height + 14 - dishTop)).toBeLessThan(2);
   await caption.click();
   await expect(page.getByRole('dialog')).toContainText('Smokey Beef Bacon');
 });

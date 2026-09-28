@@ -125,9 +125,9 @@ document.addEventListener('click', () => requestAnimationFrame(refreshHolds));
 
 // The arrival shows three dishes of the new menu in relief, one after the other.
 const reliefDishes = [
-  {id:'burger-smokey-beef-bacon',name:'Smokey Beef Bacon',tag:'BURGER · DOUBLE SMASH & BACON DE BŒUF',alt:'Le burger Smokey Beef Bacon du Safe Lounge : double smash, cheddar fondu et bacon de bœuf, servi avec ses frites'},
-  {id:'pizzas-burratella-lov',name:'Burratella Lov’',tag:'PIZZA · STRACCIATELLA & JAMBON CRU',alt:'La pizza Burratella Lov’ du Safe Lounge : stracciatella, jambon cru, tomates cerises, copeaux de parmesan et crème balsamique'},
-  {id:'pates-penne-forestiere',name:'Penne Forestière',tag:'PÂTES · POULET & CHAMPIGNONS',alt:'Les Penne Forestière du Safe Lounge : poulet, champignons émincés, sauce à la crème et parmesan'},
+  {id:'burger-smokey-beef-bacon',width:1302,height:684,name:'Smokey Beef Bacon',tag:'BURGER · DOUBLE SMASH & BACON DE BŒUF',alt:'Le burger Smokey Beef Bacon du Safe Lounge : double smash, cheddar fondu et bacon de bœuf, servi avec ses frites'},
+  {id:'pizzas-burratella-lov',width:1255,height:915,name:'Burratella Lov’',tag:'PIZZA · STRACCIATELLA & JAMBON CRU',alt:'La pizza Burratella Lov’ du Safe Lounge : stracciatella, jambon cru, tomates cerises, copeaux de parmesan et crème balsamique'},
+  {id:'pates-penne-forestiere',width:1281,height:802,name:'Penne Forestière',tag:'PÂTES · POULET & CHAMPIGNONS',alt:'Les Penne Forestière du Safe Lounge : poulet, champignons émincés, sauce à la crème et parmesan'},
 ].map(dish => ({ ...dish, image:`/assets/hero-3d/${dish.id}.webp`, depth:`/assets/hero-3d/${dish.id}-depth.webp` }));
 const reliefStage = $('[data-dish3d-stage]');
 const relief = initDish3D(reliefStage, reliefDishes);
@@ -135,12 +135,24 @@ const reliefSpin = $('.dish3d-spin');
 const reliefCaption = $('.dish3d-caption');
 let currentRelief = 0;
 let reliefTimeline: gsap.core.Timeline | undefined;
+// The dish sits on the bottom of the stage and fills it by width or by height,
+// so its top moves from one dish to the next. The label rests just above it.
+function placeReliefCaption() {
+  const dish = reliefDishes[currentRelief];
+  const stageRatio = reliefStage.clientWidth / Math.max(1, reliefStage.clientHeight);
+  const filled = Math.min(1, stageRatio / (dish.width / dish.height));
+  // Each cut-out keeps a 24 px transparent margin around the dish.
+  reliefStage.style.setProperty('--dish-rise', `${(filled * (1 - 24 / dish.height) * 100).toFixed(1)}%`);
+}
+placeReliefCaption();
+new ResizeObserver(placeReliefCaption).observe(reliefStage);
 function changeRelief(index: number) {
   if (index === currentRelief) return;
   currentRelief = index;
   const dish = reliefDishes[index];
   const update = () => {
     relief.show(index);
+    placeReliefCaption();
     $('#dish3d-name').textContent = dish.name;
     $('#dish3d-tag').textContent = dish.tag;
     $('.dish3d-caption').dataset.open = dish.id;
