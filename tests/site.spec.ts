@@ -384,7 +384,7 @@ test('les infos pratiques donnent adresse, horaires, téléphone et état d’ou
   const contact = page.locator('#contact');
   await expect(contact.locator('address')).toContainText('82 boulevard Michelet');
   await expect(contact.locator('address')).toContainText('93130 Noisy-le-Sec');
-  await expect(contact.locator('.contact-phone')).toHaveAttribute('href', 'tel:+33647778556');
+  await expect(contact.locator('.contact-phone')).toHaveAttribute('href', 'tel:+33148501547');
   await expect(contact.locator('.hours li')).toHaveCount(3);
   // Saturday 0:30 in Paris: Friday's service runs until 2 am.
   await expect(page.locator('#open-status')).toContainText('Ouvert maintenant · jusqu’à 02h');

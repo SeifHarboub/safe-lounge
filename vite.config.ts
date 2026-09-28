@@ -27,7 +27,7 @@ function structuredData(): Plugin {
         url: siteUrl,
         image: [image('assets/og-image.jpg'), image('assets/instagram/salon.webp'), image('assets/instagram/terrasse.webp')],
         logo: image('assets/logo-dark.svg'),
-        telephone: '+33647778556',
+        telephone: '+33148501547',
         email: 'contact@lesafelounge.fr',
         foundingDate: '2017',
         servesCuisine: ['Burgers', 'Pizzas', 'Pâtes'],
