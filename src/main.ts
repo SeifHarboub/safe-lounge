@@ -22,7 +22,6 @@ const panel = $('#menu-panel');
 const titles: Record<string, string> = { burger: 'Burgers', panuozzo: 'Panuozzos', pates: 'Pâtes', pizzas: 'Pizzas' };
 const reducedQuery = matchMedia('(prefers-reduced-motion: reduce)');
 let motionPaused = reducedQuery.matches;
-try { motionPaused = motionPaused || localStorage.getItem('safe-motion-paused') === 'true'; } catch { /* Preferences are optional. */ }
 const canAnimate = () => !motionPaused;
 const categories = $('#categories');
 categories.innerHTML = menu.map(category => `<button role="tab" id="tab-${category.id}"${category.items.length ? '' : ' class="is-empty"'} aria-controls="menu-panel" aria-selected="${category.id === selectedCategory}" tabindex="${category.id === selectedCategory ? '0' : '-1'}" data-category="${category.id}"><span>${category.label}</span><span class="category-count">${category.items.length ? String(category.items.length).padStart(2,'0') : 'bientôt'}</span><span class="category-arrow">↗︎</span></button>`).join('');
@@ -312,8 +311,6 @@ function setupMotion() {
   animationContext?.revert();
   relief.setPaused(motionPaused);
   document.documentElement.classList.toggle('motion-paused',motionPaused);
-  $('#motion-toggle').setAttribute('aria-pressed',String(motionPaused));
-  $('#motion-label').textContent=motionPaused?'Animations en pause':'Animations activées';
   if (motionPaused) { gsap.set('.dish-card',{clearProps:'all'}); return; }
   animationContext=gsap.context(()=>{
     gsap.from('.arrival h1 .h1-line',{y:55,opacity:0,rotation:3,stagger:.12,duration:1,ease:'power3.out'});
@@ -326,7 +323,6 @@ function setupMotion() {
     gsap.utils.toArray<HTMLElement>('.lounge-tile').forEach((element,index)=>gsap.from(element,{y:40,opacity:0,duration:.8,delay:index*.1,ease:'power3.out',scrollTrigger:{trigger:'.lounge-strip',start:'top 94%',once:true}}));
   });
 }
-$('#motion-toggle').addEventListener('click',()=>{motionPaused=!motionPaused;try{localStorage.setItem('safe-motion-paused',String(motionPaused));}catch{} setupMotion();});
 reducedQuery.addEventListener('change',event=>{motionPaused=event.matches;setupMotion();});
 setupMotion();
 window.addEventListener('load',()=>ScrollTrigger.refresh());
