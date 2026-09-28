@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs';
 // Development, preview and the test suite run at the root unless it is exported.
 const base = process.env.BASE_PATH || '/';
 // SITE_URL is the public address search engines should index (canonical, Open Graph).
-const siteUrl = process.env.SITE_URL || 'https://seifharboub.github.io/safe-lounge/';
+const siteUrl = process.env.SITE_URL || 'https://lesafelounge.com/';
 
 interface Dish { id: string; name: string; description: string; extra: string; image: string | null }
 interface Category { id: string; label: string; description: string; items: Dish[] }

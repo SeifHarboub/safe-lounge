@@ -12,7 +12,7 @@ npm run dev
 - `npm test` : tests de parcours dans Chrome via Playwright.
 - `npm run deploy` : reconstruit le site et remplace la branche `gh-pages`.
 
-Le site est publié sur https://seifharboub.github.io/safe-lounge/ (GitHub Pages, branche `gh-pages`).
+Le site est publié sur https://lesafelounge.com/ (GitHub Pages, branche `gh-pages`, domaine chez IONOS). Le fichier `CNAME` est écrit par `scripts/deploy.sh` ; les anciennes pages WordPress (`/burgers`, `/pizzas`, `/hookah`…) redirigent vers leur section depuis `public/<page>/index.html`.
 Les sources restent sur `main`, la branche `gh-pages` ne contient que le site construit.
 
 Les chemins d’assets construits à l’exécution — photos de la carte, plats de l’accueil, desserts —
