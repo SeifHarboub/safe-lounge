@@ -1,7 +1,7 @@
 [
   {
     "id": "burger",
-    "label": "Burger",
+    "label": "Burgers",
     "description": "Chicken burgers croustillants et smash burgers au bœuf, tous servis avec 200 g de frites.",
     "source": "SAFE_LOUNGE_BBQ_RACLETTE_200G_FRITES_A4.pdf",
     "items": [
@@ -81,35 +81,35 @@
   },
   {
     "id": "frappuccino",
-    "label": "Frappuccino",
+    "label": "Frappuccinos",
     "description": "",
     "source": "",
     "items": []
   },
   {
     "id": "iced-latte",
-    "label": "Iced Latte",
+    "label": "Iced lattes",
     "description": "",
     "source": "",
     "items": []
   },
   {
     "id": "milkshake",
-    "label": "Milkshake",
+    "label": "Milkshakes",
     "description": "",
     "source": "",
     "items": []
   },
   {
     "id": "mocktail",
-    "label": "Mocktail",
+    "label": "Mocktails",
     "description": "",
     "source": "",
     "items": []
   },
   {
     "id": "panuozzo",
-    "label": "Panuozzo",
+    "label": "Panuozzos",
     "description": "",
     "source": "",
     "items": []
@@ -158,7 +158,7 @@
       },
       {
         "id": "pates-penne-arrabiata",
-        "name": "Penne Arrabiata",
+        "name": "Penne Arrabbiata",
         "description": "Penne à la sauce tomate relevée à l’huile piquante, avec une tomate cerise.",
         "extra": "",
         "price": null,
@@ -258,7 +258,7 @@
   },
   {
     "id": "tiramisu",
-    "label": "Tiramisu",
+    "label": "Tiramisus",
     "description": "",
     "source": "",
     "items": []

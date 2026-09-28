@@ -19,7 +19,6 @@ let selectedCategory = 'burger';
 const search = $<HTMLInputElement>('#dish-search');
 const grid = $('#dish-grid');
 const panel = $('#menu-panel');
-const titles: Record<string, string> = { burger: 'Burgers', panuozzo: 'Panuozzos', pates: 'Pâtes', pizzas: 'Pizzas' };
 const reducedQuery = matchMedia('(prefers-reduced-motion: reduce)');
 let motionPaused = reducedQuery.matches;
 const canAnimate = () => !motionPaused;
@@ -31,7 +30,7 @@ function renderMenu(animate = true) {
   const query = normalize(search.value.trim());
   const category = menu.find(category => category.id === selectedCategory)!;
   const dishes = query ? allDishes.filter(dish => normalize(`${dish.name} ${dish.description} ${menu.find(c => c.id === dish.category)!.label}`).includes(query)) : category.items;
-  $('#category-title').textContent = query ? 'Votre envie, à la carte.' : titles[category.id] || category.label;
+  $('#category-title').textContent = query ? 'Votre envie, à la carte.' : category.label;
   $('#category-description').textContent = query ? `Recherche dans toute la carte : « ${search.value.trim()} »` : category.description;
   // An empty category says so once, in the box below: no count, no second notice.
   $('#result-count').textContent = dishes.length ? `${dishes.length} choix` : '';

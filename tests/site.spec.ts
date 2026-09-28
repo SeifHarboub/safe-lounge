@@ -1,8 +1,8 @@
 import { expect, test } from '@playwright/test';
 
 const categoryLabels = [
-  'Burger', 'Panuozzo', 'Pizzas', 'Pâtes', 'Tiramisu',
-  'Mocktail', 'Milkshake', 'Iced Latte', 'Frappuccino',
+  'Burgers', 'Panuozzos', 'Pizzas', 'Pâtes', 'Tiramisus',
+  'Mocktails', 'Milkshakes', 'Iced lattes', 'Frappuccinos',
 ];
 
 test('la nouvelle carte affiche les neuf catégories dans le bon ordre', async ({ page }) => {
@@ -29,7 +29,7 @@ const dishes: { id: string; tab?: string; name: string; has: string[]; hasNot?: 
   { id: 'pates-rigatoni-tartufo', tab: 'pates', name: 'Rigatoni Tartufo', has: ['truffe', 'champignons', 'copeaux de parmesan'] },
   { id: 'pates-spaghetti-merguez', tab: 'pates', name: 'Spaghetti Merguez', has: ['merguez', 'sauce tomate crémeuse', 'olives', 'parmesan'] },
   { id: 'pates-spaghetti-formaggi', tab: 'pates', name: 'Spaghetti Formaggi', has: ['gorgonzola', 'copeaux de parmesan'] },
-  { id: 'pates-penne-arrabiata', tab: 'pates', name: 'Penne Arrabiata', has: ['sauce tomate relevée à l’huile piquante'], hasNot: ['parmesan'] },
+  { id: 'pates-penne-arrabiata', tab: 'pates', name: 'Penne Arrabbiata', has: ['sauce tomate relevée à l’huile piquante'], hasNot: ['parmesan'] },
   { id: 'pates-penne-forestiere', tab: 'pates', name: 'Penne Forestière', has: ['poulet', 'champignons', 'sauce crémeuse au parmesan'] },
   { id: 'pates-penne-saumon', tab: 'pates', name: 'Penne Saumon', has: ['saumon', 'sauce tomate crémeuse au parmesan'] },
   { id: 'pizzas-bollywood-style', tab: 'pizzas', name: 'Bollywood Style', has: ['sauce curry', 'mozzarella', 'poulet', 'oignons confits', 'tomates cerises', 'sauce basilic', 'crème balsamique'] },
