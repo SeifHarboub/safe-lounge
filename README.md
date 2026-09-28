@@ -96,9 +96,15 @@ La vidéo de l’accueil est remplacée par trois plats de la nouvelle carte en 
 
 ## Lounge
 
-La section lounge met en avant la chicha réellement servie : une Wookah en bois avec chauffe Quasar. Les trois visuels de `public/assets/lounge/` sont générés à partir des photos d’origine du lounge (`research/lounge-originals/`), en gardant le même modèle ; seuls le décor, la lumière et la fumée changent. Les formules à 20 € et 25 € sont affichées sans fiche : la nouvelle carte ne les contient pas encore.
+La section lounge présente les chichas servies (Wookah, Alpha, Brodator, Mig tradi) et leur chauffe Quasar. Les visuels montrent la Wookah en bois. Les trois visuels de `public/assets/lounge/` sont générés à partir des photos d’origine du lounge (`research/lounge-originals/`), en gardant le même modèle ; seuls le décor, la lumière et la fumée changent. Les formules à 20 € et 25 € sont affichées sans fiche : la nouvelle carte ne les contient pas encore.
 
 La fumée du fond est photographique : deux plaques de fumée sur fond noir, générées puis converties en calques transparents aux bords fondus (`smoke-tall.webp`, `smoke-wide.webp`). Cinq calques montent ou dérivent en boucle, décalés dans le temps pour qu’une volute soit toujours visible ; sans animation, ils restent affichés, immobiles et plus discrets.
+
+## Infos pratiques
+
+La dernière section réunit l’adresse (liens Google Maps, Waze et Plans), les horaires, le téléphone, l’e-mail et une carte Google intégrée, assombrie en CSS pour suivre la palette. Un badge indique « Ouvert maintenant » ou « Fermé » à l’heure de Paris et la ligne d’horaires du jour est mise en avant ; une nuit après minuit compte pour le jour où le service a commencé (`CLOSING_HOUR` dans `src/main.ts`). Le menu du haut y mène par « Infos & accès », et son bouton appelle directement le restaurant.
+
+Tailles de texte : sur ordinateur, plus aucun texte courant sous 11 px et les paragraphes passent entre 15 et 17 px ; les tailles tablette et téléphone sont regroupées en fin de feuille de style.
 
 ## Référencement
 

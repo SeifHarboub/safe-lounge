@@ -365,14 +365,36 @@ test('la page expose un référencement local complet', async ({ page }) => {
   expect(missingAlt).toBe(0);
 });
 
-test('le lounge met en avant la Wookah en bois et sa chauffe Quasar', async ({ page }) => {
+test('le lounge présente ses chichas et la chauffe Quasar', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('#lieu')).toHaveCount(0);
   await expect(page.locator('a[href="#lieu"]')).toHaveCount(0);
   const lounge = page.locator('#lounge');
-  await expect(lounge.locator('.lounge-specs')).toContainText('Wookah en bois');
+  await expect(lounge.locator('.lounge-specs')).toContainText('Wookah, Alpha, Brodator, Mig tradi');
   await expect(lounge.locator('.lounge-specs')).toContainText('Quasar');
   await expect(lounge.locator('.lounge-picture img')).toHaveAttribute('src', /lounge\/wookah-quasar\.webp$/);
   await expect(lounge.locator('.lounge-tile img')).toHaveCount(2);
   await expect(lounge.locator('.lounge-formula')).toHaveCount(2);
+});
+
+test('les infos pratiques donnent adresse, horaires, téléphone et état d’ouverture', async ({ page }) => {
+  await page.clock.setFixedTime(new Date('2026-10-03T00:30:00+02:00'));
+  await page.goto('/');
+  await expect(page.locator('.header nav a[href="#contact"]')).toHaveText(/Infos & accès/);
+  const contact = page.locator('#contact');
+  await expect(contact.locator('address')).toContainText('82 boulevard Michelet');
+  await expect(contact.locator('address')).toContainText('93130 Noisy-le-Sec');
+  await expect(contact.locator('.contact-phone')).toHaveAttribute('href', 'tel:+33647778556');
+  await expect(contact.locator('.hours li')).toHaveCount(3);
+  // Saturday 0:30 in Paris: Friday's service runs until 2 am.
+  await expect(page.locator('#open-status')).toContainText('Ouvert maintenant · jusqu’à 02h');
+  await expect(contact.locator('.hours li.today')).toContainText('Vendredi');
+  await expect(contact.locator('.contact-map iframe')).toHaveAttribute('src', /google\.com\/maps/);
+});
+
+test('l’état d’ouverture annonce la réouverture l’après-midi', async ({ page }) => {
+  await page.clock.setFixedTime(new Date('2026-10-05T11:00:00+02:00'));
+  await page.goto('/');
+  await expect(page.locator('#open-status')).toContainText('Fermé · ouvre aujourd’hui à 15h');
+  await expect(page.locator('.hours li.today')).toContainText('Lundi');
 });

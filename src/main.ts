@@ -321,3 +321,25 @@ setupMotion();
 window.addEventListener('load',()=>ScrollTrigger.refresh());
 document.fonts.ready.then(()=>ScrollTrigger.refresh());
 $('#year').textContent=String(new Date().getFullYear());
+
+// Opening status in Paris time. A night past midnight belongs to the day it
+// started: at 1 am on Saturday, Friday's service (open until 2 am) is running.
+const CLOSING_HOUR = [1, 1, 1, 1, 1, 2, 2]; // after midnight, by opening day (Sunday first)
+const openStatus = $('#open-status');
+function updateOpenStatus() {
+  const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Paris', weekday: 'short', hour: 'numeric', hourCycle: 'h23' }).formatToParts(new Date());
+  const day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(parts.find(part => part.type === 'weekday')!.value);
+  const hour = Number(parts.find(part => part.type === 'hour')!.value);
+  const serviceDay = hour < 5 ? (day + 6) % 7 : day;
+  const closes = CLOSING_HOUR[serviceDay];
+  const open = hour < 5 ? hour < closes : hour >= 15;
+  $('#open-status-text').textContent = open
+    ? `Ouvert maintenant · jusqu’à ${String(closes).padStart(2, '0')}h`
+    : `Fermé · ouvre ${hour < 5 ? 'à' : 'aujourd’hui à'} 15h`;
+  openStatus.classList.toggle('is-open', open);
+  openStatus.classList.toggle('is-closed', !open);
+  openStatus.hidden = false;
+  document.querySelectorAll<HTMLElement>('.hours li').forEach(row => row.classList.toggle('today', row.dataset.days!.split(' ').includes(String(serviceDay))));
+}
+updateOpenStatus();
+setInterval(updateOpenStatus, 60_000);
