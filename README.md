@@ -47,11 +47,11 @@ Les coordonnées et l’année 2017 proviennent du brandboard / brandbook du cli
 
 ## Interactions
 
-Accueil à trois plats avec transitions, photographies animées au défilement, ruban animé, catégories, recherche transversale insensible aux accents, fiches détaillées avec prix et suppléments, navigation et raccourcis mobiles.
+Accueil à trois plats en relief, photographies animées au défilement, ruban animé, catégories, recherche transversale insensible aux accents, fiches détaillées avec prix et suppléments, navigation et raccourcis mobiles.
 
 Les liens internes sont traités dans `src/main.ts` plutôt que par le saut d’ancre natif : un rafraîchissement de ScrollTrigger annule le défilement doux du navigateur, et un lien de catégorie doit d’abord laisser la carte se redessiner. Chaque lien amène donc sa section exactement en haut de l’écran, sans laisser apparaître la fin de la section précédente. La section de contact occupe au moins une hauteur d’écran pour que la dernière ancre puisse elle aussi se caler en haut.
 
-L’accueil et la section desserts changent de plat tout seuls. La barre de progression *est* le minuteur : c’est une animation CSS, donc la mettre en pause — hors écran, derrière un dialogue, sur le bouton d’animations ou sous une préférence de mouvement réduit — arrête aussi la rotation, et les deux ne peuvent pas se désynchroniser. Un clic sur une pastille reprend la main immédiatement.
+Les plats en relief de l’accueil changent toutes les 7 s sur un minuteur CSS invisible (`.dish3d-timer`), soumis aux mêmes pauses. La section desserts change de plat toute seule. Sa barre de progression *est* le minuteur : c’est une animation CSS, donc la mettre en pause — hors écran, derrière un dialogue, sur le bouton d’animations ou sous une préférence de mouvement réduit — arrête aussi la rotation, et les deux ne peuvent pas se désynchroniser. Un clic sur une pastille reprend la main immédiatement.
 
 Sur téléphone, les trois cartes « Le plus dur, c’est de choisir » forment un rail que l’on fait glisser : une seule photographie occupe la largeur, sans morceau de la suivante ni barre de défilement, et trois repères de position sont posés au-dessus. Il avance seul toutes les 3,2 s en va-et-vient, et rend la main définitivement dès que le visiteur fait défiler le rail lui-même.
 

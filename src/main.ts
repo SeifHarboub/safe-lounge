@@ -40,7 +40,7 @@ function renderMenu(animate = true) {
   tabs.forEach(tab => { const active = !query && tab.dataset.category === category.id; tab.setAttribute('aria-selected',String(active)); tab.tabIndex = tab.dataset.category === category.id ? 0 : -1; });
   if (query) { panel.removeAttribute('aria-labelledby'); panel.setAttribute('aria-label','Résultats de recherche dans toute la carte'); }
   else { panel.setAttribute('aria-labelledby',`tab-${category.id}`); panel.removeAttribute('aria-label'); }
-  grid.innerHTML = dishes.length ? dishes.map((dish, index) => { const label = menu.find(c => c.items.some(item => item.id === dish.id))!.label; return `<button class="dish-card" data-open="${dish.id}" aria-label="Voir ${escape(dish.name)}${dish.price === null ? '' : `, ${dish.price} euros`}"><div class="dish-photo">${dish.image ? `<img src="${asset(dish.image)}" alt="${escape(`${dish.name}, ${label.toLowerCase()} du Safe Lounge à Noisy-le-Sec`)}" width="1080" height="1080" loading="${index < 3 ? 'eager' : 'lazy'}" />` : `<div class="no-photo"><img src="${asset('/assets/symbol-lilac.svg')}" alt="" /><span>BIENTÔT À LA CARTE</span></div>`}<span class="dish-open">↗︎</span></div><div class="dish-title"><h4>${escape(dish.name)}</h4>${dish.price === null ? '' : `<span>${dish.price}<small>€</small></span>`}</div><p>${escape(dish.description)}</p>${dish.extra ? `<span class="dish-extra">${escape(dish.extra)}</span>` : ''}</button>`; }).join('') : '<div class="no-results"><span>Cette catégorie arrive bientôt.</span><p>Notre équipe finalise cette sélection. En attendant, demandez-nous ce qui est servi sur place.</p></div>';
+  grid.innerHTML = dishes.length ? dishes.map((dish, index) => { const label = menu.find(c => c.items.some(item => item.id === dish.id))!.label; return `<button class="dish-card" data-open="${dish.id}" aria-label="Voir ${escape(dish.name)}${dish.price === null ? '' : `, ${dish.price} euros`}"><div class="dish-frame"><div class="dish-photo">${dish.image ? `<img src="${asset(dish.image)}" alt="${escape(`${dish.name}, ${label.toLowerCase()} du Safe Lounge à Noisy-le-Sec`)}" width="1080" height="1080" loading="${index < 3 ? 'eager' : 'lazy'}" />` : `<div class="no-photo"><img src="${asset('/assets/symbol-lilac.svg')}" alt="" /><span>BIENTÔT À LA CARTE</span></div>`}<span class="dish-open">↗︎</span></div></div><div class="dish-title"><h4>${escape(dish.name)}</h4>${dish.price === null ? '' : `<span>${dish.price}<small>€</small></span>`}</div><p>${escape(dish.description)}</p>${dish.extra ? `<span class="dish-extra">${escape(dish.extra)}</span>` : ''}</button>`; }).join('') : '<div class="no-results"><span>Cette catégorie arrive bientôt.</span><p>Notre équipe finalise cette sélection. En attendant, demandez-nous ce qui est servi sur place.</p></div>';
   if (animate && canAnimate()) gsap.fromTo('.dish-card',{y:24,opacity:0},{y:0,opacity:1,duration:.45,stagger:.045,ease:'power2.out',clearProps:'transform,opacity'});
   requestAnimationFrame(() => ScrollTrigger.refresh());
 }
@@ -101,36 +101,7 @@ $('.dialog-close').addEventListener('click', () => dialog.close());
 dialog.addEventListener('click', event => { if (event.target === dialog) {const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();} });
 dialog.addEventListener('close', () => document.body.classList.remove('dialog-open'));
 
-const slides = [
-  {id:'burger-bbq-raclette',name:'BBQ’ Raclette',tag:'NOUVELLE CARTE · 200 G DE FRITES',image:'/assets/menu-v2/burger-bbq-raclette.webp',shape:'burger'},
-  {id:'burger-chicken-biggie',name:'Chicken Biggie',tag:'DOUBLE CHEDDAR · 200 G DE FRITES',image:'/assets/menu-v2/burger-chicken-biggie.webp',shape:'burger'},
-  {id:'burger-chicken-creamy',name:'Chicken Creamy',tag:'MAYONNAISE · DOUBLE CHEDDAR',image:'/assets/menu-v2/burger-chicken-creamy.webp',shape:'burger'},
-  {id:'burger-smokey-bacon',name:'Smokey Bacon',tag:'BACON DE BŒUF · DOUBLE CHEDDAR',image:'/assets/menu-v2/burger-smokey-bacon.webp',shape:'burger'},
-  {id:'burger-classic-smash',name:'Classic Smash',tag:'DOUBLE SMASH · DOUBLE CHEDDAR',image:'/assets/menu-v2/burger-classic-smash.webp',shape:'burger'},
-];
-let currentSlide = 0;
-const heroFood = $('.hero-food');
-const slideButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-slide]')];
-let slideTimeline: gsap.core.Timeline | undefined;
-function changeSlide(index: number) {
-  if (index === currentSlide) return;
-  currentSlide = index;
-  slideButtons.forEach((button,i) => { button.classList.toggle('selected',i===index);button.setAttribute('aria-pressed',String(i===index)); });
-  const slide = slides[index];
-  const update = () => {
-    const image = $<HTMLImageElement>('#hero-image'); image.src=asset(slide.image); image.alt=slide.name;
-    heroFood.className='hero-food '+slide.shape;
-    $('#hero-dish-name').textContent=slide.name;
-    $('.hero-dish-label small').textContent=slide.tag;
-    $('.hero-dish-label').dataset.open=slide.id;
-  };
-  slideTimeline?.kill();
-  if (!canAnimate()) {update();gsap.set(heroFood,{clearProps:'transform,opacity'});return;}
-  slideTimeline = gsap.timeline().to(heroFood,{scale:.82,rotation:-12,opacity:0,duration:.22,ease:'power2.in'}).call(update).fromTo(heroFood,{scale:.8,rotation:12,opacity:0},{scale:1,rotation:0,opacity:1,duration:.65,ease:'power3.out',clearProps:'transform,opacity'});
-}
-slideButtons.forEach(button=>button.addEventListener('click',()=>changeSlide(Number(button.dataset.slide))));
-
-// The three dishes and the desserts rotate on their own. The progress bar *is*
+// The desserts rotate on their own. The progress bar *is*
 // the timer: it is a CSS animation, so pausing it — off screen, behind a dialog,
 // on the motion toggle or under a reduced-motion preference — stops the rotation
 // too, and the two can never drift apart.
@@ -153,8 +124,6 @@ document.addEventListener('visibilitychange', refreshHolds);
 [dialog, filmDialog].forEach(element => element.addEventListener('close', refreshHolds));
 // A dialog opens on a click; the next frame is when its state is readable.
 document.addEventListener('click', () => requestAnimationFrame(refreshHolds));
-autoRotate(slideButtons.map(button => button.querySelector('i')!), () => changeSlide((currentSlide + 1) % slides.length));
-holdWhenOutOfSight($('.hero'), $('.hero-bottom'));
 
 // The arrival shows three dishes of the new menu in relief, one after the other.
 const reliefDishes = [
@@ -165,14 +134,13 @@ const reliefDishes = [
 const reliefStage = $('[data-dish3d-stage]');
 const relief = initDish3D(reliefStage, reliefDishes);
 const reliefSpin = $('.dish3d-spin');
-const reliefButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-dish3d]')];
+const reliefCaption = $('.dish3d-caption');
 let currentRelief = 0;
 let reliefTimeline: gsap.core.Timeline | undefined;
 function changeRelief(index: number) {
   if (index === currentRelief) return;
   currentRelief = index;
   const dish = reliefDishes[index];
-  reliefButtons.forEach((button, i) => { button.classList.toggle('selected', i === index); button.setAttribute('aria-pressed', String(i === index)); });
   const update = () => {
     relief.show(index);
     $('#dish3d-name').textContent = dish.name;
@@ -180,16 +148,19 @@ function changeRelief(index: number) {
     $('.dish3d-caption').dataset.open = dish.id;
   };
   reliefTimeline?.kill();
-  if (!canAnimate()) { update(); gsap.set(reliefSpin, { clearProps: 'transform,opacity' }); return; }
+  if (!canAnimate()) { update(); gsap.set([reliefSpin, reliefCaption], { clearProps: 'transform,opacity' }); return; }
   // The dish spins away on its vertical axis and the next one spins in.
   reliefTimeline = gsap.timeline()
     .to(reliefSpin, { rotationY: -75, scale: .86, opacity: 0, duration: .32, ease: 'power2.in' })
+    .to(reliefCaption, { y: -8, opacity: 0, duration: .25, ease: 'power2.in' }, 0)
     .call(update)
-    .fromTo(reliefSpin, { rotationY: 75, scale: .86, opacity: 0 }, { rotationY: 0, scale: 1, opacity: 1, duration: .8, ease: 'power3.out', clearProps: 'transform,opacity' });
+    .fromTo(reliefSpin, { rotationY: 75, scale: .86, opacity: 0 }, { rotationY: 0, scale: 1, opacity: 1, duration: .8, ease: 'power3.out', clearProps: 'transform,opacity' })
+    .fromTo(reliefCaption, { y: 10, opacity: 0 }, { y: 0, opacity: 1, duration: .5, ease: 'power3.out', clearProps: 'transform,opacity' }, '<.1');
 }
-reliefButtons.forEach(button => button.addEventListener('click', () => changeRelief(Number(button.dataset.dish3d))));
-autoRotate(reliefButtons.map(button => button.querySelector('i')!), () => changeRelief((currentRelief + 1) % reliefDishes.length));
-holdWhenOutOfSight($('.arrival'), $('.dish3d-dots'));
+// No visible control: an invisible CSS timer turns the dishes, and pauses with
+// the same holds as the other rotations.
+$('.dish3d-timer').addEventListener('animationiteration', () => changeRelief((currentRelief + 1) % reliefDishes.length));
+holdWhenOutOfSight($('.arrival'), $('.arrival-dish'));
 
 const sweets = [
   {id:'desserts-4',name:'Tiramisu pistachio',image:'pistache.jpg',price:9},
@@ -328,9 +299,6 @@ function setupMotion() {
     gsap.from('.arrival h1 .h1-line',{y:55,opacity:0,rotation:3,stagger:.12,duration:1,ease:'power3.out'});
     gsap.to('.arrival-background',{yPercent:12,ease:'none',scrollTrigger:{trigger:'.arrival',start:'top top',end:'bottom top',scrub:1}});
     gsap.from('.arrival-dish',{y:45,opacity:0,duration:1.1,ease:'power3.out'});
-    gsap.from('.hero-food-wrap',{scale:.8,opacity:0,duration:1.3,ease:'power3.out'});
-    gsap.to('.hero-food-wrap',{rotation:24,y:65,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:1}});
-    gsap.to('.hero-symbol',{rotation:180,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:1}});
     gsap.utils.toArray<HTMLElement>('.reveal').forEach(element=>gsap.from(element,{y:45,opacity:0,duration:.8,ease:'power3.out',scrollTrigger:{trigger:element,start:'top 92%',once:true}}));
     gsap.utils.toArray<HTMLElement>('.craving-card').forEach((element,index)=>gsap.from(element,{y:70,opacity:0,rotation:index%2?-3:3,duration:.85,delay:index*.08,ease:'power3.out',scrollTrigger:{trigger:element,start:'top 94%',once:true}}));
     gsap.to('.sweet-photo>img',{rotation:35,ease:'none',scrollTrigger:{trigger:'.sweet-section',start:'top bottom',end:'bottom top',scrub:1}});

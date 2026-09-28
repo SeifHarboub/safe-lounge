@@ -84,7 +84,6 @@ test('le Smokey Beef Bacon reste limité au menu et respecte sa recette', async 
   await expect(card).toContainText('deux tranches de cheddar fondu');
   await expect(card).toContainText('une tranche de bacon de bœuf snackée');
   await expect(card).toContainText('200 g de frites');
-  await expect(page.locator('[data-slide="5"]')).toHaveCount(0);
   await expect(card.locator('.dish-title > span')).toHaveCount(0);
 });
 
@@ -98,7 +97,6 @@ test('l’Original Smash reste limité au menu et sans bacon', async ({ page }) 
   await expect(card).toContainText('deux tranches de cheddar fondu');
   await expect(card).toContainText('200 g de frites');
   await expect(card).not.toContainText('bacon');
-  await expect(page.locator('[data-slide="6"]')).toHaveCount(0);
   await expect(card.locator('.dish-title > span')).toHaveCount(0);
 });
 
@@ -111,7 +109,6 @@ test('le Biggie Smash reste limité au menu avec sa sauce classic burger', async
   await expect(card).toContainText('deux steaks smash');
   await expect(card).toContainText('deux tranches de cheddar fondu');
   await expect(card).toContainText('200 g de frites');
-  await expect(page.locator('[data-slide="7"]')).toHaveCount(0);
   await expect(card.locator('.dish-title > span')).toHaveCount(0);
 });
 
@@ -324,19 +321,28 @@ test('une catégorie en attente ne conserve aucun ancien plat', async ({ page })
   await expect(page.locator('.dish-card')).toHaveCount(0);
 });
 
-test('l’accueil présente trois plats en relief à la place de la vidéo', async ({ page }) => {
+test('l’accueil présente les plats en relief, nom au-dessus et sans sélecteur', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('#arrival-video')).toHaveCount(0);
+  await expect(page.locator('#assiettes')).toHaveCount(0);
+  await expect(page.locator('[data-dish3d], .dish3d-dots')).toHaveCount(0);
   const caption = page.locator('.dish3d-caption');
   await expect(caption).toContainText('Smokey Beef Bacon');
   await expect(page.locator('.dish3d-still')).toHaveAttribute('src', /hero-3d\/burger-smokey-beef-bacon\.webp$/);
-  await page.locator('[data-dish3d="1"]').click();
-  await expect(caption).toContainText('Burratella Lov’');
-  await expect(page.locator('.dish3d-still')).toHaveAttribute('src', /hero-3d\/pizzas-burratella-lov\.webp$/);
-  await page.locator('[data-dish3d="2"]').click();
-  await expect(caption).toContainText('Penne Forestière');
+  const captionBox = (await caption.boundingBox())!;
+  const stageBox = (await page.locator('.dish3d-stage').boundingBox())!;
+  expect(captionBox.y + captionBox.height).toBeLessThanOrEqual(stageBox.y + 1);
   await caption.click();
-  await expect(page.getByRole('dialog')).toContainText('Penne Forestière');
+  await expect(page.getByRole('dialog')).toContainText('Smokey Beef Bacon');
+});
+
+test('les plats en relief se succèdent seuls', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.goto('/');
+  await page.locator('.dish3d-timer').dispatchEvent('animationiteration');
+  await expect(page.locator('.dish3d-caption')).toContainText('Burratella Lov’');
+  await page.locator('.dish3d-timer').dispatchEvent('animationiteration');
+  await expect(page.locator('.dish3d-caption')).toContainText('Penne Forestière');
 });
 
 test('la page expose un référencement local complet', async ({ page }) => {
