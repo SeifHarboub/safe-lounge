@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import rawMenu from './menu.json';
 import { initMedia } from './media';
+import { initDish3D } from './dish3d';
 import { asset } from './asset';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -19,13 +20,13 @@ let selectedCategory = 'burger';
 const search = $<HTMLInputElement>('#dish-search');
 const grid = $('#dish-grid');
 const panel = $('#menu-panel');
-const titles: Record<string, string> = { burger: 'Chicken Burgers', panuozzo: 'Panuozzos', pates: 'Pâtes', pizzas: 'Pizzas' };
+const titles: Record<string, string> = { burger: 'Burgers', panuozzo: 'Panuozzos', pates: 'Pâtes', pizzas: 'Pizzas' };
 const reducedQuery = matchMedia('(prefers-reduced-motion: reduce)');
 let motionPaused = reducedQuery.matches;
 try { motionPaused = motionPaused || localStorage.getItem('safe-motion-paused') === 'true'; } catch { /* Preferences are optional. */ }
 const canAnimate = () => !motionPaused;
 const categories = $('#categories');
-categories.innerHTML = menu.map(category => `<button role="tab" id="tab-${category.id}" aria-controls="menu-panel" aria-selected="${category.id === selectedCategory}" tabindex="${category.id === selectedCategory ? '0' : '-1'}" data-category="${category.id}"><span>${category.label}</span><span class="category-count">${String(category.items.length).padStart(2,'0')}</span><span class="category-arrow">↗︎</span></button>`).join('');
+categories.innerHTML = menu.map(category => `<button role="tab" id="tab-${category.id}" aria-controls="menu-panel" aria-selected="${category.id === selectedCategory}" tabindex="${category.id === selectedCategory ? '0' : '-1'}" data-category="${category.id}"><span>${category.label}</span><span class="category-count">${category.items.length ? String(category.items.length).padStart(2,'0') : 'bientôt'}</span><span class="category-arrow">↗︎</span></button>`).join('');
 const tabs = [...categories.querySelectorAll<HTMLButtonElement>('button')];
 
 function renderMenu(animate = true) {
@@ -39,7 +40,7 @@ function renderMenu(animate = true) {
   tabs.forEach(tab => { const active = !query && tab.dataset.category === category.id; tab.setAttribute('aria-selected',String(active)); tab.tabIndex = tab.dataset.category === category.id ? 0 : -1; });
   if (query) { panel.removeAttribute('aria-labelledby'); panel.setAttribute('aria-label','Résultats de recherche dans toute la carte'); }
   else { panel.setAttribute('aria-labelledby',`tab-${category.id}`); panel.removeAttribute('aria-label'); }
-  grid.innerHTML = dishes.length ? dishes.map((dish, index) => `<button class="dish-card" data-open="${dish.id}" aria-label="Voir ${escape(dish.name)}${dish.price === null ? '' : `, ${dish.price} euros`}"><div class="dish-photo">${dish.image ? `<img src="${asset(dish.image)}" alt="${escape(dish.name)}" width="1080" height="1080" loading="${index < 3 ? 'eager' : 'lazy'}" />` : `<div class="no-photo"><img src="${asset('/assets/symbol-lilac.svg')}" alt="" /><span>BIENTÔT À LA CARTE</span></div>`}<span class="dish-open">↗︎</span></div><div class="dish-title"><h4>${escape(dish.name)}</h4>${dish.price === null ? '' : `<span>${dish.price}<small>€</small></span>`}</div><p>${escape(dish.description)}</p>${dish.extra ? `<span class="dish-extra">${escape(dish.extra)}</span>` : ''}</button>`).join('') : '<div class="no-results"><span>Cette catégorie arrive bientôt.</span><p>Le PDF de cette catégorie n’a pas encore été intégré.</p></div>';
+  grid.innerHTML = dishes.length ? dishes.map((dish, index) => { const label = menu.find(c => c.items.some(item => item.id === dish.id))!.label; return `<button class="dish-card" data-open="${dish.id}" aria-label="Voir ${escape(dish.name)}${dish.price === null ? '' : `, ${dish.price} euros`}"><div class="dish-photo">${dish.image ? `<img src="${asset(dish.image)}" alt="${escape(`${dish.name}, ${label.toLowerCase()} du Safe Lounge à Noisy-le-Sec`)}" width="1080" height="1080" loading="${index < 3 ? 'eager' : 'lazy'}" />` : `<div class="no-photo"><img src="${asset('/assets/symbol-lilac.svg')}" alt="" /><span>BIENTÔT À LA CARTE</span></div>`}<span class="dish-open">↗︎</span></div><div class="dish-title"><h4>${escape(dish.name)}</h4>${dish.price === null ? '' : `<span>${dish.price}<small>€</small></span>`}</div><p>${escape(dish.description)}</p>${dish.extra ? `<span class="dish-extra">${escape(dish.extra)}</span>` : ''}</button>`; }).join('') : '<div class="no-results"><span>Cette catégorie arrive bientôt.</span><p>Notre équipe finalise cette sélection. En attendant, demandez-nous ce qui est servi sur place.</p></div>';
   if (animate && canAnimate()) gsap.fromTo('.dish-card',{y:24,opacity:0},{y:0,opacity:1,duration:.45,stagger:.045,ease:'power2.out',clearProps:'transform,opacity'});
   requestAnimationFrame(() => ScrollTrigger.refresh());
 }
@@ -92,7 +93,7 @@ function openDish(id: string) {
   const dish = allDishes.find(dish => dish.id === id);
   if (!dish) return;
   const category = menu.find(category => category.id === dish.category)!;
-  $('#dialog-content').innerHTML = `${dish.image ? `<img class="dialog-photo" src="${asset(dish.image)}" alt="${escape(dish.name)}" width="1080" height="1080" />` : `<div class="dialog-photo no-photo"><img src="${asset('/assets/symbol-lilac.svg')}" alt="" /></div>`}<div class="dialog-copy"><p class="eyebrow">${escape(category.label)}</p><h2 id="dialog-title">${escape(dish.name)}</h2>${dish.price === null ? '' : `<strong class="dialog-price">${dish.price} €</strong>`}<p>${escape(dish.description)}</p>${dish.extra ? `<p class="dialog-extra">${escape(dish.extra)}</p>` : ''}<div class="dialog-footer">Une question sur les allergènes ? Notre équipe vous renseigne.</div></div>`;
+  $('#dialog-content').innerHTML = `${dish.image ? `<img class="dialog-photo" src="${asset(dish.image)}" alt="${escape(`${dish.name}, ${category.label.toLowerCase()} du Safe Lounge`)}" width="1080" height="1080" />` : `<div class="dialog-photo no-photo"><img src="${asset('/assets/symbol-lilac.svg')}" alt="" /></div>`}<div class="dialog-copy"><p class="eyebrow">${escape(category.label)}</p><h2 id="dialog-title">${escape(dish.name)}</h2>${dish.price === null ? '' : `<strong class="dialog-price">${dish.price} €</strong>`}<p>${escape(dish.description)}</p>${dish.extra ? `<p class="dialog-extra">${escape(dish.extra)}</p>` : ''}<div class="dialog-footer">Une question sur les allergènes ? Notre équipe vous renseigne.</div></div>`;
   dialog.showModal(); document.body.classList.add('dialog-open');
   if (canAnimate()) gsap.fromTo(dialog,{opacity:0,y:20,scale:.97},{opacity:1,y:0,scale:1,duration:.3,clearProps:'all'});
 }
@@ -101,11 +102,11 @@ dialog.addEventListener('click', event => { if (event.target === dialog) {const 
 dialog.addEventListener('close', () => document.body.classList.remove('dialog-open'));
 
 const slides = [
-  {id:'burger-bbq-raclette',name:'BBQ’ Raclette',tag:'NOUVELLE CARTE · 200 G DE FRITES',image:'/assets/menu-v2/burger-bbq-raclette.png',shape:'burger'},
-  {id:'burger-chicken-biggie',name:'Chicken Biggie',tag:'DOUBLE CHEDDAR · 200 G DE FRITES',image:'/assets/menu-v2/burger-chicken-biggie.png',shape:'burger'},
-  {id:'burger-chicken-creamy',name:'Chicken Creamy',tag:'MAYONNAISE · DOUBLE CHEDDAR',image:'/assets/menu-v2/burger-chicken-creamy.png',shape:'burger'},
-  {id:'burger-smokey-bacon',name:'Smokey Bacon',tag:'BACON DE BŒUF · DOUBLE CHEDDAR',image:'/assets/menu-v2/burger-smokey-bacon.png',shape:'burger'},
-  {id:'burger-classic-smash',name:'Classic Smash',tag:'DOUBLE SMASH · DOUBLE CHEDDAR',image:'/assets/menu-v2/burger-classic-smash.png',shape:'burger'},
+  {id:'burger-bbq-raclette',name:'BBQ’ Raclette',tag:'NOUVELLE CARTE · 200 G DE FRITES',image:'/assets/menu-v2/burger-bbq-raclette.webp',shape:'burger'},
+  {id:'burger-chicken-biggie',name:'Chicken Biggie',tag:'DOUBLE CHEDDAR · 200 G DE FRITES',image:'/assets/menu-v2/burger-chicken-biggie.webp',shape:'burger'},
+  {id:'burger-chicken-creamy',name:'Chicken Creamy',tag:'MAYONNAISE · DOUBLE CHEDDAR',image:'/assets/menu-v2/burger-chicken-creamy.webp',shape:'burger'},
+  {id:'burger-smokey-bacon',name:'Smokey Bacon',tag:'BACON DE BŒUF · DOUBLE CHEDDAR',image:'/assets/menu-v2/burger-smokey-bacon.webp',shape:'burger'},
+  {id:'burger-classic-smash',name:'Classic Smash',tag:'DOUBLE SMASH · DOUBLE CHEDDAR',image:'/assets/menu-v2/burger-classic-smash.webp',shape:'burger'},
 ];
 let currentSlide = 0;
 const heroFood = $('.hero-food');
@@ -154,6 +155,41 @@ document.addEventListener('visibilitychange', refreshHolds);
 document.addEventListener('click', () => requestAnimationFrame(refreshHolds));
 autoRotate(slideButtons.map(button => button.querySelector('i')!), () => changeSlide((currentSlide + 1) % slides.length));
 holdWhenOutOfSight($('.hero'), $('.hero-bottom'));
+
+// The arrival shows three dishes of the new menu in relief, one after the other.
+const reliefDishes = [
+  {id:'burger-smokey-beef-bacon',name:'Smokey Beef Bacon',tag:'BURGER · DOUBLE SMASH & BACON DE BŒUF',alt:'Le burger Smokey Beef Bacon du Safe Lounge : double smash, cheddar fondu et bacon de bœuf, servi avec ses frites'},
+  {id:'pizzas-burratella-lov',name:'Burratella Lov’',tag:'PIZZA · STRACCIATELLA & JAMBON CRU',alt:'La pizza Burratella Lov’ du Safe Lounge : stracciatella, jambon cru, tomates cerises, copeaux de parmesan et crème balsamique'},
+  {id:'pates-penne-forestiere',name:'Penne Forestière',tag:'PÂTES · POULET & CHAMPIGNONS',alt:'Les Penne Forestière du Safe Lounge : poulet, champignons émincés, sauce à la crème et parmesan'},
+].map(dish => ({ ...dish, image:`/assets/hero-3d/${dish.id}.webp`, depth:`/assets/hero-3d/${dish.id}-depth.webp` }));
+const reliefStage = $('[data-dish3d-stage]');
+const relief = initDish3D(reliefStage, reliefDishes);
+const reliefSpin = $('.dish3d-spin');
+const reliefButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-dish3d]')];
+let currentRelief = 0;
+let reliefTimeline: gsap.core.Timeline | undefined;
+function changeRelief(index: number) {
+  if (index === currentRelief) return;
+  currentRelief = index;
+  const dish = reliefDishes[index];
+  reliefButtons.forEach((button, i) => { button.classList.toggle('selected', i === index); button.setAttribute('aria-pressed', String(i === index)); });
+  const update = () => {
+    relief.show(index);
+    $('#dish3d-name').textContent = dish.name;
+    $('#dish3d-tag').textContent = dish.tag;
+    $('.dish3d-caption').dataset.open = dish.id;
+  };
+  reliefTimeline?.kill();
+  if (!canAnimate()) { update(); gsap.set(reliefSpin, { clearProps: 'transform,opacity' }); return; }
+  // The dish spins away on its vertical axis and the next one spins in.
+  reliefTimeline = gsap.timeline()
+    .to(reliefSpin, { rotationY: -75, scale: .86, opacity: 0, duration: .32, ease: 'power2.in' })
+    .call(update)
+    .fromTo(reliefSpin, { rotationY: 75, scale: .86, opacity: 0 }, { rotationY: 0, scale: 1, opacity: 1, duration: .8, ease: 'power3.out', clearProps: 'transform,opacity' });
+}
+reliefButtons.forEach(button => button.addEventListener('click', () => changeRelief(Number(button.dataset.dish3d))));
+autoRotate(reliefButtons.map(button => button.querySelector('i')!), () => changeRelief((currentRelief + 1) % reliefDishes.length));
+holdWhenOutOfSight($('.arrival'), $('.dish3d-dots'));
 
 const sweets = [
   {id:'desserts-4',name:'Tiramisu pistachio',image:'pistache.jpg',price:9},
@@ -279,19 +315,19 @@ function syncViewport(){categories.setAttribute('aria-orientation',mobileQuery.m
 mobileQuery.addEventListener('change',syncViewport);syncViewport();
 
 // Motion is optional. Scroll-based movement follows the visitor's own pace.
-const media = initMedia(motionPaused);
+initMedia();
 let animationContext: gsap.Context | undefined;
 function setupMotion() {
   animationContext?.revert();
-  media.setMotionPaused(motionPaused);
+  relief.setPaused(motionPaused);
   document.documentElement.classList.toggle('motion-paused',motionPaused);
   $('#motion-toggle').setAttribute('aria-pressed',String(motionPaused));
   $('#motion-label').textContent=motionPaused?'Animations en pause':'Animations activées';
   if (motionPaused) { gsap.set('.dish-card',{clearProps:'all'}); return; }
   animationContext=gsap.context(()=>{
-    gsap.from('.arrival h1 span',{y:55,opacity:0,rotation:3,stagger:.12,duration:1,ease:'power3.out'});
+    gsap.from('.arrival h1 .h1-line',{y:55,opacity:0,rotation:3,stagger:.12,duration:1,ease:'power3.out'});
     gsap.to('.arrival-background',{yPercent:12,ease:'none',scrollTrigger:{trigger:'.arrival',start:'top top',end:'bottom top',scrub:1}});
-    gsap.from('.arrival-film',{y:45,opacity:0,rotation:4,duration:1.1,ease:'power3.out'});
+    gsap.from('.arrival-dish',{y:45,opacity:0,duration:1.1,ease:'power3.out'});
     gsap.from('.hero-food-wrap',{scale:.8,opacity:0,duration:1.3,ease:'power3.out'});
     gsap.to('.hero-food-wrap',{rotation:24,y:65,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:1}});
     gsap.to('.hero-symbol',{rotation:180,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:1}});

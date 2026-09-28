@@ -2,7 +2,7 @@
   {
     "id": "burger",
     "label": "Burger",
-    "description": "Chicken burgers généreux, servis avec leurs frites.",
+    "description": "Chicken burgers croustillants et smash burgers au bœuf, tous servis avec 200 g de frites.",
     "source": "SAFE_LOUNGE_BBQ_RACLETTE_200G_FRITES_A4.pdf",
     "items": [
       {
@@ -11,7 +11,7 @@
         "description": "Pain potato bun moelleux, sauce BBQ sur les deux pains, salade iceberg croquante, poulet frit croustillant et une tranche de raclette fondue.",
         "extra": "Servi avec 200 g de frites.",
         "price": null,
-        "image": "/assets/menu-v2/burger-bbq-raclette.png",
+        "image": "/assets/menu-v2/burger-bbq-raclette.webp",
         "sourceImage": "SAFE_LOUNGE_BBQ_RACLETTE_200G_FRITES_A4.pdf"
       },
       {
@@ -20,7 +20,7 @@
         "description": "Pain potato bun moelleux, sauce classic burger sur les deux pains, salade iceberg croquante, poulet frit croustillant et deux tranches de cheddar fondu.",
         "extra": "Servi avec 200 g de frites.",
         "price": null,
-        "image": "/assets/menu-v2/burger-chicken-biggie.png",
+        "image": "/assets/menu-v2/burger-chicken-biggie.webp",
         "sourceImage": "SAFE_LOUNGE_CHICKEN_BIGGIE_200G_FRITES_A4.pdf"
       },
       {
@@ -29,7 +29,7 @@
         "description": "Pain potato bun moelleux, sauce mayonnaise sur les deux pains, salade iceberg croquante, poulet frit croustillant et deux tranches de cheddar fondu.",
         "extra": "Servi avec 200 g de frites.",
         "price": null,
-        "image": "/assets/menu-v2/burger-chicken-creamy.png",
+        "image": "/assets/menu-v2/burger-chicken-creamy.webp",
         "sourceImage": "SAFE_LOUNGE_CREAMY_200G_FRITES_A4.pdf"
       },
       {
@@ -38,7 +38,7 @@
         "description": "Pain potato bun moelleux, sauce Smokey Baconnaise sur les deux pains, salade iceberg croquante, poulet frit croustillant, deux tranches de cheddar fondu et une tranche de bacon de bœuf snackée.",
         "extra": "Servi avec 200 g de frites.",
         "price": null,
-        "image": "/assets/menu-v2/burger-smokey-bacon.png",
+        "image": "/assets/menu-v2/burger-smokey-bacon.webp",
         "sourceImage": "SAFE_LOUNGE_SMOKEY_BACON_FINAL_200G_FRITES_A4.pdf"
       },
       {
@@ -47,7 +47,7 @@
         "description": "Pain potato bun moelleux, ketchup sur le pain inférieur, salade iceberg croquante, deux steaks smash, deux tranches de cheddar fondu et moutarde sous le pain supérieur.",
         "extra": "Servi avec 200 g de frites.",
         "price": null,
-        "image": "/assets/menu-v2/burger-classic-smash.png",
+        "image": "/assets/menu-v2/burger-classic-smash.webp",
         "sourceImage": "SAFE_LOUNGE_CLASSIC_SMASH_200G_FRITES_A4.pdf"
       },
       {
@@ -56,7 +56,7 @@
         "description": "Pain potato bun moelleux, sauce Smoked Beef sur les deux pains, salade iceberg croquante, deux steaks smash, deux tranches de cheddar fondu et une tranche de bacon de bœuf snackée.",
         "extra": "Servi avec 200 g de frites.",
         "price": null,
-        "image": "/assets/menu-v2/burger-smokey-beef-bacon.png",
+        "image": "/assets/menu-v2/burger-smokey-beef-bacon.webp",
         "sourceImage": "SAFE_LOUNGE_SMOKEY_BEEF_BACON_200G_FRITES_A4.pdf"
       },
       {
@@ -65,7 +65,7 @@
         "description": "Pain potato bun moelleux, sauce Original Smash sur les deux pains, salade iceberg croquante, deux steaks smash et deux tranches de cheddar fondu.",
         "extra": "Servi avec 200 g de frites.",
         "price": null,
-        "image": "/assets/menu-v2/burger-original-smash.png",
+        "image": "/assets/menu-v2/burger-original-smash.webp",
         "sourceImage": "SAFE_LOUNGE_ORIGINAL_SMASH_200G_FRITES_A4.pdf"
       },
       {
@@ -74,20 +74,50 @@
         "description": "Pain potato bun moelleux, sauce classic burger sur les deux pains, salade iceberg croquante, deux steaks smash et deux tranches de cheddar fondu.",
         "extra": "Servi avec 200 g de frites.",
         "price": null,
-        "image": "/assets/menu-v2/burger-biggie-smash.png",
+        "image": "/assets/menu-v2/burger-biggie-smash.webp",
         "sourceImage": "SAFE_LOUNGE_BIGGIE_SMASH_200G_FRITES_A4.pdf"
       }
     ]
   },
-  { "id": "frappuccino", "label": "Frappuccino", "description": "La nouvelle sélection arrive prochainement.", "source": "", "items": [] },
-  { "id": "iced-latte", "label": "Iced Latte", "description": "La nouvelle sélection arrive prochainement.", "source": "", "items": [] },
-  { "id": "milkshake", "label": "Milkshake", "description": "La nouvelle sélection arrive prochainement.", "source": "", "items": [] },
-  { "id": "mocktail", "label": "Mocktail", "description": "La nouvelle sélection arrive prochainement.", "source": "", "items": [] },
-  { "id": "panuozzo", "label": "Panuozzo", "description": "La nouvelle sélection arrive prochainement.", "source": "", "items": [] },
+  {
+    "id": "frappuccino",
+    "label": "Frappuccino",
+    "description": "La nouvelle sélection arrive prochainement.",
+    "source": "",
+    "items": []
+  },
+  {
+    "id": "iced-latte",
+    "label": "Iced Latte",
+    "description": "La nouvelle sélection arrive prochainement.",
+    "source": "",
+    "items": []
+  },
+  {
+    "id": "milkshake",
+    "label": "Milkshake",
+    "description": "La nouvelle sélection arrive prochainement.",
+    "source": "",
+    "items": []
+  },
+  {
+    "id": "mocktail",
+    "label": "Mocktail",
+    "description": "La nouvelle sélection arrive prochainement.",
+    "source": "",
+    "items": []
+  },
+  {
+    "id": "panuozzo",
+    "label": "Panuozzo",
+    "description": "La nouvelle sélection arrive prochainement.",
+    "source": "",
+    "items": []
+  },
   {
     "id": "pates",
     "label": "Pâtes",
-    "description": "Des recettes généreuses préparées dans l’esprit du Safe.",
+    "description": "Spaghetti, penne et rigatoni : sauce tomate, crème, gorgonzola ou truffe, dans l’esprit généreux du Safe.",
     "source": "SAFE_LOUNGE_SPAGHETTI_SICILIENNE_A4.pdf",
     "items": [
       {
@@ -96,7 +126,7 @@
         "description": "Spaghetti à la sauce tomate, thon égoutté, six olives, sucre, sel, poivre et parmesan râpé.",
         "extra": "Servis avec une tomate cerise coupée en deux.",
         "price": null,
-        "image": "/assets/menu-v2/pates-spaghetti-sicilienne.png",
+        "image": "/assets/menu-v2/pates-spaghetti-sicilienne.webp",
         "sourceImage": "SAFE_LOUNGE_SPAGHETTI_SICILIENNE_A4.pdf"
       },
       {
@@ -105,7 +135,7 @@
         "description": "Rigatoni à la crème, champignons émincés, parmesan râpé, sel, poivre et une cuillère à soupe de truffe.",
         "extra": "Cinq copeaux de parmesan et une tomate cerise coupée en deux.",
         "price": null,
-        "image": "/assets/menu-v2/pates-rigatoni-tartufo.png",
+        "image": "/assets/menu-v2/pates-rigatoni-tartufo.webp",
         "sourceImage": "SAFE_LOUNGE_RIGATONI_TARTUFO_A4.pdf"
       },
       {
@@ -114,7 +144,7 @@
         "description": "Spaghetti à la merguez en morceaux, six olives, une louche de sauce tomate, crème liquide, parmesan râpé, sel et poivre.",
         "extra": "Servis avec une tomate cerise coupée en deux.",
         "price": null,
-        "image": "/assets/menu-v2/pates-spaghetti-merguez.png",
+        "image": "/assets/menu-v2/pates-spaghetti-merguez.webp",
         "sourceImage": "SAFE_LOUNGE_SPAGHETTI_MERGUEZ_A4.pdf"
       },
       {
@@ -123,7 +153,7 @@
         "description": "Spaghetti dans une sauce à la crème liquide et au gorgonzola, assaisonnée de sel et de poivre.",
         "extra": "Cinq copeaux de parmesan et une tomate cerise coupée en deux.",
         "price": null,
-        "image": "/assets/menu-v2/pates-spaghetti-formaggi.png",
+        "image": "/assets/menu-v2/pates-spaghetti-formaggi.webp",
         "sourceImage": "SAFE_LOUNGE_SPAGHETTI_FORMAGGI_A4.pdf"
       },
       {
@@ -132,7 +162,7 @@
         "description": "Penne à la sauce tomate relevée à l’huile piquante, assaisonnée de sel et de poivre.",
         "extra": "Servies avec une tomate cerise coupée en deux.",
         "price": null,
-        "image": "/assets/menu-v2/pates-penne-arrabiata.png",
+        "image": "/assets/menu-v2/pates-penne-arrabiata.webp",
         "sourceImage": "SAFE_LOUNGE_PENNES_ARRABIATA_A4.pdf"
       },
       {
@@ -141,7 +171,7 @@
         "description": "Penne aux champignons émincés et au poulet en morceaux, dans une sauce à la crème et au parmesan avec une cuillère à café de fond de veau.",
         "extra": "Assaisonnées de sel et de poivre, avec une tomate cerise coupée en deux.",
         "price": null,
-        "image": "/assets/menu-v2/pates-penne-forestiere.png",
+        "image": "/assets/menu-v2/pates-penne-forestiere.webp",
         "sourceImage": "SAFE_LOUNGE_PENNES_FORESTIERE_A4.pdf"
       },
       {
@@ -150,7 +180,7 @@
         "description": "Penne dans une sauce tomate à la crème et au parmesan, assaisonnée de sel et de poivre, avec du saumon émietté ajouté en fin de cuisson.",
         "extra": "Servies avec une tomate cerise coupée en deux.",
         "price": null,
-        "image": "/assets/menu-v2/pates-penne-saumon.png",
+        "image": "/assets/menu-v2/pates-penne-saumon.webp",
         "sourceImage": "SAFE_LOUNGE_PENNES_SAUMON_A4.pdf"
       }
     ]
@@ -158,7 +188,7 @@
   {
     "id": "pizzas",
     "label": "Pizzas",
-    "description": "Des pizzas généreuses aux recettes du Safe.",
+    "description": "Des pizzas généreuses sur base tomate, crème ou curry, finies après cuisson : stracciatella, jambon cru, oignons confits, sauce basilic.",
     "source": "SAFE_LOUNGE_PIZZA_BOLLYWOOD_STYLE_A4.pdf",
     "items": [
       {
@@ -167,7 +197,7 @@
         "description": "Pizza sur base de sauce curry, mozzarella râpée, poulet émincé et crème liquide.",
         "extra": "Après cuisson : oignons confits, tomates cerises coupées en deux, sauce basilic et crème balsamique.",
         "price": null,
-        "image": "/assets/menu-v2/pizzas-bollywood-style.png",
+        "image": "/assets/menu-v2/pizzas-bollywood-style.webp",
         "sourceImage": "SAFE_LOUNGE_PIZZA_BOLLYWOOD_STYLE_A4.pdf"
       },
       {
@@ -176,7 +206,7 @@
         "description": "Pizza sur base de sauce tomate et mozzarella râpée.",
         "extra": "Après cuisson : stracciatella, jambon cru, copeaux de parmesan, tomates cerises coupées en deux, sauce basilic et crème balsamique.",
         "price": null,
-        "image": "/assets/menu-v2/pizzas-burratella-lov.png",
+        "image": "/assets/menu-v2/pizzas-burratella-lov.webp",
         "sourceImage": "SAFE_LOUNGE_PIZZA_BURRATELLA_LOV_A4.pdf"
       },
       {
@@ -185,7 +215,7 @@
         "description": "Pizza sur base de sauce tomate et mozzarella râpée, avec des champignons émincés.",
         "extra": "Après cuisson : jambon.",
         "price": null,
-        "image": "/assets/menu-v2/pizzas-classica-queen.png",
+        "image": "/assets/menu-v2/pizzas-classica-queen.webp",
         "sourceImage": "SAFE_LOUNGE_PIZZA_CLASSICA_QUEEN_A4.pdf"
       },
       {
@@ -194,7 +224,7 @@
         "description": "Pizza sur base de sauce tomate et mozzarella râpée, avec des rondelles de merguez et un œuf.",
         "extra": "Après cuisson : jambon cru et sauce basilic.",
         "price": null,
-        "image": "/assets/menu-v2/pizzas-malaga.png",
+        "image": "/assets/menu-v2/pizzas-malaga.webp",
         "sourceImage": "SAFE_LOUNGE_PIZZA_MALAGA_A4.pdf"
       },
       {
@@ -203,7 +233,7 @@
         "description": "Pizza sur base de sauce tomate et mozzarella râpée, avec du thon égoutté et des olives.",
         "extra": "Après cuisson : sauce basilic et oignons confits.",
         "price": null,
-        "image": "/assets/menu-v2/pizzas-marmithon.png",
+        "image": "/assets/menu-v2/pizzas-marmithon.webp",
         "sourceImage": "SAFE_LOUNGE_PIZZA_MARMITHON_A4.pdf"
       },
       {
@@ -212,7 +242,7 @@
         "description": "Pizza sur base de mozzarella râpée, avec des lardons émincés, des pommes de terre précuites en rondelles et de la crème liquide.",
         "extra": "Après cuisson : oignons confits et sauce persillade.",
         "price": null,
-        "image": "/assets/menu-v2/pizzas-paysanne.png",
+        "image": "/assets/menu-v2/pizzas-paysanne.webp",
         "sourceImage": "SAFE_LOUNGE_PIZZA_PAYSANNE_A4.pdf"
       },
       {
@@ -221,10 +251,16 @@
         "description": "Pizza sur base de sauce tomate et mozzarella râpée, avec des rondelles de merguez, des poivrons rouges et verts émincés et un œuf.",
         "extra": "Après cuisson : oignons confits.",
         "price": null,
-        "image": "/assets/menu-v2/pizzas-pizz-arabia.png",
+        "image": "/assets/menu-v2/pizzas-pizz-arabia.webp",
         "sourceImage": "SAFE_LOUNGE_PIZZA_PIZZ_ARABIA_A4.pdf"
       }
     ]
   },
-  { "id": "tiramisu", "label": "Tiramisu", "description": "La nouvelle sélection arrive prochainement.", "source": "", "items": [] }
+  {
+    "id": "tiramisu",
+    "label": "Tiramisu",
+    "description": "La nouvelle sélection arrive prochainement.",
+    "source": "",
+    "items": []
+  }
 ]

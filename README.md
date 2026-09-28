@@ -9,7 +9,7 @@ npm run dev
 
 - `npm run build` : vérification TypeScript et production du site statique dans `dist/`.
 - `npm run preview` : aperçu du build.
-- `npm test` : dix-huit tests de parcours dans Chrome via Playwright.
+- `npm test` : tests de parcours dans Chrome via Playwright.
 - `npm run deploy` : reconstruit le site et remplace la branche `gh-pages`.
 
 Le site est publié sur https://seifharboub.github.io/safe-lounge/ (GitHub Pages, branche `gh-pages`).
@@ -101,3 +101,14 @@ Les affiches des vidéos `en-cuisine` et `a-table` sont des images extraites des
 La section lounge met en avant les deux photographies de chicha du site officiel (`hookah1.jpg`, `hookah2.jpg`, les visuels des formules à 20 € et 25 €) ; elles ouvrent la fiche de leur formule. La photographie du salon lounge les accompagne. `public/assets/instagram/pizza.jpg` n’est plus affichée mais reste archivée avec les autres médias.
 
 Code du lecteur : `src/media.ts`. Les tests couvrent également le décodage / la lecture, l’arrêt hors écran, la fermeture et le retour du focus.
+
+## Accueil en relief
+
+La vidéo de l’accueil est remplacée par trois plats de la nouvelle carte en relief : Smokey Beef Bacon, Burratella Lov’ et Penne Forestière. Ce sont les photos de la carte, détourées sans retouche, accompagnées d’une carte de profondeur (`public/assets/hero-3d/`). `src/dish3d.ts` déplace chaque pixel selon sa profondeur dans un shader WebGL quand le plat s’incline : il tourne seul, suit la souris sur ordinateur et le doigt sur téléphone. Sans WebGL, ou animations en pause, l’image détourée reste affichée. La fabrication des images est décrite dans `scripts/hero-3d/`.
+
+## Référencement
+
+- Titre, description, URL canonique, Open Graph et Twitter Card dans `index.html` ; `SITE_URL` fixe l’adresse publique au build (GitHub Pages par défaut).
+- `vite.config.ts` injecte les données Schema.org `Restaurant` : adresse, téléphone, horaires et la carte complète, construite depuis `src/menu.json`.
+- `public/robots.txt` et `public/sitemap.xml` ; `public/assets/og-image.jpg` pour les partages.
+- Les photos de la carte sont servies en WebP 1080 px (les PNG d’origine sont dans `research/menu-v2-originals/`).

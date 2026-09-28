@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://seifharboub.github.io/safe-lounge/sitemap.xml

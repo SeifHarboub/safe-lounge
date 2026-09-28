@@ -23,7 +23,7 @@ test('le BBQ Raclette reprend la recette du PDF sans prix inventé', async ({ pa
   await expect(card).toContainText('poulet frit croustillant');
   await expect(card).toContainText('une tranche de raclette');
   await expect(card).toContainText('200 g de frites');
-  await expect(card.locator('img')).toHaveAttribute('src', /menu-v2\/burger-bbq-raclette\.png$/);
+  await expect(card.locator('img')).toHaveAttribute('src', /menu-v2\/burger-bbq-raclette\.webp$/);
   await expect(card.locator('.dish-title > span')).toHaveCount(0);
 });
 
@@ -322,4 +322,36 @@ test('une catégorie en attente ne conserve aucun ancien plat', async ({ page })
   await expect(page.locator('#category-title')).toHaveText('Panuozzos');
   await expect(page.locator('#dish-grid')).toContainText('Cette catégorie arrive bientôt.');
   await expect(page.locator('.dish-card')).toHaveCount(0);
+});
+
+test('l’accueil présente trois plats en relief à la place de la vidéo', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.locator('#arrival-video')).toHaveCount(0);
+  const caption = page.locator('.dish3d-caption');
+  await expect(caption).toContainText('Smokey Beef Bacon');
+  await expect(page.locator('.dish3d-still')).toHaveAttribute('src', /hero-3d\/burger-smokey-beef-bacon\.webp$/);
+  await page.locator('[data-dish3d="1"]').click();
+  await expect(caption).toContainText('Burratella Lov’');
+  await expect(page.locator('.dish3d-still')).toHaveAttribute('src', /hero-3d\/pizzas-burratella-lov\.webp$/);
+  await page.locator('[data-dish3d="2"]').click();
+  await expect(caption).toContainText('Penne Forestière');
+  await caption.click();
+  await expect(page.getByRole('dialog')).toContainText('Penne Forestière');
+});
+
+test('la page expose un référencement local complet', async ({ page }) => {
+  await page.goto('/');
+  await expect(page).toHaveTitle(/Noisy-le-Sec/);
+  await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', /Noisy-le-Sec/);
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', /^https:\/\//);
+  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', /og-image\.jpg$/);
+  await expect(page.locator('h1')).toHaveCount(1);
+  await expect(page.locator('h1')).toContainText('Noisy-le-Sec');
+  const data = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent() ?? '{}');
+  expect(data['@type']).toBe('Restaurant');
+  expect(data.address.postalCode).toBe('93130');
+  const items = data.hasMenu.hasMenuSection.flatMap((section: { hasMenuItem: unknown[] }) => section.hasMenuItem);
+  expect(items).toHaveLength(22);
+  const missingAlt = await page.locator('img:not([alt])').count();
+  expect(missingAlt).toBe(0);
 });
