@@ -398,3 +398,26 @@ test('l’état d’ouverture annonce la réouverture l’après-midi', async ({
   await expect(page.locator('#open-status')).toContainText('Fermé · ouvre aujourd’hui à 15h');
   await expect(page.locator('.hours li.today')).toContainText('Lundi');
 });
+
+test('sur téléphone, le titre d’accueil tient sur une ligne et les catégories forment une barre', async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 780 });
+  await page.goto('/');
+  const kicker = page.locator('.h1-kicker');
+  const box = (await kicker.boundingBox())!;
+  expect(box.height).toBeLessThan(20);
+  expect(box.x + box.width).toBeLessThanOrEqual(360);
+  const tabs = page.locator('#categories > button');
+  const first = (await tabs.first().boundingBox())!;
+  const last = (await tabs.last().boundingBox())!;
+  expect(Math.abs(first.y - last.y)).toBeLessThan(1);
+  await expect(page.locator('.menu-sidebar')).toHaveCSS('position', 'sticky');
+});
+
+test('sur téléphone, choisir une catégorie ramène le début de la liste sous la barre', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/');
+  await page.evaluate(() => scrollTo(0, document.querySelector<HTMLElement>('#carte')!.offsetTop + 900));
+  await page.locator('#tab-pizzas').click();
+  await expect(page.locator('#category-title')).toHaveText('Pizzas');
+  await expect.poll(async () => page.evaluate(() => Math.round(document.querySelector('.menu-results')!.getBoundingClientRect().top - document.querySelector('.menu-sidebar')!.getBoundingClientRect().bottom))).toBe(0);
+});

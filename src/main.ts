@@ -25,7 +25,7 @@ let motionPaused = reducedQuery.matches;
 try { motionPaused = motionPaused || localStorage.getItem('safe-motion-paused') === 'true'; } catch { /* Preferences are optional. */ }
 const canAnimate = () => !motionPaused;
 const categories = $('#categories');
-categories.innerHTML = menu.map(category => `<button role="tab" id="tab-${category.id}" aria-controls="menu-panel" aria-selected="${category.id === selectedCategory}" tabindex="${category.id === selectedCategory ? '0' : '-1'}" data-category="${category.id}"><span>${category.label}</span><span class="category-count">${category.items.length ? String(category.items.length).padStart(2,'0') : 'bientôt'}</span><span class="category-arrow">↗︎</span></button>`).join('');
+categories.innerHTML = menu.map(category => `<button role="tab" id="tab-${category.id}"${category.items.length ? '' : ' class="is-empty"'} aria-controls="menu-panel" aria-selected="${category.id === selectedCategory}" tabindex="${category.id === selectedCategory ? '0' : '-1'}" data-category="${category.id}"><span>${category.label}</span><span class="category-count">${category.items.length ? String(category.items.length).padStart(2,'0') : 'bientôt'}</span><span class="category-arrow">↗︎</span></button>`).join('');
 const tabs = [...categories.querySelectorAll<HTMLButtonElement>('button')];
 
 function renderMenu(animate = true) {
@@ -46,6 +46,17 @@ function renderMenu(animate = true) {
 function selectCategory(id: string) {
   if (!menu.some(category => category.id === id)) return;
   selectedCategory = id; search.value = ''; renderMenu();
+  if (!mobileQuery.matches) return;
+  // On a phone the tabs are one sticky row: centre the chosen tab, and if the
+  // row is stuck at the top, bring the start of the list back under it.
+  const tab = tabs.find(tab => tab.dataset.category === id)!;
+  const behavior = canAnimate() ? 'smooth' : 'auto';
+  categories.scrollTo({ left: tab.offsetLeft - (categories.clientWidth - tab.offsetWidth) / 2, behavior });
+  // Two frames: renderMenu's ScrollTrigger refresh would cancel a smooth scroll started now.
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    const offset = $('.menu-results').getBoundingClientRect().top - $('.menu-sidebar').offsetHeight;
+    if (offset < 0) window.scrollTo({ top: window.scrollY + offset, behavior });
+  }));
 }
 tabs.forEach((tab, index) => {
   tab.addEventListener('click', () => selectCategory(tab.dataset.category!));

@@ -104,6 +104,8 @@ La fumée du fond est photographique : deux plaques de fumée sur fond noir, gé
 
 La dernière section réunit l’adresse (liens Google Maps, Waze et Plans), les horaires, le téléphone, l’e-mail et une carte Google intégrée, assombrie en CSS pour suivre la palette. Un badge indique « Ouvert maintenant » ou « Fermé » à l’heure de Paris et la ligne d’horaires du jour est mise en avant ; une nuit après minuit compte pour le jour où le service a commencé (`CLOSING_HOUR` dans `src/main.ts`). Le menu du haut y mène par « Infos & accès », et son bouton appelle directement le restaurant.
 
+Sur téléphone, les catégories de la carte forment une seule barre d’onglets que l’on fait glisser, collée en haut de l’écran pendant la lecture ; choisir un onglet le centre et ramène le début de la liste juste sous la barre. La fumée du lounge couvre toute la section et monte du bas vers le haut, et la première ligne de l’accueil tient sur une seule ligne.
+
 Tailles de texte : sur ordinateur, plus aucun texte courant sous 11 px et les paragraphes passent entre 15 et 17 px ; les tailles tablette et téléphone sont regroupées en fin de feuille de style.
 
 ## Référencement
