@@ -57,26 +57,11 @@ h1 .italic{font-family:Fraunces,serif;font-style:italic;font-size:1.05em;font-we
 .marquee-track>div{display:flex;align-items:center;gap:55px;padding-right:55px}
 .marquee span{font-family:Oswald,sans-serif;font-size:42px;font-weight:450;letter-spacing:-1px;line-height:1.15}
 .marquee img{width:31px;height:34px}
-/* Visual entry points */
 .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:40px}
-.section-head h2,.menu-heading h2{margin-top:22px}
+.section-head h2{margin-top:22px}
 .section-head h2 em{color:var(--green)}
 .section-aside{padding-bottom:6px}
 .section-aside>p{font-size:15px;line-height:1.8;color:#625b61;margin-bottom:24px}
-.craving-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:24px;margin-top:45px}
-.craving-card{min-width:0;grid-column:span 2}
-.craving-card:nth-last-child(-n+2){grid-column:span 3}
-.craving-image{position:relative;border-radius:5px;aspect-ratio:1;overflow:hidden;background:var(--lilac)}
-.craving-image>img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.3,1)}
-.craving-card:hover .craving-image>img{transform:scale(1.08) rotate(2deg)}
-.photo-tag{position:absolute;top:16px;left:16px;background:var(--cream);padding:8px 11px;font-size:7px;font-weight:700;letter-spacing:1.3px;border-radius:2px}
-.image-arrow{position:absolute;bottom:16px;right:16px;background:var(--green);color:var(--cream);width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-size:24px;transition:background .3s,transform .3s}
-.craving-card:hover .image-arrow{background:var(--ink);transform:rotate(45deg)}
-.craving-caption{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-top:17px}
-.craving-caption h3{font-size:29px}
-.craving-caption>span{font-size:7px;letter-spacing:.7px;font-weight:650}
-.cravings{padding-bottom:78px}
-.craving-dots{display:none}
 /* Full photographed menu */
 .menu-section{padding-top:72px;border-top:1px solid #150b1930}
 .menu-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:30px}
@@ -151,27 +136,6 @@ h1 .italic{font-family:Fraunces,serif;font-style:italic;font-size:1.05em;font-we
 .dish-card:hover .dish-frame:after{transform:translate(-9px,12px) rotate(-3deg)}
 .menu-section .dish-open{color:var(--ink)}
 .menu-section .dish-photo{border-radius:4px 64px 4px 4px;background:#1a3327;border:1px solid #e6e4d826;box-shadow:0 18px 34px #091b1166}
-/* A sweet pause */
-.sweet-section{display:grid;grid-template-columns:1fr 1fr;gap:5%;padding:62px 8%;background:var(--lilac);align-items:center;overflow:hidden}
-.sweet-photo{position:relative;aspect-ratio:1;max-width:470px}
-.sweet-photo>img{width:100%;height:100%;object-fit:cover;clip-path:circle(43% at 50% 50%);transform:rotate(-15deg);filter:drop-shadow(0 12px 15px #150b1930)}
-.sweet-orbit{position:absolute;inset:-3%;border:1px solid #150b1925;border-radius:50%}
-.sweet-sticker{position:absolute;top:12%;left:-5%;background:var(--green);color:var(--cream);width:108px;height:108px;border-radius:50%;font-family:Oswald,sans-serif;font-size:17px;text-align:center;display:grid;place-content:center;transform:rotate(-15deg);letter-spacing:.4px;box-shadow:0 0 0 6px var(--lilac)}
-.sweet-copy h2{margin:23px 0}
-.sweet-copy>p:not(.eyebrow){font-size:12px;line-height:1.8;margin:25px 0;color:#34223b}
-.sweet-rotator{margin-top:27px}
-.sweet-price{display:flex;gap:20px;align-items:center;background:none;border:0;padding:0;font-size:8px;letter-spacing:1px;text-align:left}
-.sweet-price>span:first-child{min-width:172px}
-.sweet-open{font-size:17px;letter-spacing:0;transition:transform .3s}
-.sweet-price:hover .sweet-open{transform:translate(3px,-3px)}
-.sweet-dots{display:flex;gap:9px;margin-top:17px}
-.sweet-dots button{position:relative;width:42px;height:3px;padding:0;border:0;border-radius:2px;background:#150b1930}
-.sweet-dots button:before{content:"";position:absolute;inset:-11px -4px}
-.sweet-dots i{position:absolute;inset:0;width:0;background:var(--ink);border-radius:2px}
-.sweet-dots button[aria-pressed=true] i{width:100%;animation:slide-progress var(--rotation,6.4s) linear}
-.sweet-dots.rotation-hold button[aria-pressed=true] i{animation-play-state:paused}
-.motion-paused .sweet-dots button[aria-pressed=true] i{animation:none}
-.sweet-price strong{font-family:Fraunces,serif;font-size:20px;font-weight:500}
 /* Late-night lounge */
 .lounge{display:grid;grid-template-columns:1fr 1fr;gap:9%;align-items:center;background:var(--ink);color:var(--cream);overflow:hidden;overflow:clip;padding-top:100px;padding-bottom:110px}
 .lounge{position:relative}
@@ -185,7 +149,7 @@ h1 .italic{font-family:Fraunces,serif;font-style:italic;font-size:1.05em;font-we
 .lounge-haze i:nth-child(4){--o:.32;--t:40s;left:-10%;bottom:-2%;width:90%;height:55%;background-image:url('/assets/lounge/smoke-wide.webp');animation-name:smoke-drift}
 .lounge-haze i:nth-child(5){--o:.3;--t:52s;--d:-26s;right:-12%;top:18%;width:80%;height:50%;background-image:url('/assets/lounge/smoke-wide.webp');scale:-1 1;animation-name:smoke-drift}
 .lounge .eyebrow{color:var(--lilac)}
-.lounge h2{margin:23px 0}
+.lounge h2{margin:0 0 23px}
 .lounge h2 em{color:var(--lilac)}
 .lounge-intro{font-size:16px;line-height:1.8;color:#e6e4d8b5;margin-top:24px}
 .lounge-formulas{margin:28px 0}
@@ -218,7 +182,7 @@ h1 .italic{font-family:Fraunces,serif;font-style:italic;font-size:1.05em;font-we
 .contact{background:var(--green);color:var(--cream);padding-top:65px;padding-bottom:40px;min-height:100svh;display:flex;flex-direction:column;justify-content:space-between}
 .contact>.eyebrow{color:var(--jade)}
 .contact-head{display:flex;align-items:center;justify-content:space-between;gap:45px;margin:30px 0 40px}
-.contact-title>span:first-child{font-family:Oswald,sans-serif;font-size:clamp(70px,10vw,160px);font-weight:450;line-height:1.08;letter-spacing:-.05em}
+.contact-title>span:last-child{font-family:Oswald,sans-serif;font-size:clamp(70px,10vw,160px);font-weight:450;line-height:1.08;letter-spacing:-.05em}
 .contact-title em{font-style:normal;color:var(--lilac)}
 footer{padding:30px 6%;display:flex;align-items:center;justify-content:space-between;gap:25px}
 footer>span,footer>a:not(:first-child){font-size:13px}
@@ -238,7 +202,6 @@ footer>span{color:#625b61}
 .dialog-copy .dialog-extra{margin-top:14px;color:var(--green)!important}
 .dialog-footer{border-top:1px solid #150b1930;margin-top:auto;padding-top:25px;font-size:13px;line-height:1.8}
 .dialog-close{position:absolute;z-index:2;right:12px;top:12px;width:36px;height:36px;border:1px solid #150b1930;background:var(--cream);border-radius:50%;font-size:25px;line-height:1}
-@keyframes slide-progress{from{width:0}to{width:100%}}
 @keyframes smoke-rise{0%{opacity:0;transform:translate3d(0,16%,0) scale(.88) rotate(-2deg)}22%{opacity:var(--o)}68%{opacity:calc(var(--o) * .85)}100%{opacity:0;transform:translate3d(var(--dx,0),var(--rise,-24%),0) scale(1.3) rotate(3deg)}}
 @keyframes smoke-drift{0%{opacity:0;transform:translate3d(-10%,5%,0) scale(1)}30%{opacity:var(--o)}70%{opacity:calc(var(--o) * .8)}100%{opacity:0;transform:translate3d(12%,-10%,0) scale(1.22)}}
 @keyframes dish-timer{to{opacity:1}}
@@ -251,17 +214,13 @@ footer>span{color:#625b61}
 .section-pad{padding-left:max(6%,calc((100% - 1440px)/2));padding-right:max(6%,calc((100% - 1440px)/2))}
 }
 @media(max-width:1150px){
-.craving-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-.craving-card,.craving-card:nth-last-child(-n+2){grid-column:auto}
 .header nav{gap:23px}
 .section-pad{padding-left:5%;padding-right:5%}
 .menu-layout{grid-template-columns:165px 1fr;gap:30px}
 .dish-grid{gap:26px 16px}
-.craving-caption h3{font-size:24px}
-.craving-caption>span{font-size:6px}
 .lounge{gap:6%}
 .lounge-intro br{display:none}
-.contact-title>span:first-child{font-size:10vw}
+.contact-title>span:last-child{font-size:10vw}
 }
 /* Mobile */
 @media(max-width:760px){html{scroll-padding-top:0}
@@ -294,18 +253,6 @@ h2{font-size:44px}
 .section-aside>p{margin:0}
 .section-aside>p br{display:none}
 .text-link{gap:20px;white-space:nowrap;padding-bottom:7px}
-.craving-grid{gap:22px;margin-top:26px;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:0}
-.craving-grid::-webkit-scrollbar{display:none}
-.craving-card{flex:0 0 100%;scroll-snap-align:start}
-.craving-dots{display:flex;gap:9px;margin:26px 0 2px}
-.craving-dots button{position:relative;width:42px;height:3px;padding:0;border:0;border-radius:2px;background:#150b1926}
-.craving-dots button:before{content:"";position:absolute;inset:-18px -4px}
-.craving-dots i{position:absolute;inset:0;width:0;background:var(--ink);border-radius:2px;transition:width .45s}
-.craving-dots button[aria-pressed=true] i{width:100%}
-.photo-tag{top:12px;left:12px;font-size:6px;padding:7px 9px}
-.craving-caption h3{font-size:25px}
-.craving-caption>span{font-size:6px}
-.cravings{padding-bottom:45px}
 .menu-section{padding-top:50px}
 .menu-heading{display:block}
 .menu-search{width:100%;padding-top:25px}
@@ -328,14 +275,6 @@ h2{font-size:44px}
 .dish-extra{line-height:1.5}
 .menu-service{gap:12px}
 .menu-service>span{max-width:200px}
-.sweet-section{grid-template-columns:1fr;padding:35px 7% 55px;gap:15px}
-.sweet-photo{width:90%;max-width:370px;margin:0 auto;order:1}
-.sweet-copy{order:2}
-.sweet-sticker{width:96px;height:96px;font-size:11.5px;line-height:1.35;left:-2%;top:8%;box-shadow:0 0 0 5px var(--lilac)}
-.sweet-copy h2{font-size:48px}
-.sweet-copy>p:not(.eyebrow){font-size:11px;margin:20px 0}
-.sweet-copy>p br{display:none}
-.sweet-price{font-size:7px;margin-top:22px}
 .lounge{grid-template-columns:1fr;gap:42px;padding-bottom:70px}
 .lounge h2{font-size:53px}
 .lounge-intro{max-width:420px}
@@ -347,7 +286,7 @@ h2{font-size:44px}
 .lounge-handwriting{font-size:21px}
 .contact{padding-top:50px;padding-bottom:35px}
 .contact-head{flex-direction:column;align-items:stretch;gap:20px;margin-top:25px;margin-bottom:28px}
-.contact-title>span:first-child{font-size:clamp(52px,12.5vw,90px);line-height:1.14}
+.contact-title>span:last-child{font-size:clamp(52px,12.5vw,90px);line-height:1.14}
 footer{flex-wrap:wrap;padding:25px 6% 100px;gap:25px 12px}
 footer>a:first-child{width:45%}
 footer>a:first-child img{width:110px;height:65px}
@@ -449,17 +388,12 @@ footer>span{width:50%;text-align:right}
 @media(max-width:1023px){
 .eyebrow{letter-spacing:1.2px}
 .arrival-address{letter-spacing:.6px}
-.photo-tag{font-size:9px;padding:8px 10px}
-.craving-caption>span{font-size:9px}
-.sweet-price{font-size:9px;letter-spacing:.8px}
-.sweet-price>span:first-child{min-width:0}
 .lounge-badge{letter-spacing:1.1px}
 }
 /* Touch targets: the link keeps its size, its tappable area does not. */
 @media(max-width:1023px){
-.text-link,footer>a,.menu-service a,.sweet-price,.arrival-place{position:relative}
-.text-link:before,footer>a:before,.menu-service a:before,.sweet-price:before,.arrival-place:before{content:"";position:absolute;inset:-13px -6px}
-.sweet-dots button:before{inset:-18px -4px}
+.text-link,footer>a,.menu-service a,.arrival-place{position:relative}
+.text-link:before,footer>a:before,.menu-service a:before,.arrival-place:before{content:"";position:absolute;inset:-13px -6px}
 .back-top{width:40px;height:40px}
 }
 @media(max-width:760px){.dish-frame{margin:8px 5px 0 4px}
@@ -585,3 +519,6 @@ footer>span,footer>a:not(:first-child){font-size:12px}
 #categories>button.is-empty{color:#e6e4d85c}
 #categories>button:hover:not([aria-selected=true]){background:none}
 }
+/* Keyword line at the top of a section title: styled as the small label it replaces. */
+h2 .h2-kicker{display:block;margin-bottom:24px;font-family:Satoshi,sans-serif;font-weight:650;letter-spacing:1.5px;line-height:1.5;text-transform:uppercase}
+.contact-title .h2-kicker{margin-bottom:26px}

@@ -213,3 +213,17 @@ test('fermer la fiche d’un plat ne laisse pas de contour après un clic', asyn
   await page.keyboard.press('Escape');
   expect(await card.evaluate(element => element === document.activeElement)).toBe(true);
 });
+
+test('les titres de section portent les mots-clés et le contact affiche la bonne adresse e-mail', async ({ page }) => {
+  await page.goto('/');
+  await expect(page).toHaveTitle(/chicha à Noisy-le-Sec/);
+  await expect(page.locator('#carte h2')).toContainText('burgers, pizzas & pâtes à Noisy-le-Sec');
+  await expect(page.locator('#lounge h2')).toContainText('Lounge chicha à Noisy-le-Sec');
+  await expect(page.locator('#contact h2')).toContainText('Adresse, horaires & accès');
+  await expect(page.locator('section[hidden]')).toHaveCount(0);
+  await expect(page.locator('a[href^="mailto:"]').first()).toHaveAttribute('href', 'mailto:lesafelounge@gmail.com');
+  await expect(page.locator('a[href*="lesafelounge.fr"]')).toHaveCount(0);
+  const data = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent() ?? '{}');
+  expect(data.email).toBe('lesafelounge@gmail.com');
+  expect(data.geo.latitude).toBeCloseTo(48.8933, 3);
+});

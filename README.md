@@ -37,7 +37,7 @@ La carte a été relevée le 18 septembre 2026 sur les dix pages du site officie
 
 Les boutons Dinner et Lounge du site d’origine utilisent des liens JavaScript Divi. Les sous-pages contiennent bien la carte complète.
 
-Les 56 entrées de carte, ingrédients, prix et suppléments sont conservés dans `src/menu.json`. La ligne des boissons fraîches regroupe les neuf boissons à 5 €, comme sur le site source. Les 55 photos sont téléchargées depuis ce même site et conservées sans retouche dans `public/assets/menu/`. Aucune photographie externe ni image générée n’est utilisée. Les recadrages et rotations sont uniquement des effets d’affichage CSS.
+Les 56 entrées de carte, ingrédients, prix et suppléments sont conservés dans `src/menu.json`. La ligne des boissons fraîches regroupe les neuf boissons à 5 €, comme sur le site source. Les 55 photos de cette ancienne carte (`public/assets/menu/`) ont été retirées du site avec les sections « Premiers aperçus » et desserts qu’elles illustraient ; elles restent dans l’historique git. La carte actuelle utilise `public/assets/menu-v2/`.
 
 `research/original-menu.json` archive les textes, modules HTML et URLs des photos consultés. `python3 scripts/import-menu.py` reconstruit la carte depuis cette archive ; il ne synchronise pas automatiquement les futures mises à jour du site.
 
@@ -114,3 +114,5 @@ Tailles de texte : sur ordinateur, plus aucun texte courant sous 11 px et les pa
 - `vite.config.ts` injecte les données Schema.org `Restaurant` : adresse, téléphone, horaires et la carte complète, construite depuis `src/menu.json`.
 - `public/robots.txt` et `public/sitemap.xml` ; `public/assets/og-image.jpg` pour les partages.
 - Les photos de la carte sont servies en WebP 1080 px (les PNG d’origine sont dans `research/menu-v2-originals/`).
+- Chaque titre de section commence par une ligne de mots-clés (« La carte · burgers, pizzas & pâtes à Noisy-le-Sec », « Lounge chicha à Noisy-le-Sec », « Adresse, horaires & accès ») ; la grande phrase d’accroche reste en dessous.
+- Les données Schema.org portent les coordonnées GPS (OpenStreetMap), le lien Google Maps et l’e-mail `lesafelounge@gmail.com`.

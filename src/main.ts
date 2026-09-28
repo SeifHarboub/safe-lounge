@@ -119,15 +119,6 @@ dialog.addEventListener('close', () => {
   if (dishOpenedByPointer) (document.activeElement as HTMLElement | null)?.blur();
 });
 
-// The desserts rotate on their own. The progress bar *is*
-// the timer: it is a CSS animation, so pausing it — off screen, behind a dialog,
-// on the motion toggle or under a reduced-motion preference — stops the rotation
-// too, and the two can never drift apart.
-function autoRotate(bars: HTMLElement[], advance: () => void) {
-  bars.forEach(bar => bar.addEventListener('animationend', event => {
-    if ((event as AnimationEvent).animationName === 'slide-progress') advance();
-  }));
-}
 const mobileQuery = matchMedia('(max-width: 760px)');
 const holds: (() => void)[] = [];
 function holdWhenOutOfSight(section: Element, holder: Element) {
@@ -191,95 +182,6 @@ function changeRelief(index: number) {
 $('.dish3d-timer').addEventListener('animationiteration', () => changeRelief((currentRelief + 1) % reliefDishes.length));
 holdWhenOutOfSight($('.arrival'), $('.arrival-dish'));
 
-const sweets = [
-  {id:'desserts-4',name:'Tiramisu pistachio',image:'pistache.jpg',price:9},
-  {id:'desserts-1',name:'Fondant chocolat',image:'fondant.jpg',price:7},
-  {id:'desserts-6',name:'Brioche perdue',image:'brioche.jpg',price:11},
-  {id:'desserts-3',name:'Tiramisu nutella-spéculoos',image:'speculoos2.jpg',price:9},
-];
-let currentSweet = 0;
-const sweetImage = $<HTMLImageElement>('#sweet-image');
-const sweetDots = $('.sweet-dots');
-sweetDots.innerHTML = sweets.map((sweet, index) => `<button data-sweet="${index}" aria-pressed="${index === 0}" aria-label="Voir ${escape(sweet.name)}"><i></i></button>`).join('');
-const sweetButtons = [...sweetDots.querySelectorAll<HTMLButtonElement>('button')];
-let sweetTimeline: gsap.core.Timeline | undefined;
-function changeSweet(index: number) {
-  if (index === currentSweet) return;
-  currentSweet = index;
-  const sweet = sweets[index];
-  sweetButtons.forEach((button, position) => button.setAttribute('aria-pressed', String(position === index)));
-  const update = () => {
-    sweetImage.src = asset('/assets/menu/' + sweet.image);
-    sweetImage.alt = sweet.name;
-    $('#sweet-name').textContent = sweet.name.toUpperCase();
-    $('#sweet-cost').textContent = `${sweet.price} €`;
-    $('.sweet-price').dataset.open = sweet.id;
-  };
-  sweetTimeline?.kill();
-  if (!canAnimate()) { update(); gsap.set(sweetImage, { clearProps: 'transform,opacity' }); return; }
-  sweetTimeline = gsap.timeline()
-    .to(sweetImage,{scale:.86,rotation:-10,opacity:0,duration:.25,ease:'power2.in'})
-    .call(update)
-    .fromTo(sweetImage,{scale:.88,rotation:10,opacity:0},{scale:1,rotation:0,opacity:1,duration:.6,ease:'power3.out',clearProps:'transform,opacity'});
-}
-sweetButtons.forEach(button => button.addEventListener('click', () => changeSweet(Number(button.dataset.sweet))));
-autoRotate(sweetButtons.map(button => button.querySelector('i')!), () => changeSweet((currentSweet + 1) % sweets.length));
-holdWhenOutOfSight($('.sweet-section'), $('.sweet-dots'));
-
-// On phones the appetite cards are a swipe rail. It advances on its own so the
-// second and third cards are seen at all, and hands over for good the moment the
-// visitor touches, drags or scrolls it themselves.
-const rail = $('.craving-grid');
-const railCards = [...rail.querySelectorAll<HTMLElement>('.craving-card')];
-const railDots = $('.craving-dots');
-railDots.innerHTML = railCards.map((card, index) => {
-  const label = card.querySelector('h3')!.textContent!.replace(/\.$/, '');
-  return `<button data-rail="${index}" aria-pressed="${index === 0}" aria-label="Voir ${escape(label)}"><i></i></button>`;
-}).join('');
-const railButtons = [...railDots.querySelectorAll<HTMLButtonElement>('button')];
-let railIndex = 0;
-let railStep = 1;
-let railTimer: number | undefined;
-let railTakenOver = false;
-let railInView = false;
-// Any scroll of the rail outside this window came from the visitor, not from us.
-let ownScrollUntil = 0;
-function railRuns() {
-  return canAnimate() && mobileQuery.matches && railInView && !railTakenOver
-    && !document.hidden && !dialog.open && rail.scrollWidth > rail.clientWidth + 4;
-}
-function showRailCard(index: number) {
-  railIndex = index;
-  railButtons.forEach((button, position) => button.setAttribute('aria-pressed', String(position === index)));
-  ownScrollUntil = performance.now() + 900;
-  rail.scrollTo({ left: railCards[index].offsetLeft - railCards[0].offsetLeft, behavior: canAnimate() ? 'smooth' : 'auto' });
-}
-function advanceRail() {
-  if (railIndex + railStep >= railCards.length || railIndex + railStep < 0) railStep = -railStep;
-  showRailCard(railIndex + railStep);
-}
-function syncRail() {
-  clearInterval(railTimer);
-  if (railRuns()) railTimer = setInterval(advanceRail, 3200);
-}
-function railHandOver() { railTakenOver = true; syncRail(); }
-// A tap, or a finger scrolling the page over the cards, must not count as taking
-// over — only a scroll of the rail itself that we did not start.
-rail.addEventListener('scroll', () => {
-  if (performance.now() > ownScrollUntil) railHandOver();
-  const here = rail.scrollLeft + rail.clientWidth / 2;
-  const nearest = railCards.reduce((best, card, index) =>
-    Math.abs(card.offsetLeft - railCards[0].offsetLeft + card.clientWidth / 2 - here) <
-    Math.abs(railCards[best].offsetLeft - railCards[0].offsetLeft + railCards[best].clientWidth / 2 - here) ? index : best, 0);
-  railIndex = nearest;
-  railButtons.forEach((button, position) => button.setAttribute('aria-pressed', String(position === nearest)));
-}, { passive: true });
-rail.addEventListener('keydown', railHandOver);
-railButtons.forEach(button => button.addEventListener('click', () => { railHandOver(); showRailCard(Number(button.dataset.rail)); }));
-new IntersectionObserver(entries => { railInView = entries[0].isIntersecting; syncRail(); }, { threshold: .3 }).observe(rail);
-holds.push(syncRail);
-mobileQuery.addEventListener('change', syncRail);
-
 const MARQUEE_SPEED = 88; // pixels per second
 const marqueeTrack = document.querySelector<HTMLElement>('.marquee-track');
 function layoutMarquee() {
@@ -326,9 +228,6 @@ function setupMotion() {
     gsap.to('.arrival-background',{yPercent:12,ease:'none',scrollTrigger:{trigger:'.arrival',start:'top top',end:'bottom top',scrub:1}});
     gsap.from('.arrival-dish',{y:45,opacity:0,duration:1.1,ease:'power3.out'});
     gsap.utils.toArray<HTMLElement>('.reveal').forEach(element=>gsap.from(element,{y:45,opacity:0,duration:.8,ease:'power3.out',scrollTrigger:{trigger:element,start:'top 92%',once:true}}));
-    gsap.utils.toArray<HTMLElement>('.craving-card').forEach((element,index)=>gsap.from(element,{y:70,opacity:0,rotation:index%2?-3:3,duration:.85,delay:index*.08,ease:'power3.out',scrollTrigger:{trigger:element,start:'top 94%',once:true}}));
-    gsap.to('.sweet-photo>img',{rotation:35,ease:'none',scrollTrigger:{trigger:'.sweet-section',start:'top bottom',end:'bottom top',scrub:1}});
-    gsap.fromTo('.sweet-sticker',{rotation:-15},{rotation:10,ease:'none',scrollTrigger:{trigger:'.sweet-section',start:'top bottom',end:'bottom top',scrub:1}});
     gsap.utils.toArray<HTMLElement>('.lounge-tile').forEach((element,index)=>gsap.from(element,{y:40,opacity:0,duration:.8,delay:index*.1,ease:'power3.out',scrollTrigger:{trigger:'.lounge-strip',start:'top 94%',once:true}}));
   });
 }
