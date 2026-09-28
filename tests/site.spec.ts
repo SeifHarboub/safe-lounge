@@ -15,291 +15,53 @@ test('la nouvelle carte affiche les neuf catégories dans le bon ordre', async (
   await expect(tabs.first()).toHaveAttribute('aria-selected', 'true');
 });
 
-test('le BBQ Raclette reprend la recette du PDF sans prix inventé', async ({ page }) => {
-  await page.goto('/#carte');
-  const card = page.locator('.dish-card[data-open="burger-bbq-raclette"]');
-  await expect(card).toBeVisible();
-  await expect(card).toContainText('BBQ’ Raclette');
-  await expect(card).toContainText('poulet frit croustillant');
-  await expect(card).toContainText('une tranche de raclette');
-  await expect(card).toContainText('200 g de frites');
-  await expect(card.locator('img')).toHaveAttribute('src', /menu-v2\/burger-bbq-raclette\.webp$/);
-  await expect(card.locator('.dish-title > span')).toHaveCount(0);
-});
+// Each dish shows its ingredients as a customer reads them, never the recipe steps.
+const dishes: { id: string; tab?: string; name: string; has: string[]; hasNot?: string[] }[] = [
+  { id: 'burger-bbq-raclette', name: 'BBQ’ Raclette', has: ['poulet frit croustillant', 'raclette fondue', 'sauce BBQ', '200 g de frites'] },
+  { id: 'burger-chicken-biggie', name: 'Chicken Biggie', has: ['poulet frit croustillant', 'double cheddar fondu', 'sauce classic burger', '200 g de frites'] },
+  { id: 'burger-chicken-creamy', name: 'Chicken Creamy', has: ['poulet frit croustillant', 'double cheddar fondu', 'mayonnaise', '200 g de frites'] },
+  { id: 'burger-smokey-bacon', name: 'Smokey Bacon', has: ['poulet frit croustillant', 'bacon de bœuf snacké', 'sauce Smokey Baconnaise', '200 g de frites'] },
+  { id: 'burger-classic-smash', name: 'Classic Smash', has: ['deux steaks smash', 'double cheddar fondu', 'ketchup', 'moutarde', '200 g de frites'] },
+  { id: 'burger-smokey-beef-bacon', name: 'Smokey Beef Bacon', has: ['deux steaks smash', 'bacon de bœuf snacké', 'sauce Smoked Beef', '200 g de frites'] },
+  { id: 'burger-original-smash', name: 'Original Smash', has: ['deux steaks smash', 'double cheddar fondu', 'sauce Original Smash', '200 g de frites'], hasNot: ['bacon'] },
+  { id: 'burger-biggie-smash', name: 'Biggie Smash', has: ['deux steaks smash', 'double cheddar fondu', 'sauce classic burger', '200 g de frites'] },
+  { id: 'pates-spaghetti-sicilienne', tab: 'pates', name: 'Spaghetti Sicilienne', has: ['sauce tomate', 'thon', 'olives', 'parmesan', 'tomate cerise'] },
+  { id: 'pates-rigatoni-tartufo', tab: 'pates', name: 'Rigatoni Tartufo', has: ['truffe', 'champignons', 'copeaux de parmesan'] },
+  { id: 'pates-spaghetti-merguez', tab: 'pates', name: 'Spaghetti Merguez', has: ['merguez', 'sauce tomate crémeuse', 'olives', 'parmesan'] },
+  { id: 'pates-spaghetti-formaggi', tab: 'pates', name: 'Spaghetti Formaggi', has: ['gorgonzola', 'copeaux de parmesan'] },
+  { id: 'pates-penne-arrabiata', tab: 'pates', name: 'Penne Arrabiata', has: ['sauce tomate relevée à l’huile piquante'], hasNot: ['parmesan'] },
+  { id: 'pates-penne-forestiere', tab: 'pates', name: 'Penne Forestière', has: ['poulet', 'champignons', 'sauce crémeuse au parmesan'] },
+  { id: 'pates-penne-saumon', tab: 'pates', name: 'Penne Saumon', has: ['saumon', 'sauce tomate crémeuse au parmesan'] },
+  { id: 'pizzas-bollywood-style', tab: 'pizzas', name: 'Bollywood Style', has: ['sauce curry', 'mozzarella', 'poulet', 'oignons confits', 'tomates cerises', 'sauce basilic', 'crème balsamique'] },
+  { id: 'pizzas-burratella-lov', tab: 'pizzas', name: 'Burratella Lov’', has: ['sauce tomate', 'stracciatella', 'jambon cru', 'copeaux de parmesan', 'sauce basilic', 'crème balsamique'] },
+  { id: 'pizzas-classica-queen', tab: 'pizzas', name: 'Classica Queen', has: ['sauce tomate', 'mozzarella', 'champignons', 'jambon'] },
+  { id: 'pizzas-malaga', tab: 'pizzas', name: 'Malaga', has: ['merguez', 'œuf', 'jambon cru', 'sauce basilic'] },
+  { id: 'pizzas-marmithon', tab: 'pizzas', name: 'Marmithon', has: ['thon', 'olives', 'oignons confits', 'sauce basilic'] },
+  { id: 'pizzas-paysanne', tab: 'pizzas', name: 'Paysanne', has: ['base crème', 'lardons', 'pommes de terre', 'sauce persillade'], hasNot: ['sauce tomate'] },
+  { id: 'pizzas-pizz-arabia', tab: 'pizzas', name: 'Pizz’Arabia', has: ['merguez', 'poivrons rouges et verts', 'œuf', 'oignons confits'], hasNot: ['sauce basilic'] },
+];
 
-test('le Chicken Biggie reprend sa sauce et son double cheddar', async ({ page }) => {
-  await page.goto('/#carte');
-  const card = page.locator('.dish-card[data-open="burger-chicken-biggie"]');
-  await expect(card).toBeVisible();
-  await expect(card).toContainText('Chicken Biggie');
-  await expect(card).toContainText('sauce classic burger sur les deux pains');
-  await expect(card).toContainText('deux tranches de cheddar fondu');
-  await expect(card).toContainText('200 g de frites');
-  await expect(card.locator('.dish-title > span')).toHaveCount(0);
-});
+for (const dish of dishes) {
+  test(`${dish.name} présente ses ingrédients, sans prix inventé`, async ({ page }) => {
+    await page.goto('/#carte');
+    if (dish.tab) await page.locator(`#tab-${dish.tab}`).click();
+    const card = page.locator(`.dish-card[data-open="${dish.id}"]`);
+    await expect(card).toBeVisible();
+    await expect(card).toContainText(dish.name);
+    for (const ingredient of dish.has) await expect(card).toContainText(ingredient, { ignoreCase: true });
+    for (const ingredient of dish.hasNot ?? []) await expect(card).not.toContainText(ingredient, { ignoreCase: true });
+    await expect(card.locator('.dish-title > span')).toHaveCount(0);
+  });
+}
 
-test('le Chicken Creamy affiche la mayonnaise sur les deux pains', async ({ page }) => {
+test('aucune description ne détaille la recette', async ({ page }) => {
   await page.goto('/#carte');
-  const card = page.locator('.dish-card[data-open="burger-chicken-creamy"]');
-  await expect(card).toBeVisible();
-  await expect(card).toContainText('Chicken Creamy');
-  await expect(card).toContainText('sauce mayonnaise sur les deux pains');
-  await expect(card).toContainText('deux tranches de cheddar fondu');
-  await expect(card).toContainText('200 g de frites');
-  await expect(card.locator('.dish-title > span')).toHaveCount(0);
-});
-
-test('le Smokey Bacon respecte le bacon de bœuf et la sauce dédiée', async ({ page }) => {
-  await page.goto('/#carte');
-  const card = page.locator('.dish-card[data-open="burger-smokey-bacon"]');
-  await expect(card).toBeVisible();
-  await expect(card).toContainText('Smokey Bacon');
-  await expect(card).toContainText('Smokey Baconnaise sur les deux pains');
-  await expect(card).toContainText('deux tranches de cheddar fondu');
-  await expect(card).toContainText('une tranche de bacon de bœuf snackée');
-  await expect(card).toContainText('200 g de frites');
-  await expect(card.locator('.dish-title > span')).toHaveCount(0);
-});
-
-test('le Classic Smash contient bien deux steaks et les deux sauces séparées', async ({ page }) => {
-  await page.goto('/#carte');
-  const card = page.locator('.dish-card[data-open="burger-classic-smash"]');
-  await expect(card).toBeVisible();
-  await expect(card).toContainText('Classic Smash');
-  await expect(card).toContainText('ketchup sur le pain inférieur');
-  await expect(card).toContainText('deux steaks smash');
-  await expect(card).toContainText('deux tranches de cheddar fondu');
-  await expect(card).toContainText('moutarde sous le pain supérieur');
-  await expect(card).toContainText('200 g de frites');
-  await expect(card.locator('.dish-title > span')).toHaveCount(0);
-});
-
-test('le Smokey Beef Bacon reste limité au menu et respecte sa recette', async ({ page }) => {
-  await page.goto('/#carte');
-  const card = page.locator('.dish-card[data-open="burger-smokey-beef-bacon"]');
-  await expect(card).toBeVisible();
-  await expect(card).toContainText('Smokey Beef Bacon');
-  await expect(card).toContainText('sauce Smoked Beef sur les deux pains');
-  await expect(card).toContainText('deux steaks smash');
-  await expect(card).toContainText('deux tranches de cheddar fondu');
-  await expect(card).toContainText('une tranche de bacon de bœuf snackée');
-  await expect(card).toContainText('200 g de frites');
-  await expect(card.locator('.dish-title > span')).toHaveCount(0);
-});
-
-test('l’Original Smash reste limité au menu et sans bacon', async ({ page }) => {
-  await page.goto('/#carte');
-  const card = page.locator('.dish-card[data-open="burger-original-smash"]');
-  await expect(card).toBeVisible();
-  await expect(card).toContainText('Original Smash');
-  await expect(card).toContainText('sauce Original Smash sur les deux pains');
-  await expect(card).toContainText('deux steaks smash');
-  await expect(card).toContainText('deux tranches de cheddar fondu');
-  await expect(card).toContainText('200 g de frites');
-  await expect(card).not.toContainText('bacon');
-  await expect(card.locator('.dish-title > span')).toHaveCount(0);
-});
-
-test('le Biggie Smash reste limité au menu avec sa sauce classic burger', async ({ page }) => {
-  await page.goto('/#carte');
-  const card = page.locator('.dish-card[data-open="burger-biggie-smash"]');
-  await expect(card).toBeVisible();
-  await expect(card).toContainText('Biggie Smash');
-  await expect(card).toContainText('sauce classic burger sur les deux pains');
-  await expect(card).toContainText('deux steaks smash');
-  await expect(card).toContainText('deux tranches de cheddar fondu');
-  await expect(card).toContainText('200 g de frites');
-  await expect(card.locator('.dish-title > span')).toHaveCount(0);
-});
-
-test('la Spaghetti Sicilienne ouvre la nouvelle catégorie Pâtes', async ({ page }) => {
-  await page.goto('/#carte');
-  await page.locator('#tab-pates').click();
-  const card = page.locator('.dish-card[data-open="pates-spaghetti-sicilienne"]');
-  await expect(page.locator('#category-title')).toHaveText('Pâtes');
-  await expect(card).toBeVisible();
-  await expect(card).toContainText('Spaghetti Sicilienne');
-  await expect(card).toContainText('sauce tomate');
-  await expect(card).toContainText('thon égoutté');
-  await expect(card).toContainText('six olives');
-  await expect(card).toContainText('parmesan râpé');
-  await expect(card).toContainText('une tomate cerise coupée en deux');
-  await expect(card.locator('.dish-title > span')).toHaveCount(0);
-});
-
-test('le Rigatoni Tartufo respecte la truffe et les cinq copeaux', async ({ page }) => {
-  await page.goto('/#carte');
-  await page.locator('#tab-pates').click();
-  const card = page.locator('.dish-card[data-open="pates-rigatoni-tartufo"]');
-  await expect(card).toBeVisible();
-  await expect(card).toContainText('Rigatoni Tartufo');
-  await expect(card).toContainText('champignons émincés');
-  await expect(card).toContainText('une cuillère à soupe de truffe');
-  await expect(card).toContainText('Cinq copeaux de parmesan');
-  await expect(card).toContainText('une tomate cerise coupée en deux');
-  await expect(card.locator('.dish-title > span')).toHaveCount(0);
-});
-
-test('les Spaghetti Merguez respectent la sauce crémeuse et les six olives', async ({ page }) => {
-  await page.goto('/#carte');
-  await page.locator('#tab-pates').click();
-  const card = page.locator('.dish-card[data-open="pates-spaghetti-merguez"]');
-  await expect(card).toBeVisible();
-  await expect(card).toContainText('Spaghetti Merguez');
-  await expect(card).toContainText('merguez en morceaux');
-  await expect(card).toContainText('six olives');
-  await expect(card).toContainText('une louche de sauce tomate');
-  await expect(card).toContainText('crème liquide');
-  await expect(card).toContainText('une tomate cerise coupée en deux');
-  await expect(card.locator('.dish-title > span')).toHaveCount(0);
-});
-
-test('les Spaghetti Formaggi suivent les deux fromages détaillés par la fiche', async ({ page }) => {
-  await page.goto('/#carte');
-  await page.locator('#tab-pates').click();
-  const card = page.locator('.dish-card[data-open="pates-spaghetti-formaggi"]');
-  await expect(card).toBeVisible();
-  await expect(card).toContainText('Spaghetti Formaggi');
-  await expect(card).toContainText('crème liquide et au gorgonzola');
-  await expect(card).toContainText('Cinq copeaux de parmesan');
-  await expect(card).toContainText('une tomate cerise coupée en deux');
-  await expect(card.locator('.dish-title > span')).toHaveCount(0);
-});
-
-test('les Penne Arrabiata restent fidèles à la recette sans fromage', async ({ page }) => {
-  await page.goto('/#carte');
-  await page.locator('#tab-pates').click();
-  const card = page.locator('.dish-card[data-open="pates-penne-arrabiata"]');
-  await expect(card).toBeVisible();
-  await expect(card).toContainText('Penne Arrabiata');
-  await expect(card).toContainText('sauce tomate relevée à l’huile piquante');
-  await expect(card).toContainText('sel et de poivre');
-  await expect(card).toContainText('une tomate cerise coupée en deux');
-  await expect(card).not.toContainText('parmesan');
-  await expect(card.locator('.dish-title > span')).toHaveCount(0);
-});
-
-test('les Penne Forestière respectent le poulet et le fond de veau', async ({ page }) => {
-  await page.goto('/#carte');
-  await page.locator('#tab-pates').click();
-  const card = page.locator('.dish-card[data-open="pates-penne-forestiere"]');
-  await expect(card).toBeVisible();
-  await expect(card).toContainText('Penne Forestière');
-  await expect(card).toContainText('champignons émincés');
-  await expect(card).toContainText('poulet en morceaux');
-  await expect(card).toContainText('crème et au parmesan');
-  await expect(card).toContainText('une cuillère à café de fond de veau');
-  await expect(card).toContainText('une tomate cerise coupée en deux');
-  await expect(card.locator('.dish-title > span')).toHaveCount(0);
-});
-
-test('les Penne Saumon respectent la sauce rosée et le saumon émietté', async ({ page }) => {
-  await page.goto('/#carte');
-  await page.locator('#tab-pates').click();
-  const card = page.locator('.dish-card[data-open="pates-penne-saumon"]');
-  await expect(card).toBeVisible();
-  await expect(card).toContainText('Penne Saumon');
-  await expect(card).toContainText('sauce tomate à la crème et au parmesan');
-  await expect(card).toContainText('saumon émietté ajouté en fin de cuisson');
-  await expect(card).toContainText('une tomate cerise coupée en deux');
-  await expect(card.locator('.dish-title > span')).toHaveCount(0);
-});
-
-test('la Bollywood Style respecte les ingrédients avant et après cuisson', async ({ page }) => {
-  await page.goto('/#carte');
-  await page.locator('#tab-pizzas').click();
-  await expect(page.locator('#category-title')).toHaveText('Pizzas');
-  const card = page.locator('.dish-card[data-open="pizzas-bollywood-style"]');
-  await expect(card).toBeVisible();
-  await expect(card).toContainText('Bollywood Style');
-  await expect(card).toContainText('sauce curry');
-  await expect(card).toContainText('mozzarella râpée');
-  await expect(card).toContainText('poulet émincé');
-  await expect(card).toContainText('crème liquide');
-  await expect(card).toContainText('oignons confits');
-  await expect(card).toContainText('tomates cerises coupées en deux');
-  await expect(card).toContainText('sauce basilic');
-  await expect(card).toContainText('crème balsamique');
-  await expect(card.locator('.dish-title > span')).toHaveCount(0);
-});
-
-test('la Burratella Lov respecte les garnitures ajoutées après cuisson', async ({ page }) => {
-  await page.goto('/#carte');
-  await page.locator('#tab-pizzas').click();
-  const card = page.locator('.dish-card[data-open="pizzas-burratella-lov"]');
-  await expect(card).toBeVisible();
-  await expect(card).toContainText('Burratella Lov’');
-  await expect(card).toContainText('sauce tomate et mozzarella râpée');
-  await expect(card).toContainText('stracciatella');
-  await expect(card).toContainText('jambon cru');
-  await expect(card).toContainText('copeaux de parmesan');
-  await expect(card).toContainText('tomates cerises coupées en deux');
-  await expect(card).toContainText('sauce basilic');
-  await expect(card).toContainText('crème balsamique');
-  await expect(card.locator('.dish-title > span')).toHaveCount(0);
-});
-
-test('la Classica Queen reste fidèle à sa recette simple', async ({ page }) => {
-  await page.goto('/#carte');
-  await page.locator('#tab-pizzas').click();
-  const card = page.locator('.dish-card[data-open="pizzas-classica-queen"]');
-  await expect(card).toBeVisible();
-  await expect(card).toContainText('Classica Queen');
-  await expect(card).toContainText('sauce tomate et mozzarella râpée');
-  await expect(card).toContainText('champignons émincés');
-  await expect(card).toContainText('Après cuisson : jambon');
-  await expect(card.locator('.dish-title > span')).toHaveCount(0);
-});
-
-test('la Malaga affiche la merguez et son œuf central', async ({ page }) => {
-  await page.goto('/#carte');
-  await page.locator('#tab-pizzas').click();
-  const card = page.locator('.dish-card[data-open="pizzas-malaga"]');
-  await expect(card).toBeVisible();
-  await expect(card).toContainText('Malaga');
-  await expect(card).toContainText('rondelles de merguez et un œuf');
-  await expect(card).toContainText('Après cuisson : jambon cru et sauce basilic');
-  await expect(card.locator('.dish-title > span')).toHaveCount(0);
-});
-
-test('la Marmithon respecte le thon, les olives et les finitions', async ({ page }) => {
-  await page.goto('/#carte');
-  await page.locator('#tab-pizzas').click();
-  const card = page.locator('.dish-card[data-open="pizzas-marmithon"]');
-  await expect(card).toBeVisible();
-  await expect(card).toContainText('Marmithon');
-  await expect(card).toContainText('thon égoutté et des olives');
-  await expect(card).toContainText('Après cuisson : sauce basilic et oignons confits');
-  await expect(card.locator('.dish-title > span')).toHaveCount(0);
-});
-
-test('la Paysanne suit sa base blanche sans sauce tomate ajoutée', async ({ page }) => {
-  await page.goto('/#carte');
-  await page.locator('#tab-pizzas').click();
-  const card = page.locator('.dish-card[data-open="pizzas-paysanne"]');
-  await expect(card).toBeVisible();
-  await expect(card).toContainText('Paysanne');
-  await expect(card).toContainText('mozzarella râpée');
-  await expect(card).toContainText('lardons émincés');
-  await expect(card).toContainText('pommes de terre précuites en rondelles');
-  await expect(card).toContainText('crème liquide');
-  await expect(card).toContainText('Après cuisson : oignons confits et sauce persillade');
-  await expect(card).not.toContainText('sauce tomate');
-  await expect(card.locator('.dish-title > span')).toHaveCount(0);
-});
-
-test('la Pizz’Arabia respecte ses poivrons et sa finition aux oignons', async ({ page }) => {
-  await page.goto('/#carte');
-  await page.locator('#tab-pizzas').click();
-  const card = page.locator('.dish-card[data-open="pizzas-pizz-arabia"]');
-  await expect(card).toBeVisible();
-  await expect(card).toContainText('Pizz’Arabia');
-  await expect(card).toContainText('rondelles de merguez');
-  await expect(card).toContainText('poivrons rouges et verts émincés');
-  await expect(card).toContainText('un œuf');
-  await expect(card).toContainText('Après cuisson : oignons confits');
-  await expect(card).not.toContainText('sauce basilic');
-  await expect(card.locator('.dish-title > span')).toHaveCount(0);
+  await expect(page.locator('.dish-card[data-open="burger-bbq-raclette"] img')).toHaveAttribute('src', /menu-v2\/burger-bbq-raclette\.webp$/);
+  for (const tab of ['burger', 'pates', 'pizzas']) {
+    await page.locator(`#tab-${tab}`).click();
+    const text = (await page.locator('#menu-panel').textContent()) ?? '';
+    expect(text).not.toMatch(/cuisson|louche|cuillère|égoutt|précuit|sel et|poivre\b|coupée en deux/i);
+  }
 });
 
 test('la fiche du burger fonctionne sur mobile', async ({ page }) => {
