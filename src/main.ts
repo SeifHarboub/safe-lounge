@@ -6,20 +6,20 @@ import { initMedia } from './media';
 import { asset } from './asset';
 
 gsap.registerPlugin(ScrollTrigger);
-interface Dish { id: string; name: string; description: string; extra: string; price: number; image: string | null; sourceImage: string | null }
+interface Dish { id: string; name: string; description: string; extra: string; price: number | null; image: string | null; sourceImage: string | null }
 interface Category { id: string; label: string; description: string; source: string; items: Dish[] }
-// The default category leads the list; the rest keeps a plates-sweets-drinks reading.
-const DISPLAY_ORDER = ['burgers','pizzas','pates','salades','desserts','crepes','milkshakes','mocktails','boissons','hookah'];
+// Follow a natural meal journey: savoury dishes, dessert, then cold drinks and coffees.
+const DISPLAY_ORDER = ['burger','panuozzo','pizzas','pates','tiramisu','mocktail','milkshake','iced-latte','frappuccino'];
 const menu = (rawMenu as Category[]).slice().sort((a, b) => DISPLAY_ORDER.indexOf(a.id) - DISPLAY_ORDER.indexOf(b.id));
 const allDishes = menu.flatMap(category => category.items.map(dish => ({ ...dish, category: category.id })));
 const $ = <T extends Element = HTMLElement>(selector: string) => document.querySelector<T>(selector)!;
 const escape = (text: string) => text.replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]!));
 const normalize = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-let selectedCategory = 'burgers';
+let selectedCategory = 'burger';
 const search = $<HTMLInputElement>('#dish-search');
 const grid = $('#dish-grid');
 const panel = $('#menu-panel');
-const titles: Record<string, string> = { burgers: 'Burgers gourmets', pizzas: 'Pizzas traditionnelles', hookah: 'Les formules lounge' };
+const titles: Record<string, string> = { burger: 'Chicken Burgers', panuozzo: 'Panuozzos', pates: 'Pâtes', pizzas: 'Pizzas' };
 const reducedQuery = matchMedia('(prefers-reduced-motion: reduce)');
 let motionPaused = reducedQuery.matches;
 try { motionPaused = motionPaused || localStorage.getItem('safe-motion-paused') === 'true'; } catch { /* Preferences are optional. */ }
@@ -39,11 +39,12 @@ function renderMenu(animate = true) {
   tabs.forEach(tab => { const active = !query && tab.dataset.category === category.id; tab.setAttribute('aria-selected',String(active)); tab.tabIndex = tab.dataset.category === category.id ? 0 : -1; });
   if (query) { panel.removeAttribute('aria-labelledby'); panel.setAttribute('aria-label','Résultats de recherche dans toute la carte'); }
   else { panel.setAttribute('aria-labelledby',`tab-${category.id}`); panel.removeAttribute('aria-label'); }
-  grid.innerHTML = dishes.length ? dishes.map((dish, index) => `<button class="dish-card" data-open="${dish.id}" aria-label="Voir ${escape(dish.name)}, ${dish.price} euros"><div class="dish-photo">${dish.image ? `<img src="${asset(dish.image)}" alt="${escape(dish.name)}" width="1080" height="1080" loading="${index < 3 ? 'eager' : 'lazy'}" />` : `<div class="no-photo"><img src="${asset('/assets/symbol-lilac.svg')}" alt="" /><span>LES RAFRAÎCHISSEMENTS</span></div>`}<span class="dish-open">↗︎</span></div><div class="dish-title"><h4>${dish.id === 'boissons-5' ? 'Les boissons fraîches' : escape(dish.name)}</h4><span>${dish.price}<small>€</small></span></div><p>${escape(dish.id === 'boissons-5' ? dish.name : dish.description || (category.id === 'milkshakes' ? 'Milkshake' : ''))}</p>${dish.extra ? `<span class="dish-extra">${escape(dish.extra)}</span>` : ''}</button>`).join('') : '<div class="no-results"><span>Rien dans l’assiette… pour le moment.</span><p>Essayez « pizza », « chocolat » ou « poulet ».</p><button type="button" data-clear>Revenir à la carte ↗︎</button></div>';
+  grid.innerHTML = dishes.length ? dishes.map((dish, index) => `<button class="dish-card" data-open="${dish.id}" aria-label="Voir ${escape(dish.name)}${dish.price === null ? '' : `, ${dish.price} euros`}"><div class="dish-photo">${dish.image ? `<img src="${asset(dish.image)}" alt="${escape(dish.name)}" width="1080" height="1080" loading="${index < 3 ? 'eager' : 'lazy'}" />` : `<div class="no-photo"><img src="${asset('/assets/symbol-lilac.svg')}" alt="" /><span>BIENTÔT À LA CARTE</span></div>`}<span class="dish-open">↗︎</span></div><div class="dish-title"><h4>${escape(dish.name)}</h4>${dish.price === null ? '' : `<span>${dish.price}<small>€</small></span>`}</div><p>${escape(dish.description)}</p>${dish.extra ? `<span class="dish-extra">${escape(dish.extra)}</span>` : ''}</button>`).join('') : '<div class="no-results"><span>Cette catégorie arrive bientôt.</span><p>Le PDF de cette catégorie n’a pas encore été intégré.</p></div>';
   if (animate && canAnimate()) gsap.fromTo('.dish-card',{y:24,opacity:0},{y:0,opacity:1,duration:.45,stagger:.045,ease:'power2.out',clearProps:'transform,opacity'});
   requestAnimationFrame(() => ScrollTrigger.refresh());
 }
 function selectCategory(id: string) {
+  if (!menu.some(category => category.id === id)) return;
   selectedCategory = id; search.value = ''; renderMenu();
 }
 tabs.forEach((tab, index) => {
@@ -88,9 +89,10 @@ renderMenu(false);
 // Native dialog handles focus trapping, Escape and returning focus to its trigger.
 const dialog = $<HTMLDialogElement>('#dish-dialog');
 function openDish(id: string) {
-  const dish = allDishes.find(dish => dish.id === id)!;
+  const dish = allDishes.find(dish => dish.id === id);
+  if (!dish) return;
   const category = menu.find(category => category.id === dish.category)!;
-  $('#dialog-content').innerHTML = `${dish.image ? `<img class="dialog-photo" src="${asset(dish.image)}" alt="${escape(dish.name)}" width="1080" height="1080" />` : `<div class="dialog-photo no-photo"><img src="${asset('/assets/symbol-lilac.svg')}" alt="" /></div>`}<div class="dialog-copy"><p class="eyebrow">${escape(category.label)}</p><h2 id="dialog-title">${dish.id === 'boissons-5' ? 'Les boissons fraîches' : escape(dish.name)}</h2><strong class="dialog-price">${dish.price} €</strong><p>${escape(dish.id === 'boissons-5' ? dish.name : dish.description)}</p>${dish.extra ? `<p class="dialog-extra">${escape(dish.extra)}</p>` : ''}${category.id === 'burgers' ? '<p class="dialog-extra">Servi avec frites allumettes croustillantes.</p>' : ''}<div class="dialog-footer">${category.id === 'hookah' ? 'Espace hookah réservé aux adultes.' : 'Une question sur les allergènes ? Notre équipe vous renseigne.'}</div></div>`;
+  $('#dialog-content').innerHTML = `${dish.image ? `<img class="dialog-photo" src="${asset(dish.image)}" alt="${escape(dish.name)}" width="1080" height="1080" />` : `<div class="dialog-photo no-photo"><img src="${asset('/assets/symbol-lilac.svg')}" alt="" /></div>`}<div class="dialog-copy"><p class="eyebrow">${escape(category.label)}</p><h2 id="dialog-title">${escape(dish.name)}</h2>${dish.price === null ? '' : `<strong class="dialog-price">${dish.price} €</strong>`}<p>${escape(dish.description)}</p>${dish.extra ? `<p class="dialog-extra">${escape(dish.extra)}</p>` : ''}<div class="dialog-footer">Une question sur les allergènes ? Notre équipe vous renseigne.</div></div>`;
   dialog.showModal(); document.body.classList.add('dialog-open');
   if (canAnimate()) gsap.fromTo(dialog,{opacity:0,y:20,scale:.97},{opacity:1,y:0,scale:1,duration:.3,clearProps:'all'});
 }
@@ -99,9 +101,11 @@ dialog.addEventListener('click', event => { if (event.target === dialog) {const 
 dialog.addEventListener('close', () => document.body.classList.remove('dialog-open'));
 
 const slides = [
-  {id:'pizzas-3',name:'Sugar Pepperoni',tag:'CUITE SUR PIERRE',image:'PEPERONI.jpg',price:12,shape:'pizza'},
-  {id:'burgers-5',name:'Smokey Bacon',tag:'SERVI AVEC FRITES',image:'smokey.jpg',price:14,shape:'burger'},
-  {id:'desserts-4',name:'Tiramisu Pistachio',tag:'LA TOUCHE SUCRÉE',image:'pistache.jpg',price:9,shape:'dessert'},
+  {id:'burger-bbq-raclette',name:'BBQ’ Raclette',tag:'NOUVELLE CARTE · 200 G DE FRITES',image:'/assets/menu-v2/burger-bbq-raclette.png',shape:'burger'},
+  {id:'burger-chicken-biggie',name:'Chicken Biggie',tag:'DOUBLE CHEDDAR · 200 G DE FRITES',image:'/assets/menu-v2/burger-chicken-biggie.png',shape:'burger'},
+  {id:'burger-chicken-creamy',name:'Chicken Creamy',tag:'MAYONNAISE · DOUBLE CHEDDAR',image:'/assets/menu-v2/burger-chicken-creamy.png',shape:'burger'},
+  {id:'burger-smokey-bacon',name:'Smokey Bacon',tag:'BACON DE BŒUF · DOUBLE CHEDDAR',image:'/assets/menu-v2/burger-smokey-bacon.png',shape:'burger'},
+  {id:'burger-classic-smash',name:'Classic Smash',tag:'DOUBLE SMASH · DOUBLE CHEDDAR',image:'/assets/menu-v2/burger-classic-smash.png',shape:'burger'},
 ];
 let currentSlide = 0;
 const heroFood = $('.hero-food');
@@ -113,12 +117,11 @@ function changeSlide(index: number) {
   slideButtons.forEach((button,i) => { button.classList.toggle('selected',i===index);button.setAttribute('aria-pressed',String(i===index)); });
   const slide = slides[index];
   const update = () => {
-    const image = $<HTMLImageElement>('#hero-image'); image.src=asset('/assets/menu/'+slide.image); image.alt=slide.name;
+    const image = $<HTMLImageElement>('#hero-image'); image.src=asset(slide.image); image.alt=slide.name;
     heroFood.className='hero-food '+slide.shape;
     $('#hero-dish-name').textContent=slide.name;
     $('.hero-dish-label small').textContent=slide.tag;
     $('.hero-dish-label').dataset.open=slide.id;
-    $('#hero-price').innerHTML=`${slide.price}<small>€</small>`;
   };
   slideTimeline?.kill();
   if (!canAnimate()) {update();gsap.set(heroFood,{clearProps:'transform,opacity'});return;}

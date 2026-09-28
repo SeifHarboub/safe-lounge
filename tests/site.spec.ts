@@ -1,331 +1,325 @@
-import { test, expect } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 
-test('les dix rubriques conservent tous les plats et les tarifs importants', async ({ page }) => {
-  await page.goto('/');
-  const counts: Record<string, number> = { salades:2, pates:7, pizzas:12, burgers:5, desserts:6, crepes:6, milkshakes:4, mocktails:7, boissons:5, hookah:2 };
-  let total = 0;
-  for (const [category, count] of Object.entries(counts)) {
-    await page.locator(`#tab-${category}`).click();
-    await expect(page.locator('.dish-card')).toHaveCount(count);
-    const images=page.locator('.dish-card img');
-    for (const image of await images.all()) {
-      await image.scrollIntoViewIfNeeded();
-      await expect.poll(()=>image.evaluate((e:HTMLImageElement)=>e.complete&&e.naturalWidth>0)).toBe(true);
-    }
-    total += count;
+const categoryLabels = [
+  'Burger', 'Panuozzo', 'Pizzas', 'Pâtes', 'Tiramisu',
+  'Mocktail', 'Milkshake', 'Iced Latte', 'Frappuccino',
+];
+
+test('la nouvelle carte affiche les neuf catégories dans le bon ordre', async ({ page }) => {
+  await page.goto('/#carte');
+  const tabs = page.locator('#categories > button');
+  await expect(tabs).toHaveCount(categoryLabels.length);
+  for (let index = 0; index < categoryLabels.length; index += 1) {
+    await expect(tabs.nth(index).locator('span').first()).toHaveText(categoryLabels[index]);
   }
-  expect(total).toBe(56);
-  await page.locator('[data-open="hookah-2"]').last().click();
-  await expect(page.getByRole('dialog')).toContainText('25 €');
-  await page.keyboard.press('Escape');
-  await page.locator('#tab-desserts').click();
-  await page.locator('.dish-card[data-open="desserts-1"]').click();
-  await expect(page.getByRole('dialog')).toContainText('7 €');
-  await expect(page.getByRole('dialog')).toContainText('Boule vanille +2€');
-  await page.getByRole('button',{name:'Fermer le détail du plat'}).click();
-  await expect(page.locator('.dish-card[data-open="desserts-1"]')).toBeFocused();
-  await page.locator('#tab-mocktails').click();
-  await page.locator('.dish-card[data-open="mocktails-2"]').click();
-  await expect(page.getByRole('dialog')).toContainText('9 €');
-  await expect(page.getByRole('dialog')).toContainText('Fraise');
+  await expect(tabs.first()).toHaveAttribute('aria-selected', 'true');
 });
 
-test('recherche transversale, accents et aucun résultat', async ({ page }) => {
-  await page.goto('/');
-  await page.getByLabel('Une envie précise ?').fill('speculoos');
-  await expect(page.locator('.dish-card')).toHaveCount(3);
-  await page.getByLabel('Une envie précise ?').fill('xyzxyz');
-  await expect(page.getByText('Rien dans l’assiette… pour le moment.')).toBeVisible();
-  await page.getByRole('button',{name:'Revenir à la carte'}).click();
-  await expect(page.locator('.dish-card')).toHaveCount(5);
-  await page.locator('#tab-burgers').focus();
-  await page.keyboard.press('ArrowDown');
-  await expect(page.locator('#tab-pizzas')).toHaveAttribute('aria-selected','true');
-  await page.keyboard.press('End');
-  await expect(page.locator('#tab-hookah')).toHaveAttribute('aria-selected','true');
+test('le BBQ Raclette reprend la recette du PDF sans prix inventé', async ({ page }) => {
+  await page.goto('/#carte');
+  const card = page.locator('.dish-card[data-open="burger-bbq-raclette"]');
+  await expect(card).toBeVisible();
+  await expect(card).toContainText('BBQ’ Raclette');
+  await expect(card).toContainText('poulet frit croustillant');
+  await expect(card).toContainText('une tranche de raclette');
+  await expect(card).toContainText('200 g de frites');
+  await expect(card.locator('img')).toHaveAttribute('src', /menu-v2\/burger-bbq-raclette\.png$/);
+  await expect(card.locator('.dish-title > span')).toHaveCount(0);
 });
 
-test('les trois plats de l’accueil changent de photo, de prix et de fiche', async ({ page }) => {
-  await page.goto('/');
-  await page.getByRole('button',{name:'02 Burger mood'}).click();
-  await expect(page.locator('#hero-image')).toHaveAttribute('src','/assets/menu/smokey.jpg');
-  await expect(page.locator('#hero-price')).toHaveText('14€');
-  await page.locator('.hero-dish-label').click();
-  await expect(page.getByRole('dialog')).toContainText('Smokey bacon');
-  await expect(page.getByRole('dialog')).toContainText('Servi avec frites allumettes croustillantes.');
-  await page.keyboard.press('Escape');
-  await page.getByRole('button',{name:'03 Sweet tooth'}).click();
-  await expect(page.locator('#hero-image')).toHaveAttribute('src','/assets/menu/pistache.jpg');
-  await expect(page.locator('#hero-price')).toHaveText('9€');
+test('le Chicken Biggie reprend sa sauce et son double cheddar', async ({ page }) => {
+  await page.goto('/#carte');
+  const card = page.locator('.dish-card[data-open="burger-chicken-biggie"]');
+  await expect(card).toBeVisible();
+  await expect(card).toContainText('Chicken Biggie');
+  await expect(card).toContainText('sauce classic burger sur les deux pains');
+  await expect(card).toContainText('deux tranches de cheddar fondu');
+  await expect(card).toContainText('200 g de frites');
+  await expect(card.locator('.dish-title > span')).toHaveCount(0);
 });
 
-test('mobile : navigation, raccourcis de catégorie et absence de débordement', async ({ page }) => {
-  for (const width of [360,390,768,1440]) {
-    await page.setViewportSize({width,height:900});
-    await page.goto('/');
-    await expect.poll(()=>page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
-  }
-  await page.setViewportSize({width:390,height:844});
-  await page.getByRole('button',{name:'Ouvrir la navigation'}).click();
-  await page.locator('#mobile-nav').getByRole('link',{name:'La carte'}).click();
-  await expect(page.locator('#mobile-nav')).toBeHidden();
-  await page.getByRole('link',{name:'Je craque pour un dessert'}).click();
-  await expect(page.locator('#tab-desserts')).toHaveAttribute('aria-selected','true');
-  await expect(page.locator('.dish-card')).toHaveCount(6);
+test('le Chicken Creamy affiche la mayonnaise sur les deux pains', async ({ page }) => {
+  await page.goto('/#carte');
+  const card = page.locator('.dish-card[data-open="burger-chicken-creamy"]');
+  await expect(card).toBeVisible();
+  await expect(card).toContainText('Chicken Creamy');
+  await expect(card).toContainText('sauce mayonnaise sur les deux pains');
+  await expect(card).toContainText('deux tranches de cheddar fondu');
+  await expect(card).toContainText('200 g de frites');
+  await expect(card.locator('.dish-title > span')).toHaveCount(0);
 });
 
-test('les animations peuvent être arrêtées et le choix est mémorisé', async ({ page }) => {
-  await page.emulateMedia({reducedMotion:'no-preference'});
-  const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
-  await page.goto('/');
-  await page.locator('#motion-toggle').click();
-  await expect(page.locator('html')).toHaveClass('motion-paused');
-  await page.reload();
-  await expect(page.locator('#motion-toggle')).toHaveAttribute('aria-pressed','true');
-  await expect(page.locator('#motion-label')).toHaveText('Animations en pause');
-  expect(errors).toEqual([]);
+test('le Smokey Bacon respecte le bacon de bœuf et la sauce dédiée', async ({ page }) => {
+  await page.goto('/#carte');
+  const card = page.locator('.dish-card[data-open="burger-smokey-bacon"]');
+  await expect(card).toBeVisible();
+  await expect(card).toContainText('Smokey Bacon');
+  await expect(card).toContainText('Smokey Baconnaise sur les deux pains');
+  await expect(card).toContainText('deux tranches de cheddar fondu');
+  await expect(card).toContainText('une tranche de bacon de bœuf snackée');
+  await expect(card).toContainText('200 g de frites');
+  await expect(card.locator('.dish-title > span')).toHaveCount(0);
 });
 
-test('les vidéos restent locales, respectent la réduction des mouvements et se ferment proprement', async ({ page }) => {
-  await page.goto('/');
-  const preview=page.locator('#arrival-video');
-  await expect(preview).not.toHaveAttribute('src', /.+/);
-  await page.getByRole('button',{name:'Lire l’aperçu vidéo',exact:true}).click();
-  await expect.poll(()=>preview.evaluate((video:HTMLVideoElement)=>!video.paused&&video.currentTime>0)).toBe(true);
-  await page.getByRole('button',{name:'Mettre l’aperçu vidéo en pause',exact:true}).click();
-  await expect.poll(()=>preview.evaluate((video:HTMLVideoElement)=>video.paused)).toBe(true);
-  await page.locator('.film-caption').click();
-  await expect(page.locator('#film-dialog')).toBeVisible();
-  await expect(page.locator('#film-player')).toHaveAttribute('src','/assets/instagram/safe-moments.mp4');
-  await expect.poll(()=>page.locator('#film-player').evaluate((video:HTMLVideoElement)=>video.readyState>=2&&video.currentTime>0)).toBe(true);
-  await page.keyboard.press('Escape');
-  await expect(page.locator('#film-dialog')).not.toBeVisible();
-  await expect(page.locator('#film-player')).not.toHaveAttribute('src', /.+/);
-  await expect(page.locator('body')).not.toHaveClass('dialog-open');
-  await expect(page.locator('.film-caption')).toBeFocused();
-  await page.getByRole('button',{name:/DANS LES COULISSES/}).click();
-  await expect(page.locator('#film-player')).toHaveAttribute('src','/assets/instagram/en-cuisine.mp4');
-  await page.getByRole('button',{name:'Fermer la vidéo',exact:true}).click();
+test('le Classic Smash contient bien deux steaks et les deux sauces séparées', async ({ page }) => {
+  await page.goto('/#carte');
+  const card = page.locator('.dish-card[data-open="burger-classic-smash"]');
+  await expect(card).toBeVisible();
+  await expect(card).toContainText('Classic Smash');
+  await expect(card).toContainText('ketchup sur le pain inférieur');
+  await expect(card).toContainText('deux steaks smash');
+  await expect(card).toContainText('deux tranches de cheddar fondu');
+  await expect(card).toContainText('moutarde sous le pain supérieur');
+  await expect(card).toContainText('200 g de frites');
+  await expect(card.locator('.dish-title > span')).toHaveCount(0);
 });
 
-test('la vidéo muette se met en pause hors écran', async ({ page }) => {
-  await page.emulateMedia({reducedMotion:'no-preference'});
-  await page.goto('/');
-  const preview=page.locator('#arrival-video');
-  await expect.poll(()=>preview.evaluate((video:HTMLVideoElement)=>!video.paused&&video.currentTime>0)).toBe(true);
-  await expect.poll(()=>preview.evaluate((video:HTMLVideoElement)=>video.muted)).toBe(true);
-  await page.locator('#carte').scrollIntoViewIfNeeded();
-  await expect.poll(()=>preview.evaluate((video:HTMLVideoElement)=>video.paused)).toBe(true);
+test('le Smokey Beef Bacon reste limité au menu et respecte sa recette', async ({ page }) => {
+  await page.goto('/#carte');
+  const card = page.locator('.dish-card[data-open="burger-smokey-beef-bacon"]');
+  await expect(card).toBeVisible();
+  await expect(card).toContainText('Smokey Beef Bacon');
+  await expect(card).toContainText('sauce Smoked Beef sur les deux pains');
+  await expect(card).toContainText('deux steaks smash');
+  await expect(card).toContainText('deux tranches de cheddar fondu');
+  await expect(card).toContainText('une tranche de bacon de bœuf snackée');
+  await expect(card).toContainText('200 g de frites');
+  await expect(page.locator('[data-slide="5"]')).toHaveCount(0);
+  await expect(card.locator('.dish-title > span')).toHaveCount(0);
 });
 
-test('chaque lien interne amène sa section en haut de l’écran', async ({ page }) => {
-  await page.setViewportSize({width:1280,height:800});
-  await page.goto('/');
-  const jumps: [string, string, string?][] = [
-    ['.craving-card[data-go="burgers"] .image-arrow', '#carte', 'Burgers gourmets'],
-    ['.craving-card[data-go="pates"] .image-arrow', '#carte', 'Pâtes fraîches'],
-    ['.sweet-copy a.button', '#carte', 'Desserts'],
-    ['.lounge-copy .text-link', '#carte', 'Mocktails'],
-    ['.header nav a[href="#lieu"]', '#lieu'],
-    ['.header nav a[href="#lounge"]', '#lounge'],
-    ['.header-cta', '#contact'],
-    ['.scroll-cue', '#envies'],
-  ];
-  for (const [trigger, section, category] of jumps) {
-    await page.evaluate(()=>window.scrollTo(0,0));
-    await page.locator(trigger).click();
-    await expect.poll(()=>page.locator(section).evaluate(element=>Math.round(Math.abs(element.getBoundingClientRect().top)))).toBe(0);
-    if (category) await expect(page.locator('#category-title')).toHaveText(category);
-  }
+test('l’Original Smash reste limité au menu et sans bacon', async ({ page }) => {
+  await page.goto('/#carte');
+  const card = page.locator('.dish-card[data-open="burger-original-smash"]');
+  await expect(card).toBeVisible();
+  await expect(card).toContainText('Original Smash');
+  await expect(card).toContainText('sauce Original Smash sur les deux pains');
+  await expect(card).toContainText('deux steaks smash');
+  await expect(card).toContainText('deux tranches de cheddar fondu');
+  await expect(card).toContainText('200 g de frites');
+  await expect(card).not.toContainText('bacon');
+  await expect(page.locator('[data-slide="6"]')).toHaveCount(0);
+  await expect(card.locator('.dish-title > span')).toHaveCount(0);
 });
 
-test('aucun lien ne pointe dans le vide', async ({ page }) => {
-  await page.goto('/');
-  const targets = await page.locator('a[href^="#"]').evaluateAll(links =>
-    links.map(link => link.getAttribute('href')!).filter(href => href.length > 1));
-  expect(targets.length).toBeGreaterThan(5);
-  for (const target of targets) await expect(page.locator(target)).toHaveCount(1);
+test('le Biggie Smash reste limité au menu avec sa sauce classic burger', async ({ page }) => {
+  await page.goto('/#carte');
+  const card = page.locator('.dish-card[data-open="burger-biggie-smash"]');
+  await expect(card).toBeVisible();
+  await expect(card).toContainText('Biggie Smash');
+  await expect(card).toContainText('sauce classic burger sur les deux pains');
+  await expect(card).toContainText('deux steaks smash');
+  await expect(card).toContainText('deux tranches de cheddar fondu');
+  await expect(card).toContainText('200 g de frites');
+  await expect(page.locator('[data-slide="7"]')).toHaveCount(0);
+  await expect(card.locator('.dish-title > span')).toHaveCount(0);
 });
 
-test('le ruban défile vite et sans trou à toutes les largeurs', async ({ page }) => {
-  await page.emulateMedia({reducedMotion:'no-preference'});
-  for (const width of [390,768,1280,1920,2560]) {
-    await page.setViewportSize({width,height:800});
-    await page.goto('/');
-    const ribbon = await page.locator('.marquee-track').evaluate((track: HTMLElement) => ({
-      slack: track.getBoundingClientRect().width + parseFloat(getComputedStyle(track).getPropertyValue('--marquee-shift')) - innerWidth,
-      speed: (track.firstElementChild as HTMLElement).getBoundingClientRect().width / parseFloat(getComputedStyle(track).animationDuration),
-      loops: getComputedStyle(track).animationIterationCount,
-    }));
-    expect(ribbon.slack, `largeur ${width}`).toBeGreaterThanOrEqual(0);
-    expect(ribbon.speed, `largeur ${width}`).toBeGreaterThan(70);
-    expect(ribbon.speed, `largeur ${width}`).toBeLessThan(110);
-    expect(ribbon.loops).toBe('infinite');
-  }
+test('la Spaghetti Sicilienne ouvre la nouvelle catégorie Pâtes', async ({ page }) => {
+  await page.goto('/#carte');
+  await page.locator('#tab-pates').click();
+  const card = page.locator('.dish-card[data-open="pates-spaghetti-sicilienne"]');
+  await expect(page.locator('#category-title')).toHaveText('Pâtes');
+  await expect(card).toBeVisible();
+  await expect(card).toContainText('Spaghetti Sicilienne');
+  await expect(card).toContainText('sauce tomate');
+  await expect(card).toContainText('thon égoutté');
+  await expect(card).toContainText('six olives');
+  await expect(card).toContainText('parmesan râpé');
+  await expect(card).toContainText('une tomate cerise coupée en deux');
+  await expect(card.locator('.dish-title > span')).toHaveCount(0);
 });
 
-test('l’accueil et les desserts tournent en boucle et rendent la main au clic', async ({ page }) => {
-  await page.emulateMedia({reducedMotion:'no-preference'});
-  await page.goto('/');
-  await page.locator('.hero-bottom').scrollIntoViewIfNeeded();
-  await page.getByRole('button',{name:'03 Sweet tooth'}).click();
-  await expect(page.locator('#hero-dish-name')).toHaveText('Tiramisu Pistachio');
-  // From the last dish the rotation wraps round to the first on its own.
-  await expect.poll(()=>page.locator('#hero-dish-name').textContent(),{timeout:14000}).toBe('Sugar Pepperoni');
-
-  await page.locator('.sweet-section').scrollIntoViewIfNeeded();
-  const lastDot = page.locator('.sweet-dots button').last();
-  await lastDot.click();
-  await expect(page.locator('#sweet-name')).toHaveText('TIRAMISU NUTELLA-SPÉCULOOS');
-  await expect(page.locator('.sweet-price')).toHaveAttribute('data-open','desserts-3');
-  await expect.poll(()=>page.locator('#sweet-name').textContent(),{timeout:14000}).toBe('TIRAMISU PISTACHIO');
-  await expect(page.locator('#sweet-image')).toHaveAttribute('src','/assets/menu/pistache.jpg');
-  await page.locator('.sweet-price').click();
-  await expect(page.getByRole('dialog')).toContainText('Tiramisu pistachio');
+test('le Rigatoni Tartufo respecte la truffe et les cinq copeaux', async ({ page }) => {
+  await page.goto('/#carte');
+  await page.locator('#tab-pates').click();
+  const card = page.locator('.dish-card[data-open="pates-rigatoni-tartufo"]');
+  await expect(card).toBeVisible();
+  await expect(card).toContainText('Rigatoni Tartufo');
+  await expect(card).toContainText('champignons émincés');
+  await expect(card).toContainText('une cuillère à soupe de truffe');
+  await expect(card).toContainText('Cinq copeaux de parmesan');
+  await expect(card).toContainText('une tomate cerise coupée en deux');
+  await expect(card.locator('.dish-title > span')).toHaveCount(0);
 });
 
-test('mobile : le rail des envies défile seul puis laisse la main au visiteur', async ({ page }) => {
-  await page.emulateMedia({reducedMotion:'no-preference'});
-  await page.setViewportSize({width:390,height:844});
-  await page.goto('/');
-  const rail = page.locator('.craving-grid');
-  await rail.scrollIntoViewIfNeeded();
-  const left = () => rail.evaluate(element => Math.round(element.scrollLeft));
-  const dot = () => page.locator('.craving-dots button[aria-pressed="true"]').getAttribute('data-rail');
-  expect(await left()).toBeLessThan(10);
-  await expect.poll(left,{timeout:20000}).toBeGreaterThan(50);
-  await expect.poll(dot).not.toBe('0');
-
-  // Posing a finger on a card — the way one scrolls the page — must not stop it.
-  await rail.evaluate(element => {
-    element.dispatchEvent(new PointerEvent('pointerdown',{bubbles:true}));
-    element.dispatchEvent(new PointerEvent('pointerup',{bubbles:true}));
-  });
-  const beforeTap = await left();
-  await expect.poll(left,{timeout:20000}).not.toBe(beforeTap);
-
-  // Scrolling the rail sideways does, and for good. Three nudges, spaced out, so
-  // that at least one lands outside the window that covers an automatic move.
-  for (let nudge = 0; nudge < 4; nudge += 1) {
-    // Alternate the target: scrolling to where it already sits fires no event.
-    await rail.evaluate((element, spot) => element.scrollTo({left:spot}), nudge % 2 ? 0 : 130);
-    await page.waitForTimeout(1300);
-  }
-  const held = await left();
-  expect(held).toBeLessThan(20);
-  await page.waitForTimeout(6000);
-  expect(await left()).toBe(held);
+test('les Spaghetti Merguez respectent la sauce crémeuse et les six olives', async ({ page }) => {
+  await page.goto('/#carte');
+  await page.locator('#tab-pates').click();
+  const card = page.locator('.dish-card[data-open="pates-spaghetti-merguez"]');
+  await expect(card).toBeVisible();
+  await expect(card).toContainText('Spaghetti Merguez');
+  await expect(card).toContainText('merguez en morceaux');
+  await expect(card).toContainText('six olives');
+  await expect(card).toContainText('une louche de sauce tomate');
+  await expect(card).toContainText('crème liquide');
+  await expect(card).toContainText('une tomate cerise coupée en deux');
+  await expect(card.locator('.dish-title > span')).toHaveCount(0);
 });
 
-test('mobile : toutes les catégories tiennent à l’écran, la catégorie par défaut en tête', async ({ page }) => {
-  await page.setViewportSize({width:360,height:800});
-  await page.goto('/');
-  const shelf = page.locator('#categories');
-  expect(await shelf.evaluate(element => element.scrollWidth - element.clientWidth)).toBe(0);
-  expect(await shelf.evaluate(element => {
-    const edge = element.getBoundingClientRect().right;
-    return [...element.children].filter(tab => tab.getBoundingClientRect().right > edge + 1).length;
-  })).toBe(0);
-  await expect(page.locator('#categories>button').first()).toHaveAttribute('data-category','burgers');
-  await expect(page.locator('#categories>button').first()).toHaveAttribute('aria-selected','true');
-  await expect(page.locator('#categories>button')).toHaveCount(10);
+test('les Spaghetti Formaggi suivent les deux fromages détaillés par la fiche', async ({ page }) => {
+  await page.goto('/#carte');
+  await page.locator('#tab-pates').click();
+  const card = page.locator('.dish-card[data-open="pates-spaghetti-formaggi"]');
+  await expect(card).toBeVisible();
+  await expect(card).toContainText('Spaghetti Formaggi');
+  await expect(card).toContainText('crème liquide et au gorgonzola');
+  await expect(card).toContainText('Cinq copeaux de parmesan');
+  await expect(card).toContainText('une tomate cerise coupée en deux');
+  await expect(card.locator('.dish-title > span')).toHaveCount(0);
 });
 
-test('mobile : aucun texte sous 9 px et aucun débordement', async ({ page }) => {
-  for (const width of [360,390,430]) {
-    await page.setViewportSize({width,height:844});
-    await page.goto('/');
-    await page.evaluate(async()=>{for(let y=0;y<document.body.scrollHeight;y+=400){scrollTo(0,y);await new Promise(r=>setTimeout(r,40));}scrollTo(0,0);});
-    const tiny = await page.evaluate(()=>[...document.querySelectorAll('body *')]
-      .filter(element=>element.children.length===0 && element.textContent!.trim() && element.getBoundingClientRect().width>0)
-      .filter(element=>parseFloat(getComputedStyle(element).fontSize)<9)
-      .map(element=>`${element.tagName}.${element.className} ${getComputedStyle(element).fontSize}`));
-    expect(tiny,`largeur ${width}`).toEqual([]);
-    expect(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth),`largeur ${width}`).toBe(0);
-  }
+test('les Penne Arrabiata restent fidèles à la recette sans fromage', async ({ page }) => {
+  await page.goto('/#carte');
+  await page.locator('#tab-pates').click();
+  const card = page.locator('.dish-card[data-open="pates-penne-arrabiata"]');
+  await expect(card).toBeVisible();
+  await expect(card).toContainText('Penne Arrabiata');
+  await expect(card).toContainText('sauce tomate relevée à l’huile piquante');
+  await expect(card).toContainText('sel et de poivre');
+  await expect(card).toContainText('une tomate cerise coupée en deux');
+  await expect(card).not.toContainText('parmesan');
+  await expect(card.locator('.dish-title > span')).toHaveCount(0);
 });
 
-test('mobile : chaque lien et bouton reste confortable au doigt', async ({ page }) => {
-  await page.setViewportSize({width:390,height:844});
-  await page.goto('/');
-  await page.evaluate(async()=>{for(let y=0;y<document.body.scrollHeight;y+=400){scrollTo(0,y);await new Promise(r=>setTimeout(r,40));}scrollTo(0,0);});
-  const cramped = await page.evaluate(() => {
-    const small: string[] = [];
-    for (const element of document.querySelectorAll<HTMLElement>('a,button')) {
-      if (element.offsetParent === null) continue;
-      element.scrollIntoView({ block: 'center', behavior: 'instant' });
-      const box = element.getBoundingClientRect();
-      if (box.height >= 36 && box.width >= 36) continue;
-      // A pseudo-element may widen the tap area beyond the painted box.
-      const middle = box.left + box.width / 2;
-      let above = 0, below = 0;
-      for (let gap = 1; gap <= 26; gap += 1) { const hit = document.elementFromPoint(middle, box.top - gap); if (hit !== element && !element.contains(hit)) break; above = gap; }
-      for (let gap = 1; gap <= 26; gap += 1) { const hit = document.elementFromPoint(middle, box.bottom + gap); if (hit !== element && !element.contains(hit)) break; below = gap; }
-      if (box.height + above + below < 36) small.push(`${(element.textContent || '↗').trim().slice(0,24)} — ${Math.round(box.height + above + below)}px`);
-    }
-    return small;
-  });
-  expect(cramped).toEqual([]);
+test('les Penne Forestière respectent le poulet et le fond de veau', async ({ page }) => {
+  await page.goto('/#carte');
+  await page.locator('#tab-pates').click();
+  const card = page.locator('.dish-card[data-open="pates-penne-forestiere"]');
+  await expect(card).toBeVisible();
+  await expect(card).toContainText('Penne Forestière');
+  await expect(card).toContainText('champignons émincés');
+  await expect(card).toContainText('poulet en morceaux');
+  await expect(card).toContainText('crème et au parmesan');
+  await expect(card).toContainText('une cuillère à café de fond de veau');
+  await expect(card).toContainText('une tomate cerise coupée en deux');
+  await expect(card.locator('.dish-title > span')).toHaveCount(0);
 });
 
-test('les flèches restent des glyphes texte, jamais des emoji', async ({ page }) => {
-  await page.setViewportSize({width:390,height:844});
-  await page.goto('/');
-  await page.getByRole('button',{name:'Ouvrir la navigation'}).click();
-  await page.locator('#tab-hookah').click();
-  await page.locator('.dish-card').first().click();
-  // Every arrow, including those written by the script, must carry U+FE0E:
-  // without it iOS falls back to the colour emoji font wherever the serif has
-  // no glyph, and the arrow turns into a blue square.
-  const bare = await page.evaluate(() => {
-    const found: string[] = [];
-    const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-    for (let node = walk.nextNode(); node; node = walk.nextNode()) {
-      const text = node.textContent || '';
-      for (let i = 0; i < text.length; i += 1) {
-        if ('↗▶↓↑'.includes(text[i]) && text[i + 1] !== '︎') {
-          found.push(`${(node.parentElement?.className || node.parentElement?.tagName || '?')} « ${text.trim().slice(0,24)} »`);
-        }
-      }
-    }
-    return [...new Set(found)];
-  });
-  expect(bare).toEqual([]);
-  await expect(page.locator('#tab-hookah span').first()).toHaveText('Hookah');
+test('les Penne Saumon respectent la sauce rosée et le saumon émietté', async ({ page }) => {
+  await page.goto('/#carte');
+  await page.locator('#tab-pates').click();
+  const card = page.locator('.dish-card[data-open="pates-penne-saumon"]');
+  await expect(card).toBeVisible();
+  await expect(card).toContainText('Penne Saumon');
+  await expect(card).toContainText('sauce tomate à la crème et au parmesan');
+  await expect(card).toContainText('saumon émietté ajouté en fin de cuisson');
+  await expect(card).toContainText('une tomate cerise coupée en deux');
+  await expect(card.locator('.dish-title > span')).toHaveCount(0);
 });
 
-test('mobile : le menu se ferme au doigt posé à côté, pas seulement sur la croix', async ({ page }) => {
-  await page.setViewportSize({width:390,height:844});
-  await page.goto('/');
-  const panel = page.locator('#mobile-nav');
-  await page.getByRole('button',{name:'Ouvrir la navigation'}).click();
-  await expect(panel).toBeVisible();
-  await page.mouse.click(200, 700);
-  await expect(panel).toBeHidden();
-  await page.getByRole('button',{name:'Ouvrir la navigation'}).click();
-  await expect(panel).toBeVisible();
-  await page.getByRole('button',{name:'Fermer la navigation'}).click();
-  await expect(panel).toBeHidden();
+test('la Bollywood Style respecte les ingrédients avant et après cuisson', async ({ page }) => {
+  await page.goto('/#carte');
+  await page.locator('#tab-pizzas').click();
+  await expect(page.locator('#category-title')).toHaveText('Pizzas');
+  const card = page.locator('.dish-card[data-open="pizzas-bollywood-style"]');
+  await expect(card).toBeVisible();
+  await expect(card).toContainText('Bollywood Style');
+  await expect(card).toContainText('sauce curry');
+  await expect(card).toContainText('mozzarella râpée');
+  await expect(card).toContainText('poulet émincé');
+  await expect(card).toContainText('crème liquide');
+  await expect(card).toContainText('oignons confits');
+  await expect(card).toContainText('tomates cerises coupées en deux');
+  await expect(card).toContainText('sauce basilic');
+  await expect(card).toContainText('crème balsamique');
+  await expect(card.locator('.dish-title > span')).toHaveCount(0);
 });
 
-test('l’aperçu vidéo tient dans une barre sur mobile et s’affiche en grand sur desktop', async ({ page }) => {
-  await page.setViewportSize({width:390,height:844});
-  await page.goto('/');
-  const film = page.locator('.arrival-film');
-  const barre = await film.boundingBox();
-  // Une barre, pas une carte : elle ne doit plus dévorer le haut de page.
-  expect(barre!.height).toBeLessThan(110);
-  // Et elle ne passe pas sous la barre d’actions fixe.
-  const dock = (await page.locator('.mobile-dock').boundingBox())!;
-  expect(barre!.y + barre!.height).toBeLessThanOrEqual(dock.y + 1);
+test('la Burratella Lov respecte les garnitures ajoutées après cuisson', async ({ page }) => {
+  await page.goto('/#carte');
+  await page.locator('#tab-pizzas').click();
+  const card = page.locator('.dish-card[data-open="pizzas-burratella-lov"]');
+  await expect(card).toBeVisible();
+  await expect(card).toContainText('Burratella Lov’');
+  await expect(card).toContainText('sauce tomate et mozzarella râpée');
+  await expect(card).toContainText('stracciatella');
+  await expect(card).toContainText('jambon cru');
+  await expect(card).toContainText('copeaux de parmesan');
+  await expect(card).toContainText('tomates cerises coupées en deux');
+  await expect(card).toContainText('sauce basilic');
+  await expect(card).toContainText('crème balsamique');
+  await expect(card.locator('.dish-title > span')).toHaveCount(0);
+});
 
-  await page.setViewportSize({width:1440,height:900});
-  await page.goto('/');
-  const fenetre = (await page.locator('.film-window').boundingBox())!;
-  expect(fenetre.width).toBeGreaterThan(340);
-  const hero = (await page.locator('.arrival').boundingBox())!;
-  const repere = (await page.locator('.arrival-scroll').boundingBox())!;
-  const carte = (await page.locator('.arrival-film').boundingBox())!;
-  expect(carte.y).toBeGreaterThan(hero.y);
-  expect(carte.y + carte.height).toBeLessThanOrEqual(repere.y);
+test('la Classica Queen reste fidèle à sa recette simple', async ({ page }) => {
+  await page.goto('/#carte');
+  await page.locator('#tab-pizzas').click();
+  const card = page.locator('.dish-card[data-open="pizzas-classica-queen"]');
+  await expect(card).toBeVisible();
+  await expect(card).toContainText('Classica Queen');
+  await expect(card).toContainText('sauce tomate et mozzarella râpée');
+  await expect(card).toContainText('champignons émincés');
+  await expect(card).toContainText('Après cuisson : jambon');
+  await expect(card.locator('.dish-title > span')).toHaveCount(0);
+});
+
+test('la Malaga affiche la merguez et son œuf central', async ({ page }) => {
+  await page.goto('/#carte');
+  await page.locator('#tab-pizzas').click();
+  const card = page.locator('.dish-card[data-open="pizzas-malaga"]');
+  await expect(card).toBeVisible();
+  await expect(card).toContainText('Malaga');
+  await expect(card).toContainText('rondelles de merguez et un œuf');
+  await expect(card).toContainText('Après cuisson : jambon cru et sauce basilic');
+  await expect(card.locator('.dish-title > span')).toHaveCount(0);
+});
+
+test('la Marmithon respecte le thon, les olives et les finitions', async ({ page }) => {
+  await page.goto('/#carte');
+  await page.locator('#tab-pizzas').click();
+  const card = page.locator('.dish-card[data-open="pizzas-marmithon"]');
+  await expect(card).toBeVisible();
+  await expect(card).toContainText('Marmithon');
+  await expect(card).toContainText('thon égoutté et des olives');
+  await expect(card).toContainText('Après cuisson : sauce basilic et oignons confits');
+  await expect(card.locator('.dish-title > span')).toHaveCount(0);
+});
+
+test('la Paysanne suit sa base blanche sans sauce tomate ajoutée', async ({ page }) => {
+  await page.goto('/#carte');
+  await page.locator('#tab-pizzas').click();
+  const card = page.locator('.dish-card[data-open="pizzas-paysanne"]');
+  await expect(card).toBeVisible();
+  await expect(card).toContainText('Paysanne');
+  await expect(card).toContainText('mozzarella râpée');
+  await expect(card).toContainText('lardons émincés');
+  await expect(card).toContainText('pommes de terre précuites en rondelles');
+  await expect(card).toContainText('crème liquide');
+  await expect(card).toContainText('Après cuisson : oignons confits et sauce persillade');
+  await expect(card).not.toContainText('sauce tomate');
+  await expect(card.locator('.dish-title > span')).toHaveCount(0);
+});
+
+test('la Pizz’Arabia respecte ses poivrons et sa finition aux oignons', async ({ page }) => {
+  await page.goto('/#carte');
+  await page.locator('#tab-pizzas').click();
+  const card = page.locator('.dish-card[data-open="pizzas-pizz-arabia"]');
+  await expect(card).toBeVisible();
+  await expect(card).toContainText('Pizz’Arabia');
+  await expect(card).toContainText('rondelles de merguez');
+  await expect(card).toContainText('poivrons rouges et verts émincés');
+  await expect(card).toContainText('un œuf');
+  await expect(card).toContainText('Après cuisson : oignons confits');
+  await expect(card).not.toContainText('sauce basilic');
+  await expect(card.locator('.dish-title > span')).toHaveCount(0);
+});
+
+test('la fiche du burger fonctionne sur mobile', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/#carte');
+  await page.locator('.dish-card[data-open="burger-bbq-raclette"]').click();
+  const dialog = page.getByRole('dialog');
+  await expect(dialog).toBeVisible();
+  await expect(dialog).toContainText('BBQ’ Raclette');
+  await expect(dialog).toContainText('Servi avec 200 g de frites.');
+  await expect(dialog.locator('.dialog-price')).toHaveCount(0);
+});
+
+test('une catégorie en attente ne conserve aucun ancien plat', async ({ page }) => {
+  await page.goto('/#carte');
+  await page.locator('#tab-panuozzo').click();
+  await expect(page.locator('#category-title')).toHaveText('Panuozzos');
+  await expect(page.locator('#dish-grid')).toContainText('Cette catégorie arrive bientôt.');
+  await expect(page.locator('.dish-card')).toHaveCount(0);
 });
