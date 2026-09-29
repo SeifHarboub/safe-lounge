@@ -48,7 +48,7 @@ const dishes: { id: string; tab?: string; name: string; has: string[]; hasNot?: 
   { id: 'pizzas-pizz-arabia', tab: 'pizzas', name: 'Pizz’Arabia', has: ['merguez', 'poivrons rouges et verts', 'œuf', 'oignons confits'], hasNot: ['sauce basilic'] },
   { id: 'pizzas-ranch', tab: 'pizzas', name: 'Ranch’', has: ['sauce barbecue', 'poivrons rouges et verts', 'poulet', 'chorizo', 'crème', 'oignons confits', 'cheddar'], hasNot: ['sauce tomate'] },
   { id: 'pizzas-rosalia', tab: 'pizzas', name: 'Rosalia', has: ['sauce tomate', 'mozzarella', 'champignons', 'poulet', 'merguez artisanale', 'crème'], hasNot: ['oignons confits', 'sauce basilic'] },
-  { id: 'pizzas-sugar-pepperoni', tab: 'pizzas', name: 'Sugar Pepperoni', has: ['sauce tomate', 'sauce barbecue', 'mozzarella', 'pepperoni'], hasNot: ['oignons', 'sauce basilic'] },
+  { id: 'pizzas-sugar-pepperoni', tab: 'pizzas', name: 'Sugar Pepperoni', has: ['sauce tomate à la barbecue', 'mozzarella', 'pepperoni'], hasNot: ['oignons', 'sauce basilic'] },
   { id: 'pizzas-tartuffe-mafia', tab: 'pizzas', name: 'Tartuffe Mafia', has: ['crème truffée', 'champignons', 'stracciatella', 'tomates cerises', 'copeaux de parmesan', 'sauce basilic', 'crème balsamique'], hasNot: ['mozzarella', 'sauce tomate'] },
   { id: 'pizzas-tutti-formaggi', tab: 'pizzas', name: 'Tutti Formaggi', has: ['sauce tomate', 'mozzarella', 'chèvre', 'gorgonzola', 'copeaux de parmesan'], hasNot: ['viande', 'champignons'] },
   { id: 'pizzas-vieille-fermiere', tab: 'pizzas', name: 'Vieille Fermière', has: ['base crème', 'mozzarella', 'poulet', 'champignons', 'oignons confits'], hasNot: ['sauce tomate'] },
@@ -116,6 +116,16 @@ for (const dish of dishes) {
     else await expect(card.locator('.dish-title > span')).toHaveText(`${price}€`);
   });
 }
+
+test('les burgers sont servis avec des frites et les panuozzos avec une salade', async ({ page }) => {
+  await page.goto('/#carte');
+  await expect(page.locator('.dish-card[data-open="burger-classic-smash"] .dish-served')).toHaveText('Servi avec des frites');
+  await expect(page.locator('.dish-card[data-open^="burger-"] .dish-served')).toHaveCount(8);
+  await page.locator('#tab-panuozzo').click();
+  await expect(page.locator('.dish-card[data-open^="panuozzo-"] .dish-served')).toHaveCount(3);
+  await page.locator('.dish-card[data-open="panuozzo-verde"]').click();
+  await expect(page.getByRole('dialog').locator('.dialog-served')).toHaveText('Servi avec une salade');
+});
 
 test('les prix de Bilal et les suppléments des smash burgers s’affichent', async ({ page }) => {
   await page.goto('/#carte');

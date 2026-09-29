@@ -103,6 +103,8 @@ h1 .italic{font-family:Fraunces,serif;font-style:italic;font-size:1.05em;font-we
 .dish-title>span{font-family:Fraunces,serif;font-size:26px;font-weight:500;white-space:nowrap;line-height:1}
 .dish-title small{font-family:Satoshi,sans-serif;font-size:12px;margin-left:3px}
 .dish-card>p{font-size:14px;line-height:1.75;color:#625b61;margin-top:10px}
+.dish-served{display:inline-block;margin-top:10px;font-size:11px;font-weight:650;letter-spacing:1.2px;text-transform:uppercase;color:var(--jade)}
+.dish-served+.dish-extra{margin-top:6px}
 .dish-extra{display:block;font-size:13px;margin-top:10px;color:var(--green)}
 .menu-service{display:flex;justify-content:space-between;gap:20px;border-top:1px solid #150b1925;margin-top:35px;padding-top:20px;font-size:13px;color:#625b61;line-height:1.6}
 .menu-service a{white-space:nowrap;color:var(--ink);border-bottom:1px solid #150b1940}
@@ -199,6 +201,7 @@ footer>span{color:#625b61}
 .dialog-copy h2{font-size:39px;margin-top:25px;line-height:1.1}
 .dialog-price{font-family:Fraunces,serif;font-size:35px;font-weight:400;margin:18px 0}
 .dialog-copy>p:not(.eyebrow){font-size:16px;line-height:1.8;color:#625b61}
+.dialog-copy .dialog-served{margin-top:12px;font-size:12px!important;font-weight:650;letter-spacing:1.2px;text-transform:uppercase;color:var(--green)!important}
 .dialog-copy .dialog-extra{margin-top:14px;color:var(--green)!important}
 .dialog-footer{border-top:1px solid #150b1930;margin-top:auto;padding-top:25px;font-size:13px;line-height:1.8}
 .dialog-allergens{margin:22px 0 26px}
