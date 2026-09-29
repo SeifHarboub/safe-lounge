@@ -796,7 +796,7 @@
       {
         "id": "dessert-fondant-chocolat",
         "name": "Fondant au chocolat",
-        "description": "L’indémodable mi-cuit au chocolat de la maison.",
+        "description": "Fondant mi-cuit au chocolat.",
         "extra": "Boule de glace vanille +2 €",
         "price": 7,
         "image": "/assets/menu-v2/dessert-fondant-chocolat.webp",
@@ -810,7 +810,7 @@
       {
         "id": "dessert-tiramisu-coffee",
         "name": "Original Tiramisu Coffee",
-        "description": "Le tiramisu originel qui respecte la tradition : mascarpone, biscuits imbibés de café et cacao.",
+        "description": "Mascarpone, biscuits cuillères imbibés de café et cacao.",
         "extra": "",
         "price": 8,
         "image": "/assets/menu-v2/dessert-tiramisu-coffee.webp",
@@ -824,7 +824,7 @@
       {
         "id": "dessert-tiramisu-nutella-speculoos",
         "name": "Tiramisu Nutella-Spéculoos",
-        "description": "Pour les plus gourmands : mascarpone, Nutella et spéculoos.",
+        "description": "Mascarpone, biscuits cuillères, Nutella et spéculoos.",
         "extra": "",
         "price": 9,
         "image": "/assets/menu-v2/dessert-tiramisu-nutella-speculoos.webp",
@@ -840,7 +840,7 @@
       {
         "id": "dessert-tiramisu-pistachio",
         "name": "Tiramisu Pistachio",
-        "description": "Le bonheur à l’état pur : mascarpone et crème de pistache.",
+        "description": "Mascarpone, biscuits cuillères et crème de pistache.",
         "extra": "",
         "price": 9,
         "image": "/assets/menu-v2/dessert-tiramisu-pistachio.webp",
@@ -855,7 +855,7 @@
       {
         "id": "dessert-bowl-fruits",
         "name": "Bowl de fruits",
-        "description": "Fruits frais de saison, pause fraîcheur garantie.",
+        "description": "Fruits frais de saison.",
         "extra": "",
         "price": 10,
         "image": "/assets/menu-v2/dessert-bowl-fruits.webp",
@@ -865,7 +865,7 @@
       {
         "id": "dessert-brioche-perdue",
         "name": "Brioche perdue",
-        "description": "Deux tranches de brioche dorées façon pain perdu, légèrement superposées, avec leur topping au choix : Nutella, spéculoos, crème Bueno ou caramel beurre salé.",
+        "description": "Brioche façon pain perdu, topping au choix : Nutella, spéculoos, crème Bueno ou caramel beurre salé.",
         "extra": "Topping supplémentaire +2 €",
         "price": 11,
         "image": "/assets/menu-v2/dessert-brioche-perdue.webp",
@@ -1070,7 +1070,7 @@
       {
         "id": "chaud-expresso-leggero",
         "name": "Expresso Leggero",
-        "description": "Un expresso au profil doux et léger.",
+        "description": "Expresso, profil doux.",
         "extra": "",
         "price": 3,
         "image": "/assets/menu-v2/chaud-expresso.webp",
@@ -1080,7 +1080,7 @@
       {
         "id": "chaud-expresso-forte",
         "name": "Expresso Forte",
-        "description": "Un expresso au profil corsé et intense.",
+        "description": "Expresso, profil corsé.",
         "extra": "",
         "price": 3,
         "image": "/assets/menu-v2/chaud-expresso.webp",
@@ -1090,7 +1090,7 @@
       {
         "id": "chaud-expresso-caramello",
         "name": "Expresso Caramello",
-        "description": "Un expresso aux notes aromatiques de caramel.",
+        "description": "Expresso aux notes de caramel.",
         "extra": "",
         "price": 4,
         "image": "/assets/menu-v2/chaud-expresso.webp",
@@ -1100,7 +1100,7 @@
       {
         "id": "chaud-expresso-nocciola",
         "name": "Expresso Nocciola",
-        "description": "Un expresso aux notes aromatiques de noisette.",
+        "description": "Expresso aux notes de noisette.",
         "extra": "",
         "price": 4,
         "image": "/assets/menu-v2/chaud-expresso-nocciola.webp",
@@ -1110,7 +1110,7 @@
       {
         "id": "chaud-cafe-au-lait",
         "name": "Café au lait",
-        "description": "Expresso allongé de lait chaud.",
+        "description": "Expresso et lait chaud.",
         "extra": "",
         "price": 5,
         "image": "/assets/menu-v2/chaud-cafe-au-lait.webp",
@@ -1122,7 +1122,7 @@
       {
         "id": "chaud-chocolat-chaud",
         "name": "Chocolat chaud",
-        "description": "Chocolat chaud onctueux.",
+        "description": "Chocolat et lait chaud.",
         "extra": "",
         "price": 5,
         "image": "/assets/menu-v2/chaud-chocolat-chaud.webp",
@@ -1134,7 +1134,7 @@
       {
         "id": "chaud-the",
         "name": "Thé",
-        "description": "Thé servi chaud.",
+        "description": "Thé chaud.",
         "extra": "",
         "price": 5,
         "image": "/assets/menu-v2/chaud-the.webp",
