@@ -1,11 +1,15 @@
+import { readFileSync } from 'node:fs';
 import { expect, test } from '@playwright/test';
 
+const menuData: { items: { id: string; price: number | null; allergens: string[] }[] }[] = JSON.parse(readFileSync(new URL('../src/menu.json', import.meta.url), 'utf8'));
+const menuDish = (id: string) => menuData.flatMap(category => category.items).find(item => item.id === id)!;
+
 const categoryLabels = [
-  'Burgers', 'Panuozzos', 'Pizzas', 'Pâtes', 'Tiramisus',
+  'Burgers', 'Panuozzos', 'Pizzas', 'Pâtes', 'Salades', 'Tiramisus',
   'Mocktails', 'Milkshakes', 'Iced lattes', 'Frappuccinos',
 ];
 
-test('la nouvelle carte affiche les neuf catégories dans le bon ordre', async ({ page }) => {
+test('la nouvelle carte affiche les dix catégories dans le bon ordre', async ({ page }) => {
   await page.goto('/#carte');
   const tabs = page.locator('#categories > button');
   await expect(tabs).toHaveCount(categoryLabels.length);
@@ -67,6 +71,8 @@ const dishes: { id: string; tab?: string; name: string; has: string[]; hasNot?: 
   { id: 'iced-latte-caramello', tab: 'iced-latte', name: 'Iced Caramello', has: ['sirop de vanille', 'café Caramello', 'lait entier', 'glaçons', 'chantilly', 'coulis caramel'] },
   { id: 'iced-latte-coffee-latte', tab: 'iced-latte', name: 'Iced Coffee Latte', has: ['sirop de sucre', 'Espresso Forte', 'lait entier', 'glaçons', 'chantilly'], hasNot: ['caramel', 'cacao'] },
   { id: 'iced-latte-nocciola', tab: 'iced-latte', name: 'Iced Nocciola', has: ['coulis chocolat', 'café Nocciola', 'lait entier', 'glaçons', 'chantilly'], hasNot: ['caramel', 'vanille'] },
+  { id: 'salade-original-burrata', tab: 'salade', name: 'Original Burrata', has: ['burrata', 'olives de Ligurie', 'tomates cerises', 'sauce basilic', 'crème balsamique'], hasNot: ['poulet'] },
+  { id: 'salade-cesar', tab: 'salade', name: 'César', has: ['salade', 'tomates cerises', 'poulet', 'croûtons', 'sauce César'], hasNot: ['burrata'] },
   { id: 'tiramisu-cafe', tab: 'tiramisu', name: 'Tiramisu Café', has: ['mascarpone', 'biscuits cuillères', 'imbibés de café', 'cacao'], hasNot: ['Nutella', 'pistache'] },
   { id: 'tiramisu-nutella', tab: 'tiramisu', name: 'Tiramisu Nutella', has: ['mascarpone', 'imbibés de Nutella', 'cacao'], hasNot: ['pistache', 'spéculoos'] },
   { id: 'tiramisu-speculoos', tab: 'tiramisu', name: 'Tiramisu Spéculoos', has: ['mascarpone', 'imbibés de spéculoos', 'cacao'], hasNot: ['Nutella', 'pistache'] },
@@ -74,17 +80,45 @@ const dishes: { id: string; tab?: string; name: string; has: string[]; hasNot?: 
 ];
 
 for (const dish of dishes) {
-  test(`${dish.name} présente ses ingrédients, sans prix inventé`, async ({ page }) => {
+  test(`${dish.name} présente ses ingrédients et le prix de la carte`, async ({ page }) => {
     await page.goto('/#carte');
     if (dish.tab) await page.locator(`#tab-${dish.tab}`).click();
     const card = page.locator(`.dish-card[data-open="${dish.id}"]`);
     await expect(card).toBeVisible();
     await expect(card).toContainText(dish.name);
     for (const ingredient of dish.has) await expect(card).toContainText(ingredient, { ignoreCase: true });
-    for (const ingredient of dish.hasNot ?? []) await expect(card).not.toContainText(ingredient, { ignoreCase: true });
-    await expect(card.locator('.dish-title > span')).toHaveCount(0);
+    for (const ingredient of dish.hasNot ?? []) await expect(card.locator('p')).not.toContainText(ingredient, { ignoreCase: true });
+    const { price } = menuDish(dish.id);
+    if (price === null) await expect(card.locator('.dish-title > span')).toHaveCount(0);
+    else await expect(card.locator('.dish-title > span')).toHaveText(`${price}€`);
   });
 }
+
+test('les prix de Bilal et les suppléments des smash burgers s’affichent', async ({ page }) => {
+  await page.goto('/#carte');
+  await expect(page.locator('.dish-card[data-open="burger-classic-smash"] .dish-title > span')).toHaveText('13€');
+  await expect(page.locator('.dish-card[data-open="burger-classic-smash"]')).toContainText('Bacon de bœuf +2 € · Version XL (triple steak) +3 €');
+  await expect(page.locator('.dish-card[data-open="burger-smokey-beef-bacon"] .dish-title > span')).toHaveText('14€');
+  await page.locator('#tab-pizzas').click();
+  await expect(page.locator('.dish-card[data-open="pizzas-burratella-lov"] .dish-title > span')).toHaveText('16€');
+  await page.locator('#tab-milkshake').click();
+  await expect(page.locator('.dish-card[data-open="milkshake-vanille"] .dish-title > span')).toHaveText('8€');
+  await expect(page.locator('.dish-card[data-open="milkshake-oreo"] .dish-title > span')).toHaveText('9€');
+});
+
+test('chaque fiche détaille ses allergènes', async ({ page }) => {
+  await page.goto('/#carte');
+  await page.locator('.dish-card[data-open="burger-classic-smash"]').click();
+  const dialog = page.getByRole('dialog');
+  await expect(dialog.locator('.dialog-price')).toHaveText('13 €');
+  await expect(dialog.locator('.dialog-allergens li')).toHaveText(['Gluten', 'Œufs', 'Lait', 'Moutarde']);
+  await expect(dialog.locator('.dialog-footer')).toContainText('traces restent possibles');
+  await dialog.locator('.dialog-close').click();
+  await page.locator('#tab-mocktail').click();
+  await page.locator('.dish-card[data-open="mocktail-mojito-fraise"]').click();
+  await expect(dialog.locator('.dialog-allergens')).toContainText('Aucun des 14 allergènes majeurs');
+  for (const category of menuData) for (const item of category.items) expect(Array.isArray(item.allergens), item.id).toBe(true);
+});
 
 test('aucune description ne détaille la recette', async ({ page }) => {
   await page.goto('/#carte');
@@ -172,6 +206,13 @@ test('le lounge présente ses chichas et la chauffe Quasar', async ({ page }) =>
   await expect(lounge.locator('.lounge-picture img')).toHaveAttribute('src', /lounge\/wookah-quasar\.webp$/);
   await expect(lounge.locator('.lounge-tile img')).toHaveCount(2);
   await expect(lounge.locator('.lounge-formula')).toHaveCount(2);
+  await expect(lounge.locator('h2')).not.toContainText('soirée');
+  await expect(lounge.locator('.lounge-intro')).toContainText('dès 15 h');
+  await expect(lounge.locator('.lounge-intro')).not.toContainText('assiette');
+  await expect(lounge.locator('.lounge-formula').nth(0)).toContainText('FORMULE 1');
+  await expect(lounge.locator('.lounge-formula').nth(0)).toContainText('Hookah & Drink');
+  await expect(lounge.locator('.lounge-formula').nth(1)).toContainText('FORMULE 2');
+  await expect(lounge.locator('.lounge-formula').nth(1)).toContainText(/Hookah & Mocktail\s*ou Milkshake/);
 });
 
 test('les infos pratiques donnent adresse, horaires, téléphone et état d’ouverture', async ({ page }) => {

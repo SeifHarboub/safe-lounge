@@ -6,10 +6,10 @@ import { initDish3D } from './dish3d';
 import { asset } from './asset';
 
 gsap.registerPlugin(ScrollTrigger);
-interface Dish { id: string; name: string; description: string; extra: string; price: number | null; image: string | null; sourceImage: string | null }
+interface Dish { id: string; name: string; description: string; extra: string; price: number | null; image: string | null; sourceImage: string | null; allergens: string[] }
 interface Category { id: string; label: string; description: string; source: string; items: Dish[] }
 // Follow a natural meal journey: savoury dishes, dessert, then cold drinks and coffees.
-const DISPLAY_ORDER = ['burger','panuozzo','pizzas','pates','tiramisu','mocktail','milkshake','iced-latte','frappuccino'];
+const DISPLAY_ORDER = ['burger','panuozzo','pizzas','pates','salade','tiramisu','mocktail','milkshake','iced-latte','frappuccino'];
 const menu = (rawMenu as Category[]).slice().sort((a, b) => DISPLAY_ORDER.indexOf(a.id) - DISPLAY_ORDER.indexOf(b.id));
 const allDishes = menu.flatMap(category => category.items.map(dish => ({ ...dish, category: category.id })));
 const $ = <T extends Element = HTMLElement>(selector: string) => document.querySelector<T>(selector)!;
@@ -110,7 +110,7 @@ function openDish(id: string, byPointer = false) {
   const dish = allDishes.find(dish => dish.id === id);
   if (!dish) return;
   const category = menu.find(category => category.id === dish.category)!;
-  $('#dialog-content').innerHTML = `${dish.image ? `<img class="dialog-photo" src="${asset(dish.image)}" alt="${escape(`${dish.name}, ${category.label.toLowerCase()} du Safe Lounge`)}" width="1080" height="1080" />` : `<div class="dialog-photo no-photo"><img src="${asset('/assets/symbol-lilac.svg')}" alt="" /></div>`}<div class="dialog-copy"><p class="eyebrow">${escape(category.label)}</p><h2 id="dialog-title">${escape(dish.name)}</h2>${dish.price === null ? '' : `<strong class="dialog-price">${dish.price} €</strong>`}<p>${escape(dish.description)}</p>${dish.extra ? `<p class="dialog-extra">${escape(dish.extra)}</p>` : ''}<div class="dialog-footer">Une question sur les allergènes ? Notre équipe vous renseigne.</div></div>`;
+  $('#dialog-content').innerHTML = `${dish.image ? `<img class="dialog-photo" src="${asset(dish.image)}" alt="${escape(`${dish.name}, ${category.label.toLowerCase()} du Safe Lounge`)}" width="1080" height="1080" />` : `<div class="dialog-photo no-photo"><img src="${asset('/assets/symbol-lilac.svg')}" alt="" /></div>`}<div class="dialog-copy"><p class="eyebrow">${escape(category.label)}</p><h2 id="dialog-title">${escape(dish.name)}</h2>${dish.price === null ? '' : `<strong class="dialog-price">${dish.price} €</strong>`}<p>${escape(dish.description)}</p>${dish.extra ? `<p class="dialog-extra">${escape(dish.extra)}</p>` : ''}<div class="dialog-allergens"><h3>Allergènes</h3>${dish.allergens.length ? `<ul>${dish.allergens.map(allergen => `<li>${escape(allergen)}</li>`).join('')}</ul>` : '<p>Aucun des 14 allergènes majeurs.</p>'}</div><div class="dialog-footer">D’après nos recettes. Tout est préparé dans la même cuisine : des traces restent possibles. Une allergie ? Signalez-la avant de commander.</div></div>`;
   dialog.showModal(); document.body.classList.add('dialog-open');
   if (canAnimate()) gsap.fromTo(dialog,{opacity:0,y:20,scale:.97},{opacity:1,y:0,scale:1,duration:.3,clearProps:'all'});
 }

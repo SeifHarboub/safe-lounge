@@ -12,7 +12,13 @@
         "extra": "",
         "price": null,
         "image": "/assets/menu-v2/burger-bbq-raclette.webp",
-        "sourceImage": "SAFE_LOUNGE_BBQ_RACLETTE_200G_FRITES_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_BBQ_RACLETTE_200G_FRITES_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Lait",
+          "Moutarde"
+        ]
       },
       {
         "id": "burger-chicken-biggie",
@@ -21,7 +27,13 @@
         "extra": "",
         "price": null,
         "image": "/assets/menu-v2/burger-chicken-biggie.webp",
-        "sourceImage": "SAFE_LOUNGE_CHICKEN_BIGGIE_200G_FRITES_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_CHICKEN_BIGGIE_200G_FRITES_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Lait",
+          "Moutarde"
+        ]
       },
       {
         "id": "burger-chicken-creamy",
@@ -30,7 +42,13 @@
         "extra": "",
         "price": null,
         "image": "/assets/menu-v2/burger-chicken-creamy.webp",
-        "sourceImage": "SAFE_LOUNGE_CREAMY_200G_FRITES_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_CREAMY_200G_FRITES_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Lait",
+          "Moutarde"
+        ]
       },
       {
         "id": "burger-smokey-bacon",
@@ -39,43 +57,73 @@
         "extra": "",
         "price": null,
         "image": "/assets/menu-v2/burger-smokey-bacon.webp",
-        "sourceImage": "SAFE_LOUNGE_SMOKEY_BACON_FINAL_200G_FRITES_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_SMOKEY_BACON_FINAL_200G_FRITES_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Lait",
+          "Moutarde"
+        ]
       },
       {
         "id": "burger-classic-smash",
         "name": "Classic Smash",
         "description": "Potato bun moelleux, deux steaks smash, double cheddar fondu, ketchup, moutarde et salade iceberg.",
-        "extra": "",
-        "price": null,
+        "extra": "Bacon de bœuf +2 € · Version XL (triple steak) +3 €",
+        "price": 13,
         "image": "/assets/menu-v2/burger-classic-smash.webp",
-        "sourceImage": "SAFE_LOUNGE_CLASSIC_SMASH_200G_FRITES_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_CLASSIC_SMASH_200G_FRITES_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Lait",
+          "Moutarde"
+        ]
       },
       {
         "id": "burger-smokey-beef-bacon",
         "name": "Smokey Beef Bacon",
         "description": "Potato bun moelleux, deux steaks smash, bacon de bœuf snacké, double cheddar fondu, sauce Smoked Beef et salade iceberg.",
-        "extra": "",
-        "price": null,
+        "extra": "Version XL (triple steak) +3 €",
+        "price": 14,
         "image": "/assets/menu-v2/burger-smokey-beef-bacon.webp",
-        "sourceImage": "SAFE_LOUNGE_SMOKEY_BEEF_BACON_200G_FRITES_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_SMOKEY_BEEF_BACON_200G_FRITES_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Lait",
+          "Moutarde"
+        ]
       },
       {
         "id": "burger-original-smash",
         "name": "Original Smash",
         "description": "Potato bun moelleux, deux steaks smash, double cheddar fondu, sauce Original Smash et salade iceberg.",
-        "extra": "",
-        "price": null,
+        "extra": "Bacon de bœuf +2 € · Version XL (triple steak) +3 €",
+        "price": 13,
         "image": "/assets/menu-v2/burger-original-smash.webp",
-        "sourceImage": "SAFE_LOUNGE_ORIGINAL_SMASH_200G_FRITES_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_ORIGINAL_SMASH_200G_FRITES_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Lait",
+          "Moutarde"
+        ]
       },
       {
         "id": "burger-biggie-smash",
         "name": "Biggie Smash",
         "description": "Potato bun moelleux, deux steaks smash, double cheddar fondu, sauce classic burger et salade iceberg.",
-        "extra": "",
-        "price": null,
+        "extra": "Bacon de bœuf +2 € · Version XL (triple steak) +3 €",
+        "price": 13,
         "image": "/assets/menu-v2/burger-biggie-smash.webp",
-        "sourceImage": "SAFE_LOUNGE_BIGGIE_SMASH_200G_FRITES_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_BIGGIE_SMASH_200G_FRITES_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Lait",
+          "Moutarde"
+        ]
       }
     ]
   },
@@ -90,27 +138,37 @@
         "name": "Caramello",
         "description": "Espresso Caramello, lait entier, sirop vanille, glace vanille, glaçons, chantilly et coulis caramel.",
         "extra": "",
-        "price": null,
+        "price": 9,
         "image": "/assets/menu-v2/frappuccino-caramello.webp",
-        "sourceImage": "SAFE_LOUNGE_FRAPPUCCINO_CARAMELLO_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_FRAPPUCCINO_CARAMELLO_A4.pdf",
+        "allergens": [
+          "Lait"
+        ]
       },
       {
         "id": "frappuccino-coffee-latte",
         "name": "Coffee Latte",
         "description": "Espresso Forte, lait entier, sirop de sucre, glace vanille, glaçons et chantilly.",
         "extra": "",
-        "price": null,
+        "price": 8,
         "image": "/assets/menu-v2/frappuccino-coffee-latte.webp",
-        "sourceImage": "SAFE_LOUNGE_FRAPPUCCINO_COFFEE_LATTE_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_FRAPPUCCINO_COFFEE_LATTE_A4.pdf",
+        "allergens": [
+          "Lait"
+        ]
       },
       {
         "id": "frappuccino-nocciola",
         "name": "Nocciola",
         "description": "Café Nocciola, lait entier, coulis chocolat, glace vanille, glaçons et chantilly, avec un filet de chocolat.",
         "extra": "",
-        "price": null,
+        "price": 9,
         "image": "/assets/menu-v2/frappuccino-nocciola.webp",
-        "sourceImage": "SAFE_LOUNGE_FRAPPUCCINO_NOCCIOLA_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_FRAPPUCCINO_NOCCIOLA_A4.pdf",
+        "allergens": [
+          "Soja",
+          "Lait"
+        ]
       }
     ]
   },
@@ -125,27 +183,37 @@
         "name": "Iced Caramello",
         "description": "Sirop de vanille, café Caramello, lait entier, glaçons, chantilly et coulis caramel.",
         "extra": "",
-        "price": null,
+        "price": 7,
         "image": "/assets/menu-v2/iced-latte-caramello.webp",
-        "sourceImage": "SAFE_LOUNGE_ICED_CARAMELLO_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_ICED_CARAMELLO_A4.pdf",
+        "allergens": [
+          "Lait"
+        ]
       },
       {
         "id": "iced-latte-coffee-latte",
         "name": "Iced Coffee Latte",
         "description": "Sirop de sucre, Espresso Forte, lait entier, glaçons et chantilly.",
         "extra": "",
-        "price": null,
+        "price": 6,
         "image": "/assets/menu-v2/iced-latte-coffee-latte.webp",
-        "sourceImage": "SAFE_LOUNGE_ICED_COFFEE_LATTE_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_ICED_COFFEE_LATTE_A4.pdf",
+        "allergens": [
+          "Lait"
+        ]
       },
       {
         "id": "iced-latte-nocciola",
         "name": "Iced Nocciola",
         "description": "Coulis chocolat, café Nocciola, lait entier, glaçons, chantilly et filet de coulis chocolat.",
         "extra": "",
-        "price": null,
+        "price": 7,
         "image": "/assets/menu-v2/iced-latte-nocciola.webp",
-        "sourceImage": "SAFE_LOUNGE_ICED_NOCCIOLA_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_ICED_NOCCIOLA_A4.pdf",
+        "allergens": [
+          "Soja",
+          "Lait"
+        ]
       }
     ]
   },
@@ -160,54 +228,84 @@
         "name": "Bueno",
         "description": "Glace vanille, lait et Kinder Bueno mixé, avec chantilly et une demi-barre de Bueno.",
         "extra": "",
-        "price": null,
+        "price": 9,
         "image": "/assets/menu-v2/milkshake-bueno.webp",
-        "sourceImage": "SAFE_LOUNGE_MILKSHAKE_BUENO_FINAL_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_MILKSHAKE_BUENO_FINAL_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Soja",
+          "Lait",
+          "Fruits à coque"
+        ]
       },
       {
         "id": "milkshake-cookies",
         "name": "Cookies",
         "description": "Glace vanille, lait et cookies aux pépites de chocolat mixés, avec chantilly et un demi-cookie.",
         "extra": "",
-        "price": null,
+        "price": 9,
         "image": "/assets/menu-v2/milkshake-cookies.webp",
-        "sourceImage": "SAFE_LOUNGE_MILKSHAKE_COOKIES_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_MILKSHAKE_COOKIES_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Soja",
+          "Lait"
+        ]
       },
       {
         "id": "milkshake-oreo",
         "name": "Oreo",
         "description": "Glace vanille, lait et biscuits Oreo mixés, avec chantilly et un biscuit Oreo.",
         "extra": "",
-        "price": null,
+        "price": 9,
         "image": "/assets/menu-v2/milkshake-oreo.webp",
-        "sourceImage": "SAFE_LOUNGE_MILKSHAKE_OREO_FINAL_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_MILKSHAKE_OREO_FINAL_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Soja",
+          "Lait"
+        ]
       },
       {
         "id": "milkshake-petit-beurre",
         "name": "Petit Beurre",
         "description": "Glace vanille, lait et biscuits Petit Beurre mixés, avec chantilly et un demi-biscuit Petit Beurre.",
         "extra": "",
-        "price": null,
+        "price": 9,
         "image": "/assets/menu-v2/milkshake-petit-beurre.webp",
-        "sourceImage": "SAFE_LOUNGE_MILKSHAKE_PETIT_BEURRE_FINAL_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_MILKSHAKE_PETIT_BEURRE_FINAL_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Lait"
+        ]
       },
       {
         "id": "milkshake-speculoos",
         "name": "Spéculoos",
         "description": "Glace vanille, lait et biscuits Spéculoos mixés, avec chantilly et un demi-biscuit Spéculoos.",
         "extra": "",
-        "price": null,
+        "price": 9,
         "image": "/assets/menu-v2/milkshake-speculoos.webp",
-        "sourceImage": "SAFE_LOUNGE_MILKSHAKE_SPECULOOS_CORRIGE_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_MILKSHAKE_SPECULOOS_CORRIGE_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Soja",
+          "Lait"
+        ]
       },
       {
         "id": "milkshake-vanille",
         "name": "Vanille",
         "description": "Glace vanille, lait et chantilly.",
         "extra": "",
-        "price": null,
+        "price": 8,
         "image": "/assets/menu-v2/milkshake-vanille.webp",
-        "sourceImage": "SAFE_LOUNGE_MILKSHAKE_VANILLE_4_ETAPES_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_MILKSHAKE_VANILLE_4_ETAPES_A4.pdf",
+        "allergens": [
+          "Lait"
+        ]
       }
     ]
   },
@@ -224,7 +322,8 @@
         "extra": "",
         "price": null,
         "image": "/assets/menu-v2/mocktail-amor-amor.webp",
-        "sourceImage": "SAFE_LOUNGE_MOCKTAIL_AMOR_AMOR_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_MOCKTAIL_AMOR_AMOR_A4.pdf",
+        "allergens": []
       },
       {
         "id": "mocktail-coco-loco",
@@ -233,7 +332,8 @@
         "extra": "",
         "price": null,
         "image": "/assets/menu-v2/mocktail-coco-loco.webp",
-        "sourceImage": "SAFE_LOUNGE_MOCKTAIL_COCO_LOCO_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_MOCKTAIL_COCO_LOCO_A4.pdf",
+        "allergens": []
       },
       {
         "id": "mocktail-mojito-framboise",
@@ -242,7 +342,8 @@
         "extra": "",
         "price": null,
         "image": "/assets/menu-v2/mocktail-mojito-framboise.webp",
-        "sourceImage": "SAFE_LOUNGE_MOCKTAIL_MOJITO_FRAMBOISE_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_MOCKTAIL_MOJITO_FRAMBOISE_A4.pdf",
+        "allergens": []
       },
       {
         "id": "mocktail-mojito-fraise",
@@ -251,7 +352,8 @@
         "extra": "",
         "price": null,
         "image": "/assets/menu-v2/mocktail-mojito-fraise.webp",
-        "sourceImage": "SAFE_LOUNGE_MOCKTAIL_MOJITO_FRAISE_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_MOCKTAIL_MOJITO_FRAISE_A4.pdf",
+        "allergens": []
       },
       {
         "id": "mocktail-passion-fruit-lemonade",
@@ -260,7 +362,8 @@
         "extra": "",
         "price": null,
         "image": "/assets/menu-v2/mocktail-passion-fruit-lemonade.webp",
-        "sourceImage": "SAFE_LOUNGE_MOCKTAIL_PASSION_FRUIT_LEMONADE_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_MOCKTAIL_PASSION_FRUIT_LEMONADE_A4.pdf",
+        "allergens": []
       }
     ]
   },
@@ -277,7 +380,11 @@
         "extra": "",
         "price": null,
         "image": "/assets/menu-v2/panuozzo-rosso.webp",
-        "sourceImage": "SAFE_LOUNGE_PANUOZZO_ROSSO_A4 (1).pdf"
+        "sourceImage": "SAFE_LOUNGE_PANUOZZO_ROSSO_A4 (1).pdf",
+        "allergens": [
+          "Gluten",
+          "Lait"
+        ]
       },
       {
         "id": "panuozzo-tartufo",
@@ -286,7 +393,11 @@
         "extra": "",
         "price": null,
         "image": "/assets/menu-v2/panuozzo-tartufo.webp",
-        "sourceImage": "SAFE_LOUNGE_PANUOZZO_TARTUFO_A4 (1).pdf"
+        "sourceImage": "SAFE_LOUNGE_PANUOZZO_TARTUFO_A4 (1).pdf",
+        "allergens": [
+          "Gluten",
+          "Lait"
+        ]
       },
       {
         "id": "panuozzo-verde",
@@ -295,7 +406,13 @@
         "extra": "",
         "price": null,
         "image": "/assets/menu-v2/panuozzo-verde.webp",
-        "sourceImage": "SAFE_LOUNGE_PANUOZZO_VERDE_A4 (1).pdf"
+        "sourceImage": "SAFE_LOUNGE_PANUOZZO_VERDE_A4 (1).pdf",
+        "allergens": [
+          "Gluten",
+          "Lait",
+          "Fruits à coque",
+          "Sulfites"
+        ]
       }
     ]
   },
@@ -310,18 +427,29 @@
         "name": "Spaghetti Sicilienne",
         "description": "Spaghetti à la sauce tomate, thon, olives et parmesan, avec une tomate cerise.",
         "extra": "",
-        "price": null,
+        "price": 13,
         "image": "/assets/menu-v2/pates-spaghetti-sicilienne.webp",
-        "sourceImage": "SAFE_LOUNGE_SPAGHETTI_SICILIENNE_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_SPAGHETTI_SICILIENNE_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Poissons",
+          "Lait"
+        ]
       },
       {
         "id": "pates-rigatoni-tartufo",
         "name": "Rigatoni Tartufo",
         "description": "Rigatoni dans une sauce crémeuse à la truffe, champignons et parmesan, avec copeaux de parmesan et tomate cerise.",
         "extra": "",
-        "price": null,
+        "price": 13,
         "image": "/assets/menu-v2/pates-rigatoni-tartufo.webp",
-        "sourceImage": "SAFE_LOUNGE_RIGATONI_TARTUFO_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_RIGATONI_TARTUFO_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Lait"
+        ]
       },
       {
         "id": "pates-spaghetti-merguez",
@@ -330,43 +458,68 @@
         "extra": "",
         "price": null,
         "image": "/assets/menu-v2/pates-spaghetti-merguez.webp",
-        "sourceImage": "SAFE_LOUNGE_SPAGHETTI_MERGUEZ_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_SPAGHETTI_MERGUEZ_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Lait"
+        ]
       },
       {
         "id": "pates-spaghetti-formaggi",
         "name": "Spaghetti Formaggi",
         "description": "Spaghetti dans une sauce crémeuse au gorgonzola, avec copeaux de parmesan et tomate cerise.",
         "extra": "",
-        "price": null,
+        "price": 12,
         "image": "/assets/menu-v2/pates-spaghetti-formaggi.webp",
-        "sourceImage": "SAFE_LOUNGE_SPAGHETTI_FORMAGGI_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_SPAGHETTI_FORMAGGI_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Lait"
+        ]
       },
       {
         "id": "pates-penne-arrabiata",
         "name": "Penne Arrabbiata",
         "description": "Penne à la sauce tomate relevée à l’huile piquante, avec une tomate cerise.",
         "extra": "",
-        "price": null,
+        "price": 11,
         "image": "/assets/menu-v2/pates-penne-arrabiata.webp",
-        "sourceImage": "SAFE_LOUNGE_PENNES_ARRABIATA_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_PENNES_ARRABIATA_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Œufs"
+        ]
       },
       {
         "id": "pates-penne-forestiere",
         "name": "Penne Forestière",
         "description": "Penne au poulet et aux champignons, sauce crémeuse au parmesan, avec une tomate cerise.",
         "extra": "",
-        "price": null,
+        "price": 14,
         "image": "/assets/menu-v2/pates-penne-forestiere.webp",
-        "sourceImage": "SAFE_LOUNGE_PENNES_FORESTIERE_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_PENNES_FORESTIERE_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Lait"
+        ]
       },
       {
         "id": "pates-penne-saumon",
         "name": "Penne Saumon",
         "description": "Penne au saumon, sauce tomate crémeuse au parmesan, avec une tomate cerise.",
         "extra": "",
-        "price": null,
+        "price": 15,
         "image": "/assets/menu-v2/pates-penne-saumon.webp",
-        "sourceImage": "SAFE_LOUNGE_PENNES_SAUMON_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_PENNES_SAUMON_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Poissons",
+          "Lait"
+        ]
       }
     ]
   },
@@ -381,99 +534,156 @@
         "name": "Bollywood Style",
         "description": "Sauce curry, crème, mozzarella, poulet, oignons confits, tomates cerises, sauce basilic et crème balsamique.",
         "extra": "",
-        "price": null,
+        "price": 15,
         "image": "/assets/menu-v2/pizzas-bollywood-style.webp",
-        "sourceImage": "SAFE_LOUNGE_PIZZA_BOLLYWOOD_STYLE_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_PIZZA_BOLLYWOOD_STYLE_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Lait",
+          "Fruits à coque",
+          "Sulfites"
+        ]
       },
       {
         "id": "pizzas-burratella-lov",
         "name": "Burratella Lov’",
         "description": "Sauce tomate, mozzarella, stracciatella, jambon cru, copeaux de parmesan, tomates cerises, sauce basilic et crème balsamique.",
         "extra": "",
-        "price": null,
+        "price": 16,
         "image": "/assets/menu-v2/pizzas-burratella-lov.webp",
-        "sourceImage": "SAFE_LOUNGE_PIZZA_BURRATELLA_LOV_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_PIZZA_BURRATELLA_LOV_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Lait",
+          "Fruits à coque",
+          "Sulfites"
+        ]
       },
       {
         "id": "pizzas-classica-queen",
         "name": "Classica Queen",
         "description": "Sauce tomate, mozzarella, champignons et jambon.",
         "extra": "",
-        "price": null,
+        "price": 12,
         "image": "/assets/menu-v2/pizzas-classica-queen.webp",
-        "sourceImage": "SAFE_LOUNGE_PIZZA_CLASSICA_QUEEN_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_PIZZA_CLASSICA_QUEEN_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Lait"
+        ]
       },
       {
         "id": "pizzas-malaga",
         "name": "Malaga",
         "description": "Sauce tomate, mozzarella, merguez, œuf, jambon cru et sauce basilic.",
         "extra": "",
-        "price": null,
+        "price": 15,
         "image": "/assets/menu-v2/pizzas-malaga.webp",
-        "sourceImage": "SAFE_LOUNGE_PIZZA_MALAGA_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_PIZZA_MALAGA_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Lait",
+          "Fruits à coque"
+        ]
       },
       {
         "id": "pizzas-marmithon",
         "name": "Marmithon",
         "description": "Sauce tomate, mozzarella, thon, olives, oignons confits et sauce basilic.",
         "extra": "",
-        "price": null,
+        "price": 13,
         "image": "/assets/menu-v2/pizzas-marmithon.webp",
-        "sourceImage": "SAFE_LOUNGE_PIZZA_MARMITHON_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_PIZZA_MARMITHON_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Poissons",
+          "Lait",
+          "Fruits à coque"
+        ]
       },
       {
         "id": "pizzas-paysanne",
         "name": "Paysanne",
         "description": "Base crème, mozzarella, lardons, pommes de terre, oignons confits et sauce persillade.",
         "extra": "",
-        "price": null,
+        "price": 13,
         "image": "/assets/menu-v2/pizzas-paysanne.webp",
-        "sourceImage": "SAFE_LOUNGE_PIZZA_PAYSANNE_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_PIZZA_PAYSANNE_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Lait"
+        ]
       },
       {
         "id": "pizzas-pizz-arabia",
         "name": "Pizz’Arabia",
         "description": "Sauce tomate, mozzarella, merguez, poivrons rouges et verts, œuf et oignons confits.",
         "extra": "",
-        "price": null,
+        "price": 14,
         "image": "/assets/menu-v2/pizzas-pizz-arabia.webp",
-        "sourceImage": "SAFE_LOUNGE_PIZZA_PIZZ_ARABIA_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_PIZZA_PIZZ_ARABIA_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Lait"
+        ]
       },
       {
         "id": "pizzas-ranch",
         "name": "Ranch’",
         "description": "Sauce barbecue, mozzarella, poivrons rouges et verts, poulet, chorizo, crème, oignons confits et cheddar.",
         "extra": "",
-        "price": null,
+        "price": 15,
         "image": "/assets/menu-v2/pizzas-ranch.webp",
-        "sourceImage": "SAFE_LOUNGE_PIZZA_RANCH_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_PIZZA_RANCH_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Lait",
+          "Moutarde"
+        ]
       },
       {
         "id": "pizzas-rosalia",
         "name": "Rosalia",
         "description": "Sauce tomate, mozzarella, champignons, poulet, merguez artisanale et crème.",
         "extra": "",
-        "price": null,
+        "price": 15,
         "image": "/assets/menu-v2/pizzas-rosalia.webp",
-        "sourceImage": "SAFE_LOUNGE_PIZZA_ROSALIA_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_PIZZA_ROSALIA_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Lait"
+        ]
       },
       {
         "id": "pizzas-sugar-pepperoni",
         "name": "Sugar Pepperoni",
         "description": "Sauce tomate, sauce barbecue, mozzarella et pepperoni.",
         "extra": "",
-        "price": null,
+        "price": 12,
         "image": "/assets/menu-v2/pizzas-sugar-pepperoni.webp",
-        "sourceImage": "SAFE_LOUNGE_PIZZA_SUGAR_PEPPERONI_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_PIZZA_SUGAR_PEPPERONI_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Lait",
+          "Moutarde"
+        ]
       },
       {
         "id": "pizzas-tartuffe-mafia",
         "name": "Tartuffe Mafia",
         "description": "Crème truffée, champignons, stracciatella, tomates cerises, copeaux de parmesan, sauce basilic et crème balsamique.",
         "extra": "",
-        "price": null,
+        "price": 15,
         "image": "/assets/menu-v2/pizzas-tartuffe-mafia.webp",
-        "sourceImage": "SAFE_LOUNGE_PIZZA_TARTUFFE_MAFIA_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_PIZZA_TARTUFFE_MAFIA_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Lait",
+          "Fruits à coque",
+          "Sulfites"
+        ]
       },
       {
         "id": "pizzas-tic-et-tac",
@@ -482,34 +692,91 @@
         "extra": "",
         "price": null,
         "image": "/assets/menu-v2/pizzas-tic-et-tac.webp",
-        "sourceImage": "SAFE_LOUNGE_PIZZA_TIC_ET_TAC_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_PIZZA_TIC_ET_TAC_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Lait",
+          "Fruits à coque"
+        ]
       },
       {
         "id": "pizzas-tutti-formaggi",
         "name": "Tutti Formaggi",
         "description": "Sauce tomate, mozzarella, chèvre, gorgonzola et copeaux de parmesan.",
         "extra": "",
-        "price": null,
+        "price": 14,
         "image": "/assets/menu-v2/pizzas-tutti-formaggi.webp",
-        "sourceImage": "SAFE_LOUNGE_PIZZA_TUTTI_FORMAGGI_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_PIZZA_TUTTI_FORMAGGI_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Lait"
+        ]
       },
       {
         "id": "pizzas-vieille-fermiere",
         "name": "Vieille Fermière",
         "description": "Base crème, mozzarella, poulet, champignons et oignons confits.",
         "extra": "",
-        "price": null,
+        "price": 14,
         "image": "/assets/menu-v2/pizzas-vieille-fermiere.webp",
-        "sourceImage": "SAFE_LOUNGE_PIZZA_VIEILLE_FERMIERE_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_PIZZA_VIEILLE_FERMIERE_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Lait"
+        ]
       },
       {
         "id": "pizzas-western",
         "name": "Western",
         "description": "Sauce moutarde, mozzarella, poulet rôti, crème, oignons confits et sauce persillade.",
         "extra": "",
-        "price": null,
+        "price": 14,
         "image": "/assets/menu-v2/pizzas-western.webp",
-        "sourceImage": "SAFE_LOUNGE_PIZZA_WESTERN_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_PIZZA_WESTERN_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Lait",
+          "Moutarde"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "salade",
+    "label": "Salades",
+    "description": "",
+    "source": "",
+    "items": [
+      {
+        "id": "salade-original-burrata",
+        "name": "Original Burrata",
+        "description": "Burrata, olives de Ligurie, tomates cerises, sauce basilic et crème balsamique.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/salade-original-burrata.webp",
+        "sourceImage": "app Safe Lounge (photo client)",
+        "allergens": [
+          "Lait",
+          "Fruits à coque",
+          "Sulfites"
+        ]
+      },
+      {
+        "id": "salade-cesar",
+        "name": "César",
+        "description": "Salade, tomates cerises, poulet, croûtons à l’ail et aux fines herbes, sauce César.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/salade-cesar.webp",
+        "sourceImage": "app Safe Lounge (photo client)",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Poissons",
+          "Lait",
+          "Moutarde",
+          "Sulfites"
+        ]
       }
     ]
   },
@@ -526,7 +793,12 @@
         "extra": "",
         "price": null,
         "image": "/assets/menu-v2/tiramisu-cafe.webp",
-        "sourceImage": "SAFE_LOUNGE_TIRAMISU_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_TIRAMISU_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Lait"
+        ]
       },
       {
         "id": "tiramisu-nutella",
@@ -535,7 +807,14 @@
         "extra": "",
         "price": null,
         "image": "/assets/menu-v2/tiramisu-nutella.webp",
-        "sourceImage": "SAFE_LOUNGE_TIRAMISU_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_TIRAMISU_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Soja",
+          "Lait",
+          "Fruits à coque"
+        ]
       },
       {
         "id": "tiramisu-speculoos",
@@ -544,7 +823,13 @@
         "extra": "",
         "price": null,
         "image": "/assets/menu-v2/tiramisu-speculoos.webp",
-        "sourceImage": "SAFE_LOUNGE_TIRAMISU_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_TIRAMISU_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Soja",
+          "Lait"
+        ]
       },
       {
         "id": "tiramisu-pistache",
@@ -553,7 +838,13 @@
         "extra": "",
         "price": null,
         "image": "/assets/menu-v2/tiramisu-pistache.webp",
-        "sourceImage": "SAFE_LOUNGE_TIRAMISU_A4.pdf"
+        "sourceImage": "SAFE_LOUNGE_TIRAMISU_A4.pdf",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Lait",
+          "Fruits à coque"
+        ]
       }
     ]
   }
