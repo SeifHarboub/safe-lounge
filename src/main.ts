@@ -7,8 +7,9 @@ import { asset } from './asset';
 gsap.registerPlugin(ScrollTrigger);
 interface Dish { id: string; name: string; description: string; extra: string; served?: string; group?: string; price: number | null; image: string | null; sourceImage: string | null; allergens: string[] }
 interface Category { id: string; label: string; description: string; source: string; groups?: string[]; items: Dish[] }
-// Follow a natural meal journey: savoury dishes, dessert, then cold drinks and coffees.
-const DISPLAY_ORDER = ['burger','panuozzo','pizzas','pates','salade','dessert','crepes','boissons-fraiches','boissons-chaudes','mocktail','milkshake','iced-latte','frappuccino'];
+// Follow a meal: salads to start, main dishes, desserts and crêpes, then drinks,
+// from soft drinks to signature drinks, ending with hot drinks as after a meal.
+const DISPLAY_ORDER = ['salade','burger','panuozzo','pizzas','pates','dessert','crepes','boissons-fraiches','mocktail','milkshake','iced-latte','frappuccino','boissons-chaudes'];
 // Within each category, dishes are listed from the cheapest to the dearest; a
 // dish without a price goes last, and equal prices keep the menu's own order.
 const byPrice = (a: Dish, b: Dish) => (a.price ?? Infinity) - (b.price ?? Infinity);

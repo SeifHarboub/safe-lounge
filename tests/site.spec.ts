@@ -5,8 +5,8 @@ const menuData: { items: { id: string; price: number | null; allergens: string[]
 const menuDish = (id: string) => menuData.flatMap(category => category.items).find(item => item.id === id)!;
 
 const categoryLabels = [
-  'Burgers', 'Panuozzos', 'Pizzas', 'Pâtes', 'Salades', 'Desserts', 'Crêpes',
-  'Boissons fraîches', 'Boissons chaudes', 'Mocktails', 'Milkshakes', 'Iced lattes', 'Frappuccinos',
+  'Salades', 'Burgers', 'Panuozzos', 'Pizzas', 'Pâtes', 'Desserts', 'Crêpes',
+  'Boissons fraîches', 'Mocktails', 'Milkshakes', 'Iced lattes', 'Frappuccinos', 'Boissons chaudes',
 ];
 
 test('la nouvelle carte affiche les treize catégories dans le bon ordre', async ({ page }) => {
@@ -16,7 +16,7 @@ test('la nouvelle carte affiche les treize catégories dans le bon ordre', async
   for (let index = 0; index < categoryLabels.length; index += 1) {
     await expect(tabs.nth(index).locator('span').first()).toHaveText(categoryLabels[index]);
   }
-  await expect(tabs.first()).toHaveAttribute('aria-selected', 'true');
+  await expect(page.locator('#tab-burger')).toHaveAttribute('aria-selected', 'true');
 });
 
 // Each dish shows its ingredients as a customer reads them, never the recipe steps.

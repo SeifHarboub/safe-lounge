@@ -74,7 +74,7 @@ y compris le balisage écrit par le script.
 
 Le téléphone est la cible principale. Aucun texte ne descend sous 9 px en dessous de 1024 px, aucun lien ni bouton n’offre moins de 36 px à toucher — les liens de texte gardent leur taille, c’est un pseudo-élément qui élargit la zone tactile —, et rien ne déborde à 360, 390 ni 430 px. Trois tests couvrent ces trois règles.
 
-Les onze catégories de la carte s’affichent en pastilles qui reviennent à la ligne : tout est visible d’un coup, rien n’est coupé et il n’y a pas de défilement horizontal. L’ordre d’affichage place la catégorie sélectionnée par défaut en tête (`DISPLAY_ORDER` dans `src/main.ts`) ; `src/menu.json` conserve l’ordre du site source.
+Les onze catégories de la carte s’affichent en pastilles qui reviennent à la ligne : tout est visible d’un coup, rien n’est coupé et il n’y a pas de défilement horizontal. L’ordre d’affichage suit un repas : salades, plats, desserts et crêpes, puis boissons fraîches, signatures et boissons chaudes (`DISPLAY_ORDER` dans `src/main.ts`) ; les burgers restent ouverts par défaut ; `src/menu.json` conserve l’ordre du site source.
 
 ## Maintenance
 
