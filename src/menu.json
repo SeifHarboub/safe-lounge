@@ -929,7 +929,7 @@
       {
         "id": "crepe-nutella",
         "name": "Crêpe Nutella",
-        "description": "Crêpe chaude généreusement nappée de Nutella.",
+        "description": "Crêpe chaude nappée de Nutella.",
         "extra": "",
         "price": 8,
         "image": "/assets/menu-v2/dessert-crepe-nutella.webp",
