@@ -10,7 +10,7 @@
         "name": "BBQ’ Raclette",
         "description": "Potato bun moelleux, poulet frit croustillant, raclette fondue, sauce BBQ et salade iceberg.",
         "extra": "",
-        "price": null,
+        "price": 14,
         "image": "/assets/menu-v2/burger-bbq-raclette.webp",
         "sourceImage": "SAFE_LOUNGE_BBQ_RACLETTE_200G_FRITES_A4.pdf",
         "allergens": [
@@ -25,7 +25,7 @@
         "name": "Chicken Biggie",
         "description": "Potato bun moelleux, poulet frit croustillant, double cheddar fondu, sauce classic burger et salade iceberg.",
         "extra": "",
-        "price": null,
+        "price": 13,
         "image": "/assets/menu-v2/burger-chicken-biggie.webp",
         "sourceImage": "SAFE_LOUNGE_CHICKEN_BIGGIE_200G_FRITES_A4.pdf",
         "allergens": [
@@ -40,7 +40,7 @@
         "name": "Chicken Creamy",
         "description": "Potato bun moelleux, poulet frit croustillant, double cheddar fondu, mayonnaise et salade iceberg.",
         "extra": "",
-        "price": null,
+        "price": 13,
         "image": "/assets/menu-v2/burger-chicken-creamy.webp",
         "sourceImage": "SAFE_LOUNGE_CREAMY_200G_FRITES_A4.pdf",
         "allergens": [
@@ -55,7 +55,7 @@
         "name": "Smokey Bacon",
         "description": "Potato bun moelleux, poulet frit croustillant, bacon de bœuf snacké, double cheddar fondu, sauce Smokey Baconnaise et salade iceberg.",
         "extra": "",
-        "price": null,
+        "price": 14,
         "image": "/assets/menu-v2/burger-smokey-bacon.webp",
         "sourceImage": "SAFE_LOUNGE_SMOKEY_BACON_FINAL_200G_FRITES_A4.pdf",
         "allergens": [
@@ -316,33 +316,13 @@
     "source": "SAFE_LOUNGE_MOCKTAIL_AMOR_AMOR_A4.pdf",
     "items": [
       {
-        "id": "mocktail-amor-amor",
-        "name": "Amor Amor",
-        "description": "Jus de passion, jus d’ananas, jus de mangue, sirop de vanille, grenadine et glace pilée.",
+        "id": "mocktail-virgin-mojito",
+        "name": "Virgin Mojito",
+        "description": "Menthe fraîche, citron vert, sirop de sucre de canne, Sprite et glace pilée.",
         "extra": "",
-        "price": null,
-        "image": "/assets/menu-v2/mocktail-amor-amor.webp",
-        "sourceImage": "SAFE_LOUNGE_MOCKTAIL_AMOR_AMOR_A4.pdf",
-        "allergens": []
-      },
-      {
-        "id": "mocktail-coco-loco",
-        "name": "Coco Loco",
-        "description": "Jus de piña colada, lait de coco, jus d’ananas, sirop de vanille et glace pilée.",
-        "extra": "",
-        "price": null,
-        "image": "/assets/menu-v2/mocktail-coco-loco.webp",
-        "sourceImage": "SAFE_LOUNGE_MOCKTAIL_COCO_LOCO_A4.pdf",
-        "allergens": []
-      },
-      {
-        "id": "mocktail-mojito-framboise",
-        "name": "Mojito Framboise",
-        "description": "Menthe fraîche, citron vert, sirop de framboise, Sprite et glace pilée.",
-        "extra": "",
-        "price": null,
-        "image": "/assets/menu-v2/mocktail-mojito-framboise.webp",
-        "sourceImage": "SAFE_LOUNGE_MOCKTAIL_MOJITO_FRAMBOISE_A4.pdf",
+        "price": 8,
+        "image": "/assets/menu-v2/mocktail-virgin-mojito.webp",
+        "sourceImage": "SAFE_LOUNGE_MOCKTAIL_VIRGIN_MOJITO_A4.pdf",
         "allergens": []
       },
       {
@@ -350,9 +330,39 @@
         "name": "Mojito Fraise",
         "description": "Menthe fraîche, citron vert, sirop de fraise, Sprite et glace pilée.",
         "extra": "",
-        "price": null,
+        "price": 9,
         "image": "/assets/menu-v2/mocktail-mojito-fraise.webp",
         "sourceImage": "SAFE_LOUNGE_MOCKTAIL_MOJITO_FRAISE_A4.pdf",
+        "allergens": []
+      },
+      {
+        "id": "mocktail-mojito-framboise",
+        "name": "Mojito Framboise",
+        "description": "Menthe fraîche, citron vert, sirop de framboise, Sprite et glace pilée.",
+        "extra": "",
+        "price": 9,
+        "image": "/assets/menu-v2/mocktail-mojito-framboise.webp",
+        "sourceImage": "SAFE_LOUNGE_MOCKTAIL_MOJITO_FRAMBOISE_A4.pdf",
+        "allergens": []
+      },
+      {
+        "id": "mocktail-coco-loco",
+        "name": "Coco Loco",
+        "description": "Jus de piña colada, lait de coco, jus d’ananas, sirop de vanille et glace pilée.",
+        "extra": "",
+        "price": 10,
+        "image": "/assets/menu-v2/mocktail-coco-loco.webp",
+        "sourceImage": "SAFE_LOUNGE_MOCKTAIL_COCO_LOCO_A4.pdf",
+        "allergens": []
+      },
+      {
+        "id": "mocktail-amor-amor",
+        "name": "Amor Amor",
+        "description": "Jus de passion, jus d’ananas, jus de mangue, sirop de vanille, grenadine et glace pilée.",
+        "extra": "",
+        "price": 10,
+        "image": "/assets/menu-v2/mocktail-amor-amor.webp",
+        "sourceImage": "SAFE_LOUNGE_MOCKTAIL_AMOR_AMOR_A4.pdf",
         "allergens": []
       },
       {
@@ -360,7 +370,7 @@
         "name": "Passion Fruit Lemonade",
         "description": "Jus de passion, jus de citron jaune, sirop de sucre de canne, eau pétillante et glace pilée.",
         "extra": "",
-        "price": null,
+        "price": 10,
         "image": "/assets/menu-v2/mocktail-passion-fruit-lemonade.webp",
         "sourceImage": "SAFE_LOUNGE_MOCKTAIL_PASSION_FRUIT_LEMONADE_A4.pdf",
         "allergens": []
@@ -378,7 +388,7 @@
         "name": "Rosso",
         "description": "Pain en pâte à pizza, crème de poivrons, roquette, jambon de dinde, chorizo finement tranché, stracciatella, poivrons, oignons confits et huile piquante.",
         "extra": "",
-        "price": null,
+        "price": 14,
         "image": "/assets/menu-v2/panuozzo-rosso.webp",
         "sourceImage": "SAFE_LOUNGE_PANUOZZO_ROSSO_A4 (1).pdf",
         "allergens": [
@@ -391,7 +401,7 @@
         "name": "Tartufo",
         "description": "Pain en pâte à pizza, crème de truffe, roquette, jambon de dinde, jambon de bœuf, stracciatella, champignons poêlés, copeaux de parmesan et poivre moulu.",
         "extra": "",
-        "price": null,
+        "price": 15,
         "image": "/assets/menu-v2/panuozzo-tartufo.webp",
         "sourceImage": "SAFE_LOUNGE_PANUOZZO_TARTUFO_A4 (1).pdf",
         "allergens": [
@@ -404,7 +414,7 @@
         "name": "Verde",
         "description": "Pain en pâte à pizza, pesto basilic, roquette, jambon de dinde, stracciatella, tomates cerises confites, copeaux de parmesan et crème balsamique.",
         "extra": "",
-        "price": null,
+        "price": 13,
         "image": "/assets/menu-v2/panuozzo-verde.webp",
         "sourceImage": "SAFE_LOUNGE_PANUOZZO_VERDE_A4 (1).pdf",
         "allergens": [
@@ -526,7 +536,7 @@
   {
     "id": "pizzas",
     "label": "Pizzas",
-    "description": "Des pizzas généreuses sur base tomate, crème ou curry : stracciatella, jambon cru, merguez, oignons confits… à chacun la sienne.",
+    "description": "Des pizzas généreuses sur base tomate, crème ou curry : stracciatella, jambon de dinde, merguez, oignons confits… à chacun la sienne.",
     "source": "SAFE_LOUNGE_PIZZA_BOLLYWOOD_STYLE_A4.pdf",
     "items": [
       {
@@ -547,7 +557,7 @@
       {
         "id": "pizzas-burratella-lov",
         "name": "Burratella Lov’",
-        "description": "Sauce tomate, mozzarella, stracciatella, jambon cru, copeaux de parmesan, tomates cerises, sauce basilic et crème balsamique.",
+        "description": "Sauce tomate, mozzarella, stracciatella, jambon de dinde, copeaux de parmesan, tomates cerises, sauce basilic et crème balsamique.",
         "extra": "",
         "price": 16,
         "image": "/assets/menu-v2/pizzas-burratella-lov.webp",
@@ -562,7 +572,7 @@
       {
         "id": "pizzas-classica-queen",
         "name": "Classica Queen",
-        "description": "Sauce tomate, mozzarella, champignons et jambon.",
+        "description": "Sauce tomate, mozzarella, champignons et jambon de dinde.",
         "extra": "",
         "price": 12,
         "image": "/assets/menu-v2/pizzas-classica-queen.webp",
@@ -575,7 +585,7 @@
       {
         "id": "pizzas-malaga",
         "name": "Malaga",
-        "description": "Sauce tomate, mozzarella, merguez, œuf, jambon cru et sauce basilic.",
+        "description": "Sauce tomate, mozzarella, merguez, œuf, jambon de dinde et sauce basilic.",
         "extra": "",
         "price": 15,
         "image": "/assets/menu-v2/pizzas-malaga.webp",
@@ -686,20 +696,6 @@
         ]
       },
       {
-        "id": "pizzas-tic-et-tac",
-        "name": "Tic & Tac",
-        "description": "Mozzarella, chèvre, crème, noix et miel.",
-        "extra": "",
-        "price": null,
-        "image": "/assets/menu-v2/pizzas-tic-et-tac.webp",
-        "sourceImage": "SAFE_LOUNGE_PIZZA_TIC_ET_TAC_A4.pdf",
-        "allergens": [
-          "Gluten",
-          "Lait",
-          "Fruits à coque"
-        ]
-      },
-      {
         "id": "pizzas-tutti-formaggi",
         "name": "Tutti Formaggi",
         "description": "Sauce tomate, mozzarella, chèvre, gorgonzola et copeaux de parmesan.",
@@ -750,9 +746,9 @@
       {
         "id": "salade-original-burrata",
         "name": "Original Burrata",
-        "description": "Burrata, olives de Ligurie, tomates cerises, sauce basilic et crème balsamique.",
+        "description": "Burrata sur un fond d’huile d’olive, olives de Ligurie, sauce basilic et crème balsamique.",
         "extra": "",
-        "price": null,
+        "price": 9,
         "image": "/assets/menu-v2/salade-original-burrata.webp",
         "sourceImage": "app Safe Lounge (photo client)",
         "allergens": [
@@ -764,9 +760,9 @@
       {
         "id": "salade-cesar",
         "name": "César",
-        "description": "Salade, tomates cerises, poulet, croûtons à l’ail et aux fines herbes, sauce César.",
+        "description": "Salade, poulet, croûtons à l’ail et aux fines herbes, sauce César.",
         "extra": "",
-        "price": null,
+        "price": 10,
         "image": "/assets/menu-v2/salade-cesar.webp",
         "sourceImage": "app Safe Lounge (photo client)",
         "allergens": [
@@ -781,19 +777,19 @@
     ]
   },
   {
-    "id": "tiramisu",
-    "label": "Tiramisus",
+    "id": "dessert",
+    "label": "Desserts",
     "description": "",
-    "source": "",
+    "source": "Carte Safe Lounge",
     "items": [
       {
-        "id": "tiramisu-cafe",
-        "name": "Tiramisu Café",
-        "description": "Mascarpone, œufs, sucre roux, biscuits cuillères imbibés de café et cacao en poudre.",
-        "extra": "",
-        "price": null,
-        "image": "/assets/menu-v2/tiramisu-cafe.webp",
-        "sourceImage": "SAFE_LOUNGE_TIRAMISU_A4.pdf",
+        "id": "dessert-fondant-chocolat",
+        "name": "Fondant au chocolat",
+        "description": "L’indémodable mi-cuit au chocolat de la maison.",
+        "extra": "Boule de glace vanille +2 €",
+        "price": 7,
+        "image": "/assets/menu-v2/dessert-fondant-chocolat.webp",
+        "sourceImage": "Création produit d’après la photo du fondant du restaurant",
         "allergens": [
           "Gluten",
           "Œufs",
@@ -801,50 +797,338 @@
         ]
       },
       {
-        "id": "tiramisu-nutella",
-        "name": "Tiramisu Nutella",
-        "description": "Mascarpone, œufs, sucre roux, biscuits cuillères imbibés de Nutella et cacao en poudre.",
+        "id": "dessert-tiramisu-coffee",
+        "name": "Original Tiramisu Coffee",
+        "description": "Le tiramisu originel qui respecte la tradition : mascarpone, biscuits imbibés de café et cacao.",
         "extra": "",
-        "price": null,
-        "image": "/assets/menu-v2/tiramisu-nutella.webp",
-        "sourceImage": "SAFE_LOUNGE_TIRAMISU_A4.pdf",
+        "price": 8,
+        "image": "/assets/menu-v2/dessert-tiramisu-coffee.webp",
+        "sourceImage": "Création produit, tiramisu café",
         "allergens": [
           "Gluten",
           "Œufs",
-          "Soja",
-          "Lait",
-          "Fruits à coque"
-        ]
-      },
-      {
-        "id": "tiramisu-speculoos",
-        "name": "Tiramisu Spéculoos",
-        "description": "Mascarpone, œufs, sucre roux, biscuits cuillères imbibés de spéculoos et cacao en poudre.",
-        "extra": "",
-        "price": null,
-        "image": "/assets/menu-v2/tiramisu-speculoos.webp",
-        "sourceImage": "SAFE_LOUNGE_TIRAMISU_A4.pdf",
-        "allergens": [
-          "Gluten",
-          "Œufs",
-          "Soja",
           "Lait"
         ]
       },
       {
-        "id": "tiramisu-pistache",
-        "name": "Tiramisu Pistache",
-        "description": "Mascarpone, œufs, sucre roux, biscuits cuillères imbibés de crème de pistache et cacao en poudre.",
+        "id": "dessert-tiramisu-nutella-speculoos",
+        "name": "Tiramisu Nutella-Spéculoos",
+        "description": "Pour les plus gourmands : mascarpone, Nutella et spéculoos.",
         "extra": "",
-        "price": null,
-        "image": "/assets/menu-v2/tiramisu-pistache.webp",
-        "sourceImage": "SAFE_LOUNGE_TIRAMISU_A4.pdf",
+        "price": 9,
+        "image": "/assets/menu-v2/dessert-tiramisu-nutella-speculoos.webp",
+        "sourceImage": "Carte Safe Lounge",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Lait",
+          "Fruits à coque",
+          "Soja"
+        ]
+      },
+      {
+        "id": "dessert-tiramisu-pistachio",
+        "name": "Tiramisu Pistachio",
+        "description": "Le bonheur à l’état pur : mascarpone et crème de pistache.",
+        "extra": "",
+        "price": 9,
+        "image": "/assets/menu-v2/dessert-tiramisu-pistachio.webp",
+        "sourceImage": "Carte Safe Lounge",
         "allergens": [
           "Gluten",
           "Œufs",
           "Lait",
           "Fruits à coque"
         ]
+      },
+      {
+        "id": "dessert-bowl-fruits",
+        "name": "Bowl de fruits",
+        "description": "Fruits frais de saison, pause fraîcheur garantie.",
+        "extra": "",
+        "price": 10,
+        "image": "/assets/menu-v2/dessert-bowl-fruits.webp",
+        "sourceImage": "Carte Safe Lounge",
+        "allergens": []
+      },
+      {
+        "id": "dessert-brioche-perdue",
+        "name": "Brioche perdue",
+        "description": "Deux tranches de brioche dorées façon pain perdu, légèrement superposées, avec leur topping au choix : Nutella, spéculoos, crème Bueno ou caramel beurre salé.",
+        "extra": "Topping supplémentaire +2 €",
+        "price": 11,
+        "image": "/assets/menu-v2/dessert-brioche-perdue.webp",
+        "sourceImage": "Carte Safe Lounge",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Lait",
+          "Fruits à coque",
+          "Soja"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "crepes",
+    "label": "Crêpes",
+    "description": "",
+    "source": "Carte Safe Lounge",
+    "items": [
+      {
+        "id": "crepe-beurre-sucre",
+        "name": "Crêpe beurre sucre",
+        "description": "La simplicité délicieuse à l’état pur : beurre et sucre.",
+        "extra": "",
+        "price": 7,
+        "image": "/assets/menu-v2/dessert-crepe-beurre-sucre.webp",
+        "sourceImage": "Carte Safe Lounge",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Lait"
+        ]
+      },
+      {
+        "id": "crepe-nutella",
+        "name": "Crêpe Nutella",
+        "description": "Gourmande et décadente, nappée de Nutella.",
+        "extra": "",
+        "price": 8,
+        "image": "/assets/menu-v2/dessert-crepe-nutella.webp",
+        "sourceImage": "Carte Safe Lounge",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Lait",
+          "Fruits à coque",
+          "Soja"
+        ]
+      },
+      {
+        "id": "crepe-speculoos",
+        "name": "Crêpe crème spéculoos",
+        "description": "Pour les fans de spéculoos : nappée de crème spéculoos.",
+        "extra": "",
+        "price": 8,
+        "image": "/assets/menu-v2/dessert-crepe-speculoos.webp",
+        "sourceImage": "Carte Safe Lounge",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Lait",
+          "Soja"
+        ]
+      },
+      {
+        "id": "crepe-caramel",
+        "name": "Crêpe caramel beurre salé",
+        "description": "Une explosion sucrée-salée, nappée de caramel au beurre salé.",
+        "extra": "",
+        "price": 8,
+        "image": "/assets/menu-v2/dessert-crepe-caramel.webp",
+        "sourceImage": "Carte Safe Lounge",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Lait"
+        ]
+      },
+      {
+        "id": "crepe-bueno",
+        "name": "Crêpe crème Bueno",
+        "description": "Si bonne qu’on en deviendrait méchant : nappée de crème Bueno.",
+        "extra": "",
+        "price": 8,
+        "image": "/assets/menu-v2/dessert-crepe-bueno.webp",
+        "sourceImage": "Carte Safe Lounge",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Lait",
+          "Fruits à coque",
+          "Soja"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "boissons-fraiches",
+    "label": "Boissons fraîches",
+    "description": "Des bouteilles en verre servies bien fraîches.",
+    "source": "Carte Safe Lounge",
+    "items": [
+      {
+        "id": "boisson-coca-cola",
+        "name": "Coca-Cola",
+        "description": "Coca-Cola Goût Original en bouteille en verre de 33 cl.",
+        "extra": "",
+        "price": 5,
+        "image": "/assets/menu-v2/boisson-coca-cola.webp",
+        "sourceImage": "Création produit d’après la bouteille Coca-Cola Original 33 cl",
+        "allergens": []
+      },
+      {
+        "id": "boisson-coca-cola-zero",
+        "name": "Coca-Cola Zéro",
+        "description": "Coca-Cola Zéro Sucres en bouteille en verre de 33 cl.",
+        "extra": "",
+        "price": 5,
+        "image": "/assets/menu-v2/boisson-coca-cola-zero.webp",
+        "sourceImage": "Création produit d’après la bouteille Coca-Cola Zéro Sucres 33 cl",
+        "allergens": []
+      },
+      {
+        "id": "boisson-coca-cola-cherry",
+        "name": "Coca-Cola Cherry",
+        "description": "Coca-Cola saveur cerise en bouteille en verre de 33 cl.",
+        "extra": "",
+        "price": 5,
+        "image": "/assets/menu-v2/boisson-coca-cola-cherry.webp",
+        "sourceImage": "Création produit d’après la bouteille Coca-Cola Cherry 33 cl",
+        "allergens": []
+      },
+      {
+        "id": "boisson-oasis-tropical",
+        "name": "Oasis Tropical",
+        "description": "Oasis Tropical en bouteille en verre de 25 cl.",
+        "extra": "",
+        "price": 5,
+        "image": "/assets/menu-v2/boisson-oasis-tropical.webp",
+        "sourceImage": "Création produit d’après la bouteille Oasis Tropical 25 cl verre",
+        "allergens": []
+      },
+      {
+        "id": "boisson-fuze-tea-peche",
+        "name": "Fuze Tea Pêche",
+        "description": "Thé glacé saveur pêche intense en bouteille en verre de 25 cl.",
+        "extra": "",
+        "price": 5,
+        "image": "/assets/menu-v2/boisson-fuze-tea-peche.webp",
+        "sourceImage": "Création produit d’après la bouteille Fuze Tea Pêche Intense 25 cl verre",
+        "allergens": []
+      },
+      {
+        "id": "boisson-sprite",
+        "name": "Sprite",
+        "description": "Sprite goût original citron-citron vert en bouteille en verre de 33 cl.",
+        "extra": "",
+        "price": 5,
+        "image": "/assets/menu-v2/boisson-sprite.webp",
+        "sourceImage": "Création produit d’après la bouteille Sprite 33 cl verre",
+        "allergens": []
+      },
+      {
+        "id": "boisson-orangina",
+        "name": "Orangina",
+        "description": "Orangina et sa pulpe en bouteille en verre de 25 cl.",
+        "extra": "",
+        "price": 5,
+        "image": "/assets/menu-v2/boisson-orangina.webp",
+        "sourceImage": "Création produit d’après la bouteille Orangina 25 cl verre",
+        "allergens": []
+      },
+      {
+        "id": "boisson-san-pellegrino",
+        "name": "San Pellegrino",
+        "description": "Eau minérale naturelle gazeuse S.Pellegrino en bouteille en verre de 50 cl.",
+        "extra": "",
+        "price": 5,
+        "image": "/assets/menu-v2/boisson-san-pellegrino.webp",
+        "sourceImage": "Création produit d’après la bouteille S.Pellegrino 50 cl verre",
+        "allergens": []
+      },
+      {
+        "id": "boisson-vittel",
+        "name": "Vittel",
+        "description": "Eau minérale naturelle Vittel en bouteille en verre de 50 cl.",
+        "extra": "",
+        "price": 5,
+        "image": "/assets/menu-v2/boisson-vittel.webp",
+        "sourceImage": "Création produit d’après la bouteille Vittel 50 cl verre",
+        "allergens": []
+      }
+    ]
+  },
+  {
+    "id": "boissons-chaudes",
+    "label": "Boissons chaudes",
+    "description": "",
+    "source": "Carte Safe Lounge",
+    "items": [
+      {
+        "id": "chaud-expresso-leggero",
+        "name": "Expresso Leggero",
+        "description": "Un expresso au profil doux et léger.",
+        "extra": "",
+        "price": 3,
+        "image": "/assets/menu-v2/chaud-expresso.webp",
+        "sourceImage": "Carte Safe Lounge",
+        "allergens": []
+      },
+      {
+        "id": "chaud-expresso-forte",
+        "name": "Expresso Forte",
+        "description": "Un expresso au profil corsé et intense.",
+        "extra": "",
+        "price": 3,
+        "image": "/assets/menu-v2/chaud-expresso.webp",
+        "sourceImage": "Carte Safe Lounge",
+        "allergens": []
+      },
+      {
+        "id": "chaud-expresso-caramello",
+        "name": "Expresso Caramello",
+        "description": "Un expresso aux notes aromatiques de caramel.",
+        "extra": "",
+        "price": 4,
+        "image": "/assets/menu-v2/chaud-expresso.webp",
+        "sourceImage": "Carte Safe Lounge",
+        "allergens": []
+      },
+      {
+        "id": "chaud-expresso-nocciola",
+        "name": "Expresso Nocciola",
+        "description": "Un expresso aux notes aromatiques de noisette.",
+        "extra": "",
+        "price": 4,
+        "image": "/assets/menu-v2/chaud-expresso-nocciola.webp",
+        "sourceImage": "Carte Safe Lounge",
+        "allergens": []
+      },
+      {
+        "id": "chaud-cafe-au-lait",
+        "name": "Café au lait",
+        "description": "Expresso allongé de lait chaud.",
+        "extra": "",
+        "price": 5,
+        "image": "/assets/menu-v2/chaud-cafe-au-lait.webp",
+        "sourceImage": "Création produit, série boissons chaudes",
+        "allergens": [
+          "Lait"
+        ]
+      },
+      {
+        "id": "chaud-chocolat-chaud",
+        "name": "Chocolat chaud",
+        "description": "Chocolat chaud onctueux.",
+        "extra": "",
+        "price": 5,
+        "image": "/assets/menu-v2/chaud-chocolat-chaud.webp",
+        "sourceImage": "Création produit, série boissons chaudes",
+        "allergens": [
+          "Lait"
+        ]
+      },
+      {
+        "id": "chaud-the",
+        "name": "Thé",
+        "description": "Thé servi chaud.",
+        "extra": "",
+        "price": 5,
+        "image": "/assets/menu-v2/chaud-the.webp",
+        "sourceImage": "Création produit, série boissons chaudes",
+        "allergens": []
       }
     ]
   }

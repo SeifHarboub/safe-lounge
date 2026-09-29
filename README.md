@@ -74,7 +74,7 @@ y compris le balisage écrit par le script.
 
 Le téléphone est la cible principale. Aucun texte ne descend sous 9 px en dessous de 1024 px, aucun lien ni bouton n’offre moins de 36 px à toucher — les liens de texte gardent leur taille, c’est un pseudo-élément qui élargit la zone tactile —, et rien ne déborde à 360, 390 ni 430 px. Trois tests couvrent ces trois règles.
 
-Les dix catégories de la carte s’affichent en pastilles qui reviennent à la ligne : tout est visible d’un coup, rien n’est coupé et il n’y a pas de défilement horizontal. L’ordre d’affichage place la catégorie sélectionnée par défaut en tête (`DISPLAY_ORDER` dans `src/main.ts`) ; `src/menu.json` conserve l’ordre du site source.
+Les onze catégories de la carte s’affichent en pastilles qui reviennent à la ligne : tout est visible d’un coup, rien n’est coupé et il n’y a pas de défilement horizontal. L’ordre d’affichage place la catégorie sélectionnée par défaut en tête (`DISPLAY_ORDER` dans `src/main.ts`) ; `src/menu.json` conserve l’ordre du site source.
 
 ## Maintenance
 
@@ -95,7 +95,7 @@ L’accueil affiche en plein cadre neuf plats de la carte, un par envie (burger,
 
 ## Lounge
 
-La section lounge présente les chichas servies (Wookah, Alpha, Brodator, Mig tradi) et leur chauffe Quasar. Les visuels montrent la Wookah en bois. Les trois visuels de `public/assets/lounge/` sont générés à partir des photos d’origine du lounge (`research/lounge-originals/`), en gardant le même modèle ; seuls le décor, la lumière et la fumée changent. Les formules à 20 € et 25 € sont affichées sans fiche : la nouvelle carte ne les contient pas encore.
+La section lounge présente les hookahs servis (Alpha, Brodator, Mig tradi) et leur chauffe Quasar. Les visuels montrent un hookah en bois ; les textes n’emploient ni « chicha » ni « Wookah », à la demande du client. Les trois visuels de `public/assets/lounge/` sont générés à partir des photos d’origine du lounge (`research/lounge-originals/`), en gardant le même modèle ; seuls le décor, la lumière et la fumée changent. Les formules à 20 € et 25 € sont affichées sans fiche : la nouvelle carte ne les contient pas encore.
 
 La fumée du fond est photographique : deux plaques de fumée sur fond noir, générées puis converties en calques transparents aux bords fondus (`smoke-tall.webp`, `smoke-wide.webp`). Cinq calques montent ou dérivent en boucle, décalés dans le temps pour qu’une volute soit toujours visible ; sans animation, ils restent affichés, immobiles et plus discrets.
 
@@ -113,5 +113,5 @@ Tailles de texte : sur ordinateur, plus aucun texte courant sous 11 px et les pa
 - `vite.config.ts` injecte les données Schema.org `Restaurant` : adresse, téléphone, horaires et la carte complète, construite depuis `src/menu.json`.
 - `public/robots.txt` et `public/sitemap.xml` ; `public/assets/og-image.jpg` pour les partages.
 - Les photos de la carte sont servies en WebP 1080 px (les PNG d’origine sont dans `research/menu-v2-originals/`).
-- Chaque titre de section commence par une ligne de mots-clés (« La carte · cuisine généreuse, comme à la maison, à Noisy-le-Sec », « Lounge chicha à Noisy-le-Sec », « Adresse, horaires & accès ») ; la grande phrase d’accroche reste en dessous.
+- Chaque titre de section commence par une ligne de mots-clés (« La carte · cuisine généreuse, comme à la maison, à Noisy-le-Sec », « Lounge hookah à Noisy-le-Sec », « Adresse, horaires & accès ») ; la grande phrase d’accroche reste en dessous.
 - Les données Schema.org portent les coordonnées GPS (OpenStreetMap), le lien Google Maps et l’e-mail `lesafelounge@gmail.com`.

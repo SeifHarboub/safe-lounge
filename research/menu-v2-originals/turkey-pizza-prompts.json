@@ -1,0 +1,17 @@
+{
+  "tool": "built-in imagegen",
+  "edits": [
+    {
+      "name": "burratella-lov",
+      "prompt": "Use case: precise-object-edit. Edit target: attached Safe Lounge pizza burratella-lov. Replace ALL prosciutto with JAMBON DE DINDE, pink cooked turkey deli ham. USER CORRECTION: turkey ham must be distinctly ROSY PINK, NOT pale beige or ivory, NOT white chicken ham. A medium warm rosy pink, smooth homogeneous opaque lean deli texture, without white fat marbling or cured prosciutto veins. Thin broad folded slices or half-slices, slightly firmer and smoother than prosciutto; appetizing natural turkey ham pink. Do not make the meat white or cream. Preserve absolutely everything else: exact other toppings, sauces, crust, dark plate, camera, square composition, green background, amber light and table. Only substitute the ham, no additional toppings, text, props or garnish. Photoreal premium food photography."
+    },
+    {
+      "name": "classica-queen",
+      "prompt": "Use case: precise-object-edit. Edit target: attached Safe Lounge pizza classica-queen. Replace ALL prosciutto with JAMBON DE DINDE, pink cooked turkey deli ham. USER CORRECTION: turkey ham must be distinctly ROSY PINK, NOT pale beige or ivory, NOT white chicken ham. A medium warm rosy pink, smooth homogeneous opaque lean deli texture, without white fat marbling or cured prosciutto veins. Thin broad folded slices or half-slices, slightly firmer and smoother than prosciutto; appetizing natural turkey ham pink. Do not make the meat white or cream. Preserve absolutely everything else: exact other toppings, sauces, crust, dark plate, camera, square composition, green background, amber light and table. Only substitute the ham, no additional toppings, text, props or garnish. Photoreal premium food photography."
+    },
+    {
+      "name": "malaga",
+      "prompt": "Use case: precise-object-edit. Edit target: attached Safe Lounge pizza malaga. Replace ALL prosciutto with JAMBON DE DINDE, pink cooked turkey deli ham. USER CORRECTION: turkey ham must be distinctly ROSY PINK, NOT pale beige or ivory, NOT white chicken ham. A medium warm rosy pink, smooth homogeneous opaque lean deli texture, without white fat marbling or cured prosciutto veins. Thin broad folded slices or half-slices, slightly firmer and smoother than prosciutto; appetizing natural turkey ham pink. Do not make the meat white or cream. Preserve absolutely everything else: exact other toppings, sauces, crust, dark plate, camera, square composition, green background, amber light and table. Only substitute the ham, no additional toppings, text, props or garnish. Photoreal premium food photography."
+    }
+  ]
+}

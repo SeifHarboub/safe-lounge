@@ -23,7 +23,7 @@ function structuredData(): Plugin {
         '@type': 'Restaurant',
         '@id': `${siteUrl}#restaurant`,
         name: 'Le Safe Lounge',
-        description: 'Restaurant et lounge chicha à Noisy-le-Sec : smash burgers, chicken burgers, pizzas et pâtes, formules hookah avec soft, mocktail ou milkshake.',
+        description: 'Restaurant et lounge hookah à Noisy-le-Sec : smash burgers, chicken burgers, pizzas et pâtes, formules hookah avec soft, mocktail ou milkshake.',
         url: siteUrl,
         image: [image('assets/og-image.jpg'), image('assets/instagram/salon.webp'), image('assets/instagram/terrasse.webp')],
         logo: image('assets/logo-dark.svg'),

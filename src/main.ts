@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 interface Dish { id: string; name: string; description: string; extra: string; price: number | null; image: string | null; sourceImage: string | null; allergens: string[] }
 interface Category { id: string; label: string; description: string; source: string; items: Dish[] }
 // Follow a natural meal journey: savoury dishes, dessert, then cold drinks and coffees.
-const DISPLAY_ORDER = ['burger','panuozzo','pizzas','pates','salade','tiramisu','mocktail','milkshake','iced-latte','frappuccino'];
+const DISPLAY_ORDER = ['burger','panuozzo','pizzas','pates','salade','dessert','crepes','boissons-fraiches','boissons-chaudes','mocktail','milkshake','iced-latte','frappuccino'];
 const menu = (rawMenu as Category[]).slice().sort((a, b) => DISPLAY_ORDER.indexOf(a.id) - DISPLAY_ORDER.indexOf(b.id));
 const allDishes = menu.flatMap(category => category.items.map(dish => ({ ...dish, category: category.id })));
 const $ = <T extends Element = HTMLElement>(selector: string) => document.querySelector<T>(selector)!;
@@ -38,7 +38,7 @@ function renderMenu(animate = true) {
   tabs.forEach(tab => { const active = !query && tab.dataset.category === category.id; tab.setAttribute('aria-selected',String(active)); tab.tabIndex = tab.dataset.category === category.id ? 0 : -1; });
   if (query) { panel.removeAttribute('aria-labelledby'); panel.setAttribute('aria-label','Résultats de recherche dans toute la carte'); }
   else { panel.setAttribute('aria-labelledby',`tab-${category.id}`); panel.removeAttribute('aria-label'); }
-  grid.innerHTML = dishes.length ? dishes.map((dish, index) => { const label = menu.find(c => c.items.some(item => item.id === dish.id))!.label; return `<button class="dish-card" data-open="${dish.id}" aria-label="Voir ${escape(dish.name)}${dish.price === null ? '' : `, ${dish.price} euros`}"><div class="dish-frame"><div class="dish-photo">${dish.image ? `<img src="${asset(dish.image)}" alt="${escape(`${dish.name}, ${label.toLowerCase()} du Safe Lounge à Noisy-le-Sec`)}" width="1080" height="1080" loading="${index < 3 ? 'eager' : 'lazy'}" />` : `<div class="no-photo"><img src="${asset('/assets/symbol-lilac.svg')}" alt="" /><span>BIENTÔT À LA CARTE</span></div>`}<span class="dish-open">↗︎</span></div></div><div class="dish-title"><h4>${escape(dish.name)}</h4>${dish.price === null ? '' : `<span>${dish.price}<small>€</small></span>`}</div><p>${escape(dish.description)}</p>${dish.extra ? `<span class="dish-extra">${escape(dish.extra)}</span>` : ''}</button>`; }).join('') : '<div class="no-results"><span>Cette catégorie arrive bientôt.</span><p>Notre équipe finalise cette sélection. En attendant, demandez-nous ce qui est servi sur place.</p></div>';
+  grid.innerHTML = dishes.length ? dishes.map((dish, index) => { const label = menu.find(c => c.items.some(item => item.id === dish.id))!.label; return `<button class="dish-card" data-open="${dish.id}" aria-label="Voir ${escape(dish.name)}${dish.price === null ? '' : `, ${dish.price} euros`}"><div class="dish-frame"><div class="dish-photo">${dish.image ? `<img src="${asset(dish.image)}" alt="${escape(`${dish.name}, ${label.toLowerCase()} du Safe Lounge à Noisy-le-Sec`)}" width="1080" height="1080" loading="${index < 3 ? 'eager' : 'lazy'}" />` : `<div class="no-photo"><img src="${asset('/assets/symbol-lilac.svg')}" alt="" /></div>`}<span class="dish-open">↗︎</span></div></div><div class="dish-title"><h4>${escape(dish.name)}</h4>${dish.price === null ? '' : `<span>${dish.price}<small>€</small></span>`}</div><p>${escape(dish.description)}</p>${dish.extra ? `<span class="dish-extra">${escape(dish.extra)}</span>` : ''}</button>`; }).join('') : '<div class="no-results"><span>Cette catégorie arrive bientôt.</span><p>Notre équipe finalise cette sélection. En attendant, demandez-nous ce qui est servi sur place.</p></div>';
   if (animate && canAnimate()) gsap.fromTo('.dish-card',{y:24,opacity:0},{y:0,opacity:1,duration:.45,stagger:.045,ease:'power2.out',clearProps:'transform,opacity'});
   requestAnimationFrame(() => ScrollTrigger.refresh());
 }
@@ -138,7 +138,7 @@ document.addEventListener('click', () => requestAnimationFrame(refreshHolds));
 
 // The arrival fills its frame with one dish per craving, one after the other.
 // The photos share the arrival's dark green backdrop, so they melt into it.
-const HERO_PICKS = ['burger-smokey-beef-bacon','pizzas-burratella-lov','panuozzo-tartufo','pates-penne-saumon','salade-original-burrata','tiramisu-cafe','milkshake-bueno','iced-latte-nocciola','mocktail-mojito-fraise'];
+const HERO_PICKS = ['burger-smokey-beef-bacon','pizzas-burratella-lov','panuozzo-tartufo','pates-penne-saumon','salade-original-burrata','dessert-fondant-chocolat','dessert-tiramisu-coffee','crepe-nutella','dessert-brioche-perdue','milkshake-bueno','iced-latte-nocciola','mocktail-mojito-fraise'];
 const DRINK_CATEGORIES = ['milkshake','iced-latte','mocktail','frappuccino'];
 const heroDishes = HERO_PICKS.map(id => allDishes.find(dish => dish.id === id)!).filter(dish => dish?.image);
 const heroSlides = $('.hero-slides');
