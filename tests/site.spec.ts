@@ -32,13 +32,14 @@ const dishes: { id: string; tab?: string; name: string; has: string[]; hasNot?: 
   { id: 'panuozzo-rosso', tab: 'panuozzo', name: 'Rosso', has: ['pain en pâte à pizza', 'crème de poivrons', 'roquette', 'jambon de dinde', 'chorizo finement tranché', 'stracciatella', 'poivrons', 'oignons confits', 'huile piquante'] },
   { id: 'panuozzo-tartufo', tab: 'panuozzo', name: 'Tartufo', has: ['pain en pâte à pizza', 'crème de truffe', 'roquette', 'jambon de dinde', 'jambon de bœuf', 'stracciatella', 'champignons poêlés', 'copeaux de parmesan', 'poivre moulu'] },
   { id: 'panuozzo-verde', tab: 'panuozzo', name: 'Verde', has: ['pain en pâte à pizza', 'pesto basilic', 'roquette', 'jambon de dinde', 'stracciatella', 'tomates cerises confites', 'copeaux de parmesan', 'crème balsamique'] },
-  { id: 'pates-spaghetti-sicilienne', tab: 'pates', name: 'Spaghetti Sicilienne', has: ['sauce tomate', 'thon', 'olives', 'parmesan', 'tomate cerise'] },
-  { id: 'pates-rigatoni-tartufo', tab: 'pates', name: 'Rigatoni Tartufo', has: ['truffe', 'champignons', 'copeaux de parmesan'] },
-  { id: 'pates-spaghetti-merguez', tab: 'pates', name: 'Spaghetti Merguez', has: ['merguez', 'sauce tomate crémeuse', 'olives', 'parmesan'] },
-  { id: 'pates-spaghetti-formaggi', tab: 'pates', name: 'Spaghetti Formaggi', has: ['gorgonzola', 'copeaux de parmesan'] },
+  { id: 'pates-spaghetti-sicilienne', tab: 'pates', name: 'Spaghetti Sicilienne', has: ['sauce tomate', 'thon', 'olives', 'parmesan'], hasNot: ['tomate cerise'] },
+  { id: 'pates-rigatoni-tartufo', tab: 'pates', name: 'Rigatoni Tartufo', has: ['truffe', 'champignons', 'copeaux de parmesan'], hasNot: ['tomate cerise'] },
+  { id: 'pates-spaghetti-merguez', tab: 'pates', name: 'Spaghetti Merguez', has: ['merguez', 'sauce tomate crémeuse', 'olives', 'parmesan'], hasNot: ['tomate cerise'] },
+  { id: 'pates-spaghetti-formaggi', tab: 'pates', name: 'Spaghetti Formaggi', has: ['gorgonzola', 'copeaux de parmesan'], hasNot: ['tomate cerise'] },
   { id: 'pates-penne-arrabiata', tab: 'pates', name: 'Penne Arrabbiata', has: ['sauce tomate relevée à l’huile piquante'], hasNot: ['parmesan'] },
-  { id: 'pates-penne-forestiere', tab: 'pates', name: 'Penne Forestière', has: ['poulet', 'champignons', 'sauce crémeuse au parmesan'] },
-  { id: 'pates-penne-saumon', tab: 'pates', name: 'Penne Saumon', has: ['saumon', 'sauce tomate crémeuse au parmesan'] },
+  { id: 'pates-penne-forestiere', tab: 'pates', name: 'Penne Forestière', has: ['poulet', 'champignons', 'sauce crémeuse au parmesan'], hasNot: ['tomate cerise'] },
+  { id: 'pates-penne-saumon', tab: 'pates', name: 'Penne Saumon', has: ['saumon', 'sauce tomate crémeuse au parmesan'], hasNot: ['tomate cerise'] },
+  { id: 'pates-rigatoni-carbonara', tab: 'pates', name: 'Rigatoni Carbonara', has: ['crème', 'jaune d’œuf', 'lardons', 'parmesan', 'poivre noir'], hasNot: ['tomate cerise'] },
   { id: 'pizzas-bollywood-style', tab: 'pizzas', name: 'Bollywood Style', has: ['sauce curry', 'mozzarella', 'poulet', 'oignons confits', 'tomates cerises', 'sauce basilic', 'crème balsamique'] },
   { id: 'pizzas-burratella-lov', tab: 'pizzas', name: 'Burratella Lov’', has: ['sauce tomate', 'stracciatella', 'jambon de dinde', 'copeaux de parmesan', 'sauce basilic', 'crème balsamique'] },
   { id: 'pizzas-classica-queen', tab: 'pizzas', name: 'Classica Queen', has: ['sauce tomate', 'mozzarella', 'champignons', 'jambon'] },
@@ -80,7 +81,7 @@ const dishes: { id: string; tab?: string; name: string; has: string[]; hasNot?: 
   { id: 'iced-latte-caramello', tab: 'iced-latte', name: 'Iced Caramello', has: ['sirop de vanille', 'café Caramello', 'lait entier', 'glaçons', 'chantilly', 'coulis caramel'] },
   { id: 'iced-latte-coffee-latte', tab: 'iced-latte', name: 'Iced Coffee Latte', has: ['sirop de sucre', 'Espresso Forte', 'lait entier', 'glaçons', 'chantilly'], hasNot: ['caramel', 'cacao'] },
   { id: 'iced-latte-nocciola', tab: 'iced-latte', name: 'Iced Nocciola', has: ['coulis chocolat', 'café Nocciola', 'lait entier', 'glaçons', 'chantilly'], hasNot: ['caramel', 'vanille'] },
-  { id: 'salade-original-burrata', tab: 'salade', name: 'Original Burrata', has: ['burrata', 'huile d’olive', 'olives de Ligurie', 'sauce basilic', 'crème balsamique'], hasNot: ['poulet', 'tomate'] },
+  { id: 'salade-original-burrata', tab: 'salade', name: 'Original Burrata', has: ['burrata', 'huile d’olive', 'tomates cerises', 'olives de Ligurie', 'sauce basilic', 'crème balsamique'], hasNot: ['poulet'] },
   { id: 'salade-cesar', tab: 'salade', name: 'César', has: ['salade', 'poulet', 'croûtons', 'sauce César'], hasNot: ['burrata', 'tomate'] },
   { id: 'dessert-fondant-chocolat', tab: 'dessert', name: 'Fondant au chocolat', has: ['mi-cuit au chocolat', 'glace vanille +2 €'] },
   { id: 'dessert-tiramisu-coffee', tab: 'dessert', name: 'Original Tiramisu Coffee', has: ['mascarpone', 'café', 'cacao'] },
@@ -178,7 +179,7 @@ test('aucune description ne détaille la recette', async ({ page }) => {
   for (const tab of ['burger', 'pates', 'pizzas']) {
     await page.locator(`#tab-${tab}`).click();
     const text = (await page.locator('#menu-panel').textContent()) ?? '';
-    expect(text).not.toMatch(/cuisson|louche|cuillère|égoutt|précuit|sel et|poivre\b|coupée en deux/i);
+    expect(text).not.toMatch(/cuisson|louche|cuillère|égoutt|précuit|sel et|poivre\b(?! noir)|coupée en deux/i);
   }
 });
 

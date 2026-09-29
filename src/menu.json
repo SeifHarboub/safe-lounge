@@ -458,7 +458,7 @@
       {
         "id": "pates-spaghetti-sicilienne",
         "name": "Spaghetti Sicilienne",
-        "description": "Spaghetti à la sauce tomate, thon, olives et parmesan, avec une tomate cerise.",
+        "description": "Spaghetti à la sauce tomate, thon, olives et parmesan.",
         "extra": "",
         "price": 13,
         "image": "/assets/menu-v2/pates-spaghetti-sicilienne.webp",
@@ -473,7 +473,7 @@
       {
         "id": "pates-rigatoni-tartufo",
         "name": "Rigatoni Tartufo",
-        "description": "Rigatoni dans une sauce crémeuse à la truffe, champignons et parmesan, avec copeaux de parmesan et tomate cerise.",
+        "description": "Rigatoni dans une sauce crémeuse à la truffe, champignons et parmesan, avec copeaux de parmesan.",
         "extra": "",
         "price": 13,
         "image": "/assets/menu-v2/pates-rigatoni-tartufo.webp",
@@ -487,7 +487,7 @@
       {
         "id": "pates-spaghetti-merguez",
         "name": "Spaghetti Merguez",
-        "description": "Spaghetti à la merguez, sauce tomate crémeuse, olives et parmesan, avec une tomate cerise.",
+        "description": "Spaghetti à la merguez, sauce tomate crémeuse, olives et parmesan.",
         "extra": "",
         "price": null,
         "image": "/assets/menu-v2/pates-spaghetti-merguez.webp",
@@ -501,7 +501,7 @@
       {
         "id": "pates-spaghetti-formaggi",
         "name": "Spaghetti Formaggi",
-        "description": "Spaghetti dans une sauce crémeuse au gorgonzola, avec copeaux de parmesan et tomate cerise.",
+        "description": "Spaghetti dans une sauce crémeuse au gorgonzola, avec copeaux de parmesan.",
         "extra": "",
         "price": 12,
         "image": "/assets/menu-v2/pates-spaghetti-formaggi.webp",
@@ -515,7 +515,7 @@
       {
         "id": "pates-penne-arrabiata",
         "name": "Penne Arrabbiata",
-        "description": "Penne à la sauce tomate relevée à l’huile piquante, avec une tomate cerise.",
+        "description": "Penne à la sauce tomate relevée à l’huile piquante.",
         "extra": "",
         "price": 11,
         "image": "/assets/menu-v2/pates-penne-arrabiata.webp",
@@ -528,7 +528,7 @@
       {
         "id": "pates-penne-forestiere",
         "name": "Penne Forestière",
-        "description": "Penne au poulet et aux champignons, sauce crémeuse au parmesan, avec une tomate cerise.",
+        "description": "Penne au poulet et aux champignons, sauce crémeuse au parmesan.",
         "extra": "",
         "price": 14,
         "image": "/assets/menu-v2/pates-penne-forestiere.webp",
@@ -542,7 +542,7 @@
       {
         "id": "pates-penne-saumon",
         "name": "Penne Saumon",
-        "description": "Penne au saumon, sauce tomate crémeuse au parmesan, avec une tomate cerise.",
+        "description": "Penne au saumon, sauce tomate crémeuse au parmesan.",
         "extra": "",
         "price": 15,
         "image": "/assets/menu-v2/pates-penne-saumon.webp",
@@ -551,6 +551,20 @@
           "Gluten",
           "Œufs",
           "Poissons",
+          "Lait"
+        ]
+      },
+      {
+        "id": "pates-rigatoni-carbonara",
+        "name": "Rigatoni Carbonara",
+        "description": "Rigatoni à la crème, jaune d’œuf, lardons, parmesan et poivre noir.",
+        "extra": "",
+        "price": 14,
+        "image": "/assets/menu-v2/pates-rigatoni-carbonara.webp",
+        "sourceImage": "Création produit d’après la fiche Rigatoni Carbonara",
+        "allergens": [
+          "Gluten",
+          "Œufs",
           "Lait"
         ]
       }
@@ -769,7 +783,7 @@
       {
         "id": "salade-original-burrata",
         "name": "Original Burrata",
-        "description": "Burrata sur un fond d’huile d’olive, olives de Ligurie, sauce basilic et crème balsamique.",
+        "description": "Burrata sur un fond d’huile d’olive, tomates cerises, olives de Ligurie, sauce basilic et crème balsamique.",
         "extra": "",
         "price": 9,
         "image": "/assets/menu-v2/salade-original-burrata.webp",
@@ -901,7 +915,7 @@
       {
         "id": "crepe-beurre-sucre",
         "name": "Crêpe beurre sucre",
-        "description": "Crêpe, beurre et sucre.",
+        "description": "Crêpe chaude au beurre et sucre.",
         "extra": "",
         "price": 7,
         "image": "/assets/menu-v2/dessert-crepe-beurre-sucre.webp",
@@ -915,7 +929,7 @@
       {
         "id": "crepe-nutella",
         "name": "Crêpe Nutella",
-        "description": "Crêpe et Nutella.",
+        "description": "Crêpe chaude généreusement nappée de Nutella.",
         "extra": "",
         "price": 8,
         "image": "/assets/menu-v2/dessert-crepe-nutella.webp",
@@ -931,7 +945,7 @@
       {
         "id": "crepe-speculoos",
         "name": "Crêpe crème spéculoos",
-        "description": "Crêpe et crème spéculoos.",
+        "description": "Crêpe chaude nappée de crème spéculoos.",
         "extra": "",
         "price": 8,
         "image": "/assets/menu-v2/dessert-crepe-speculoos.webp",
@@ -946,7 +960,7 @@
       {
         "id": "crepe-caramel",
         "name": "Crêpe caramel beurre salé",
-        "description": "Crêpe et caramel au beurre salé.",
+        "description": "Crêpe chaude nappée de caramel au beurre salé.",
         "extra": "",
         "price": 8,
         "image": "/assets/menu-v2/dessert-crepe-caramel.webp",
@@ -960,7 +974,7 @@
       {
         "id": "crepe-bueno",
         "name": "Crêpe crème Bueno",
-        "description": "Crêpe et crème Bueno.",
+        "description": "Crêpe chaude nappée de crème Bueno.",
         "extra": "",
         "price": 8,
         "image": "/assets/menu-v2/dessert-crepe-bueno.webp",
