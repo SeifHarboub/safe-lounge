@@ -117,6 +117,15 @@ for (const dish of dishes) {
   });
 }
 
+test('chaque catégorie liste ses plats du moins cher au plus cher', async ({ page }) => {
+  await page.goto('/#carte');
+  for (const category of menuData as unknown as { id: string; items: unknown[] }[]) {
+    await page.locator(`#tab-${category.id}`).click();
+    const prices = await page.locator('.dish-card').evaluateAll(cards => cards.map(card => { const text = card.querySelector('.dish-title > span')?.textContent; return text ? parseFloat(text) : Infinity; }));
+    expect(prices, category.id).toEqual([...prices].sort((a, b) => a - b));
+  }
+});
+
 test('les burgers sont servis avec des frites et les panuozzos avec une salade', async ({ page }) => {
   await page.goto('/#carte');
   await expect(page.locator('.dish-card[data-open="burger-classic-smash"] .dish-served')).toHaveText('Servi avec des frites');

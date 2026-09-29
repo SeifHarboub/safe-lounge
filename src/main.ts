@@ -9,7 +9,10 @@ interface Dish { id: string; name: string; description: string; extra: string; s
 interface Category { id: string; label: string; description: string; source: string; items: Dish[] }
 // Follow a natural meal journey: savoury dishes, dessert, then cold drinks and coffees.
 const DISPLAY_ORDER = ['burger','panuozzo','pizzas','pates','salade','dessert','crepes','boissons-fraiches','boissons-chaudes','mocktail','milkshake','iced-latte','frappuccino'];
-const menu = (rawMenu as Category[]).slice().sort((a, b) => DISPLAY_ORDER.indexOf(a.id) - DISPLAY_ORDER.indexOf(b.id));
+// Within each category, dishes are listed from the cheapest to the dearest; a
+// dish without a price goes last, and equal prices keep the menu's own order.
+const byPrice = (a: Dish, b: Dish) => (a.price ?? Infinity) - (b.price ?? Infinity);
+const menu = (rawMenu as Category[]).slice().sort((a, b) => DISPLAY_ORDER.indexOf(a.id) - DISPLAY_ORDER.indexOf(b.id)).map(category => ({ ...category, items: category.items.slice().sort(byPrice) }));
 const allDishes = menu.flatMap(category => category.items.map(dish => ({ ...dish, category: category.id })));
 const $ = <T extends Element = HTMLElement>(selector: string) => document.querySelector<T>(selector)!;
 const escape = (text: string) => text.replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]!));

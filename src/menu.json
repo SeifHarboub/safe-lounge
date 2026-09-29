@@ -889,7 +889,7 @@
       {
         "id": "crepe-beurre-sucre",
         "name": "Crêpe beurre sucre",
-        "description": "La simplicité délicieuse à l’état pur : beurre et sucre.",
+        "description": "Crêpe, beurre et sucre.",
         "extra": "",
         "price": 7,
         "image": "/assets/menu-v2/dessert-crepe-beurre-sucre.webp",
@@ -903,7 +903,7 @@
       {
         "id": "crepe-nutella",
         "name": "Crêpe Nutella",
-        "description": "Gourmande et décadente, nappée de Nutella.",
+        "description": "Crêpe et Nutella.",
         "extra": "",
         "price": 8,
         "image": "/assets/menu-v2/dessert-crepe-nutella.webp",
@@ -919,7 +919,7 @@
       {
         "id": "crepe-speculoos",
         "name": "Crêpe crème spéculoos",
-        "description": "Pour les fans de spéculoos : nappée de crème spéculoos.",
+        "description": "Crêpe et crème spéculoos.",
         "extra": "",
         "price": 8,
         "image": "/assets/menu-v2/dessert-crepe-speculoos.webp",
@@ -934,7 +934,7 @@
       {
         "id": "crepe-caramel",
         "name": "Crêpe caramel beurre salé",
-        "description": "Une explosion sucrée-salée, nappée de caramel au beurre salé.",
+        "description": "Crêpe et caramel au beurre salé.",
         "extra": "",
         "price": 8,
         "image": "/assets/menu-v2/dessert-crepe-caramel.webp",
@@ -948,7 +948,7 @@
       {
         "id": "crepe-bueno",
         "name": "Crêpe crème Bueno",
-        "description": "Si bonne qu’on en deviendrait méchant : nappée de crème Bueno.",
+        "description": "Crêpe et crème Bueno.",
         "extra": "",
         "price": 8,
         "image": "/assets/menu-v2/dessert-crepe-bueno.webp",
