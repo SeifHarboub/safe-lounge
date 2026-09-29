@@ -19,7 +19,8 @@
           "Lait",
           "Moutarde"
         ],
-        "served": "Servi avec des frites"
+        "served": "Servi avec des frites",
+        "group": "Chicken burgers"
       },
       {
         "id": "burger-chicken-biggie",
@@ -35,7 +36,8 @@
           "Lait",
           "Moutarde"
         ],
-        "served": "Servi avec des frites"
+        "served": "Servi avec des frites",
+        "group": "Chicken burgers"
       },
       {
         "id": "burger-chicken-creamy",
@@ -51,7 +53,8 @@
           "Lait",
           "Moutarde"
         ],
-        "served": "Servi avec des frites"
+        "served": "Servi avec des frites",
+        "group": "Chicken burgers"
       },
       {
         "id": "burger-smokey-bacon",
@@ -67,7 +70,8 @@
           "Lait",
           "Moutarde"
         ],
-        "served": "Servi avec des frites"
+        "served": "Servi avec des frites",
+        "group": "Chicken burgers"
       },
       {
         "id": "burger-classic-smash",
@@ -83,7 +87,8 @@
           "Lait",
           "Moutarde"
         ],
-        "served": "Servi avec des frites"
+        "served": "Servi avec des frites",
+        "group": "Smash burgers"
       },
       {
         "id": "burger-smokey-beef-bacon",
@@ -99,7 +104,8 @@
           "Lait",
           "Moutarde"
         ],
-        "served": "Servi avec des frites"
+        "served": "Servi avec des frites",
+        "group": "Smash burgers"
       },
       {
         "id": "burger-original-smash",
@@ -115,7 +121,8 @@
           "Lait",
           "Moutarde"
         ],
-        "served": "Servi avec des frites"
+        "served": "Servi avec des frites",
+        "group": "Smash burgers"
       },
       {
         "id": "burger-biggie-smash",
@@ -131,8 +138,13 @@
           "Lait",
           "Moutarde"
         ],
-        "served": "Servi avec des frites"
+        "served": "Servi avec des frites",
+        "group": "Smash burgers"
       }
+    ],
+    "groups": [
+      "Smash burgers",
+      "Chicken burgers"
     ]
   },
   {

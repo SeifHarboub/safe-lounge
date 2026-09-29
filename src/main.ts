@@ -5,14 +5,17 @@ import rawMenu from './menu.json';
 import { asset } from './asset';
 
 gsap.registerPlugin(ScrollTrigger);
-interface Dish { id: string; name: string; description: string; extra: string; served?: string; price: number | null; image: string | null; sourceImage: string | null; allergens: string[] }
-interface Category { id: string; label: string; description: string; source: string; items: Dish[] }
+interface Dish { id: string; name: string; description: string; extra: string; served?: string; group?: string; price: number | null; image: string | null; sourceImage: string | null; allergens: string[] }
+interface Category { id: string; label: string; description: string; source: string; groups?: string[]; items: Dish[] }
 // Follow a natural meal journey: savoury dishes, dessert, then cold drinks and coffees.
 const DISPLAY_ORDER = ['burger','panuozzo','pizzas','pates','salade','dessert','crepes','boissons-fraiches','boissons-chaudes','mocktail','milkshake','iced-latte','frappuccino'];
 // Within each category, dishes are listed from the cheapest to the dearest; a
 // dish without a price goes last, and equal prices keep the menu's own order.
 const byPrice = (a: Dish, b: Dish) => (a.price ?? Infinity) - (b.price ?? Infinity);
-const menu = (rawMenu as Category[]).slice().sort((a, b) => DISPLAY_ORDER.indexOf(a.id) - DISPLAY_ORDER.indexOf(b.id)).map(category => ({ ...category, items: category.items.slice().sort(byPrice) }));
+// A category split into groups (smash, then chicken burgers) keeps each group
+// together, and sorts by price inside it.
+const byGroup = (groups: string[] = []) => (a: Dish, b: Dish) => groups.indexOf(a.group ?? '') - groups.indexOf(b.group ?? '') || byPrice(a, b);
+const menu = (rawMenu as Category[]).slice().sort((a, b) => DISPLAY_ORDER.indexOf(a.id) - DISPLAY_ORDER.indexOf(b.id)).map(category => ({ ...category, items: category.items.slice().sort(byGroup(category.groups)) }));
 const allDishes = menu.flatMap(category => category.items.map(dish => ({ ...dish, category: category.id })));
 const $ = <T extends Element = HTMLElement>(selector: string) => document.querySelector<T>(selector)!;
 const escape = (text: string) => text.replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]!));
@@ -41,7 +44,7 @@ function renderMenu(animate = true) {
   tabs.forEach(tab => { const active = !query && tab.dataset.category === category.id; tab.setAttribute('aria-selected',String(active)); tab.tabIndex = tab.dataset.category === category.id ? 0 : -1; });
   if (query) { panel.removeAttribute('aria-labelledby'); panel.setAttribute('aria-label','Résultats de recherche dans toute la carte'); }
   else { panel.setAttribute('aria-labelledby',`tab-${category.id}`); panel.removeAttribute('aria-label'); }
-  grid.innerHTML = dishes.length ? dishes.map((dish, index) => { const label = menu.find(c => c.items.some(item => item.id === dish.id))!.label; return `<button class="dish-card" data-open="${dish.id}" aria-label="Voir ${escape(dish.name)}${dish.price === null ? '' : `, ${dish.price} euros`}"><div class="dish-frame"><div class="dish-photo">${dish.image ? `<img src="${asset(dish.image)}" alt="${escape(`${dish.name}, ${label.toLowerCase()} du Safe Lounge à Noisy-le-Sec`)}" width="1080" height="1080" loading="${index < 3 ? 'eager' : 'lazy'}" />` : `<div class="no-photo"><img src="${asset('/assets/symbol-lilac.svg')}" alt="" /></div>`}<span class="dish-open">↗︎</span></div></div><div class="dish-title"><h4>${escape(dish.name)}</h4>${dish.price === null ? '' : `<span>${dish.price}<small>€</small></span>`}</div><p>${escape(dish.description)}</p>${dish.served ? `<span class="dish-served">${escape(dish.served)}</span>` : ''}${dish.extra ? `<span class="dish-extra">${escape(dish.extra)}</span>` : ''}</button>`; }).join('') : '<div class="no-results"><span>Cette catégorie arrive bientôt.</span><p>Notre équipe finalise cette sélection. En attendant, demandez-nous ce qui est servi sur place.</p></div>';
+  grid.innerHTML = dishes.length ? dishes.map((dish, index) => { const heading = !query && dish.group && dish.group !== dishes[index - 1]?.group ? `<h4 class="dish-group">${escape(dish.group)}</h4>` : ''; const label = menu.find(c => c.items.some(item => item.id === dish.id))!.label; return `${heading}<button class="dish-card" data-open="${dish.id}" aria-label="Voir ${escape(dish.name)}${dish.price === null ? '' : `, ${dish.price} euros`}"><div class="dish-frame"><div class="dish-photo">${dish.image ? `<img src="${asset(dish.image)}" alt="${escape(`${dish.name}, ${label.toLowerCase()} du Safe Lounge à Noisy-le-Sec`)}" width="1080" height="1080" loading="${index < 3 ? 'eager' : 'lazy'}" />` : `<div class="no-photo"><img src="${asset('/assets/symbol-lilac.svg')}" alt="" /></div>`}<span class="dish-open">↗︎</span></div></div><div class="dish-title"><h4>${escape(dish.name)}</h4>${dish.price === null ? '' : `<span>${dish.price}<small>€</small></span>`}</div><p>${escape(dish.description)}</p>${dish.served ? `<span class="dish-served">${escape(dish.served)}</span>` : ''}${dish.extra ? `<span class="dish-extra">${escape(dish.extra)}</span>` : ''}</button>`; }).join('') : '<div class="no-results"><span>Cette catégorie arrive bientôt.</span><p>Notre équipe finalise cette sélection. En attendant, demandez-nous ce qui est servi sur place.</p></div>';
   if (animate && canAnimate()) gsap.fromTo('.dish-card',{y:24,opacity:0},{y:0,opacity:1,duration:.45,stagger:.045,ease:'power2.out',clearProps:'transform,opacity'});
   requestAnimationFrame(() => ScrollTrigger.refresh());
 }
