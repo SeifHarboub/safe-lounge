@@ -67,6 +67,10 @@ const dishes: { id: string; tab?: string; name: string; has: string[]; hasNot?: 
   { id: 'iced-latte-caramello', tab: 'iced-latte', name: 'Iced Caramello', has: ['sirop de vanille', 'café Caramello', 'lait entier', 'glaçons', 'chantilly', 'coulis caramel'] },
   { id: 'iced-latte-coffee-latte', tab: 'iced-latte', name: 'Iced Coffee Latte', has: ['sirop de sucre', 'Espresso Forte', 'lait entier', 'glaçons', 'chantilly'], hasNot: ['caramel', 'cacao'] },
   { id: 'iced-latte-nocciola', tab: 'iced-latte', name: 'Iced Nocciola', has: ['coulis chocolat', 'café Nocciola', 'lait entier', 'glaçons', 'chantilly'], hasNot: ['caramel', 'vanille'] },
+  { id: 'tiramisu-cafe', tab: 'tiramisu', name: 'Tiramisu Café', has: ['mascarpone', 'biscuits cuillères', 'imbibés de café', 'cacao'], hasNot: ['Nutella', 'pistache'] },
+  { id: 'tiramisu-nutella', tab: 'tiramisu', name: 'Tiramisu Nutella', has: ['mascarpone', 'imbibés de Nutella', 'cacao'], hasNot: ['pistache', 'spéculoos'] },
+  { id: 'tiramisu-speculoos', tab: 'tiramisu', name: 'Tiramisu Spéculoos', has: ['mascarpone', 'imbibés de spéculoos', 'cacao'], hasNot: ['Nutella', 'pistache'] },
+  { id: 'tiramisu-pistache', tab: 'tiramisu', name: 'Tiramisu Pistache', has: ['mascarpone', 'imbibés de crème de pistache', 'cacao'], hasNot: ['Nutella', 'spéculoos'] },
 ];
 
 for (const dish of dishes) {
@@ -103,15 +107,15 @@ test('la fiche du burger fonctionne sur mobile', async ({ page }) => {
   await expect(dialog.locator('.dialog-price')).toHaveCount(0);
 });
 
-test('une catégorie en attente ne conserve aucun ancien plat', async ({ page }) => {
+test('les tiramisus présentent leurs quatre imbibages', async ({ page }) => {
   await page.goto('/#carte');
   await page.locator('#tab-tiramisu').click();
   await expect(page.locator('#category-title')).toHaveText('Tiramisus');
-  await expect(page.locator('#dish-grid')).toContainText('Cette catégorie arrive bientôt.');
-  await expect(page.locator('.dish-card')).toHaveCount(0);
-  await expect(page.locator('#category-description')).toBeHidden();
-  await expect(page.locator('#result-count')).toBeHidden();
-  await expect(page.locator('.results-heading')).not.toContainText('arrive prochainement');
+  await expect(page.locator('#dish-grid')).not.toContainText('Cette catégorie arrive bientôt.');
+  await expect(page.locator('.dish-card')).toHaveCount(4);
+  for (const name of ['Tiramisu Café', 'Tiramisu Nutella', 'Tiramisu Spéculoos', 'Tiramisu Pistache']) {
+    await expect(page.locator('#dish-grid')).toContainText(name);
+  }
 });
 
 test('l’accueil présente les plats en relief, nom posé au-dessus du plat et sans sélecteur', async ({ page }) => {

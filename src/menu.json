@@ -518,6 +518,43 @@
     "label": "Tiramisus",
     "description": "",
     "source": "",
-    "items": []
+    "items": [
+      {
+        "id": "tiramisu-cafe",
+        "name": "Tiramisu Café",
+        "description": "Mascarpone, œufs, sucre roux, biscuits cuillères imbibés de café et cacao en poudre.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/tiramisu-cafe.webp",
+        "sourceImage": "SAFE_LOUNGE_TIRAMISU_A4.pdf"
+      },
+      {
+        "id": "tiramisu-nutella",
+        "name": "Tiramisu Nutella",
+        "description": "Mascarpone, œufs, sucre roux, biscuits cuillères imbibés de Nutella et cacao en poudre.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/tiramisu-nutella.webp",
+        "sourceImage": "SAFE_LOUNGE_TIRAMISU_A4.pdf"
+      },
+      {
+        "id": "tiramisu-speculoos",
+        "name": "Tiramisu Spéculoos",
+        "description": "Mascarpone, œufs, sucre roux, biscuits cuillères imbibés de spéculoos et cacao en poudre.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/tiramisu-speculoos.webp",
+        "sourceImage": "SAFE_LOUNGE_TIRAMISU_A4.pdf"
+      },
+      {
+        "id": "tiramisu-pistache",
+        "name": "Tiramisu Pistache",
+        "description": "Mascarpone, œufs, sucre roux, biscuits cuillères imbibés de crème de pistache et cacao en poudre.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/tiramisu-pistache.webp",
+        "sourceImage": "SAFE_LOUNGE_TIRAMISU_A4.pdf"
+      }
+    ]
   }
 ]
