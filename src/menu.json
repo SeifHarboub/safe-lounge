@@ -789,10 +789,12 @@
         "image": "/assets/menu-v2/salade-original-burrata.webp",
         "sourceImage": "app Safe Lounge (photo client)",
         "allergens": [
+          "Gluten",
           "Lait",
           "Fruits à coque",
           "Sulfites"
-        ]
+        ],
+        "served": "Servi avec nos petits pains maison"
       },
       {
         "id": "salade-cesar",
@@ -809,7 +811,8 @@
           "Lait",
           "Moutarde",
           "Sulfites"
-        ]
+        ],
+        "served": "Servi avec nos petits pains maison"
       }
     ]
   },

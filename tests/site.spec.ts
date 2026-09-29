@@ -137,12 +137,15 @@ test('chaque catégorie liste ses plats du moins cher au plus cher', async ({ pa
   }
 });
 
-test('les burgers sont servis avec des frites et les panuozzos avec une salade', async ({ page }) => {
+test('les burgers sont servis avec des frites, les panuozzos avec une salade et les salades avec des petits pains', async ({ page }) => {
   await page.goto('/#carte');
   await expect(page.locator('.dish-card[data-open="burger-classic-smash"] .dish-served')).toHaveText('Servi avec des frites');
   await expect(page.locator('.dish-card[data-open^="burger-"] .dish-served')).toHaveCount(8);
   await page.locator('#tab-panuozzo').click();
   await expect(page.locator('.dish-card[data-open^="panuozzo-"] .dish-served')).toHaveCount(3);
+  await page.locator('#tab-salade').click();
+  await expect(page.locator('.dish-card[data-open^="salade-"] .dish-served')).toHaveText(['Servi avec nos petits pains maison', 'Servi avec nos petits pains maison']);
+  await page.locator('#tab-panuozzo').click();
   await page.locator('.dish-card[data-open="panuozzo-verde"]').click();
   await expect(page.getByRole('dialog').locator('.dialog-served')).toHaveText('Servi avec une salade');
 });
