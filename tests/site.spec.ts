@@ -249,7 +249,7 @@ test('fermer la fiche d’un plat ne laisse pas de contour après un clic', asyn
 test('les titres de section portent les mots-clés et le contact affiche la bonne adresse e-mail', async ({ page }) => {
   await page.goto('/');
   await expect(page).toHaveTitle(/chicha à Noisy-le-Sec/);
-  await expect(page.locator('#carte h2')).toContainText('burgers, pizzas & pâtes à Noisy-le-Sec');
+  await expect(page.locator('#carte h2')).toContainText('cuisine généreuse, comme à la maison, à Noisy-le-Sec');
   await expect(page.locator('#lounge h2')).toContainText('Lounge chicha à Noisy-le-Sec');
   await expect(page.locator('#contact h2')).toContainText('Adresse, horaires & accès');
   await expect(page.locator('section[hidden]')).toHaveCount(0);
