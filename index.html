@@ -28,7 +28,7 @@
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.webp" />
   <link rel="preload" href="/assets/oswald.ttf" as="font" type="font/ttf" crossorigin />
   <link rel="preload" href="/assets/satoshi.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/assets/hero-3d/burger-smokey-beef-bacon.webp" as="image" type="image/webp" fetchpriority="high" />
+  <link rel="preload" href="/assets/menu-v2/burger-smokey-beef-bacon.webp" as="image" type="image/webp" fetchpriority="high" />
   <!--structured-data-->
 </head>
 <body>
@@ -42,27 +42,15 @@
   <nav id="mobile-nav" class="mobile-nav" aria-label="Navigation mobile" hidden><a href="#carte">La carte <span>↗︎</span></a><a href="#lounge">Le lounge <span>↗︎</span></a><a href="#contact">Infos &amp; accès <span>↗︎</span></a></nav>
   <main>
     <section id="accueil" class="arrival">
-      <img class="arrival-background" src="/assets/instagram/salon.webp" srcset="/assets/instagram/salon-768.webp 768w, /assets/instagram/salon.webp 1536w" sizes="100vw" alt="Le salon du Safe Lounge à Noisy-le-Sec, ses fauteuils verts et violets et sa grande baie vitrée" width="1536" height="2048" />
-      <div class="arrival-shade"></div>
+      <div class="hero-ambient" aria-hidden="true"></div>
+      <div class="hero-slides"><img class="is-on" src="/assets/menu-v2/burger-smokey-beef-bacon.webp" alt="Le burger Smokey Beef Bacon du Safe Lounge : double smash, cheddar fondu et bacon de bœuf, servi avec ses frites" width="1080" height="1080" fetchpriority="high" /></div>
+      <i class="hero-timer" aria-hidden="true"></i>
       <div class="arrival-content">
         <h1><span class="h1-kicker"><span class="live-dot"></span> Le Safe Lounge · restaurant &amp; lounge à Noisy-le-Sec</span> <span class="h1-line">BIEN MANGER.</span> <span class="h1-line arrival-italic">Se sentir bien.</span></h1>
         <p>Une cantine familiale et généreuse, où l’on mange comme à la maison, au <span class="nowrap">82 boulevard Michelet</span>.</p>
         <div class="arrival-actions"><a class="button lilac" href="#carte">Découvrir la carte <span class="button-arrow">↗︎</span></a><a class="arrival-place" href="#lounge">Côté lounge <span>↓︎</span></a></div>
-        <div class="arrival-address"><span>82 BOULEVARD MICHELET</span><span>NOISY-LE-SEC · DEPUIS 2017</span></div>
       </div>
-      <div class="arrival-dish">
-        <i class="dish3d-timer" aria-hidden="true"></i>
-        <div class="dish3d-stage" data-dish3d-stage>
-          <div class="dish3d-glow" aria-hidden="true"></div>
-          <button class="dish3d-caption" data-open="burger-smokey-beef-bacon"><span><small id="dish3d-tag">BURGER · DOUBLE SMASH &amp; BACON DE BŒUF</small><strong id="dish3d-name">Smokey Beef Bacon</strong></span><span class="circle-arrow">↗︎</span></button>
-          <div class="dish3d-shadow" aria-hidden="true"></div>
-          <div class="dish3d-spin">
-            <img class="dish3d-still" src="/assets/hero-3d/burger-smokey-beef-bacon.webp" alt="Le burger Smokey Beef Bacon du Safe Lounge : double smash, cheddar fondu et bacon de bœuf, servi avec ses frites" width="1302" height="684" fetchpriority="high" />
-            <canvas class="dish3d-canvas" aria-hidden="true"></canvas>
-          </div>
-        </div>
-      </div>
-      <a class="arrival-scroll" href="#carte"><span>LE LIEU VOUS PLAÎT ? ATTENDEZ DE VOIR LA CARTE.</span><span>↓︎</span></a>
+      <button class="hero-now" data-open="burger-smokey-beef-bacon"><span class="hero-now-text"><small id="hero-tag">Burgers</small><strong id="hero-name">Smokey Beef Bacon</strong></span><span class="hero-price" id="hero-price">14<small>€</small></span></button>
     </section>
     <div class="marquee" aria-label="Good food, good mood, good vibes. Le Safe Lounge."><div class="marquee-track" aria-hidden="true"><div class="marquee-group"><span>GOOD MOOD</span><img src="/assets/symbol-cream.svg" alt="" width="31" height="34" /><span>LE SAFE LOUNGE</span><img src="/assets/symbol-cream.svg" alt="" width="31" height="34" /><span>GOOD FOOD</span><img src="/assets/symbol-cream.svg" alt="" width="31" height="34" /><span>LE SAFE LOUNGE</span><img src="/assets/symbol-cream.svg" alt="" width="31" height="34" /><span>GOOD VIBES</span><img src="/assets/symbol-cream.svg" alt="" width="31" height="34" /><span>LE SAFE LOUNGE</span><img src="/assets/symbol-cream.svg" alt="" width="31" height="34" /></div></div></div>
     <section id="carte" class="menu-section section-pad">

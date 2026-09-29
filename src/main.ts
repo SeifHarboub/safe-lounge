@@ -2,7 +2,6 @@ import './style.css';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import rawMenu from './menu.json';
-import { initDish3D } from './dish3d';
 import { asset } from './asset';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -137,54 +136,54 @@ dialog.addEventListener('close', refreshHolds);
 // A dialog opens on a click; the next frame is when its state is readable.
 document.addEventListener('click', () => requestAnimationFrame(refreshHolds));
 
-// The arrival shows three dishes of the new menu in relief, one after the other.
-const reliefDishes = [
-  {id:'burger-smokey-beef-bacon',width:1302,height:684,name:'Smokey Beef Bacon',tag:'BURGER · DOUBLE SMASH & BACON DE BŒUF',alt:'Le burger Smokey Beef Bacon du Safe Lounge : double smash, cheddar fondu et bacon de bœuf, servi avec ses frites'},
-  {id:'pizzas-burratella-lov',width:1255,height:915,name:'Burratella Lov’',tag:'PIZZA · STRACCIATELLA & JAMBON CRU',alt:'La pizza Burratella Lov’ du Safe Lounge : stracciatella, jambon cru, tomates cerises, copeaux de parmesan et crème balsamique'},
-  {id:'pates-penne-forestiere',width:1281,height:802,name:'Penne Forestière',tag:'PÂTES · POULET & CHAMPIGNONS',alt:'Les Penne Forestière du Safe Lounge : poulet, champignons émincés, sauce à la crème et parmesan'},
-].map(dish => ({ ...dish, image:`/assets/hero-3d/${dish.id}.webp`, depth:`/assets/hero-3d/${dish.id}-depth.webp` }));
-const reliefStage = $('[data-dish3d-stage]');
-const relief = initDish3D(reliefStage, reliefDishes);
-const reliefSpin = $('.dish3d-spin');
-const reliefCaption = $('.dish3d-caption');
-let currentRelief = 0;
-let reliefTimeline: gsap.core.Timeline | undefined;
-// The dish sits on the bottom of the stage and fills it by width or by height,
-// so its top moves from one dish to the next. The label rests just above it.
-function placeReliefCaption() {
-  const dish = reliefDishes[currentRelief];
-  const stageRatio = reliefStage.clientWidth / Math.max(1, reliefStage.clientHeight);
-  const filled = Math.min(1, stageRatio / (dish.width / dish.height));
-  // Each cut-out keeps a 24 px transparent margin around the dish.
-  reliefStage.style.setProperty('--dish-rise', `${(filled * (1 - 24 / dish.height) * 100).toFixed(1)}%`);
-}
-placeReliefCaption();
-new ResizeObserver(placeReliefCaption).observe(reliefStage);
-function changeRelief(index: number) {
-  if (index === currentRelief) return;
-  currentRelief = index;
-  const dish = reliefDishes[index];
+// The arrival fills its frame with one dish per craving, one after the other.
+// The photos share the arrival's dark green backdrop, so they melt into it.
+const HERO_PICKS = ['burger-smokey-beef-bacon','pizzas-burratella-lov','panuozzo-tartufo','pates-penne-saumon','salade-original-burrata','tiramisu-cafe','milkshake-bueno','iced-latte-nocciola','mocktail-mojito-fraise'];
+const DRINK_CATEGORIES = ['milkshake','iced-latte','mocktail','frappuccino'];
+const heroDishes = HERO_PICKS.map(id => allDishes.find(dish => dish.id === id)!).filter(dish => dish?.image);
+const heroSlides = $('.hero-slides');
+const heroNow = $<HTMLButtonElement>('.hero-now');
+const heroAlt = (dish: typeof heroDishes[number]) => `${dish.name}, ${menu.find(category => category.id === dish.category)!.label.toLowerCase()} du Safe Lounge`;
+heroSlides.innerHTML = heroDishes.map((dish, index) => index === 0 ? heroSlides.innerHTML : `<img src="${asset(dish.image!)}" alt="${escape(heroAlt(dish))}" width="1080" height="1080" loading="lazy" />`).join('');
+const heroImages = [...heroSlides.querySelectorAll('img')];
+// Phone only: a blurred copy of each photo sits behind its lower part, so the
+// photo's edges melt into its own colours instead of showing a seam. The top,
+// behind the text, stays plain green.
+const heroAmbient = $('.hero-ambient');
+heroAmbient.innerHTML = heroDishes.map((dish, index) => `<img src="${asset(dish.image!)}" alt="" width="1080" height="1080" loading="lazy"${index === 0 ? ' class="is-on"' : ''} />`).join('');
+const heroAmbientImages = [...heroAmbient.querySelectorAll('img')];
+heroImages.forEach((image, index) => image.classList.toggle('is-tall', DRINK_CATEGORIES.includes(heroDishes[index].category)));
+let currentHero = 0;
+function showHero(next: number) {
+  currentHero = (next + heroDishes.length) % heroDishes.length;
+  const dish = heroDishes[currentHero];
+  heroImages.forEach((image, index) => image.classList.toggle('is-on', index === currentHero));
+  heroAmbientImages.forEach((image, index) => image.classList.toggle('is-on', index === currentHero));
+  // Restart the timer so a swiped-to dish gets its full turn.
+  const timer = $('.hero-timer'); timer.style.animation = 'none'; void timer.offsetWidth; timer.style.animation = '';
   const update = () => {
-    relief.show(index);
-    placeReliefCaption();
-    $('#dish3d-name').textContent = dish.name;
-    $('#dish3d-tag').textContent = dish.tag;
-    $('.dish3d-caption').dataset.open = dish.id;
+    $('#hero-tag').textContent = menu.find(category => category.id === dish.category)!.label;
+    $('#hero-name').textContent = dish.name;
+    $('#hero-price').innerHTML = dish.price === null ? '' : `${dish.price}<small>€</small>`;
+    heroNow.dataset.open = dish.id;
   };
-  reliefTimeline?.kill();
-  if (!canAnimate()) { update(); gsap.set([reliefSpin, reliefCaption], { clearProps: 'transform,opacity' }); return; }
-  // The dish spins away on its vertical axis and the next one spins in.
-  reliefTimeline = gsap.timeline()
-    .to(reliefSpin, { rotationY: -75, scale: .86, opacity: 0, duration: .32, ease: 'power2.in' })
-    .to(reliefCaption, { y: -8, opacity: 0, duration: .25, ease: 'power2.in' }, 0)
-    .call(update)
-    .fromTo(reliefSpin, { rotationY: 75, scale: .86, opacity: 0 }, { rotationY: 0, scale: 1, opacity: 1, duration: .8, ease: 'power3.out', clearProps: 'transform,opacity' })
-    .fromTo(reliefCaption, { y: 10, opacity: 0 }, { y: 0, opacity: 1, duration: .5, ease: 'power3.out', clearProps: 'transform,opacity' }, '<.1');
+  if (!canAnimate()) { update(); return; }
+  gsap.timeline().to(heroNow, { opacity: 0, y: 6, duration: .25, ease: 'power2.in' }).call(update).to(heroNow, { opacity: 1, y: 0, duration: .45, ease: 'power3.out', clearProps: 'transform,opacity' });
 }
-// No visible control: an invisible CSS timer turns the dishes, and pauses with
+// A horizontal flick on a phone moves to the next or previous dish.
+let heroSwipeX: number | null = null, heroSwipeY = 0;
+const arrival = $('.arrival');
+arrival.addEventListener('pointerdown', event => { heroSwipeX = event.clientX; heroSwipeY = event.clientY; });
+arrival.addEventListener('pointerup', event => {
+  if (heroSwipeX === null) return;
+  const dx = event.clientX - heroSwipeX, dy = event.clientY - heroSwipeY;
+  heroSwipeX = null;
+  if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) showHero(currentHero + (dx < 0 ? 1 : -1));
+});
+// No visible clock: an invisible CSS timer turns the dishes, and pauses with
 // the same holds as the other rotations.
-$('.dish3d-timer').addEventListener('animationiteration', () => changeRelief((currentRelief + 1) % reliefDishes.length));
-holdWhenOutOfSight($('.arrival'), $('.arrival-dish'));
+$('.hero-timer').addEventListener('animationiteration', () => showHero(currentHero + 1));
+holdWhenOutOfSight(arrival, arrival);
 
 const MARQUEE_SPEED = 88; // pixels per second
 const marqueeTrack = document.querySelector<HTMLElement>('.marquee-track');
@@ -224,13 +223,11 @@ mobileQuery.addEventListener('change',syncViewport);syncViewport();
 let animationContext: gsap.Context | undefined;
 function setupMotion() {
   animationContext?.revert();
-  relief.setPaused(motionPaused);
   document.documentElement.classList.toggle('motion-paused',motionPaused);
   if (motionPaused) { gsap.set('.dish-card',{clearProps:'all'}); return; }
   animationContext=gsap.context(()=>{
     gsap.from('.arrival h1 .h1-line',{y:55,opacity:0,rotation:3,stagger:.12,duration:1,ease:'power3.out'});
-    gsap.to('.arrival-background',{yPercent:12,ease:'none',scrollTrigger:{trigger:'.arrival',start:'top top',end:'bottom top',scrub:1}});
-    gsap.from('.arrival-dish',{y:45,opacity:0,duration:1.1,ease:'power3.out'});
+    gsap.from('.hero-now',{y:30,opacity:0,duration:1,delay:.3,ease:'power3.out'});
     gsap.utils.toArray<HTMLElement>('.reveal').forEach(element=>gsap.from(element,{y:45,opacity:0,duration:.8,ease:'power3.out',scrollTrigger:{trigger:element,start:'top 92%',once:true}}));
     gsap.utils.toArray<HTMLElement>('.lounge-tile').forEach((element,index)=>gsap.from(element,{y:40,opacity:0,duration:.8,delay:index*.1,ease:'power3.out',scrollTrigger:{trigger:'.lounge-strip',start:'top 94%',once:true}}));
   });

@@ -47,11 +47,11 @@ Les coordonnées et l’année 2017 proviennent du brandboard / brandbook du cli
 
 ## Interactions
 
-Accueil à trois plats en relief, photographies animées au défilement, ruban animé, catégories, recherche transversale insensible aux accents, fiches détaillées avec prix et suppléments, navigation et raccourcis mobiles.
+Accueil en plein cadre (neuf plats, un par envie), photographies animées au défilement, ruban animé, catégories, recherche transversale insensible aux accents, fiches détaillées avec prix et suppléments, navigation et raccourcis mobiles.
 
 Les liens internes sont traités dans `src/main.ts` plutôt que par le saut d’ancre natif : un rafraîchissement de ScrollTrigger annule le défilement doux du navigateur, et un lien de catégorie doit d’abord laisser la carte se redessiner. Chaque lien amène donc sa section exactement en haut de l’écran, sans laisser apparaître la fin de la section précédente. La section de contact occupe au moins une hauteur d’écran pour que la dernière ancre puisse elle aussi se caler en haut.
 
-Les plats en relief de l’accueil changent toutes les 7 s sur un minuteur CSS invisible (`.dish3d-timer`), soumis aux mêmes pauses. La section desserts change de plat toute seule. Sa barre de progression *est* le minuteur : c’est une animation CSS, donc la mettre en pause — hors écran, derrière un dialogue, ou sous une préférence de mouvement réduit — arrête aussi la rotation, et les deux ne peuvent pas se désynchroniser. Un clic sur une pastille reprend la main immédiatement.
+Les plats de l’accueil changent toutes les 5 s sur un minuteur CSS invisible (`.hero-timer`), soumis aux mêmes pauses ; aucune barre de progression, un glissement du doigt passe au suivant sur téléphone. La section desserts change de plat toute seule. Sa barre de progression *est* le minuteur : c’est une animation CSS, donc la mettre en pause — hors écran, derrière un dialogue, ou sous une préférence de mouvement réduit — arrête aussi la rotation, et les deux ne peuvent pas se désynchroniser. Un clic sur une pastille reprend la main immédiatement.
 
 Sur téléphone, les trois cartes « Le plus dur, c’est de choisir » forment un rail que l’on fait glisser : une seule photographie occupe la largeur, sans morceau de la suivante ni barre de défilement, et trois repères de position sont posés au-dessus. Il avance seul toutes les 3,2 s en va-et-vient, et rend la main définitivement dès que le visiteur fait défiler le rail lui-même.
 
@@ -63,9 +63,8 @@ Les animations suivent la préférence système de réduction des mouvements : l
 
 ## Mobile
 
-Sur téléphone, le plat en relief passe sous le texte d’accueil et occupe toute la largeur. Son étiquette
-se pose à 14 px au-dessus du haut réel du plat (`--dish-rise`, calculé depuis les proportions de chaque
-détourage), si bien qu’elle descend pour le burger, plus large que haut, et remonte pour la pizza. Le menu
+Sur téléphone, le plat de l’accueil occupe la moitié basse de l’écran sous le texte, avec son nom et son
+prix ; les boutons de l’accueil sont masqués pour ne pas le recouvrir. Le menu
 mobile se ferme aussi bien au doigt posé à côté que sur la croix.
 
 Les flèches `↗ ▶ ↓ ↑` portent toutes le sélecteur U+FE0E. Sans lui, iOS bascule sur la police
@@ -90,9 +89,9 @@ Les dix catégories de la carte s’affichent en pastilles qui reviennent à la 
 
 Les photographies du salon et de la façade viennent du compte officiel `@lesafelounge` (sources dans `research/instagram/manifest.json`). Elles sont servies en WebP dans `public/assets/instagram/` : le salon en arrière-plan de l’accueil, la façade derrière le contact. Les vidéos Instagram et la section « Votre prochaine bonne adresse » ont été retirées ; elles restent dans l’historique git.
 
-## Accueil en relief
+## Accueil en plein cadre
 
-La vidéo de l’accueil est remplacée par trois plats de la nouvelle carte en relief : Smokey Beef Bacon, Burratella Lov’ et Penne Forestière. Ce sont les photos de la carte, détourées sans retouche, accompagnées d’une carte de profondeur (`public/assets/hero-3d/`). `src/dish3d.ts` déplace chaque pixel selon sa profondeur dans un shader WebGL quand le plat s’incline : il tourne seul, suit la souris sur ordinateur et le doigt sur téléphone. Sans WebGL, ou animations en pause, l’image détourée reste affichée. La fabrication des images est décrite dans `scripts/hero-3d/`.
+L’accueil affiche en plein cadre neuf plats de la carte, un par envie (burger, pizza, panuozzo, pâtes, salade, tiramisu, milkshake, iced latte, mocktail), avec leur nom et leur prix. Les photos de `public/assets/menu-v2/` partagent le fond vert de l’accueil et s’y fondent ; les boissons, plus hautes, sont montrées en entier et plus petites. Sur téléphone, le texte est en haut, le plat occupe la moitié basse et les boutons de l’accueil sont masqués. `hero-lab/` garde les maquettes locales qui ont servi au choix (non publiées).
 
 ## Lounge
 

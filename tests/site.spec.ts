@@ -152,31 +152,36 @@ test('les tiramisus présentent leurs quatre imbibages', async ({ page }) => {
   }
 });
 
-test('l’accueil présente les plats en relief, nom posé au-dessus du plat et sans sélecteur', async ({ page }) => {
+test('l’accueil montre un plat en plein cadre, avec son nom et son prix', async ({ page }) => {
   await page.goto('/');
-  await expect(page.locator('#arrival-video')).toHaveCount(0);
-  await expect(page.locator('#assiettes')).toHaveCount(0);
-  await expect(page.locator('[data-dish3d], .dish3d-dots')).toHaveCount(0);
-  const caption = page.locator('.dish3d-caption');
-  await expect(caption).toContainText('Smokey Beef Bacon');
-  await expect(page.locator('.dish3d-still')).toHaveAttribute('src', /hero-3d\/burger-smokey-beef-bacon\.webp$/);
-  // The label rests 14 px above the top of the dish, wherever that top is.
-  const captionBox = (await caption.boundingBox())!;
-  const stageBox = (await page.locator('.dish3d-stage').boundingBox())!;
-  const rise = parseFloat(await page.locator('.dish3d-stage').evaluate(stage => getComputedStyle(stage).getPropertyValue('--dish-rise')));
-  const dishTop = stageBox.y + stageBox.height * (1 - rise / 100);
-  expect(Math.abs(captionBox.y + captionBox.height + 14 - dishTop)).toBeLessThan(2);
-  await caption.click();
+  await expect(page.locator('#arrival-video, #assiettes, .dish3d-stage')).toHaveCount(0);
+  await expect(page.locator('.hero-slides img')).toHaveCount(9);
+  await expect(page.locator('.hero-slides img.is-on')).toHaveAttribute('src', /menu-v2\/burger-smokey-beef-bacon\.webp$/);
+  const now = page.locator('.hero-now');
+  await expect(now).toContainText('Smokey Beef Bacon');
+  await expect(page.locator('#hero-price')).toHaveText('14€');
+  await expect(page.locator('.hero-slides img.is-tall')).toHaveCount(3);
+  await now.click();
   await expect(page.getByRole('dialog')).toContainText('Smokey Beef Bacon');
 });
 
-test('les plats en relief se succèdent seuls', async ({ page }) => {
+test('les plats de l’accueil se succèdent seuls, sans barre de progression', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'no-preference' });
   await page.goto('/');
-  await page.locator('.dish3d-timer').dispatchEvent('animationiteration');
-  await expect(page.locator('.dish3d-caption')).toContainText('Burratella Lov’');
-  await page.locator('.dish3d-timer').dispatchEvent('animationiteration');
-  await expect(page.locator('.dish3d-caption')).toContainText('Penne Forestière');
+  await page.locator('.hero-timer').dispatchEvent('animationiteration');
+  await expect(page.locator('.hero-now')).toContainText('Burratella Lov’');
+  await expect(page.locator('.hero-dots')).toHaveCount(0);
+  for (let step = 0; step < 5; step += 1) await page.locator('.hero-timer').dispatchEvent('animationiteration');
+  await expect(page.locator('.hero-now')).toContainText('Bueno');
+  await expect(page.locator('#hero-price')).toHaveText('9€');
+});
+
+test('sur téléphone, l’accueil laisse la place au plat, sans bouton', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/');
+  await expect(page.locator('.arrival-actions')).toBeHidden();
+  await expect(page.locator('.hero-now')).toBeInViewport();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
 });
 
 test('la page expose un référencement local complet', async ({ page }) => {
