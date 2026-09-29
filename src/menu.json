@@ -82,37 +82,222 @@
   {
     "id": "frappuccino",
     "label": "Frappuccinos",
-    "description": "",
-    "source": "",
-    "items": []
+    "description": "Des cafés glacés onctueux, mixés avec de la glace et couronnés de chantilly.",
+    "source": "SAFE_LOUNGE_FRAPPUCCINO_CARAMELLO_A4.pdf",
+    "items": [
+      {
+        "id": "frappuccino-caramello",
+        "name": "Caramello",
+        "description": "Espresso Caramello, lait entier, sirop vanille, glace vanille, glaçons, chantilly et coulis caramel.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/frappuccino-caramello.webp",
+        "sourceImage": "SAFE_LOUNGE_FRAPPUCCINO_CARAMELLO_A4.pdf"
+      },
+      {
+        "id": "frappuccino-coffee-latte",
+        "name": "Coffee Latte",
+        "description": "Espresso Forte, lait entier, sirop de sucre, glace vanille, glaçons et chantilly.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/frappuccino-coffee-latte.webp",
+        "sourceImage": "SAFE_LOUNGE_FRAPPUCCINO_COFFEE_LATTE_A4.pdf"
+      },
+      {
+        "id": "frappuccino-nocciola",
+        "name": "Nocciola",
+        "description": "Café Nocciola, lait entier, coulis chocolat, glace vanille, glaçons et chantilly, avec un filet de chocolat.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/frappuccino-nocciola.webp",
+        "sourceImage": "SAFE_LOUNGE_FRAPPUCCINO_NOCCIOLA_A4.pdf"
+      }
+    ]
   },
   {
     "id": "iced-latte",
     "label": "Iced lattes",
-    "description": "",
-    "source": "",
-    "items": []
+    "description": "Des cafés glacés servis sur glaçons, avec du lait froid et des finitions gourmandes.",
+    "source": "SAFE_LOUNGE_ICED_CARAMELLO_A4.pdf",
+    "items": [
+      {
+        "id": "iced-latte-caramello",
+        "name": "Iced Caramello",
+        "description": "Sirop de vanille, café Caramello, lait entier, glaçons, chantilly et coulis caramel.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/iced-latte-caramello.webp",
+        "sourceImage": "SAFE_LOUNGE_ICED_CARAMELLO_A4.pdf"
+      },
+      {
+        "id": "iced-latte-coffee-latte",
+        "name": "Iced Coffee Latte",
+        "description": "Sirop de sucre, Espresso Forte, lait entier, glaçons et chantilly.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/iced-latte-coffee-latte.webp",
+        "sourceImage": "SAFE_LOUNGE_ICED_COFFEE_LATTE_A4.pdf"
+      },
+      {
+        "id": "iced-latte-nocciola",
+        "name": "Iced Nocciola",
+        "description": "Coulis chocolat, café Nocciola, lait entier, glaçons, chantilly et filet de coulis chocolat.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/iced-latte-nocciola.webp",
+        "sourceImage": "SAFE_LOUNGE_ICED_NOCCIOLA_A4.pdf"
+      }
+    ]
   },
   {
     "id": "milkshake",
     "label": "Milkshakes",
-    "description": "",
-    "source": "",
-    "items": []
+    "description": "Des milkshakes généreux, mixés avec de la glace et servis avec une chantilly onctueuse.",
+    "source": "SAFE_LOUNGE_MILKSHAKE_BUENO_FINAL_A4.pdf",
+    "items": [
+      {
+        "id": "milkshake-bueno",
+        "name": "Bueno",
+        "description": "Glace vanille, lait et Kinder Bueno mixé, avec chantilly et une demi-barre de Bueno.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/milkshake-bueno.webp",
+        "sourceImage": "SAFE_LOUNGE_MILKSHAKE_BUENO_FINAL_A4.pdf"
+      },
+      {
+        "id": "milkshake-cookies",
+        "name": "Cookies",
+        "description": "Glace vanille, lait et cookies aux pépites de chocolat mixés, avec chantilly et un demi-cookie.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/milkshake-cookies.webp",
+        "sourceImage": "SAFE_LOUNGE_MILKSHAKE_COOKIES_A4.pdf"
+      },
+      {
+        "id": "milkshake-oreo",
+        "name": "Oreo",
+        "description": "Glace vanille, lait et biscuits Oreo mixés, avec chantilly et un biscuit Oreo.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/milkshake-oreo.webp",
+        "sourceImage": "SAFE_LOUNGE_MILKSHAKE_OREO_FINAL_A4.pdf"
+      },
+      {
+        "id": "milkshake-petit-beurre",
+        "name": "Petit Beurre",
+        "description": "Glace vanille, lait et biscuits Petit Beurre mixés, avec chantilly et un demi-biscuit Petit Beurre.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/milkshake-petit-beurre.webp",
+        "sourceImage": "SAFE_LOUNGE_MILKSHAKE_PETIT_BEURRE_FINAL_A4.pdf"
+      },
+      {
+        "id": "milkshake-speculoos",
+        "name": "Spéculoos",
+        "description": "Glace vanille, lait et biscuits Spéculoos mixés, avec chantilly et un demi-biscuit Spéculoos.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/milkshake-speculoos.webp",
+        "sourceImage": "SAFE_LOUNGE_MILKSHAKE_SPECULOOS_CORRIGE_A4.pdf"
+      },
+      {
+        "id": "milkshake-vanille",
+        "name": "Vanille",
+        "description": "Glace vanille, lait et chantilly.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/milkshake-vanille.webp",
+        "sourceImage": "SAFE_LOUNGE_MILKSHAKE_VANILLE_4_ETAPES_A4.pdf"
+      }
+    ]
   },
   {
     "id": "mocktail",
     "label": "Mocktails",
-    "description": "",
-    "source": "",
-    "items": []
+    "description": "Des créations sans alcool fraîches, fruitées et préparées sur glace.",
+    "source": "SAFE_LOUNGE_MOCKTAIL_AMOR_AMOR_A4.pdf",
+    "items": [
+      {
+        "id": "mocktail-amor-amor",
+        "name": "Amor Amor",
+        "description": "Jus de passion, jus d’ananas, jus de mangue, sirop de vanille, grenadine et glace pilée.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/mocktail-amor-amor.webp",
+        "sourceImage": "SAFE_LOUNGE_MOCKTAIL_AMOR_AMOR_A4.pdf"
+      },
+      {
+        "id": "mocktail-coco-loco",
+        "name": "Coco Loco",
+        "description": "Jus de piña colada, lait de coco, jus d’ananas, sirop de vanille et glace pilée.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/mocktail-coco-loco.webp",
+        "sourceImage": "SAFE_LOUNGE_MOCKTAIL_COCO_LOCO_A4.pdf"
+      },
+      {
+        "id": "mocktail-mojito-framboise",
+        "name": "Mojito Framboise",
+        "description": "Menthe fraîche, citron vert, sirop de framboise, Sprite et glace pilée.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/mocktail-mojito-framboise.webp",
+        "sourceImage": "SAFE_LOUNGE_MOCKTAIL_MOJITO_FRAMBOISE_A4.pdf"
+      },
+      {
+        "id": "mocktail-mojito-fraise",
+        "name": "Mojito Fraise",
+        "description": "Menthe fraîche, citron vert, sirop de fraise, Sprite et glace pilée.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/mocktail-mojito-fraise.webp",
+        "sourceImage": "SAFE_LOUNGE_MOCKTAIL_MOJITO_FRAISE_A4.pdf"
+      },
+      {
+        "id": "mocktail-passion-fruit-lemonade",
+        "name": "Passion Fruit Lemonade",
+        "description": "Jus de passion, jus de citron jaune, sirop de sucre de canne, eau pétillante et glace pilée.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/mocktail-passion-fruit-lemonade.webp",
+        "sourceImage": "SAFE_LOUNGE_MOCKTAIL_PASSION_FRUIT_LEMONADE_A4.pdf"
+      }
+    ]
   },
   {
     "id": "panuozzo",
     "label": "Panuozzos",
-    "description": "",
-    "source": "",
-    "items": []
+    "description": "Des pains en pâte à pizza légèrement cuits, généreusement garnis.",
+    "source": "SAFE_LOUNGE_PANUOZZO_ROSSO_A4 (1).pdf",
+    "items": [
+      {
+        "id": "panuozzo-rosso",
+        "name": "Rosso",
+        "description": "Pain en pâte à pizza, crème de poivrons, roquette, jambon de dinde, chorizo finement tranché, stracciatella, poivrons, oignons confits et huile piquante.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/panuozzo-rosso.webp",
+        "sourceImage": "SAFE_LOUNGE_PANUOZZO_ROSSO_A4 (1).pdf"
+      },
+      {
+        "id": "panuozzo-tartufo",
+        "name": "Tartufo",
+        "description": "Pain en pâte à pizza, crème de truffe, roquette, jambon de dinde, jambon de bœuf, stracciatella, champignons poêlés, copeaux de parmesan et poivre moulu.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/panuozzo-tartufo.webp",
+        "sourceImage": "SAFE_LOUNGE_PANUOZZO_TARTUFO_A4 (1).pdf"
+      },
+      {
+        "id": "panuozzo-verde",
+        "name": "Verde",
+        "description": "Pain en pâte à pizza, pesto basilic, roquette, jambon de dinde, stracciatella, tomates cerises confites, copeaux de parmesan et crème balsamique.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/panuozzo-verde.webp",
+        "sourceImage": "SAFE_LOUNGE_PANUOZZO_VERDE_A4 (1).pdf"
+      }
+    ]
   },
   {
     "id": "pates",
@@ -253,6 +438,78 @@
         "price": null,
         "image": "/assets/menu-v2/pizzas-pizz-arabia.webp",
         "sourceImage": "SAFE_LOUNGE_PIZZA_PIZZ_ARABIA_A4.pdf"
+      },
+      {
+        "id": "pizzas-ranch",
+        "name": "Ranch’",
+        "description": "Sauce barbecue, mozzarella, poivrons rouges et verts, poulet, chorizo, crème, oignons confits et cheddar.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/pizzas-ranch.webp",
+        "sourceImage": "SAFE_LOUNGE_PIZZA_RANCH_A4.pdf"
+      },
+      {
+        "id": "pizzas-rosalia",
+        "name": "Rosalia",
+        "description": "Sauce tomate, mozzarella, champignons, poulet, merguez artisanale et crème.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/pizzas-rosalia.webp",
+        "sourceImage": "SAFE_LOUNGE_PIZZA_ROSALIA_A4.pdf"
+      },
+      {
+        "id": "pizzas-sugar-pepperoni",
+        "name": "Sugar Pepperoni",
+        "description": "Sauce tomate, sauce barbecue, mozzarella et pepperoni.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/pizzas-sugar-pepperoni.webp",
+        "sourceImage": "SAFE_LOUNGE_PIZZA_SUGAR_PEPPERONI_A4.pdf"
+      },
+      {
+        "id": "pizzas-tartuffe-mafia",
+        "name": "Tartuffe Mafia",
+        "description": "Crème truffée, champignons, stracciatella, tomates cerises, copeaux de parmesan, sauce basilic et crème balsamique.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/pizzas-tartuffe-mafia.webp",
+        "sourceImage": "SAFE_LOUNGE_PIZZA_TARTUFFE_MAFIA_A4.pdf"
+      },
+      {
+        "id": "pizzas-tic-et-tac",
+        "name": "Tic & Tac",
+        "description": "Mozzarella, chèvre, crème, noix et miel.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/pizzas-tic-et-tac.webp",
+        "sourceImage": "SAFE_LOUNGE_PIZZA_TIC_ET_TAC_A4.pdf"
+      },
+      {
+        "id": "pizzas-tutti-formaggi",
+        "name": "Tutti Formaggi",
+        "description": "Sauce tomate, mozzarella, chèvre, gorgonzola et copeaux de parmesan.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/pizzas-tutti-formaggi.webp",
+        "sourceImage": "SAFE_LOUNGE_PIZZA_TUTTI_FORMAGGI_A4.pdf"
+      },
+      {
+        "id": "pizzas-vieille-fermiere",
+        "name": "Vieille Fermière",
+        "description": "Base crème, mozzarella, poulet, champignons et oignons confits.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/pizzas-vieille-fermiere.webp",
+        "sourceImage": "SAFE_LOUNGE_PIZZA_VIEILLE_FERMIERE_A4.pdf"
+      },
+      {
+        "id": "pizzas-western",
+        "name": "Western",
+        "description": "Sauce moutarde, mozzarella, poulet rôti, crème, oignons confits et sauce persillade.",
+        "extra": "",
+        "price": null,
+        "image": "/assets/menu-v2/pizzas-western.webp",
+        "sourceImage": "SAFE_LOUNGE_PIZZA_WESTERN_A4.pdf"
       }
     ]
   },

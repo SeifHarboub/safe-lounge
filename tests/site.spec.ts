@@ -25,6 +25,9 @@ const dishes: { id: string; tab?: string; name: string; has: string[]; hasNot?: 
   { id: 'burger-smokey-beef-bacon', name: 'Smokey Beef Bacon', has: ['deux steaks smash', 'bacon de bœuf snacké', 'sauce Smoked Beef'] },
   { id: 'burger-original-smash', name: 'Original Smash', has: ['deux steaks smash', 'double cheddar fondu', 'sauce Original Smash'], hasNot: ['bacon'] },
   { id: 'burger-biggie-smash', name: 'Biggie Smash', has: ['deux steaks smash', 'double cheddar fondu', 'sauce classic burger'] },
+  { id: 'panuozzo-rosso', tab: 'panuozzo', name: 'Rosso', has: ['pain en pâte à pizza', 'crème de poivrons', 'roquette', 'jambon de dinde', 'chorizo finement tranché', 'stracciatella', 'poivrons', 'oignons confits', 'huile piquante'] },
+  { id: 'panuozzo-tartufo', tab: 'panuozzo', name: 'Tartufo', has: ['pain en pâte à pizza', 'crème de truffe', 'roquette', 'jambon de dinde', 'jambon de bœuf', 'stracciatella', 'champignons poêlés', 'copeaux de parmesan', 'poivre moulu'] },
+  { id: 'panuozzo-verde', tab: 'panuozzo', name: 'Verde', has: ['pain en pâte à pizza', 'pesto basilic', 'roquette', 'jambon de dinde', 'stracciatella', 'tomates cerises confites', 'copeaux de parmesan', 'crème balsamique'] },
   { id: 'pates-spaghetti-sicilienne', tab: 'pates', name: 'Spaghetti Sicilienne', has: ['sauce tomate', 'thon', 'olives', 'parmesan', 'tomate cerise'] },
   { id: 'pates-rigatoni-tartufo', tab: 'pates', name: 'Rigatoni Tartufo', has: ['truffe', 'champignons', 'copeaux de parmesan'] },
   { id: 'pates-spaghetti-merguez', tab: 'pates', name: 'Spaghetti Merguez', has: ['merguez', 'sauce tomate crémeuse', 'olives', 'parmesan'] },
@@ -39,6 +42,31 @@ const dishes: { id: string; tab?: string; name: string; has: string[]; hasNot?: 
   { id: 'pizzas-marmithon', tab: 'pizzas', name: 'Marmithon', has: ['thon', 'olives', 'oignons confits', 'sauce basilic'] },
   { id: 'pizzas-paysanne', tab: 'pizzas', name: 'Paysanne', has: ['base crème', 'lardons', 'pommes de terre', 'sauce persillade'], hasNot: ['sauce tomate'] },
   { id: 'pizzas-pizz-arabia', tab: 'pizzas', name: 'Pizz’Arabia', has: ['merguez', 'poivrons rouges et verts', 'œuf', 'oignons confits'], hasNot: ['sauce basilic'] },
+  { id: 'pizzas-ranch', tab: 'pizzas', name: 'Ranch’', has: ['sauce barbecue', 'poivrons rouges et verts', 'poulet', 'chorizo', 'crème', 'oignons confits', 'cheddar'], hasNot: ['sauce tomate'] },
+  { id: 'pizzas-rosalia', tab: 'pizzas', name: 'Rosalia', has: ['sauce tomate', 'mozzarella', 'champignons', 'poulet', 'merguez artisanale', 'crème'], hasNot: ['oignons confits', 'sauce basilic'] },
+  { id: 'pizzas-sugar-pepperoni', tab: 'pizzas', name: 'Sugar Pepperoni', has: ['sauce tomate', 'sauce barbecue', 'mozzarella', 'pepperoni'], hasNot: ['oignons', 'sauce basilic'] },
+  { id: 'pizzas-tartuffe-mafia', tab: 'pizzas', name: 'Tartuffe Mafia', has: ['crème truffée', 'champignons', 'stracciatella', 'tomates cerises', 'copeaux de parmesan', 'sauce basilic', 'crème balsamique'], hasNot: ['mozzarella', 'sauce tomate'] },
+  { id: 'pizzas-tic-et-tac', tab: 'pizzas', name: 'Tic & Tac', has: ['mozzarella', 'chèvre', 'crème', 'noix', 'miel'], hasNot: ['sauce tomate', 'viande'] },
+  { id: 'pizzas-tutti-formaggi', tab: 'pizzas', name: 'Tutti Formaggi', has: ['sauce tomate', 'mozzarella', 'chèvre', 'gorgonzola', 'copeaux de parmesan'], hasNot: ['viande', 'champignons'] },
+  { id: 'pizzas-vieille-fermiere', tab: 'pizzas', name: 'Vieille Fermière', has: ['base crème', 'mozzarella', 'poulet', 'champignons', 'oignons confits'], hasNot: ['sauce tomate'] },
+  { id: 'pizzas-western', tab: 'pizzas', name: 'Western', has: ['sauce moutarde', 'mozzarella', 'poulet rôti', 'crème', 'oignons confits', 'sauce persillade'], hasNot: ['sauce tomate'] },
+  { id: 'frappuccino-caramello', tab: 'frappuccino', name: 'Caramello', has: ['Espresso Caramello', 'lait entier', 'sirop vanille', 'glace vanille', 'glaçons', 'chantilly', 'coulis caramel'] },
+  { id: 'frappuccino-coffee-latte', tab: 'frappuccino', name: 'Coffee Latte', has: ['Espresso Forte', 'lait entier', 'sirop de sucre', 'glace vanille', 'glaçons', 'chantilly'], hasNot: ['caramel'] },
+  { id: 'frappuccino-nocciola', tab: 'frappuccino', name: 'Nocciola', has: ['Café Nocciola', 'lait entier', 'coulis chocolat', 'glace vanille', 'glaçons', 'chantilly', 'filet de chocolat'], hasNot: ['caramel'] },
+  { id: 'mocktail-amor-amor', tab: 'mocktail', name: 'Amor Amor', has: ['jus de passion', 'jus d’ananas', 'jus de mangue', 'sirop de vanille', 'grenadine', 'glace pilée'] },
+  { id: 'mocktail-coco-loco', tab: 'mocktail', name: 'Coco Loco', has: ['jus de piña colada', 'lait de coco', 'jus d’ananas', 'sirop de vanille', 'glace pilée'] },
+  { id: 'mocktail-mojito-framboise', tab: 'mocktail', name: 'Mojito Framboise', has: ['menthe fraîche', 'citron vert', 'sirop de framboise', 'Sprite', 'glace pilée'] },
+  { id: 'mocktail-mojito-fraise', tab: 'mocktail', name: 'Mojito Fraise', has: ['menthe fraîche', 'citron vert', 'sirop de fraise', 'Sprite', 'glace pilée'], hasNot: ['framboise'] },
+  { id: 'mocktail-passion-fruit-lemonade', tab: 'mocktail', name: 'Passion Fruit Lemonade', has: ['jus de passion', 'jus de citron jaune', 'sirop de sucre de canne', 'eau pétillante', 'glace pilée'] },
+  { id: 'milkshake-bueno', tab: 'milkshake', name: 'Bueno', has: ['glace vanille', 'lait', 'Kinder Bueno mixé', 'chantilly', 'demi-barre de Bueno'], hasNot: ['coulis'] },
+  { id: 'milkshake-cookies', tab: 'milkshake', name: 'Cookies', has: ['glace vanille', 'lait', 'cookies aux pépites de chocolat mixés', 'chantilly', 'demi-cookie'], hasNot: ['coulis'] },
+  { id: 'milkshake-oreo', tab: 'milkshake', name: 'Oreo', has: ['glace vanille', 'lait', 'biscuits Oreo mixés', 'chantilly', 'un biscuit Oreo'], hasNot: ['coulis'] },
+  { id: 'milkshake-petit-beurre', tab: 'milkshake', name: 'Petit Beurre', has: ['glace vanille', 'lait', 'biscuits Petit Beurre mixés', 'chantilly', 'demi-biscuit Petit Beurre'], hasNot: ['coulis'] },
+  { id: 'milkshake-speculoos', tab: 'milkshake', name: 'Spéculoos', has: ['glace vanille', 'lait', 'biscuits Spéculoos mixés', 'chantilly', 'demi-biscuit Spéculoos'], hasNot: ['coulis'] },
+  { id: 'milkshake-vanille', tab: 'milkshake', name: 'Vanille', has: ['glace vanille', 'lait', 'chantilly'], hasNot: ['coulis', 'biscuit'] },
+  { id: 'iced-latte-caramello', tab: 'iced-latte', name: 'Iced Caramello', has: ['sirop de vanille', 'café Caramello', 'lait entier', 'glaçons', 'chantilly', 'coulis caramel'] },
+  { id: 'iced-latte-coffee-latte', tab: 'iced-latte', name: 'Iced Coffee Latte', has: ['sirop de sucre', 'Espresso Forte', 'lait entier', 'glaçons', 'chantilly'], hasNot: ['caramel', 'cacao'] },
+  { id: 'iced-latte-nocciola', tab: 'iced-latte', name: 'Iced Nocciola', has: ['coulis chocolat', 'café Nocciola', 'lait entier', 'glaçons', 'chantilly'], hasNot: ['caramel', 'vanille'] },
 ];
 
 for (const dish of dishes) {
@@ -77,8 +105,8 @@ test('la fiche du burger fonctionne sur mobile', async ({ page }) => {
 
 test('une catégorie en attente ne conserve aucun ancien plat', async ({ page }) => {
   await page.goto('/#carte');
-  await page.locator('#tab-panuozzo').click();
-  await expect(page.locator('#category-title')).toHaveText('Panuozzos');
+  await page.locator('#tab-tiramisu').click();
+  await expect(page.locator('#category-title')).toHaveText('Tiramisus');
   await expect(page.locator('#dish-grid')).toContainText('Cette catégorie arrive bientôt.');
   await expect(page.locator('.dish-card')).toHaveCount(0);
   await expect(page.locator('#category-description')).toBeHidden();
@@ -125,7 +153,7 @@ test('la page expose un référencement local complet', async ({ page }) => {
   expect(data['@type']).toBe('Restaurant');
   expect(data.address.postalCode).toBe('93130');
   const items = data.hasMenu.hasMenuSection.flatMap((section: { hasMenuItem: unknown[] }) => section.hasMenuItem);
-  expect(items).toHaveLength(22);
+  expect(items).toHaveLength(dishes.length);
   const missingAlt = await page.locator('img:not([alt])').count();
   expect(missingAlt).toBe(0);
 });
