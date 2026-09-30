@@ -211,7 +211,6 @@ footer>span{color:#625b61}
 .dialog-copy>p:not(.eyebrow){font-size:16px;line-height:1.8;color:#625b61}
 .dialog-copy .dialog-served{margin-top:12px;font-size:12px!important;font-weight:650;letter-spacing:1.2px;text-transform:uppercase;color:var(--green)!important}
 .dialog-copy .dialog-extra{margin-top:14px;color:var(--green)!important}
-.dialog-footer{border-top:1px solid #150b1930;margin-top:auto;padding-top:25px;font-size:13px;line-height:1.8}
 .dialog-allergens{margin:22px 0 26px}
 .dialog-allergens h3{font-family:Satoshi,sans-serif;font-size:12px;font-weight:650;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);margin-bottom:12px}
 .dialog-allergens ul{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
@@ -319,7 +318,6 @@ footer>span{width:50%;text-align:right}
 .dialog-copy{padding:24px}
 .dialog-copy h2{font-size:32px;margin-top:15px}
 .dialog-price{font-size:28px;margin:12px 0}
-.dialog-footer{margin-top:23px;padding-top:16px}
 .dialog-close{position:fixed;right:calc(5vw + 12px);top:calc(7dvh + 12px)}
 .no-results{padding:35px 15px}
 .no-results>span{font-size:25px}
@@ -508,7 +506,6 @@ footer>span{width:50%;text-align:right}
 footer>span,footer>a:not(:first-child){font-size:12px}
 .mobile-dock a{font-size:14px}
 .dialog-copy>p:not(.eyebrow){font-size:15px}
-.dialog-footer{font-size:12px}
 }
 /* Phone: the smoke fills the whole purple section and climbs from bottom to top. */
 @media(max-width:760px){.lounge-haze{inset:0 -8%}
@@ -538,3 +535,22 @@ h2 .h2-kicker{display:block;margin-bottom:24px;font-family:Satoshi,sans-serif;fo
 .contact-title .h2-kicker{margin-bottom:26px}
 /* Replacing the list must not let the browser re-anchor the scroll elsewhere. */
 #menu-panel{overflow-anchor:none}
+
+/* Phone: the dish sheet always fits the screen without scrolling. The copy keeps
+   its natural height and the photo takes whatever height is left. */
+@media(max-width:760px){
+#dish-dialog{max-height:92dvh;overflow:hidden}
+#dish-dialog[open]{display:flex;flex-direction:column}
+#dialog-content{display:flex;flex-direction:column;flex:1 1 auto;min-height:0}
+.dialog-photo{flex:0 1 40dvh;min-height:96px;max-height:none;height:auto;aspect-ratio:auto;object-fit:cover}
+.dialog-photo.no-photo{flex-basis:18dvh}
+.dialog-copy{flex:none;padding:16px 20px 20px}
+.dialog-copy h2{font-size:26px;margin-top:6px}
+.dialog-price{font-size:24px;margin:6px 0 8px}
+.dialog-copy>p:not(.eyebrow){font-size:14px;line-height:1.55}
+.dialog-copy .dialog-served,.dialog-copy .dialog-extra{margin-top:8px}
+.dialog-allergens{margin:14px 0 0}
+.dialog-allergens h3{margin-bottom:8px}
+.dialog-allergens ul{gap:6px}
+.dialog-allergens li{padding:4px 10px;font-size:12px}
+}

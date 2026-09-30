@@ -168,7 +168,7 @@ test('chaque fiche détaille ses allergènes', async ({ page }) => {
   const dialog = page.getByRole('dialog');
   await expect(dialog.locator('.dialog-price')).toHaveText('13 €');
   await expect(dialog.locator('.dialog-allergens li')).toHaveText(['Gluten', 'Œufs', 'Lait', 'Moutarde']);
-  await expect(dialog.locator('.dialog-footer')).toContainText('traces restent possibles');
+  await expect(dialog).not.toContainText('traces restent possibles');
   await dialog.locator('.dialog-close').click();
   await page.locator('#tab-mocktail').click();
   await page.locator('.dish-card[data-open="mocktail-mojito-fraise"]').click();
@@ -183,6 +183,21 @@ test('aucune description ne détaille la recette', async ({ page }) => {
     await page.locator(`#tab-${tab}`).click();
     const text = (await page.locator('#menu-panel').textContent()) ?? '';
     expect(text).not.toMatch(/cuisson|louche|cuillère|égoutt|précuit|sel et|poivre\b(?! noir)|coupée en deux/i);
+  }
+});
+
+test('sur un petit téléphone, chaque fiche produit tient en entier sans défiler', async ({ page }) => {
+  test.setTimeout(90000);
+  await page.setViewportSize({ width: 375, height: 667 });
+  await page.goto('/#carte');
+  for (const category of menuData as unknown as { id: string; items: { id: string }[] }[]) {
+    await page.locator(`#tab-${category.id}`).click();
+    for (const item of category.items) {
+      await page.locator(`.dish-card[data-open="${item.id}"]`).click();
+      const fit = await page.locator('#dish-dialog').evaluate(dialog => { const box = dialog.getBoundingClientRect(); return dialog.scrollHeight <= dialog.clientHeight + 1 && box.top >= 0 && box.bottom <= innerHeight; });
+      expect(fit, item.id).toBe(true);
+      await page.keyboard.press('Escape');
+    }
   }
 });
 
@@ -268,6 +283,7 @@ test('le lounge présente ses chichas et la chauffe Quasar', async ({ page }) =>
   const lounge = page.locator('#lounge');
   await expect(lounge.locator('.lounge-specs')).toContainText('Alpha, Brodator, Mig tradi');
   expect((await page.locator('body').innerText()).match(/hookah|wookah/i)).toBeNull();
+  expect((await page.locator('body').innerText()).match(/\b(drink|good mood|good food|good vibes|make it)\b/i)).toBeNull();
   await expect(lounge.locator('.lounge-specs')).toContainText('Quasar');
   await expect(lounge.locator('.lounge-picture img')).toHaveAttribute('src', /lounge\/wookah-quasar\.webp$/);
   await expect(lounge.locator('.lounge-tile img')).toHaveCount(2);
@@ -276,10 +292,10 @@ test('le lounge présente ses chichas et la chauffe Quasar', async ({ page }) =>
   await expect(lounge.locator('.lounge-intro')).toContainText('dès 15 h');
   await expect(lounge.locator('.lounge-intro')).not.toContainText('assiette');
   await expect(lounge.locator('.lounge-formula').nth(0)).toContainText('FORMULE 1');
-  await expect(lounge.locator('.lounge-formula').nth(0)).toContainText('Chicha & Drink');
+  await expect(lounge.locator('.lounge-formula').nth(0)).toContainText('Chicha & Boisson');
   await expect(lounge.locator('.lounge-formula').nth(1)).toContainText('FORMULE 2');
   await expect(lounge.locator('.lounge-formula').nth(0)).toContainText('Chicha + boisson fraîche ou boisson chaude');
-  await expect(lounge.locator('.lounge-formula').nth(1)).toContainText('Chicha & Signature Drink');
+  await expect(lounge.locator('.lounge-formula').nth(1)).toContainText('Chicha & Boisson signature');
   await expect(lounge.locator('.lounge-formula').nth(1)).toContainText('Chicha + mocktail, milkshake, iced latte ou frappuccino');
 });
 
