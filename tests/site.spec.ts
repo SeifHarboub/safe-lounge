@@ -53,7 +53,7 @@ const dishes: { id: string; tab?: string; name: string; has: string[]; hasNot?: 
   { id: 'pizzas-tartuffe-mafia', tab: 'pizzas', name: 'Tartuffe Mafia', has: ['crème truffée', 'champignons', 'stracciatella', 'tomates cerises', 'copeaux de fromage italien'], hasNot: ['mozzarella', 'sauce tomate'] },
   { id: 'pizzas-tutti-formaggi', tab: 'pizzas', name: 'Tutti Formaggi', has: ['sauce tomate', 'mozzarella', 'chèvre', 'gorgonzola', 'copeaux de fromage italien'], hasNot: ['viande', 'champignons'] },
   { id: 'pizzas-vieille-fermiere', tab: 'pizzas', name: 'Vieille Fermière', has: ['base crème', 'mozzarella', 'poulet', 'champignons', 'oignons confits'], hasNot: ['sauce tomate'] },
-  { id: 'pizzas-western', tab: 'pizzas', name: 'Western', has: ['sauce moutarde', 'mozzarella', 'poulet rôti', 'crème', 'oignons confits', 'sauce persillade'], hasNot: ['sauce tomate'] },
+  { id: 'pizzas-western', tab: 'pizzas', name: 'Western', has: ['sauce moutarde', 'mozzarella', 'poulet', 'crème', 'oignons confits', 'sauce persillade'], hasNot: ['sauce tomate', 'rôti'] },
   { id: 'frappuccino-caramello', tab: 'frappuccino', name: 'Caramello', has: ['glace vanille', 'glaçons', 'chantilly'] },
   { id: 'frappuccino-coffee-latte', tab: 'frappuccino', name: 'Coffee Latte', has: ['glace vanille', 'glaçons', 'chantilly'], hasNot: ['caramel'] },
   { id: 'frappuccino-nocciola', tab: 'frappuccino', name: 'Nocciola', has: ['glace vanille', 'glaçons', 'chantilly', 'filet de chocolat'], hasNot: ['caramel'] },
@@ -117,6 +117,13 @@ for (const dish of dishes) {
     else await expect(card.locator('.dish-title > span')).toHaveText(`${price}€`);
   });
 }
+
+test('le site tutoie, comme le slogan', async ({ page }) => {
+  await page.goto('/');
+  const text = await page.locator('body').innerText();
+  expect(text.match(/\b(vous|votre|vos)\b/i)).toBeNull();
+  await expect(page.locator('#carte h2')).toContainText('tu prends quoi ?');
+});
 
 test('la carte n’a plus de barre de recherche', async ({ page }) => {
   await page.goto('/#carte');

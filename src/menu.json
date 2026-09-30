@@ -761,7 +761,7 @@
       {
         "id": "pizzas-western",
         "name": "Western",
-        "description": "Sauce moutarde, mozzarella fior di latte, poulet rôti, crème, oignons confits et sauce persillade.",
+        "description": "Sauce moutarde, mozzarella fior di latte, poulet, crème, oignons confits et sauce persillade.",
         "extra": "",
         "price": 14,
         "image": "/assets/menu-v2/pizzas-western.webp",
