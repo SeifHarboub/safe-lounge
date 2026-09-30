@@ -156,7 +156,7 @@
       {
         "id": "frappuccino-caramello",
         "name": "Caramello",
-        "description": "Espresso aux notes de caramel, glace vanille et lait mixés avec des glaçons, surmontés de chantilly et d’un coulis de caramel.",
+        "description": "Expresso aux notes de caramel, glace vanille et lait mixés avec des glaçons, surmontés de chantilly et d’un coulis de caramel.",
         "extra": "",
         "price": 9,
         "image": "/assets/menu-v2/frappuccino-caramello.webp",
@@ -168,7 +168,7 @@
       {
         "id": "frappuccino-coffee-latte",
         "name": "Coffee Latte",
-        "description": "Espresso, glace vanille et lait mixés avec des glaçons, le tout surmonté de chantilly.",
+        "description": "Expresso, glace vanille et lait mixés avec des glaçons, le tout surmonté de chantilly.",
         "extra": "",
         "price": 8,
         "image": "/assets/menu-v2/frappuccino-coffee-latte.webp",
@@ -213,7 +213,7 @@
       {
         "id": "iced-latte-coffee-latte",
         "name": "Iced Coffee Latte",
-        "description": "Espresso, lait frais et glaçons, surmonté de chantilly pour une pause fraîche et onctueuse.",
+        "description": "Expresso, lait frais et glaçons, surmonté de chantilly pour une pause fraîche et onctueuse.",
         "extra": "",
         "price": 6,
         "image": "/assets/menu-v2/iced-latte-coffee-latte.webp",
