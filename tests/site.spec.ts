@@ -118,13 +118,16 @@ for (const dish of dishes) {
   });
 }
 
+test('la carte n’a plus de barre de recherche', async ({ page }) => {
+  await page.goto('/#carte');
+  await expect(page.locator('#dish-search, .menu-search')).toHaveCount(0);
+});
+
 test('les burgers sont regroupés en smash puis chicken, chacun par prix croissant', async ({ page }) => {
   await page.goto('/#carte');
   await expect(page.locator('.dish-group')).toHaveText(['Smash burgers', 'Chicken burgers']);
   const order = await page.locator('.dish-card').evaluateAll(cards => cards.map(card => card.getAttribute('data-open')));
   expect(order).toEqual(['burger-classic-smash', 'burger-original-smash', 'burger-biggie-smash', 'burger-smokey-beef-bacon', 'burger-chicken-biggie', 'burger-chicken-creamy', 'burger-bbq-raclette', 'burger-smokey-bacon']);
-  await page.locator('#dish-search').fill('bacon');
-  await expect(page.locator('.dish-group')).toHaveCount(0);
 });
 
 test('chaque catégorie liste ses plats du moins cher au plus cher', async ({ page }) => {

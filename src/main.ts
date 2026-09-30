@@ -20,9 +20,7 @@ const menu = (rawMenu as Category[]).slice().sort((a, b) => DISPLAY_ORDER.indexO
 const allDishes = menu.flatMap(category => category.items.map(dish => ({ ...dish, category: category.id })));
 const $ = <T extends Element = HTMLElement>(selector: string) => document.querySelector<T>(selector)!;
 const escape = (text: string) => text.replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]!));
-const normalize = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 let selectedCategory = 'burger';
-const search = $<HTMLInputElement>('#dish-search');
 const grid = $('#dish-grid');
 const panel = $('#menu-panel');
 const reducedQuery = matchMedia('(prefers-reduced-motion: reduce)');
@@ -33,25 +31,20 @@ categories.innerHTML = menu.map(category => `<button role="tab" id="tab-${catego
 const tabs = [...categories.querySelectorAll<HTMLButtonElement>('button')];
 
 function renderMenu(animate = true) {
-  const query = normalize(search.value.trim());
   const category = menu.find(category => category.id === selectedCategory)!;
-  const dishes = query ? allDishes.filter(dish => normalize(`${dish.name} ${dish.description} ${menu.find(c => c.id === dish.category)!.label}`).includes(query)) : category.items;
-  $('#category-title').textContent = query ? 'Votre envie, à la carte.' : category.label;
-  // Each dish already details its ingredients: a category only says something during a search.
-  $('#category-description').textContent = query ? `Recherche dans toute la carte : « ${search.value.trim()} »` : '';
+  const dishes = category.items;
+  $('#category-title').textContent = category.label;
   // An empty category says so once, in the box below: no count, no second notice.
   $('#result-count').textContent = dishes.length ? `${dishes.length} choix` : '';
-  $<HTMLButtonElement>('.clear-search').hidden = !query;
-  tabs.forEach(tab => { const active = !query && tab.dataset.category === category.id; tab.setAttribute('aria-selected',String(active)); tab.tabIndex = tab.dataset.category === category.id ? 0 : -1; });
-  if (query) { panel.removeAttribute('aria-labelledby'); panel.setAttribute('aria-label','Résultats de recherche dans toute la carte'); }
-  else { panel.setAttribute('aria-labelledby',`tab-${category.id}`); panel.removeAttribute('aria-label'); }
-  grid.innerHTML = dishes.length ? dishes.map((dish, index) => { const heading = !query && dish.group && dish.group !== dishes[index - 1]?.group ? `<h4 class="dish-group">${escape(dish.group)}</h4>` : ''; const label = menu.find(c => c.items.some(item => item.id === dish.id))!.label; return `${heading}<button class="dish-card" data-open="${dish.id}" aria-label="Voir ${escape(dish.name)}${dish.price === null ? '' : `, ${dish.price} euros`}"><div class="dish-frame"><div class="dish-photo">${dish.image ? `<img src="${asset(dish.image)}" alt="${escape(`${dish.name}, ${label.toLowerCase()} du Safe Lounge à Noisy-le-Sec`)}" width="1080" height="1080" loading="${index < 3 ? 'eager' : 'lazy'}" />` : `<div class="no-photo"><img src="${asset('/assets/symbol-lilac.svg')}" alt="" /></div>`}<span class="dish-open">↗︎</span></div></div><div class="dish-title"><h4>${escape(dish.name)}</h4>${dish.price === null ? '' : `<span>${dish.price}<small>€</small></span>`}</div><p>${escape(dish.description)}</p>${dish.served ? `<span class="dish-served">${escape(dish.served)}</span>` : ''}${dish.extra ? `<span class="dish-extra">${escape(dish.extra)}</span>` : ''}</button>`; }).join('') : '<div class="no-results"><span>Cette catégorie arrive bientôt.</span><p>Notre équipe finalise cette sélection. En attendant, demandez-nous ce qui est servi sur place.</p></div>';
+  tabs.forEach(tab => { const active = tab.dataset.category === category.id; tab.setAttribute('aria-selected',String(active)); tab.tabIndex = tab.dataset.category === category.id ? 0 : -1; });
+  panel.setAttribute('aria-labelledby',`tab-${category.id}`);
+  grid.innerHTML = dishes.length ? dishes.map((dish, index) => { const heading = dish.group && dish.group !== dishes[index - 1]?.group ? `<h4 class="dish-group">${escape(dish.group)}</h4>` : ''; const label = menu.find(c => c.items.some(item => item.id === dish.id))!.label; return `${heading}<button class="dish-card" data-open="${dish.id}" aria-label="Voir ${escape(dish.name)}${dish.price === null ? '' : `, ${dish.price} euros`}"><div class="dish-frame"><div class="dish-photo">${dish.image ? `<img src="${asset(dish.image)}" alt="${escape(`${dish.name}, ${label.toLowerCase()} du Safe Lounge à Noisy-le-Sec`)}" width="1080" height="1080" loading="${index < 3 ? 'eager' : 'lazy'}" />` : `<div class="no-photo"><img src="${asset('/assets/symbol-lilac.svg')}" alt="" /></div>`}<span class="dish-open">↗︎</span></div></div><div class="dish-title"><h4>${escape(dish.name)}</h4>${dish.price === null ? '' : `<span>${dish.price}<small>€</small></span>`}</div><p>${escape(dish.description)}</p>${dish.served ? `<span class="dish-served">${escape(dish.served)}</span>` : ''}${dish.extra ? `<span class="dish-extra">${escape(dish.extra)}</span>` : ''}</button>`; }).join('') : '<div class="no-results"><span>Cette catégorie arrive bientôt.</span><p>Notre équipe finalise cette sélection. En attendant, demandez-nous ce qui est servi sur place.</p></div>';
   if (animate && canAnimate()) gsap.fromTo('.dish-card',{y:24,opacity:0},{y:0,opacity:1,duration:.45,stagger:.045,ease:'power2.out',clearProps:'transform,opacity'});
   requestAnimationFrame(() => ScrollTrigger.refresh());
 }
 function selectCategory(id: string) {
   if (!menu.some(category => category.id === id)) return;
-  selectedCategory = id; search.value = ''; renderMenu();
+  selectedCategory = id; renderMenu();
   const behavior = canAnimate() ? 'smooth' : 'auto';
   // On a phone the tabs are one sticky row: centre the chosen tab in it.
   if (mobileQuery.matches) {
@@ -80,8 +73,6 @@ tabs.forEach((tab, index) => {
     event.preventDefault(); tabs[next].focus(); selectCategory(tabs[next].dataset.category!);
   });
 });
-search.addEventListener('input', () => renderMenu());
-$('.clear-search').addEventListener('click', () => { search.value=''; renderMenu(); search.focus(); });
 function goToSection(hash: string) {
   const section = document.querySelector<HTMLElement>(hash);
   if (!section) return;
@@ -95,7 +86,6 @@ document.addEventListener('click', event => {
   const target = event.target as Element;
   const categoryLink = target.closest<HTMLElement>('[data-go]');
   if (categoryLink) selectCategory(categoryLink.dataset.go!);
-  if (target.closest('[data-clear]')) { search.value='';renderMenu();search.focus(); }
   const dishLink = target.closest<HTMLElement>('[data-open]');
   if (dishLink) openDish(dishLink.dataset.open!, (event as MouseEvent).detail > 0);
   const anchor = target.closest<HTMLAnchorElement>('a[href^="#"]');
