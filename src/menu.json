@@ -8,7 +8,7 @@
       {
         "id": "burger-bbq-raclette",
         "name": "BBQ’ Raclette",
-        "description": "Potato bun moelleux, poulet frit croustillant, raclette fondue, sauce BBQ et salade iceberg.",
+        "description": "Potato bun moelleux, poulet frit gourmand, raclette fondante, salade iceberg croquante et sauce barbecue.",
         "extra": "",
         "price": 14,
         "image": "/assets/menu-v2/burger-bbq-raclette.webp",
@@ -19,13 +19,13 @@
           "Lait",
           "Moutarde"
         ],
-        "served": "Servi avec des frites",
+        "served": "Servi avec frites",
         "group": "Chicken burgers"
       },
       {
         "id": "burger-chicken-biggie",
         "name": "Chicken Biggie",
-        "description": "Potato bun moelleux, poulet frit croustillant, double cheddar fondu, sauce classic burger et salade iceberg.",
+        "description": "Potato bun moelleux, poulet frit gourmand, double cheddar fondant, salade iceberg croquante et sauce classic burger.",
         "extra": "",
         "price": 13,
         "image": "/assets/menu-v2/burger-chicken-biggie.webp",
@@ -36,13 +36,13 @@
           "Lait",
           "Moutarde"
         ],
-        "served": "Servi avec des frites",
+        "served": "Servi avec frites",
         "group": "Chicken burgers"
       },
       {
         "id": "burger-chicken-creamy",
         "name": "Chicken Creamy",
-        "description": "Potato bun moelleux, poulet frit croustillant, double cheddar fondu, mayonnaise et salade iceberg.",
+        "description": "Potato bun moelleux, poulet frit gourmand, double cheddar fondant, salade iceberg croquante et mayonnaise.",
         "extra": "",
         "price": 13,
         "image": "/assets/menu-v2/burger-chicken-creamy.webp",
@@ -53,13 +53,13 @@
           "Lait",
           "Moutarde"
         ],
-        "served": "Servi avec des frites",
+        "served": "Servi avec frites",
         "group": "Chicken burgers"
       },
       {
         "id": "burger-smokey-bacon",
         "name": "Smokey Bacon",
-        "description": "Potato bun moelleux, poulet frit croustillant, bacon de bœuf snacké, double cheddar fondu, sauce Smokey Baconnaise et salade iceberg.",
+        "description": "Potato bun moelleux, poulet frit gourmand, bacon de bœuf snacké, double cheddar fondant, salade iceberg croquante et sauce smokey baconnaise.",
         "extra": "",
         "price": 14,
         "image": "/assets/menu-v2/burger-smokey-bacon.webp",
@@ -70,13 +70,13 @@
           "Lait",
           "Moutarde"
         ],
-        "served": "Servi avec des frites",
+        "served": "Servi avec frites",
         "group": "Chicken burgers"
       },
       {
         "id": "burger-classic-smash",
         "name": "Classic Smash",
-        "description": "Potato bun moelleux, deux steaks smash, double cheddar fondu, ketchup, moutarde et salade iceberg.",
+        "description": "Potato bun moelleux, deux steaks smash, double cheddar fondant, salade iceberg croquante, ketchup et moutarde.",
         "extra": "Bacon de bœuf +2 € · Version XL (triple steak) +3 €",
         "price": 13,
         "image": "/assets/menu-v2/burger-classic-smash.webp",
@@ -87,13 +87,13 @@
           "Lait",
           "Moutarde"
         ],
-        "served": "Servi avec des frites",
+        "served": "Servi avec frites",
         "group": "Smash burgers"
       },
       {
         "id": "burger-smokey-beef-bacon",
         "name": "Smokey Beef Bacon",
-        "description": "Potato bun moelleux, deux steaks smash, bacon de bœuf snacké, double cheddar fondu, sauce Smoked Beef et salade iceberg.",
+        "description": "Potato bun moelleux, deux steaks smash, bacon de bœuf snacké, double cheddar fondant, salade iceberg croquante et sauce smoked beef.",
         "extra": "Version XL (triple steak) +3 €",
         "price": 14,
         "image": "/assets/menu-v2/burger-smokey-beef-bacon.webp",
@@ -104,13 +104,13 @@
           "Lait",
           "Moutarde"
         ],
-        "served": "Servi avec des frites",
+        "served": "Servi avec frites",
         "group": "Smash burgers"
       },
       {
         "id": "burger-original-smash",
         "name": "Original Smash",
-        "description": "Potato bun moelleux, deux steaks smash, double cheddar fondu, sauce Original Smash et salade iceberg.",
+        "description": "Potato bun moelleux, deux steaks smash, double cheddar fondant, salade iceberg croquante et sauce original smash.",
         "extra": "Bacon de bœuf +2 € · Version XL (triple steak) +3 €",
         "price": 13,
         "image": "/assets/menu-v2/burger-original-smash.webp",
@@ -121,13 +121,13 @@
           "Lait",
           "Moutarde"
         ],
-        "served": "Servi avec des frites",
+        "served": "Servi avec frites",
         "group": "Smash burgers"
       },
       {
         "id": "burger-biggie-smash",
         "name": "Biggie Smash",
-        "description": "Potato bun moelleux, deux steaks smash, double cheddar fondu, sauce classic burger et salade iceberg.",
+        "description": "Potato bun moelleux, deux steaks smash, double cheddar fondant, salade iceberg croquante et sauce classic burger.",
         "extra": "Bacon de bœuf +2 € · Version XL (triple steak) +3 €",
         "price": 13,
         "image": "/assets/menu-v2/burger-biggie-smash.webp",
@@ -138,7 +138,7 @@
           "Lait",
           "Moutarde"
         ],
-        "served": "Servi avec des frites",
+        "served": "Servi avec frites",
         "group": "Smash burgers"
       }
     ],
@@ -156,7 +156,7 @@
       {
         "id": "frappuccino-caramello",
         "name": "Caramello",
-        "description": "Espresso Caramello, lait entier, sirop vanille, glace vanille, glaçons, chantilly et coulis caramel.",
+        "description": "Espresso aux notes de caramel, glace vanille et lait mixés avec des glaçons, surmontés de chantilly et d’un coulis de caramel.",
         "extra": "",
         "price": 9,
         "image": "/assets/menu-v2/frappuccino-caramello.webp",
@@ -168,7 +168,7 @@
       {
         "id": "frappuccino-coffee-latte",
         "name": "Coffee Latte",
-        "description": "Espresso Forte, lait entier, sirop de sucre, glace vanille, glaçons et chantilly.",
+        "description": "Espresso, glace vanille et lait mixés avec des glaçons, le tout surmonté de chantilly.",
         "extra": "",
         "price": 8,
         "image": "/assets/menu-v2/frappuccino-coffee-latte.webp",
@@ -180,7 +180,7 @@
       {
         "id": "frappuccino-nocciola",
         "name": "Nocciola",
-        "description": "Café Nocciola, lait entier, coulis chocolat, glace vanille, glaçons et chantilly, avec un filet de chocolat.",
+        "description": "Café aux notes de noisette et de chocolat, glace vanille et lait mixés avec des glaçons, surmontés de chantilly et d’un filet de chocolat.",
         "extra": "",
         "price": 9,
         "image": "/assets/menu-v2/frappuccino-nocciola.webp",
@@ -201,7 +201,7 @@
       {
         "id": "iced-latte-caramello",
         "name": "Iced Caramello",
-        "description": "Sirop de vanille, café Caramello, lait entier, glaçons, chantilly et coulis caramel.",
+        "description": "Café aux notes de caramel et de vanille, accompagné de lait frais et de glaçons, surmonté de chantilly et d’un coulis de caramel.",
         "extra": "",
         "price": 7,
         "image": "/assets/menu-v2/iced-latte-caramello.webp",
@@ -213,7 +213,7 @@
       {
         "id": "iced-latte-coffee-latte",
         "name": "Iced Coffee Latte",
-        "description": "Sirop de sucre, Espresso Forte, lait entier, glaçons et chantilly.",
+        "description": "Espresso, lait frais et glaçons, surmonté de chantilly pour une pause fraîche et onctueuse.",
         "extra": "",
         "price": 6,
         "image": "/assets/menu-v2/iced-latte-coffee-latte.webp",
@@ -225,7 +225,7 @@
       {
         "id": "iced-latte-nocciola",
         "name": "Iced Nocciola",
-        "description": "Coulis chocolat, café Nocciola, lait entier, glaçons, chantilly et filet de coulis chocolat.",
+        "description": "Café aux notes de noisette et de chocolat, associé au lait et aux glaçons, surmonté de chantilly et d’un filet de chocolat.",
         "extra": "",
         "price": 7,
         "image": "/assets/menu-v2/iced-latte-nocciola.webp",
@@ -246,7 +246,7 @@
       {
         "id": "milkshake-bueno",
         "name": "Bueno",
-        "description": "Glace vanille, lait et Kinder Bueno mixé, avec chantilly et une demi-barre de Bueno.",
+        "description": "Onctueux milk-shake au Bueno, surmonté de chantilly.",
         "extra": "",
         "price": 9,
         "image": "/assets/menu-v2/milkshake-bueno.webp",
@@ -261,7 +261,7 @@
       {
         "id": "milkshake-cookies",
         "name": "Cookies",
-        "description": "Glace vanille, lait et cookies aux pépites de chocolat mixés, avec chantilly et un demi-cookie.",
+        "description": "Onctueux milk-shake aux cookies, surmonté de chantilly.",
         "extra": "",
         "price": 9,
         "image": "/assets/menu-v2/milkshake-cookies.webp",
@@ -276,7 +276,7 @@
       {
         "id": "milkshake-oreo",
         "name": "Oreo",
-        "description": "Glace vanille, lait et biscuits Oreo mixés, avec chantilly et un biscuit Oreo.",
+        "description": "Onctueux milk-shake à l’Oreo, surmonté de chantilly.",
         "extra": "",
         "price": 9,
         "image": "/assets/menu-v2/milkshake-oreo.webp",
@@ -290,7 +290,7 @@
       {
         "id": "milkshake-petit-beurre",
         "name": "Petit Beurre",
-        "description": "Glace vanille, lait et biscuits Petit Beurre mixés, avec chantilly et un demi-biscuit Petit Beurre.",
+        "description": "Onctueux milk-shake au petit beurre, surmonté de chantilly.",
         "extra": "",
         "price": 9,
         "image": "/assets/menu-v2/milkshake-petit-beurre.webp",
@@ -304,7 +304,7 @@
       {
         "id": "milkshake-speculoos",
         "name": "Spéculoos",
-        "description": "Glace vanille, lait et biscuits Spéculoos mixés, avec chantilly et un demi-biscuit Spéculoos.",
+        "description": "Onctueux milk-shake au spéculoos, surmonté de chantilly.",
         "extra": "",
         "price": 9,
         "image": "/assets/menu-v2/milkshake-speculoos.webp",
@@ -318,7 +318,7 @@
       {
         "id": "milkshake-vanille",
         "name": "Vanille",
-        "description": "Glace vanille, lait et chantilly.",
+        "description": "Onctueux milk-shake à la glace vanille, surmonté de chantilly.",
         "extra": "",
         "price": 8,
         "image": "/assets/menu-v2/milkshake-vanille.webp",
@@ -338,7 +338,7 @@
       {
         "id": "mocktail-virgin-mojito",
         "name": "Virgin Mojito",
-        "description": "Menthe fraîche, citron vert, sirop de sucre de canne, Sprite et glace pilée.",
+        "description": "Menthe fraîche, citron vert, sirop de sucre de canne, limonade et glace pilée.",
         "extra": "",
         "price": 8,
         "image": "/assets/menu-v2/mocktail-virgin-mojito.webp",
@@ -348,7 +348,7 @@
       {
         "id": "mocktail-mojito-fraise",
         "name": "Mojito Fraise",
-        "description": "Menthe fraîche, citron vert, sirop de fraise, Sprite et glace pilée.",
+        "description": "Menthe fraîche, citron vert, sirop de fraise, limonade et glace pilée.",
         "extra": "",
         "price": 9,
         "image": "/assets/menu-v2/mocktail-mojito-fraise.webp",
@@ -358,7 +358,7 @@
       {
         "id": "mocktail-mojito-framboise",
         "name": "Mojito Framboise",
-        "description": "Menthe fraîche, citron vert, sirop de framboise, Sprite et glace pilée.",
+        "description": "Menthe fraîche, citron vert, sirop de framboise, limonade et glace pilée.",
         "extra": "",
         "price": 9,
         "image": "/assets/menu-v2/mocktail-mojito-framboise.webp",
@@ -406,7 +406,7 @@
       {
         "id": "panuozzo-rosso",
         "name": "Rosso",
-        "description": "Pain en pâte à pizza, crème de poivrons, roquette, jambon de dinde, chorizo finement tranché, stracciatella, poivrons, oignons confits et huile piquante.",
+        "description": "Pain en pâte à pizza, crème de poivrons, jambon de dinde, chorizo finement tranché, stracciatella crémeuse, poivrons fondants, oignons confits, roquette et huile piquante.",
         "extra": "",
         "price": 14,
         "image": "/assets/menu-v2/panuozzo-rosso.webp",
@@ -415,12 +415,12 @@
           "Gluten",
           "Lait"
         ],
-        "served": "Servi avec une salade"
+        "served": "Servi avec salade"
       },
       {
         "id": "panuozzo-tartufo",
         "name": "Tartufo",
-        "description": "Pain en pâte à pizza, crème de truffe, roquette, jambon de dinde, jambon de bœuf, stracciatella, champignons poêlés, copeaux de parmesan et poivre moulu.",
+        "description": "Pain en pâte à pizza, crème de truffe, jambon de dinde, jambon de bœuf, stracciatella crémeuse, champignons poêlés, roquette, copeaux de parmesan et poivre moulu.",
         "extra": "",
         "price": 15,
         "image": "/assets/menu-v2/panuozzo-tartufo.webp",
@@ -429,12 +429,12 @@
           "Gluten",
           "Lait"
         ],
-        "served": "Servi avec une salade"
+        "served": "Servi avec salade"
       },
       {
         "id": "panuozzo-verde",
         "name": "Verde",
-        "description": "Pain en pâte à pizza, pesto basilic, roquette, jambon de dinde, stracciatella, tomates cerises confites, copeaux de parmesan et crème balsamique.",
+        "description": "Pain en pâte à pizza, pesto de basilic, jambon de dinde, stracciatella crémeuse, tomates cerises confites, roquette, copeaux de parmesan et crème de balsamique.",
         "extra": "",
         "price": 13,
         "image": "/assets/menu-v2/panuozzo-verde.webp",
@@ -445,7 +445,7 @@
           "Fruits à coque",
           "Sulfites"
         ],
-        "served": "Servi avec une salade"
+        "served": "Servi avec salade"
       }
     ]
   },
@@ -458,7 +458,7 @@
       {
         "id": "pates-spaghetti-sicilienne",
         "name": "Spaghetti Sicilienne",
-        "description": "Spaghetti à la sauce tomate, thon, olives et parmesan.",
+        "description": "Spaghetti à la sauce tomate, thon et olives.",
         "extra": "",
         "price": 13,
         "image": "/assets/menu-v2/pates-spaghetti-sicilienne.webp",
@@ -473,7 +473,7 @@
       {
         "id": "pates-rigatoni-tartufo",
         "name": "Rigatoni Tartufo",
-        "description": "Rigatoni dans une sauce crémeuse à la truffe, champignons et parmesan, avec copeaux de parmesan.",
+        "description": "Rigatoni à la sauce crémeuse à la truffe et aux champignons.",
         "extra": "",
         "price": 13,
         "image": "/assets/menu-v2/pates-rigatoni-tartufo.webp",
@@ -487,9 +487,9 @@
       {
         "id": "pates-spaghetti-merguez",
         "name": "Spaghetti Merguez",
-        "description": "Spaghetti à la merguez, sauce tomate crémeuse, olives et parmesan.",
+        "description": "Spaghetti à la merguez, sauce rosée à la tomate et à la crème, olives.",
         "extra": "",
-        "price": null,
+        "price": 14,
         "image": "/assets/menu-v2/pates-spaghetti-merguez.webp",
         "sourceImage": "SAFE_LOUNGE_SPAGHETTI_MERGUEZ_A4.pdf",
         "allergens": [
@@ -501,7 +501,7 @@
       {
         "id": "pates-spaghetti-formaggi",
         "name": "Spaghetti Formaggi",
-        "description": "Spaghetti dans une sauce crémeuse au gorgonzola, avec copeaux de parmesan.",
+        "description": "Spaghetti à la sauce crémeuse au gorgonzola, copeaux de parmesan.",
         "extra": "",
         "price": 12,
         "image": "/assets/menu-v2/pates-spaghetti-formaggi.webp",
@@ -515,7 +515,7 @@
       {
         "id": "pates-penne-arrabiata",
         "name": "Penne Arrabbiata",
-        "description": "Penne à la sauce tomate relevée à l’huile piquante.",
+        "description": "Penne à la sauce tomate relevée au piment et à l’huile d’olive.",
         "extra": "",
         "price": 11,
         "image": "/assets/menu-v2/pates-penne-arrabiata.webp",
@@ -528,7 +528,7 @@
       {
         "id": "pates-penne-forestiere",
         "name": "Penne Forestière",
-        "description": "Penne au poulet et aux champignons, sauce crémeuse au parmesan.",
+        "description": "Penne au poulet et aux champignons, sauce crémeuse.",
         "extra": "",
         "price": 14,
         "image": "/assets/menu-v2/pates-penne-forestiere.webp",
@@ -542,7 +542,7 @@
       {
         "id": "pates-penne-saumon",
         "name": "Penne Saumon",
-        "description": "Penne au saumon, sauce tomate crémeuse au parmesan.",
+        "description": "Penne au saumon, sauce rosée à la tomate et à la crème.",
         "extra": "",
         "price": 15,
         "image": "/assets/menu-v2/pates-penne-saumon.webp",
@@ -557,7 +557,7 @@
       {
         "id": "pates-rigatoni-carbonara",
         "name": "Rigatoni Carbonara",
-        "description": "Rigatoni à la crème, jaune d’œuf, lardons, parmesan et poivre noir.",
+        "description": "Rigatoni, sauce crémeuse à base de jaune d’œuf et parmesan, lardons et poivre noir.",
         "extra": "",
         "price": 14,
         "image": "/assets/menu-v2/pates-rigatoni-carbonara.webp",
@@ -579,7 +579,7 @@
       {
         "id": "pizzas-bollywood-style",
         "name": "Bollywood Style",
-        "description": "Sauce curry, crème, mozzarella, poulet, oignons confits, tomates cerises, sauce basilic et crème balsamique.",
+        "description": "Curry à la crème, mozzarella fior di latte, poulet, oignons confits, tomates cerises, pesto de basilic et crème de balsamique.",
         "extra": "",
         "price": 15,
         "image": "/assets/menu-v2/pizzas-bollywood-style.webp",
@@ -594,7 +594,7 @@
       {
         "id": "pizzas-burratella-lov",
         "name": "Burratella Lov’",
-        "description": "Sauce tomate, mozzarella, stracciatella, jambon de dinde, copeaux de parmesan, tomates cerises, sauce basilic et crème balsamique.",
+        "description": "Sauce tomate, mozzarella fior di latte, jambon de dinde, stracciatella, tomates cerises, copeaux de parmesan, pesto de basilic et crème de balsamique.",
         "extra": "",
         "price": 16,
         "image": "/assets/menu-v2/pizzas-burratella-lov.webp",
@@ -609,7 +609,7 @@
       {
         "id": "pizzas-classica-queen",
         "name": "Classica Queen",
-        "description": "Sauce tomate, mozzarella, champignons et jambon de dinde.",
+        "description": "Sauce tomate, mozzarella fior di latte, champignons et jambon de dinde.",
         "extra": "",
         "price": 12,
         "image": "/assets/menu-v2/pizzas-classica-queen.webp",
@@ -622,7 +622,7 @@
       {
         "id": "pizzas-malaga",
         "name": "Malaga",
-        "description": "Sauce tomate, mozzarella, merguez, œuf, jambon de dinde et sauce basilic.",
+        "description": "Sauce tomate, mozzarella fior di latte, merguez, jambon de dinde, œuf et pesto de basilic.",
         "extra": "",
         "price": 15,
         "image": "/assets/menu-v2/pizzas-malaga.webp",
@@ -637,7 +637,7 @@
       {
         "id": "pizzas-marmithon",
         "name": "Marmithon",
-        "description": "Sauce tomate, mozzarella, thon, olives, oignons confits et sauce basilic.",
+        "description": "Sauce tomate, mozzarella fior di latte, thon, olives, oignons confits et pesto de basilic.",
         "extra": "",
         "price": 13,
         "image": "/assets/menu-v2/pizzas-marmithon.webp",
@@ -652,7 +652,7 @@
       {
         "id": "pizzas-paysanne",
         "name": "Paysanne",
-        "description": "Base crème, mozzarella, lardons, pommes de terre, oignons confits et sauce persillade.",
+        "description": "Base crème, mozzarella fior di latte, lardons, pommes de terre, oignons confits et sauce persillade.",
         "extra": "",
         "price": 13,
         "image": "/assets/menu-v2/pizzas-paysanne.webp",
@@ -665,7 +665,7 @@
       {
         "id": "pizzas-pizz-arabia",
         "name": "Pizz’Arabia",
-        "description": "Sauce tomate, mozzarella, merguez, poivrons rouges et verts, œuf et oignons confits.",
+        "description": "Sauce tomate, mozzarella fior di latte, merguez, poivrons rouges et verts, œuf et oignons confits.",
         "extra": "",
         "price": 14,
         "image": "/assets/menu-v2/pizzas-pizz-arabia.webp",
@@ -679,7 +679,7 @@
       {
         "id": "pizzas-ranch",
         "name": "Ranch’",
-        "description": "Sauce barbecue, mozzarella, poivrons rouges et verts, poulet, chorizo, crème, oignons confits et cheddar.",
+        "description": "Sauce barbecue, mozzarella fior di latte, poivrons rouges et verts, poulet, chorizo, crème, oignons confits et cheddar.",
         "extra": "",
         "price": 15,
         "image": "/assets/menu-v2/pizzas-ranch.webp",
@@ -693,7 +693,7 @@
       {
         "id": "pizzas-rosalia",
         "name": "Rosalia",
-        "description": "Sauce tomate, mozzarella, champignons, poulet, merguez artisanale et crème.",
+        "description": "Sauce tomate, mozzarella fior di latte, champignons, poulet, merguez artisanale et crème.",
         "extra": "",
         "price": 15,
         "image": "/assets/menu-v2/pizzas-rosalia.webp",
@@ -706,7 +706,7 @@
       {
         "id": "pizzas-sugar-pepperoni",
         "name": "Sugar Pepperoni",
-        "description": "Sauce tomate à la barbecue, mozzarella et pepperoni.",
+        "description": "Sauce tomate à la barbecue, mozzarella fior di latte et pepperoni de bœuf.",
         "extra": "",
         "price": 12,
         "image": "/assets/menu-v2/pizzas-sugar-pepperoni.webp",
@@ -720,7 +720,7 @@
       {
         "id": "pizzas-tartuffe-mafia",
         "name": "Tartuffe Mafia",
-        "description": "Crème truffée, champignons, stracciatella, tomates cerises, copeaux de parmesan, sauce basilic et crème balsamique.",
+        "description": "Crème truffée, champignons, jambon de bœuf, stracciatella, tomates cerises, copeaux de parmesan, pesto de basilic et crème de balsamique.",
         "extra": "",
         "price": 15,
         "image": "/assets/menu-v2/pizzas-tartuffe-mafia.webp",
@@ -735,7 +735,7 @@
       {
         "id": "pizzas-tutti-formaggi",
         "name": "Tutti Formaggi",
-        "description": "Sauce tomate, mozzarella, chèvre, gorgonzola et copeaux de parmesan.",
+        "description": "Sauce tomate, mozzarella fior di latte, chèvre, gorgonzola et copeaux de parmesan.",
         "extra": "",
         "price": 14,
         "image": "/assets/menu-v2/pizzas-tutti-formaggi.webp",
@@ -748,7 +748,7 @@
       {
         "id": "pizzas-vieille-fermiere",
         "name": "Vieille Fermière",
-        "description": "Base crème, mozzarella, poulet, champignons et oignons confits.",
+        "description": "Base crème, mozzarella fior di latte, poulet, champignons et oignons confits.",
         "extra": "",
         "price": 14,
         "image": "/assets/menu-v2/pizzas-vieille-fermiere.webp",
@@ -761,7 +761,7 @@
       {
         "id": "pizzas-western",
         "name": "Western",
-        "description": "Sauce moutarde, mozzarella, poulet rôti, crème, oignons confits et sauce persillade.",
+        "description": "Sauce moutarde, mozzarella fior di latte, poulet rôti, crème, oignons confits et sauce persillade.",
         "extra": "",
         "price": 14,
         "image": "/assets/menu-v2/pizzas-western.webp",
@@ -825,7 +825,7 @@
       {
         "id": "dessert-fondant-chocolat",
         "name": "Fondant au chocolat",
-        "description": "Fondant mi-cuit au chocolat.",
+        "description": "Fondant au chocolat fait maison, cœur coulant et texture délicieusement fondante.",
         "extra": "Boule de glace vanille +2 €",
         "price": 7,
         "image": "/assets/menu-v2/dessert-fondant-chocolat.webp",
@@ -839,7 +839,7 @@
       {
         "id": "dessert-tiramisu-coffee",
         "name": "Original Tiramisu Coffee",
-        "description": "Mascarpone, biscuits cuillères imbibés de café et cacao.",
+        "description": "Onctueuse crème mascarpone, biscuits fondants imbibés de café et délicate touche de cacao.",
         "extra": "",
         "price": 8,
         "image": "/assets/menu-v2/dessert-tiramisu-coffee.webp",
@@ -853,7 +853,7 @@
       {
         "id": "dessert-tiramisu-nutella-speculoos",
         "name": "Tiramisu Nutella-Spéculoos",
-        "description": "Mascarpone, biscuits cuillères, Nutella et spéculoos.",
+        "description": "Onctueuse crème mascarpone, biscuits fondants, cœur de Nutella et éclats de spéculoos.",
         "extra": "",
         "price": 9,
         "image": "/assets/menu-v2/dessert-tiramisu-nutella-speculoos.webp",
@@ -869,7 +869,7 @@
       {
         "id": "dessert-tiramisu-pistachio",
         "name": "Tiramisu Pistachio",
-        "description": "Mascarpone, biscuits cuillères et crème de pistache.",
+        "description": "Onctueuse crème mascarpone, biscuits fondants et généreuse crème de pistache, parsemée d’éclats de pistache.",
         "extra": "",
         "price": 9,
         "image": "/assets/menu-v2/dessert-tiramisu-pistachio.webp",
@@ -894,7 +894,7 @@
       {
         "id": "dessert-brioche-perdue",
         "name": "Brioche perdue",
-        "description": "Brioche façon pain perdu, topping au choix : Nutella, spéculoos, crème Bueno ou caramel beurre salé.",
+        "description": "Brioche fondante façon pain perdu, accompagnée d’un topping au choix : Nutella, spéculoos, crème Bueno ou caramel au beurre salé.",
         "extra": "Topping supplémentaire +2 €",
         "price": 11,
         "image": "/assets/menu-v2/dessert-brioche-perdue.webp",
