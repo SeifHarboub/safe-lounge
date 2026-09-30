@@ -4,7 +4,13 @@
 @font-face{font-family:Fraunces;src:url('/assets/fraunces-italic.ttf') format('truetype');font-weight:100 900;font-style:italic;font-display:swap}
 :root{--ink:#150b19;--cream:#e6e4d8;--green:#224233;--lilac:#af8dbf;--jade:#81a092;font-family:Satoshi,sans-serif;color:var(--ink);background:var(--cream);font-synthesis:none}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:0}
+/* No CSS smooth scrolling: ScrollTrigger jumps to the top and back to measure on
+   every refresh, and a smooth jump could leave the page stranded there. Links and
+   category changes scroll smoothly from JavaScript instead. */
+html{scroll-behavior:auto;scroll-padding-top:0}
+/* A category change resizes the menu; the browser must not re-anchor the page on
+   the sections below it. The menu script places the list itself. */
+html,body{overflow-anchor:none}
 [tabindex="-1"]:focus{outline:none}
 body{margin:0;font-variant-emoji:text}
 body.dialog-open{overflow:hidden}

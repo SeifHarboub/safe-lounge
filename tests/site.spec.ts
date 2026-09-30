@@ -369,6 +369,17 @@ test('les titres de section portent les mots-clés et le contact affiche la bonn
   expect(data.geo.latitude).toBeCloseTo(48.8933, 3);
 });
 
+test('sur téléphone, passer du bas des burgers aux salades garde la liste sous la barre, sans remonter la page', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/#carte');
+  await page.evaluate(() => { const grid = document.querySelector('#dish-grid')!.getBoundingClientRect(); scrollTo({ top: scrollY + grid.top + grid.height * .8 - 300, behavior: 'instant' }); });
+  await page.locator('#tab-salade').click();
+  const bar = await page.locator('.menu-sidebar').evaluate(element => (element as HTMLElement).offsetHeight);
+  await expect.poll(async () => page.evaluate(() => Math.round(document.querySelector('.menu-results')!.getBoundingClientRect().top)), { timeout: 4000 }).toBe(bar);
+  expect(await page.evaluate(() => getComputedStyle(document.documentElement).scrollBehavior)).toBe('auto');
+});
+
 test('changer de catégorie en bas de liste ramène au début de la nouvelle liste', async ({ page }) => {
   await page.goto('/');
   await page.evaluate(() => scrollTo(0, document.querySelector<HTMLElement>('#carte')!.offsetTop + 1400));
