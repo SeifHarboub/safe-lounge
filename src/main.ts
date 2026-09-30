@@ -19,6 +19,8 @@ const byGroup = (groups: string[] = []) => (a: Dish, b: Dish) => groups.indexOf(
 const menu = (rawMenu as Category[]).slice().sort((a, b) => DISPLAY_ORDER.indexOf(a.id) - DISPLAY_ORDER.indexOf(b.id)).map(category => ({ ...category, items: category.items.slice().sort(byGroup(category.groups)) }));
 const allDishes = menu.flatMap(category => category.items.map(dish => ({ ...dish, category: category.id })));
 const $ = <T extends Element = HTMLElement>(selector: string) => document.querySelector<T>(selector)!;
+// Menu cards use a 540 px copy of each photo; the dish sheet keeps the full 1080 px one.
+const small = (image: string) => image.replace('/menu-v2/', '/menu-v2/sm/');
 const escape = (text: string) => text.replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]!));
 let selectedCategory = 'burger';
 const grid = $('#dish-grid');
@@ -38,7 +40,7 @@ function renderMenu(animate = true) {
   $('#result-count').textContent = dishes.length ? `${dishes.length} choix` : '';
   tabs.forEach(tab => { const active = tab.dataset.category === category.id; tab.setAttribute('aria-selected',String(active)); tab.tabIndex = tab.dataset.category === category.id ? 0 : -1; });
   panel.setAttribute('aria-labelledby',`tab-${category.id}`);
-  grid.innerHTML = dishes.length ? dishes.map((dish, index) => { const heading = dish.group && dish.group !== dishes[index - 1]?.group ? `<h4 class="dish-group">${escape(dish.group)}</h4>` : ''; const label = menu.find(c => c.items.some(item => item.id === dish.id))!.label; return `${heading}<button class="dish-card" data-open="${dish.id}" aria-label="Voir ${escape(dish.name)}${dish.price === null ? '' : `, ${dish.price} euros`}"><div class="dish-frame"><div class="dish-photo">${dish.image ? `<img src="${asset(dish.image)}" alt="${escape(`${dish.name}, ${label.toLowerCase()} du Safe Lounge à Noisy-le-Sec`)}" width="1080" height="1080" loading="${index < 3 ? 'eager' : 'lazy'}" />` : `<div class="no-photo"><img src="${asset('/assets/symbol-lilac.svg')}" alt="" /></div>`}<span class="dish-open">↗︎</span></div></div><div class="dish-title"><h4>${escape(dish.name)}</h4>${dish.price === null ? '' : `<span>${dish.price}<small>€</small></span>`}</div><p>${escape(dish.description)}</p>${dish.served ? `<span class="dish-served">${escape(dish.served)}</span>` : ''}${dish.extra ? `<span class="dish-extra">${escape(dish.extra)}</span>` : ''}</button>`; }).join('') : '<div class="no-results"><span>Cette catégorie arrive bientôt.</span><p>Notre équipe finalise cette sélection. En attendant, demandez-nous ce qui est servi sur place.</p></div>';
+  grid.innerHTML = dishes.length ? dishes.map((dish, index) => { const heading = dish.group && dish.group !== dishes[index - 1]?.group ? `<h4 class="dish-group">${escape(dish.group)}</h4>` : ''; const label = menu.find(c => c.items.some(item => item.id === dish.id))!.label; return `${heading}<button class="dish-card" data-open="${dish.id}" aria-label="Voir ${escape(dish.name)}${dish.price === null ? '' : `, ${dish.price} euros`}"><div class="dish-frame"><div class="dish-photo">${dish.image ? `<img src="${asset(small(dish.image))}" srcset="${asset(small(dish.image))} 540w, ${asset(dish.image)} 1080w" sizes="(max-width: 760px) 46vw, (max-width: 1150px) 30vw, 24vw" alt="${escape(`${dish.name}, ${label.toLowerCase()} du Safe Lounge à Noisy-le-Sec`)}" width="1080" height="1080" loading="lazy" decoding="async" />` : `<div class="no-photo"><img src="${asset('/assets/symbol-lilac.svg')}" alt="" /></div>`}<span class="dish-open">↗︎</span></div></div><div class="dish-title"><h4>${escape(dish.name)}</h4>${dish.price === null ? '' : `<span>${dish.price}<small>€</small></span>`}</div><p>${escape(dish.description)}</p>${dish.served ? `<span class="dish-served">${escape(dish.served)}</span>` : ''}${dish.extra ? `<span class="dish-extra">${escape(dish.extra)}</span>` : ''}</button>`; }).join('') : '<div class="no-results"><span>Cette catégorie arrive bientôt.</span><p>Notre équipe finalise cette sélection. En attendant, demandez-nous ce qui est servi sur place.</p></div>';
   if (animate && canAnimate()) gsap.fromTo('.dish-card',{y:24,opacity:0},{y:0,opacity:1,duration:.45,stagger:.045,ease:'power2.out',clearProps:'transform,opacity'});
   requestAnimationFrame(() => ScrollTrigger.refresh());
 }
@@ -141,18 +143,26 @@ const heroDishes = HERO_PICKS.map(id => allDishes.find(dish => dish.id === id)!)
 const heroSlides = $('.hero-slides');
 const heroNow = $<HTMLButtonElement>('.hero-now');
 const heroAlt = (dish: typeof heroDishes[number]) => `${dish.name}, ${menu.find(category => category.id === dish.category)!.label.toLowerCase()} du Safe Lounge`;
-heroSlides.innerHTML = heroDishes.map((dish, index) => index === 0 ? heroSlides.innerHTML : `<img src="${asset(dish.image!)}" alt="${escape(heroAlt(dish))}" width="1080" height="1080" loading="lazy" />`).join('');
+heroSlides.innerHTML = heroDishes.map((dish, index) => index === 0 ? heroSlides.innerHTML : `<img data-src="${asset(dish.image!)}" alt="${escape(heroAlt(dish))}" width="1080" height="1080" decoding="async" />`).join('');
 const heroImages = [...heroSlides.querySelectorAll('img')];
 // Phone only: a blurred copy of each photo sits behind its lower part, so the
 // photo's edges melt into its own colours instead of showing a seam. The top,
 // behind the text, stays plain green.
 const heroAmbient = $('.hero-ambient');
-heroAmbient.innerHTML = heroDishes.map((dish, index) => `<img src="${asset(dish.image!)}" alt="" width="1080" height="1080" loading="lazy"${index === 0 ? ' class="is-on"' : ''} />`).join('');
+heroAmbient.innerHTML = heroDishes.map((dish, index) => `<img ${index === 0 ? 'src' : 'data-src'}="${asset(dish.image!)}" alt="" width="1080" height="1080" decoding="async"${index === 0 ? ' class="is-on"' : ''} />`).join('');
 const heroAmbientImages = [...heroAmbient.querySelectorAll('img')];
 heroImages.forEach((image, index) => image.classList.toggle('is-tall', DRINK_CATEGORIES.includes(heroDishes[index].category)));
+// Only the dish on show and the next one are downloaded: the rest wait their turn.
+function loadHero(index: number) {
+  for (const image of [heroImages[index % heroImages.length], heroAmbientImages[index % heroAmbientImages.length]]) {
+    if (image?.dataset.src && !image.getAttribute('src')) image.src = image.dataset.src;
+  }
+}
+window.addEventListener('load', () => loadHero(1), { once: true });
 let currentHero = 0;
 function showHero(next: number) {
   currentHero = (next + heroDishes.length) % heroDishes.length;
+  loadHero(currentHero); loadHero(currentHero + 1);
   const dish = heroDishes[currentHero];
   heroImages.forEach((image, index) => image.classList.toggle('is-on', index === currentHero));
   heroAmbientImages.forEach((image, index) => image.classList.toggle('is-on', index === currentHero));

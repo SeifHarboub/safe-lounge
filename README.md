@@ -95,7 +95,7 @@ L’accueil affiche en plein cadre neuf plats de la carte, un par envie (burger,
 
 ## Lounge
 
-La section lounge présente les chichas servies (Alpha, Brodator, Mig tradi) et leur chauffe Quasar. Les visuels montrent un hookah en bois ; les textes disent « chicha » (le mot le plus recherché) et jamais « Wookah » ni « hookah ». Les trois visuels de `public/assets/lounge/` sont générés à partir des photos d’origine du lounge (`research/lounge-originals/`), en gardant le même modèle ; seuls le décor, la lumière et la fumée changent. Les formules à 20 € et 25 € sont affichées sans fiche : la nouvelle carte ne les contient pas encore.
+La section lounge présente les chichas servies (« Wookah, Alpha, Brodator… ») et leur chauffe Quasar. Les visuels montrent un hookah en bois ; les textes disent « chicha » (le mot le plus recherché) et jamais « hookah » ; « Wookah » n’apparaît que dans la liste des modèles. Les trois visuels de `public/assets/lounge/` sont générés à partir des photos d’origine du lounge (`research/lounge-originals/`), en gardant le même modèle ; seuls le décor, la lumière et la fumée changent. Les formules à 20 € et 25 € sont affichées sans fiche : la nouvelle carte ne les contient pas encore.
 
 La fumée du fond est photographique : deux plaques de fumée sur fond noir, générées puis converties en calques transparents aux bords fondus (`smoke-tall.webp`, `smoke-wide.webp`). Cinq calques montent ou dérivent en boucle, décalés dans le temps pour qu’une volute soit toujours visible ; sans animation, ils restent affichés, immobiles et plus discrets.
 
@@ -115,3 +115,11 @@ Tailles de texte : sur ordinateur, plus aucun texte courant sous 11 px et les pa
 - Les photos de la carte sont servies en WebP 1080 px (les PNG d’origine sont dans `research/menu-v2-originals/`).
 - Chaque titre de section commence par une ligne de mots-clés (« La carte · cuisine généreuse et familiale à Noisy-le-Sec », « Lounge chicha à Noisy-le-Sec », « Adresse, horaires & accès ») ; la grande phrase d’accroche reste en dessous.
 - Les données Schema.org portent les coordonnées GPS (OpenStreetMap), le lien Google Maps et l’e-mail `lesafelounge@gmail.com`.
+
+## Performances
+
+- Polices en WOFF2, limitées aux caractères latins ; Fraunces a ses axes SOFT et WONK figés à leurs valeurs par défaut (rendu identique). Les TTF d’origine restent dans `public/assets/` comme sources.
+- Les vignettes de la carte utilisent une copie de 540 px (`public/assets/menu-v2/sm/`, via `srcset`) ; la fiche d’un plat garde la photo de 1080 px. Toutes les vignettes sont en chargement différé.
+- L’accueil ne télécharge que le plat affiché et le suivant.
+- GitHub Pages impose `Cache-Control: max-age=600` et ne permet pas de le régler ; les fichiers JS et CSS portent une empreinte dans leur nom, donc une mise à jour est toujours servie.
+

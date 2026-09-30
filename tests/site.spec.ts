@@ -156,7 +156,7 @@ test('les burgers sont servis avec des frites, les panuozzos avec une salade et 
 test('les prix de Bilal et les suppléments des smash burgers s’affichent', async ({ page }) => {
   await page.goto('/#carte');
   await expect(page.locator('.dish-card[data-open="burger-classic-smash"] .dish-title > span')).toHaveText('13€');
-  await expect(page.locator('.dish-card[data-open="burger-classic-smash"]')).toContainText('Bacon de bœuf +2 € · Version XL (triple steak) +3 €');
+  await expect(page.locator('.dish-card[data-open="burger-classic-smash"]')).toContainText(/Bacon de bœuf \+2 €\s*Version XL \(triple steak\) \+3 €/);
   await expect(page.locator('.dish-card[data-open="burger-smokey-beef-bacon"] .dish-title > span')).toHaveText('14€');
   await page.locator('#tab-pizzas').click();
   await expect(page.locator('.dish-card[data-open="pizzas-burratella-lov"] .dish-title > span')).toHaveText('16€');
@@ -181,7 +181,7 @@ test('chaque fiche détaille ses allergènes', async ({ page }) => {
 
 test('aucune description ne détaille la recette', async ({ page }) => {
   await page.goto('/#carte');
-  await expect(page.locator('.dish-card[data-open="burger-bbq-raclette"] img')).toHaveAttribute('src', /menu-v2\/burger-bbq-raclette\.webp$/);
+  await expect(page.locator('.dish-card[data-open="burger-bbq-raclette"] img')).toHaveAttribute('src', /menu-v2\/sm\/burger-bbq-raclette\.webp$/);
   for (const tab of ['burger', 'pates', 'pizzas']) {
     await page.locator(`#tab-${tab}`).click();
     const text = (await page.locator('#menu-panel').textContent()) ?? '';
@@ -286,8 +286,8 @@ test('le lounge présente ses chichas et la chauffe Quasar', async ({ page }) =>
   await expect(page.locator('#lieu')).toHaveCount(0);
   await expect(page.locator('a[href="#lieu"]')).toHaveCount(0);
   const lounge = page.locator('#lounge');
-  await expect(lounge.locator('.lounge-specs')).toContainText('Alpha, Brodator, Mig tradi');
-  expect((await page.locator('body').innerText()).match(/hookah|wookah/i)).toBeNull();
+  await expect(lounge.locator('.lounge-specs')).toContainText('Wookah, Alpha, Brodator…');
+  expect((await page.locator('body').innerText()).match(/hookah/i)).toBeNull();
   expect((await page.locator('body').innerText()).match(/\b(drink|make it)\b/i)).toBeNull();
   await expect(lounge.locator('.lounge-specs')).toContainText('Quasar');
   await expect(lounge.locator('.lounge-picture img')).toHaveAttribute('src', /lounge\/wookah-quasar\.webp$/);

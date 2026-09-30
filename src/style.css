@@ -1,7 +1,7 @@
 @font-face{font-family:Satoshi;src:url('/assets/satoshi.woff2') format('woff2');font-weight:300 900;font-display:swap}
-@font-face{font-family:Oswald;src:url('/assets/oswald.ttf') format('truetype');font-weight:200 700;font-display:swap}
-@font-face{font-family:Fraunces;src:url('/assets/fraunces.ttf') format('truetype');font-weight:100 900;font-display:swap}
-@font-face{font-family:Fraunces;src:url('/assets/fraunces-italic.ttf') format('truetype');font-weight:100 900;font-style:italic;font-display:swap}
+@font-face{font-family:Oswald;src:url('/assets/oswald.woff2') format('woff2');font-weight:200 700;font-display:swap}
+@font-face{font-family:Fraunces;src:url('/assets/fraunces.woff2') format('woff2');font-weight:100 900;font-display:swap}
+@font-face{font-family:Fraunces;src:url('/assets/fraunces-italic.woff2') format('woff2');font-weight:100 900;font-style:italic;font-display:swap}
 :root{--ink:#150b19;--cream:#e6e4d8;--green:#224233;--lilac:#af8dbf;--jade:#81a092;font-family:Satoshi,sans-serif;color:var(--ink);background:var(--cream);font-synthesis:none}
 *{box-sizing:border-box}
 /* No CSS smooth scrolling: ScrollTrigger jumps to the top and back to measure on
@@ -106,7 +106,7 @@ h1 .italic{font-family:Fraunces,serif;font-style:italic;font-size:1.05em;font-we
 .dish-card>p{font-size:14px;line-height:1.75;color:#625b61;margin-top:10px}
 .dish-served{display:inline-block;margin-top:10px;font-size:11px;font-weight:650;letter-spacing:1.2px;text-transform:uppercase;color:var(--jade)}
 .dish-served+.dish-extra{margin-top:6px}
-.dish-extra{display:block;font-size:13px;margin-top:10px;color:var(--green)}
+.dish-extra{display:block;font-size:13px;margin-top:10px;color:var(--green);white-space:pre-line}
 .menu-service{display:flex;justify-content:space-between;gap:20px;border-top:1px solid #150b1925;margin-top:35px;padding-top:20px;font-size:13px;color:#625b61;line-height:1.6}
 .menu-service a{white-space:nowrap;color:var(--ink);border-bottom:1px solid #150b1940}
 .no-photo{height:100%;background:var(--green);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;color:var(--cream)}
@@ -199,7 +199,7 @@ footer>span{color:#625b61}
 .dialog-price{font-family:Fraunces,serif;font-size:35px;font-weight:400;margin:18px 0}
 .dialog-copy>p:not(.eyebrow){font-size:16px;line-height:1.8;color:#625b61}
 .dialog-copy .dialog-served{margin-top:12px;font-size:12px!important;font-weight:650;letter-spacing:1.2px;text-transform:uppercase;color:var(--green)!important}
-.dialog-copy .dialog-extra{margin-top:14px;color:var(--green)!important}
+.dialog-copy .dialog-extra{margin-top:14px;color:var(--green)!important;white-space:pre-line}
 .dialog-allergens{margin:22px 0 26px}
 .dialog-allergens h3{font-family:Satoshi,sans-serif;font-size:12px;font-weight:650;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);margin-bottom:12px}
 .dialog-allergens ul{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
