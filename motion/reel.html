@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<title>Safe Lounge · reel</title>
+<style>
+@font-face{font-family:Satoshi;src:url('../public/assets/satoshi.woff2') format('woff2');font-weight:300 900}
+@font-face{font-family:Oswald;src:url('../public/assets/oswald.ttf');font-weight:200 700}
+@font-face{font-family:Fraunces;src:url('../public/assets/fraunces.ttf');font-weight:100 900}
+@font-face{font-family:Fraunces;src:url('../public/assets/fraunces-italic.ttf');font-weight:100 900;font-style:italic}
+:root{--ink:#150b19;--cream:#e6e4d8;--green:#224233;--lilac:#af8dbf;--jade:#81a092;--photo:#011e16}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--photo);font-family:Satoshi,sans-serif;color:var(--cream)}
+.layer{position:absolute;inset:0;overflow:hidden;opacity:0;will-change:transform,opacity}
+.fill{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.shade{position:absolute;inset:0}
+.kicker{font-size:30px;font-weight:650;letter-spacing:6px;text-transform:uppercase}
+.big{font-family:Oswald,sans-serif;font-weight:500;text-transform:uppercase;letter-spacing:-.04em;line-height:.98}
+.it{font-family:Fraunces,serif;font-style:italic;font-weight:420;letter-spacing:-.05em;color:var(--lilac)}
+.line{display:block;overflow:hidden}
+.line>span{display:block}
+/* intro */
+#intro{background:radial-gradient(70% 45% at 20% 12%,#b8621c55,transparent 70%),var(--photo)}
+#intro .logo{position:absolute;left:50%;top:560px;width:620px;transform:translateX(-50%)}
+#intro .title{position:absolute;left:0;right:0;top:1000px;text-align:center}
+#intro .title .big{font-size:150px}
+#intro .title .it{font-size:132px;line-height:1.2}
+#intro .kicker{position:absolute;left:0;right:0;top:1440px;text-align:center;color:var(--jade)}
+/* place */
+#place .shade{background:linear-gradient(180deg,#011e16 0%,#011e1600 26%,#011e1600 42%,#011e16d9 60%,#011e16 78%)}
+#place .txt{position:absolute;left:80px;right:80px;bottom:250px}
+#place .kicker{color:var(--lilac);margin-bottom:26px}
+#place .big{font-size:118px}
+#place .it{font-size:112px;display:block}
+/* dishes */
+#dish{background:var(--photo)}
+#dish .ph{position:absolute;left:0;top:300px;width:1080px;height:1080px;object-fit:cover;opacity:0;
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 14%,#000 84%,transparent);mask-image:linear-gradient(180deg,transparent,#000 14%,#000 84%,transparent)}
+#dish .ph.tall{object-fit:cover}
+#dish .head{position:absolute;left:0;right:0;top:150px;text-align:center}
+#dish .head .kicker{color:var(--jade)}
+#dish .info{position:absolute;left:80px;right:80px;top:1420px}
+#dish .cat{font-size:30px;font-weight:650;letter-spacing:5px;text-transform:uppercase;color:var(--lilac)}
+#dish .name{font-family:Fraunces,serif;font-weight:450;font-size:104px;letter-spacing:-.03em;line-height:1.02;margin-top:14px}
+#dish .price{position:absolute;right:0;bottom:6px;font-family:Fraunces,serif;font-size:96px;font-weight:500}
+#dish .price small{font-family:Satoshi,sans-serif;font-size:40px;margin-left:6px}
+#dish .bar{position:absolute;left:80px;right:80px;top:1400px;height:3px;background:#e6e4d833}
+#dish .bar i{position:absolute;left:0;top:0;bottom:0;background:var(--lilac)}
+/* lounge */
+#lounge .shade{background:linear-gradient(180deg,#150b19e0 0%,#150b1933 32%,#150b1900 50%,#150b19ee 84%)}
+#lounge .smoke{position:absolute;left:-10%;width:120%;bottom:-5%;height:80%;object-fit:cover;opacity:.45;mix-blend-mode:screen}
+#lounge .top{position:absolute;left:80px;right:80px;top:170px}
+#lounge .top .kicker{color:var(--lilac);margin-bottom:22px}
+#lounge .top .big{font-size:132px}
+#lounge .formulas{position:absolute;left:80px;right:80px;bottom:230px}
+#lounge .f{display:flex;align-items:flex-end;justify-content:space-between;border-top:2px solid #e6e4d840;padding:30px 0}
+#lounge .f:last-child{border-bottom:2px solid #e6e4d840}
+#lounge .f small{display:block;font-size:26px;letter-spacing:4px;font-weight:650;color:var(--jade);margin-bottom:10px}
+#lounge .f span{font-family:Fraunces,serif;font-size:62px;letter-spacing:-.02em}
+#lounge .f strong{font-family:Fraunces,serif;font-weight:400;font-size:88px}
+#lounge .f strong small{display:inline;font-size:34px;color:var(--cream);letter-spacing:0}
+/* outro */
+#outro .fill{filter:blur(10px) brightness(.8)}
+#outro .shade{background:linear-gradient(180deg,#011e16f2 0%,#011e16c4 45%,#011e16f5 100%)}
+#outro .logo{position:absolute;left:50%;top:420px;width:560px;transform:translateX(-50%)}
+#outro .tag{position:absolute;left:0;right:0;top:820px;text-align:center}
+#outro .tag .big{font-size:112px}
+#outro .tag .it{font-size:100px;line-height:1.2}
+#outro .facts{position:absolute;left:80px;right:80px;top:1190px;text-align:center}
+#outro .facts p{font-size:40px;font-weight:600;line-height:1.7}
+#outro .facts p.muted{color:#e6e4d8b8;font-size:34px;font-weight:500}
+#outro .btn{position:absolute;left:50%;top:1540px;transform:translateX(-50%);display:flex;align-items:center;gap:30px;background:var(--lilac);color:var(--ink);padding:26px 30px 26px 44px;border-radius:8px;font-size:40px;font-weight:700;white-space:nowrap}
+#outro .btn span{width:74px;height:74px;display:grid;place-items:center;border:2px solid #150b1955;border-radius:5px;font-size:40px}
+</style>
+</head>
+<body>
+<section class="layer" id="intro">
+  <img class="logo" src="../public/assets/logo-cream.svg" alt="" />
+  <div class="title"><span class="line"><span class="big">Ton QG,</span></span><span class="line"><span class="it">comme à la maison.</span></span></div>
+  <p class="kicker">Restaurant &amp; lounge · Noisy-le-Sec</p>
+</section>
+<section class="layer" id="place">
+  <img class="fill" src="../public/assets/instagram/salon.webp" alt="" />
+  <div class="shade"></div>
+  <div class="txt"><p class="kicker">Le Safe Lounge</p><span class="line"><span class="big">Une cantine</span></span><span class="line"><span class="it">familiale</span></span><span class="line"><span class="it">et généreuse.</span></span></div>
+</section>
+<section class="layer" id="dish">
+  <div class="head"><p class="kicker">La carte</p></div>
+  <div id="dish-photos"></div>
+  <div class="bar"><i></i></div>
+  <div class="info"><p class="cat"></p><p class="name"></p><p class="price"></p></div>
+</section>
+<section class="layer" id="lounge">
+  <img class="fill" src="../public/assets/lounge/wookah-quasar.webp" alt="" />
+  <img class="smoke" src="../public/assets/lounge/smoke-tall.webp" alt="" />
+  <div class="shade"></div>
+  <div class="top"><p class="kicker">Côté lounge · dès 15 h</p><span class="line"><span class="big">Lounge</span></span><span class="line"><span class="big">chicha</span></span></div>
+  <div class="formulas">
+    <div class="f"><span><small>FORMULE 1</small>Chicha &amp; Boisson</span><strong>20<small>€</small></strong></div>
+    <div class="f"><span><small>FORMULE 2</small>Chicha &amp; Boisson signature</span><strong>25<small>€</small></strong></div>
+  </div>
+</section>
+<section class="layer" id="outro">
+  <img class="fill" src="../public/assets/instagram/terrasse.webp" alt="" />
+  <div class="shade"></div>
+  <img class="logo" src="../public/assets/logo-cream.svg" alt="" />
+  <div class="tag"><span class="line"><span class="big">Ton QG,</span></span><span class="line"><span class="it">comme à la maison.</span></span></div>
+  <div class="facts"><p>82 boulevard Michelet · Noisy-le-Sec</p><p class="muted">Ouvert 7 j/7 dès 15 h</p></div>
+  <div class="btn">lesafelounge.com <span>↗︎</span></div>
+</section>
+<script>
+// Everything is a pure function of time, so each frame renders identically.
+const DISHES = [
+  ['burger-smokey-beef-bacon', 'Burgers', 'Smokey Beef Bacon', 14],
+  ['pizzas-burratella-lov', 'Pizzas', 'Burratella Lov’', 16],
+  ['panuozzo-tartufo', 'Panuozzos', 'Tartufo', 15],
+  ['pates-rigatoni-carbonara', 'Pâtes', 'Rigatoni Carbonara', 14],
+  ['salade-original-burrata', 'Salades', 'Original Burrata', 9],
+  ['dessert-fondant-chocolat', 'Desserts', 'Fondant au chocolat', 7],
+  ['dessert-crepe-nutella', 'Crêpes', 'Crêpe Nutella', 8],
+  ['milkshake-bueno', 'Milkshakes', 'Bueno', 9],
+  ['mocktail-mojito-fraise', 'Mocktails', 'Mojito Fraise', null],
+];
+const holder = document.getElementById('dish-photos');
+holder.innerHTML = DISHES.map(d => `<img class="ph" src="../public/assets/menu-v2/${d[0]}.webp" alt="" />`).join('');
+const photos = [...holder.children];
+
+const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+const ease = t => 1 - Math.pow(1 - t, 3);          // easeOutCubic
+const inOut = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+const prog = (t, a, b) => clamp((t - a) / (b - a));
+const $ = s => document.querySelector(s);
+const set = (el, o, tf = '') => { el.style.opacity = o; el.style.transform = tf; };
+// fade a layer in over [a, a+fi] and out over [b-fo, b]
+const vis = (t, a, b, fi = .25, fo = .25) => Math.min(ease(prog(t, a, a + fi)), 1 - ease(prog(t, b - fo, b)));
+const rise = (el, t, at, dist = 60, dur = .6) => { const p = ease(prog(t, at, at + dur)); el.style.transform = `translateY(${(1 - p) * dist}%)`; el.style.opacity = p; };
+
+const T = { intro: [0, 1.9], place: [1.75, 3.7], dish: [3.55, 10.6], lounge: [10.45, 12.9], outro: [12.75, 15] };
+const DUR = 15;
+const SLOT = (T.dish[1] - T.dish[0] - .2) / DISHES.length;
+
+window.render = t => {
+  // intro
+  { const [a, b] = T.intro, L = $('#intro'); set(L, vis(t, a, b, .01, .2));
+    const p = ease(prog(t, .05, .75)); $('#intro .logo').style.transform = `translateX(-50%) scale(${.82 + .18 * p})`; $('#intro .logo').style.opacity = p;
+    const ls = L.querySelectorAll('.line>span'); rise(ls[0], t, .45, 110); rise(ls[1], t, .62, 110);
+    $('#intro .kicker').style.opacity = ease(prog(t, .9, 1.3)); }
+  // place (salon, slow push)
+  { const [a, b] = T.place, L = $('#place'); set(L, vis(t, a, b, .25, .2));
+    const z = 1.14 - .1 * prog(t, a, b); L.querySelector('.fill').style.transform = `scale(${z})`;
+    $('#place .kicker').style.opacity = ease(prog(t, a + .2, a + .6));
+    const ls = L.querySelectorAll('.line>span'); ls.forEach((s, i) => rise(s, t, a + .25 + i * .12, 110)); }
+  // dishes, rapid cuts
+  { const [a, b] = T.dish, L = $('#dish'); set(L, vis(t, a, b, .2, .2));
+    const k = clamp(Math.floor((t - a - .1) / SLOT), 0, DISHES.length - 1);
+    const local = (t - a - .1 - k * SLOT) / SLOT;
+    photos.forEach((ph, i) => {
+      if (i !== k) { ph.style.opacity = 0; return; }
+      const pin = ease(clamp(local / .22));
+      ph.style.opacity = pin;
+      ph.style.transform = `scale(${1.1 - .08 * inOut(clamp(local))}) translateY(${(1 - pin) * 40}px)`;
+    });
+    const d = DISHES[k];
+    $('#dish .cat').textContent = d[1];
+    $('#dish .name').textContent = d[2];
+    $('#dish .price').innerHTML = d[3] == null ? '' : `${d[3]}<small>€</small>`;
+    const tp = ease(clamp((local - .05) / .25));
+    $('#dish .info').style.opacity = tp; $('#dish .info').style.transform = `translateY(${(1 - tp) * 40}px)`;
+    $('#dish .bar i').style.width = `${clamp((t - a - .1) / (SLOT * DISHES.length)) * 100}%`;
+    $('#dish .head').style.opacity = ease(prog(t, a, a + .4)); }
+  // lounge
+  { const [a, b] = T.lounge, L = $('#lounge'); set(L, vis(t, a, b, .25, .2));
+    L.querySelector('.fill').style.transform = `scale(${1.12 - .08 * prog(t, a, b)})`;
+    L.querySelector('.smoke').style.transform = `translateY(${-8 * prog(t, a, b)}%)`;
+    $('#lounge .kicker').style.opacity = ease(prog(t, a + .2, a + .55));
+    const ls = L.querySelectorAll('.top .line>span'); ls.forEach((s, i) => rise(s, t, a + .25 + i * .12, 110));
+    L.querySelectorAll('.f').forEach((f, i) => { const p = ease(prog(t, a + .75 + i * .22, a + 1.25 + i * .22)); f.style.opacity = p; f.style.transform = `translateX(${(1 - p) * -60}px)`; }); }
+  // outro
+  { const [a, b] = T.outro, L = $('#outro'); set(L, vis(t, a, b + 1, .3, .01));
+    L.querySelector('.fill').style.transform = `scale(${1.1 - .06 * prog(t, a, b)})`;
+    const p = ease(prog(t, a + .15, a + .7)); $('#outro .logo').style.opacity = p; $('#outro .logo').style.transform = `translateX(-50%) scale(${.86 + .14 * p})`;
+    const ls = L.querySelectorAll('.tag .line>span'); ls.forEach((s, i) => rise(s, t, a + .45 + i * .14, 110));
+    const fp = ease(prog(t, a + .85, a + 1.25)); $('#outro .facts').style.opacity = fp; $('#outro .facts').style.transform = `translateY(${(1 - fp) * 30}px)`;
+    const bp = ease(prog(t, a + 1.1, a + 1.5)); $('#outro .btn').style.opacity = bp; $('#outro .btn').style.transform = `translateX(-50%) scale(${.9 + .1 * bp})`; }
+};
+window.DUR = DUR;
+window.ready = Promise.all([document.fonts.ready, ...[...document.images].map(i => i.decode().catch(() => {}))]);
+render(0);
+</script>
+</body>
+</html>

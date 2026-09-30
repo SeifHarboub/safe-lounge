@@ -420,7 +420,7 @@
       {
         "id": "panuozzo-tartufo",
         "name": "Tartufo",
-        "description": "Pain en pâte à pizza, crème de truffe, jambon de dinde, jambon de bœuf, stracciatella crémeuse, champignons poêlés, roquette, copeaux de parmesan et poivre moulu.",
+        "description": "Pain en pâte à pizza, crème de truffe, jambon de dinde, jambon de bœuf, stracciatella crémeuse, champignons poêlés, roquette, copeaux de fromage italien et poivre moulu.",
         "extra": "",
         "price": 15,
         "image": "/assets/menu-v2/panuozzo-tartufo.webp",
@@ -434,7 +434,7 @@
       {
         "id": "panuozzo-verde",
         "name": "Verde",
-        "description": "Pain en pâte à pizza, pesto de basilic, jambon de dinde, stracciatella crémeuse, tomates cerises confites, roquette, copeaux de parmesan et crème de balsamique.",
+        "description": "Pain en pâte à pizza, pesto de basilic, jambon de dinde, stracciatella crémeuse, tomates cerises confites, roquette, copeaux de fromage italien et crème de balsamique.",
         "extra": "",
         "price": 13,
         "image": "/assets/menu-v2/panuozzo-verde.webp",
@@ -501,7 +501,7 @@
       {
         "id": "pates-spaghetti-formaggi",
         "name": "Spaghetti Formaggi",
-        "description": "Spaghetti à la sauce crémeuse au gorgonzola, copeaux de parmesan.",
+        "description": "Spaghetti à la sauce crémeuse au gorgonzola, copeaux de fromage italien.",
         "extra": "",
         "price": 12,
         "image": "/assets/menu-v2/pates-spaghetti-formaggi.webp",
@@ -594,7 +594,7 @@
       {
         "id": "pizzas-burratella-lov",
         "name": "Burratella Lov’",
-        "description": "Sauce tomate, mozzarella fior di latte, jambon de dinde, stracciatella, tomates cerises, copeaux de parmesan, pesto de basilic et crème de balsamique.",
+        "description": "Sauce tomate, mozzarella fior di latte, jambon de dinde, stracciatella, tomates cerises, copeaux de fromage italien, pesto de basilic et crème de balsamique.",
         "extra": "",
         "price": 16,
         "image": "/assets/menu-v2/pizzas-burratella-lov.webp",
@@ -720,7 +720,7 @@
       {
         "id": "pizzas-tartuffe-mafia",
         "name": "Tartuffe Mafia",
-        "description": "Crème truffée, champignons, jambon de bœuf, stracciatella, tomates cerises, copeaux de parmesan, pesto de basilic et crème de balsamique.",
+        "description": "Crème truffée, champignons, jambon de bœuf, stracciatella, tomates cerises, copeaux de fromage italien, pesto de basilic et crème de balsamique.",
         "extra": "",
         "price": 16,
         "image": "/assets/menu-v2/pizzas-tartuffe-mafia.webp",
@@ -735,7 +735,7 @@
       {
         "id": "pizzas-tutti-formaggi",
         "name": "Tutti Formaggi",
-        "description": "Sauce tomate, mozzarella fior di latte, chèvre, gorgonzola et copeaux de parmesan.",
+        "description": "Sauce tomate, mozzarella fior di latte, chèvre, gorgonzola et copeaux de fromage italien.",
         "extra": "",
         "price": 14,
         "image": "/assets/menu-v2/pizzas-tutti-formaggi.webp",

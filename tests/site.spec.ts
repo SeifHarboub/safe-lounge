@@ -30,18 +30,18 @@ const dishes: { id: string; tab?: string; name: string; has: string[]; hasNot?: 
   { id: 'burger-original-smash', name: 'Original Smash', has: ['deux steaks smash', 'sauce Original Smash'] },
   { id: 'burger-biggie-smash', name: 'Biggie Smash', has: ['deux steaks smash', 'sauce classic burger'] },
   { id: 'panuozzo-rosso', tab: 'panuozzo', name: 'Rosso', has: ['pain en pâte à pizza', 'crème de poivrons', 'roquette', 'jambon de dinde', 'chorizo finement tranché', 'stracciatella', 'poivrons', 'oignons confits', 'huile piquante'] },
-  { id: 'panuozzo-tartufo', tab: 'panuozzo', name: 'Tartufo', has: ['pain en pâte à pizza', 'crème de truffe', 'roquette', 'jambon de dinde', 'jambon de bœuf', 'stracciatella', 'champignons poêlés', 'copeaux de parmesan', 'poivre moulu'] },
-  { id: 'panuozzo-verde', tab: 'panuozzo', name: 'Verde', has: ['pain en pâte à pizza', 'roquette', 'jambon de dinde', 'stracciatella', 'tomates cerises confites', 'copeaux de parmesan'] },
+  { id: 'panuozzo-tartufo', tab: 'panuozzo', name: 'Tartufo', has: ['pain en pâte à pizza', 'crème de truffe', 'roquette', 'jambon de dinde', 'jambon de bœuf', 'stracciatella', 'champignons poêlés', 'copeaux de fromage italien', 'poivre moulu'] },
+  { id: 'panuozzo-verde', tab: 'panuozzo', name: 'Verde', has: ['pain en pâte à pizza', 'roquette', 'jambon de dinde', 'stracciatella', 'tomates cerises confites', 'copeaux de fromage italien'] },
   { id: 'pates-spaghetti-sicilienne', tab: 'pates', name: 'Spaghetti Sicilienne', has: ['sauce tomate', 'thon', 'olives'], hasNot: ['tomate cerise'] },
   { id: 'pates-rigatoni-tartufo', tab: 'pates', name: 'Rigatoni Tartufo', has: ['truffe', 'champignons'], hasNot: ['tomate cerise'] },
   { id: 'pates-spaghetti-merguez', tab: 'pates', name: 'Spaghetti Merguez', has: ['merguez', 'olives'], hasNot: ['tomate cerise'] },
-  { id: 'pates-spaghetti-formaggi', tab: 'pates', name: 'Spaghetti Formaggi', has: ['gorgonzola', 'copeaux de parmesan'], hasNot: ['tomate cerise'] },
+  { id: 'pates-spaghetti-formaggi', tab: 'pates', name: 'Spaghetti Formaggi', has: ['gorgonzola', 'copeaux de fromage italien'], hasNot: ['tomate cerise'] },
   { id: 'pates-penne-arrabiata', tab: 'pates', name: 'Penne Arrabbiata', has: ['penne à la sauce tomate relevée au piment', 'à l’huile d’olive'], hasNot: ['parmesan'] },
   { id: 'pates-penne-forestiere', tab: 'pates', name: 'Penne Forestière', has: ['poulet', 'champignons'], hasNot: ['tomate cerise'] },
   { id: 'pates-penne-saumon', tab: 'pates', name: 'Penne Saumon', has: ['saumon'], hasNot: ['tomate cerise'] },
   { id: 'pates-rigatoni-carbonara', tab: 'pates', name: 'Rigatoni Carbonara', has: ['jaune d’œuf', 'lardons', 'parmesan', 'poivre noir'], hasNot: ['tomate cerise'] },
   { id: 'pizzas-bollywood-style', tab: 'pizzas', name: 'Bollywood Style', has: ['mozzarella', 'poulet', 'oignons confits', 'tomates cerises'] },
-  { id: 'pizzas-burratella-lov', tab: 'pizzas', name: 'Burratella Lov’', has: ['sauce tomate', 'stracciatella', 'jambon de dinde', 'copeaux de parmesan'] },
+  { id: 'pizzas-burratella-lov', tab: 'pizzas', name: 'Burratella Lov’', has: ['sauce tomate', 'stracciatella', 'jambon de dinde', 'copeaux de fromage italien'] },
   { id: 'pizzas-classica-queen', tab: 'pizzas', name: 'Classica Queen', has: ['sauce tomate', 'mozzarella', 'champignons', 'jambon'] },
   { id: 'pizzas-malaga', tab: 'pizzas', name: 'Malaga', has: ['merguez', 'œuf', 'jambon de dinde'] },
   { id: 'pizzas-marmithon', tab: 'pizzas', name: 'Marmithon', has: ['thon', 'olives', 'oignons confits'] },
@@ -50,8 +50,8 @@ const dishes: { id: string; tab?: string; name: string; has: string[]; hasNot?: 
   { id: 'pizzas-ranch', tab: 'pizzas', name: 'Ranch’', has: ['sauce barbecue', 'poivrons rouges et verts', 'poulet', 'chorizo', 'crème', 'oignons confits', 'cheddar'], hasNot: ['sauce tomate'] },
   { id: 'pizzas-rosalia', tab: 'pizzas', name: 'Rosalia', has: ['sauce tomate', 'mozzarella', 'champignons', 'poulet', 'merguez artisanale', 'crème'], hasNot: ['oignons confits', 'sauce basilic'] },
   { id: 'pizzas-sugar-pepperoni', tab: 'pizzas', name: 'Sugar Pepperoni', has: ['sauce tomate à la barbecue', 'mozzarella', 'pepperoni'], hasNot: ['oignons', 'sauce basilic'] },
-  { id: 'pizzas-tartuffe-mafia', tab: 'pizzas', name: 'Tartuffe Mafia', has: ['crème truffée', 'champignons', 'stracciatella', 'tomates cerises', 'copeaux de parmesan'], hasNot: ['mozzarella', 'sauce tomate'] },
-  { id: 'pizzas-tutti-formaggi', tab: 'pizzas', name: 'Tutti Formaggi', has: ['sauce tomate', 'mozzarella', 'chèvre', 'gorgonzola', 'copeaux de parmesan'], hasNot: ['viande', 'champignons'] },
+  { id: 'pizzas-tartuffe-mafia', tab: 'pizzas', name: 'Tartuffe Mafia', has: ['crème truffée', 'champignons', 'stracciatella', 'tomates cerises', 'copeaux de fromage italien'], hasNot: ['mozzarella', 'sauce tomate'] },
+  { id: 'pizzas-tutti-formaggi', tab: 'pizzas', name: 'Tutti Formaggi', has: ['sauce tomate', 'mozzarella', 'chèvre', 'gorgonzola', 'copeaux de fromage italien'], hasNot: ['viande', 'champignons'] },
   { id: 'pizzas-vieille-fermiere', tab: 'pizzas', name: 'Vieille Fermière', has: ['base crème', 'mozzarella', 'poulet', 'champignons', 'oignons confits'], hasNot: ['sauce tomate'] },
   { id: 'pizzas-western', tab: 'pizzas', name: 'Western', has: ['sauce moutarde', 'mozzarella', 'poulet rôti', 'crème', 'oignons confits', 'sauce persillade'], hasNot: ['sauce tomate'] },
   { id: 'frappuccino-caramello', tab: 'frappuccino', name: 'Caramello', has: ['glace vanille', 'glaçons', 'chantilly'] },
@@ -229,6 +229,8 @@ test('les desserts regroupent les six douceurs de la carte, sans les crêpes, av
 
 test('l’accueil montre un plat en plein cadre, avec son nom et son prix', async ({ page }) => {
   await page.goto('/');
+  await expect(page.locator('.arrival h1')).toContainText('TON QG,');
+  await expect(page.locator('.arrival h1')).toContainText('comme à la maison.');
   await expect(page.locator('#arrival-video, #assiettes, .dish3d-stage')).toHaveCount(0);
   await expect(page.locator('.hero-slides img')).toHaveCount(12);
   await expect(page.locator('.hero-slides img.is-on')).toHaveAttribute('src', /menu-v2\/burger-smokey-beef-bacon\.webp$/);
@@ -374,7 +376,7 @@ test('fermer la fiche d’un plat ne laisse pas de contour après un clic', asyn
 test('les titres de section portent les mots-clés et le contact affiche la bonne adresse e-mail', async ({ page }) => {
   await page.goto('/');
   await expect(page).toHaveTitle(/chicha à Noisy-le-Sec/);
-  await expect(page.locator('#carte h2')).toContainText('cuisine généreuse, comme à la maison, à Noisy-le-Sec');
+  await expect(page.locator('#carte h2')).toContainText('cuisine généreuse et familiale à Noisy-le-Sec');
   await expect(page.locator('#lounge h2')).toContainText('Lounge chicha à Noisy-le-Sec');
   await expect(page.locator('#contact h2')).toContainText('Adresse, horaires & accès');
   await expect(page.locator('section[hidden]')).toHaveCount(0);
