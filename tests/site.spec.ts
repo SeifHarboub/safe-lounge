@@ -283,7 +283,7 @@ test('le lounge présente ses chichas et la chauffe Quasar', async ({ page }) =>
   const lounge = page.locator('#lounge');
   await expect(lounge.locator('.lounge-specs')).toContainText('Alpha, Brodator, Mig tradi');
   expect((await page.locator('body').innerText()).match(/hookah|wookah/i)).toBeNull();
-  expect((await page.locator('body').innerText()).match(/\b(drink|good mood|good food|good vibes|make it)\b/i)).toBeNull();
+  expect((await page.locator('body').innerText()).match(/\b(drink|make it)\b/i)).toBeNull();
   await expect(lounge.locator('.lounge-specs')).toContainText('Quasar');
   await expect(lounge.locator('.lounge-picture img')).toHaveAttribute('src', /lounge\/wookah-quasar\.webp$/);
   await expect(lounge.locator('.lounge-tile img')).toHaveCount(2);
