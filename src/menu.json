@@ -722,7 +722,7 @@
         "name": "Tartuffe Mafia",
         "description": "Crème truffée, champignons, jambon de bœuf, stracciatella, tomates cerises, copeaux de parmesan, pesto de basilic et crème de balsamique.",
         "extra": "",
-        "price": 15,
+        "price": 16,
         "image": "/assets/menu-v2/pizzas-tartuffe-mafia.webp",
         "sourceImage": "SAFE_LOUNGE_PIZZA_TARTUFFE_MAFIA_A4.pdf",
         "allergens": [
