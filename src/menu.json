@@ -180,7 +180,7 @@
       {
         "id": "frappuccino-nocciola",
         "name": "Nocciola",
-        "description": "Café aux notes de noisette et de chocolat, glace vanille et lait mixés avec des glaçons, surmontés de chantilly et d’un filet de chocolat.",
+        "description": "Expresso aux notes de noisette et de chocolat, glace vanille et lait mixés avec des glaçons, surmontés de chantilly et d’un filet de chocolat.",
         "extra": "",
         "price": 9,
         "image": "/assets/menu-v2/frappuccino-nocciola.webp",
@@ -201,7 +201,7 @@
       {
         "id": "iced-latte-caramello",
         "name": "Iced Caramello",
-        "description": "Café aux notes de caramel et de vanille, accompagné de lait frais et de glaçons, surmonté de chantilly et d’un coulis de caramel.",
+        "description": "Expresso aux notes de caramel et de vanille, accompagné de lait frais et de glaçons, surmonté de chantilly et d’un coulis de caramel.",
         "extra": "",
         "price": 7,
         "image": "/assets/menu-v2/iced-latte-caramello.webp",
@@ -225,7 +225,7 @@
       {
         "id": "iced-latte-nocciola",
         "name": "Iced Nocciola",
-        "description": "Café aux notes de noisette et de chocolat, associé au lait et aux glaçons, surmonté de chantilly et d’un filet de chocolat.",
+        "description": "Expresso aux notes de noisette et de chocolat, associé au lait et aux glaçons, surmonté de chantilly et d’un filet de chocolat.",
         "extra": "",
         "price": 7,
         "image": "/assets/menu-v2/iced-latte-nocciola.webp",
