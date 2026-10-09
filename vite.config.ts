@@ -25,7 +25,7 @@ function structuredData(): Plugin {
         name: 'Le Safe Lounge',
         description: 'Restaurant et lounge chicha à Noisy-le-Sec : smash burgers, chicken burgers, pizzas et pâtes, formules chicha avec soft, mocktail ou milkshake.',
         url: siteUrl,
-        image: [image('assets/og-image.jpg'), image('assets/instagram/salon.webp'), image('assets/instagram/terrasse.webp')],
+        image: [image('assets/instagram/salon.webp'), image('assets/instagram/terrasse.webp')],
         logo: image('assets/logo-dark.svg'),
         telephone: '+33148501547',
         email: 'lesafelounge@gmail.com',

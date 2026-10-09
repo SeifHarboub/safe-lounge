@@ -276,7 +276,7 @@ test('la page expose un référencement local complet', async ({ page }) => {
   await expect(page).toHaveTitle(/Noisy-le-Sec/);
   await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', /Noisy-le-Sec/);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', /^https:\/\//);
-  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', /og-image\.jpg$/);
+  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute('content', /og-logo\.jpg$/);
   await expect(page.locator('h1')).toHaveCount(1);
   await expect(page.locator('h1')).toContainText('Noisy-le-Sec');
   const data = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent() ?? '{}');
