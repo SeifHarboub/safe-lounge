@@ -266,3 +266,21 @@ function updateOpenStatus() {
 }
 updateOpenStatus();
 setInterval(updateOpenStatus, 60_000);
+
+// Consent and ad measurement, only when tracking.json switched them on (see vite.config.ts).
+type Consent = { renew(): void };
+const consent = (window as Window & { Cookiebot?: Consent }).Cookiebot;
+const cookieLink = document.querySelector<HTMLAnchorElement>('.footer-cookies');
+if (consent && cookieLink) {
+  cookieLink.hidden = false;
+  cookieLink.addEventListener('click', event => { event.preventDefault(); consent.renew(); });
+}
+// Calls and directions are what the ads are meant to bring. fbq only exists once
+// the visitor has accepted marketing cookies.
+document.addEventListener('click', event => {
+  const fbq = (window as Window & { fbq?: (...args: unknown[]) => void }).fbq;
+  const link = (event.target as Element).closest<HTMLAnchorElement>('a[href]');
+  if (!fbq || !link) return;
+  if (link.href.startsWith('tel:')) fbq('track', 'Contact');
+  else if (/google\.com\/maps|waze\.com|maps\.apple\.com/.test(link.href)) fbq('track', 'FindLocation');
+});

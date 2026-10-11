@@ -123,3 +123,9 @@ Tailles de texte : sur ordinateur, plus aucun texte courant sous 11 px et les pa
 - L’accueil ne télécharge que le plat affiché et le suivant.
 - `public/.htaccess` met en cache un an les fichiers JS, CSS, polices et images (leur nom porte une empreinte) et fait revalider les pages HTML, le sitemap et le robots.txt à chaque visite ; une mise à jour est donc visible immédiatement.
 
+## Cookies et publicité
+
+Le bandeau de consentement est Cookiebot ; il pilote Google Ads et le Pixel Meta. Les trois identifiants se renseignent dans `tracking.json` (le Domain Group ID Cookiebot, `AW-…` pour Google Ads, l’ID du pixel), puis `npm run deploy`. Tant que l’identifiant Cookiebot est vide, aucun bandeau ni outil de suivi n’est injecté ; un identifiant mal formé arrête le build.
+
+Au build, `vite.config.ts` place en tête de page le mode consentement Google v2, tout refusé par défaut, puis Cookiebot (blocage automatique), puis Google Ads ; le Pixel Meta reste inerte (`type="text/plain"`) jusqu’à l’acceptation des cookies marketing. Un lien « Cookies » dans le pied de page rouvre le choix. Les clics sur le téléphone et les itinéraires envoient les événements Meta `Contact` et `FindLocation` quand le visiteur a accepté.
+

@@ -66,4 +66,34 @@ function structuredData(): Plugin {
   };
 }
 
-export default defineConfig({ base, plugins: [structuredData()] });
+interface Tracking { cookiebot: string; googleAds: string; metaPixel: string }
+
+// Consent banner and ad tags, from tracking.json. Nothing is injected without a
+// Cookiebot id: no tag may run before the visitor has been asked. Google tags
+// start with every consent denied (Consent Mode v2) and Cookiebot updates them;
+// the Meta pixel stays inert (type="text/plain") until marketing is accepted.
+function tracking(): Plugin {
+  return {
+    name: 'safe-tracking',
+    transformIndexHtml(html) {
+      const ids = JSON.parse(readFileSync(new URL('./tracking.json', import.meta.url), 'utf8')) as Tracking;
+      const checks: [keyof Tracking, RegExp][] = [['cookiebot', /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i], ['googleAds', /^AW-\d+$/], ['metaPixel', /^\d{15,16}$/]];
+      for (const [key, format] of checks) if (ids[key] && !format.test(ids[key])) throw new Error(`tracking.json : ${key} invalide (${ids[key]})`);
+      if (!ids.cookiebot) return html.replace('<!--tracking-->', '');
+      const tags = [
+        `<script data-cookieconsent="ignore">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'denied',personalization_storage:'denied',security_storage:'granted',wait_for_update:500});gtag('set','ads_data_redaction',true);</script>`,
+        `<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="${ids.cookiebot}" data-blockingmode="auto" data-culture="FR"></script>`,
+      ];
+      if (ids.googleAds) tags.push(
+        `<script async src="https://www.googletagmanager.com/gtag/js?id=${ids.googleAds}" data-cookieconsent="ignore"></script>`,
+        `<script data-cookieconsent="ignore">gtag('js',new Date());gtag('config','${ids.googleAds}');</script>`,
+      );
+      if (ids.metaPixel) tags.push(
+        `<script type="text/plain" data-cookieconsent="marketing">!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${ids.metaPixel}');fbq('track','PageView');</script>`,
+      );
+      return html.replace('<!--tracking-->', tags.join('\n  '));
+    },
+  };
+}
+
+export default defineConfig({ base, plugins: [tracking(), structuredData()] });
