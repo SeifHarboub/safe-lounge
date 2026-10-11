@@ -631,3 +631,10 @@ h2 .h2-kicker{display:block;margin-bottom:24px;font-family:Satoshi,sans-serif;fo
 #CybotCookiebotDialog#CybotCookiebotDialog #CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection{grid-column:1/-1!important;order:3}
 #CybotCookiebotDialog#CybotCookiebotDialog .CybotCookiebotDialogBodyButton{padding:11px 8px!important;font-size:13px!important}
 }
+/* Cookiebot draws its own white scroll track on each scrolling zone, cut by the
+   buttons where zones meet: hidden, the zones keep a thin scrollbar in palette. */
+#CybotCookiebotDialog#CybotCookiebotDialog .CybotCookiebotScrollbarContainer{display:none!important}
+#CybotCookiebotDialog#CybotCookiebotDialog .CybotCookiebotScrollArea,#CybotCookiebotDialog#CybotCookiebotDialog #CybotCookiebotDialogTabContent{scrollbar-width:thin!important;scrollbar-color:#e6e4d84d transparent!important}
+#CybotCookiebotDialog#CybotCookiebotDialog ::-webkit-scrollbar{width:6px!important;background:transparent!important}
+#CybotCookiebotDialog#CybotCookiebotDialog ::-webkit-scrollbar-thumb{background:#e6e4d84d!important;border-radius:6px!important}
+#CybotCookiebotDialog#CybotCookiebotDialog ::-webkit-scrollbar-track{background:transparent!important}
