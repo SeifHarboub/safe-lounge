@@ -72,10 +72,14 @@ interface Tracking { cookiebot: string; googleAds: string; metaPixel: string }
 // Cookiebot id: no tag may run before the visitor has been asked. Google tags
 // start with every consent denied (Consent Mode v2) and Cookiebot updates them;
 // the Meta pixel stays inert (type="text/plain") until marketing is accepted.
+// The Google map, which sets Google cookies, waits for marketing consent too.
+// Only the production build gets all this: the dev server and the tests stay
+// free of third-party scripts.
 function tracking(): Plugin {
   return {
     name: 'safe-tracking',
-    transformIndexHtml(html) {
+    transformIndexHtml(html, context) {
+      if (context.server) return html.replace('<!--tracking-->', '');
       const ids = JSON.parse(readFileSync(new URL('./tracking.json', import.meta.url), 'utf8')) as Tracking;
       const checks: [keyof Tracking, RegExp][] = [['cookiebot', /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i], ['googleAds', /^AW-\d+$/], ['metaPixel', /^\d{15,16}$/]];
       for (const [key, format] of checks) if (ids[key] && !format.test(ids[key])) throw new Error(`tracking.json : ${key} invalide (${ids[key]})`);
@@ -91,7 +95,10 @@ function tracking(): Plugin {
       if (ids.metaPixel) tags.push(
         `<script type="text/plain" data-cookieconsent="marketing">!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${ids.metaPixel}');fbq('track','PageView');</script>`,
       );
-      return html.replace('<!--tracking-->', tags.join('\n  '));
+      const consentMap = '<div class="contact-map-consent cookieconsent-optout-marketing"><div class="contact-map-consent-inner"><p>La carte Google dépose des cookies : elle s’affiche une fois les cookies marketing acceptés.</p><button type="button" class="contact-map-accept">Afficher la carte</button></div></div>';
+      return html
+        .replace('<!--tracking-->', tags.join('\n  '))
+        .replace(/<iframe title="Le Safe Lounge([^"]*)" src="([^"]+)"/, `${consentMap}<iframe title="Le Safe Lounge$1" data-cookieblock-src="$2" data-cookieconsent="marketing"`);
     },
   };
 }

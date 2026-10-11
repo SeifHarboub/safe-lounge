@@ -268,12 +268,15 @@ updateOpenStatus();
 setInterval(updateOpenStatus, 60_000);
 
 // Consent and ad measurement, only when tracking.json switched them on (see vite.config.ts).
-type Consent = { renew(): void };
+type Consent = { renew(): void; submitCustomConsent(preferences: boolean, statistics: boolean, marketing: boolean): void; consent: { preferences: boolean; statistics: boolean } };
 const consent = (window as Window & { Cookiebot?: Consent }).Cookiebot;
 const cookieLink = document.querySelector<HTMLAnchorElement>('.footer-cookies');
 if (consent && cookieLink) {
   cookieLink.hidden = false;
   cookieLink.addEventListener('click', event => { event.preventDefault(); consent.renew(); });
+  // The map asks for marketing consent alone, keeping the visitor's other choices.
+  document.querySelector('.contact-map-accept')?.addEventListener('click', () =>
+    consent.submitCustomConsent(consent.consent.preferences, consent.consent.statistics, true));
 }
 // Calls and directions are what the ads are meant to bring. fbq only exists once
 // the visitor has accepted marketing cookies.

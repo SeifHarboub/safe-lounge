@@ -419,7 +419,7 @@ test('changer de catégorie en bas de liste ramène au début de la nouvelle lis
   await expect(page.locator('#menu-panel')).not.toContainText('200 g de frites');
 });
 
-test('sans identifiants dans tracking.json, aucun bandeau ni outil de suivi n’est chargé', async ({ page }) => {
+test('le serveur de développement ne charge ni bandeau ni outil de suivi', async ({ page }) => {
   const thirdParty: string[] = [];
   page.on('request', request => { if (/cookiebot|googletagmanager|facebook/.test(request.url())) thirdParty.push(request.url()); });
   await page.goto('/');
