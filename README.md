@@ -10,10 +10,10 @@ npm run dev
 - `npm run build` : vérification TypeScript et production du site statique dans `dist/`.
 - `npm run preview` : aperçu du build.
 - `npm test` : tests de parcours dans Chrome via Playwright.
-- `npm run deploy` : reconstruit le site et remplace la branche `gh-pages`.
+- `npm run deploy` : reconstruit le site et l’envoie sur l’hébergement Infomaniak (FTPS).
 
-Le site est publié sur https://lesafelounge.com/ (GitHub Pages, branche `gh-pages`, domaine chez IONOS). Le fichier `CNAME` est écrit par `scripts/deploy.sh` ; les anciennes pages WordPress (`/burgers`, `/pizzas`, `/hookah`…) redirigent vers leur section depuis `public/<page>/index.html`.
-Les sources restent sur `main`, la branche `gh-pages` ne contient que le site construit.
+Le site est publié sur https://lesafelounge.com/, sur l’hébergement web Infomaniak du compte « Nuage Burger » (site `lesafelounge.com`, dossier `/sites/lesafelounge.com`, à côté de nuageburger.fr). Le domaine et la messagerie restent chez IONOS : seuls les enregistrements A, AAAA et `www` pointent vers Infomaniak (`83.228.233.137`, `2001:1600:18:104::1b4`). Le certificat Let’s Encrypt est géré et renouvelé par Infomaniak. Les anciennes pages WordPress (`/burgers`, `/pizzas`, `/hookah`…) redirigent vers leur section depuis `public/<page>/index.html`.
+`scripts/deploy.sh` envoie `dist/` avec `scripts/ftps_upload.py` sous l’utilisateur FTP `jj44wh_safelounge`, restreint au dossier du site ; son mot de passe est dans le trousseau macOS (service `infomaniak-ftp-lesafelounge`). Le serveur FTP d’Infomaniak exige que la connexion de données réutilise la session TLS de la connexion de commande, ce que le `curl` de macOS ne sait pas faire ; d’où le petit envoi en Python. `public/.htaccess` redirige `www` et HTTP vers `https://lesafelounge.com`, compresse et règle le cache (un an pour les fichiers à empreinte, revalidation pour les pages). L’ancienne copie GitHub Pages renvoie vers le domaine.
 
 Les chemins d’assets construits à l’exécution — photos de la carte, plats de l’accueil, desserts —
 passent par `asset()` dans `src/asset.ts`, qui applique `import.meta.env.BASE_URL`.
@@ -109,7 +109,7 @@ Tailles de texte : sur ordinateur, plus aucun texte courant sous 11 px et les pa
 
 ## Référencement
 
-- Titre, description, URL canonique, Open Graph et Twitter Card dans `index.html` ; `SITE_URL` fixe l’adresse publique au build (GitHub Pages par défaut).
+- Titre, description, URL canonique, Open Graph et Twitter Card dans `index.html` ; `SITE_URL` fixe l’adresse publique au build (`https://lesafelounge.com/` par défaut).
 - `vite.config.ts` injecte les données Schema.org `Restaurant` : adresse, téléphone, horaires et la carte complète, construite depuis `src/menu.json`.
 - `public/robots.txt` et `public/sitemap.xml` ; `public/assets/og-logo.jpg` (le logo sur le vert de la marque, sans photo) pour les aperçus de partage. Le nom du fichier change à chaque nouvelle image : WhatsApp et Facebook gardent l’aperçu en cache selon l’adresse de l’image.
 - Les photos de la carte sont servies en WebP 1080 px (les PNG d’origine sont dans `research/menu-v2-originals/`).
@@ -121,5 +121,5 @@ Tailles de texte : sur ordinateur, plus aucun texte courant sous 11 px et les pa
 - Polices en WOFF2, limitées aux caractères latins ; Fraunces a ses axes SOFT et WONK figés à leurs valeurs par défaut (rendu identique). Les TTF d’origine restent dans `public/assets/` comme sources.
 - Les vignettes de la carte utilisent une copie de 540 px (`public/assets/menu-v2/sm/`, via `srcset`) ; la fiche d’un plat garde la photo de 1080 px. Toutes les vignettes sont en chargement différé.
 - L’accueil ne télécharge que le plat affiché et le suivant.
-- GitHub Pages impose `Cache-Control: max-age=600` et ne permet pas de le régler ; les fichiers JS et CSS portent une empreinte dans leur nom, donc une mise à jour est toujours servie.
+- `public/.htaccess` met en cache un an les fichiers JS, CSS, polices et images (leur nom porte une empreinte) et fait revalider les pages HTML, le sitemap et le robots.txt à chaque visite ; une mise à jour est donc visible immédiatement.
 

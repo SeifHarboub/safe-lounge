@@ -1,0 +1,33 @@
+# Le Safe Lounge — hébergement Infomaniak (site statique construit par Vite).
+
+# Compression, reprise des réglages posés par Infomaniak à la création du site.
+SetOutputFilter DEFLATE
+AddOutputFilterByType DEFLATE "application/javascript" "application/json" "application/ld+json" "application/manifest+json" "application/xml" "font/opentype" "image/svg+xml" "image/x-icon" "text/css" "text/html" "text/javascript" "text/plain" "text/xml"
+
+# SECTION BEGIN GIT PROTECTION
+RedirectMatch 404 /\.git
+# SECTION END GIT PROTECTION
+
+RewriteEngine On
+# Une seule adresse publique : www renvoie vers le domaine nu.
+RewriteCond %{HTTP_HOST} ^www\.lesafelounge\.com$ [NC]
+RewriteRule ^ https://lesafelounge.com%{REQUEST_URI} [R=301,L]
+# HTTP renvoie vers HTTPS (certificat Let's Encrypt géré par Infomaniak). Les deux
+# conditions évitent une boucle si le TLS est terminé par le proxy d'Infomaniak.
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://lesafelounge.com%{REQUEST_URI} [R=301,L]
+
+# Les fichiers de assets/ changent de nom à chaque version (hash Vite) : cache long.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|woff2|webp|jpg|png|svg|mp4)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  # La page et les fichiers SEO se relisent à chaque visite pour suivre les mises en ligne.
+  <FilesMatch "\.(html|xml|txt)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
+DirectoryIndex index.html
+ErrorDocument 404 /index.html
