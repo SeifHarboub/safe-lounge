@@ -21,14 +21,12 @@ test('la nouvelle carte affiche les treize catégories dans le bon ordre', async
 
 // Each dish shows its ingredients as a customer reads them, never the recipe steps.
 const dishes: { id: string; tab?: string; name: string; has: string[]; hasNot?: string[] }[] = [
-  { id: 'burger-bbq-raclette', name: 'BBQ’ Raclette', has: ['potato bun moelleux', 'poulet frit gourmand'] },
-  { id: 'burger-chicken-biggie', name: 'Chicken Biggie', has: ['sauce classic burger'] },
-  { id: 'burger-chicken-creamy', name: 'Chicken Creamy', has: ['mayonnaise'] },
-  { id: 'burger-smokey-bacon', name: 'Smokey Bacon', has: ['bacon de bœuf snacké', 'sauce Smokey Baconnaise'] },
-  { id: 'burger-classic-smash', name: 'Classic Smash', has: ['deux steaks smash', 'ketchup', 'moutarde'] },
-  { id: 'burger-smokey-beef-bacon', name: 'Smokey Beef Bacon', has: ['deux steaks smash', 'bacon de bœuf snacké', 'sauce Smoked Beef'] },
-  { id: 'burger-original-smash', name: 'Original Smash', has: ['deux steaks smash', 'sauce Original Smash'] },
-  { id: 'burger-biggie-smash', name: 'Biggie Smash', has: ['deux steaks smash', 'sauce classic burger'] },
+  { id: 'burger-classic', name: 'Classic', has: ['double smash 130 g', 'pickles', 'salade, sauce ketchup et moutarde'], hasNot: ['iceberg', 'Colona', 'pain du bas', 'pain du haut'] },
+  { id: 'burger-original', name: 'Original', has: ['double smash 130 g', 'sauce original smash'], hasNot: ['œuf au plat', 'orange'] },
+  { id: 'burger-biggie', name: 'Biggie', has: ['double smash 130 g', 'pickles', 'sauce biggie'], hasNot: ['jaune orangé'] },
+  { id: 'burger-creamy', name: 'Creamy', has: ['double smash 130 g', 'salade et sauce mayonnaise'], hasNot: ['blanche'] },
+  { id: 'burger-tasty-bacon', name: 'Tasty Bacon', has: ['bacon de bœuf', 'oignons caramélisés', 'sauce smoked beef'], hasNot: ['brune'] },
+  { id: 'burger-frenchy', name: 'Frenchy', has: ['raclette fondante', 'bacon de bœuf', 'oignons caramélisés', 'sauce barbecue'], hasNot: ['acajou'] },
   { id: 'panuozzo-rosso', tab: 'panuozzo', name: 'Rosso', has: ['pain en pâte à pizza', 'crème de poivrons', 'roquette', 'jambon de dinde', 'chorizo finement tranché', 'stracciatella', 'poivrons', 'oignons confits', 'huile piquante'] },
   { id: 'panuozzo-tartufo', tab: 'panuozzo', name: 'Tartufo', has: ['pain en pâte à pizza', 'crème de truffe', 'roquette', 'jambon de dinde', 'jambon de bœuf', 'stracciatella', 'champignons poêlés', 'copeaux de fromage italien', 'poivre moulu'] },
   { id: 'panuozzo-verde', tab: 'panuozzo', name: 'Verde', has: ['pain en pâte à pizza', 'roquette', 'jambon de dinde', 'stracciatella', 'tomates cerises confites', 'copeaux de fromage italien'] },
@@ -83,7 +81,7 @@ const dishes: { id: string; tab?: string; name: string; has: string[]; hasNot?: 
   { id: 'iced-latte-nocciola', tab: 'iced-latte', name: 'Iced Nocciola', has: ['glaçons', 'chantilly'], hasNot: ['caramel', 'vanille'] },
   { id: 'salade-original-burrata', tab: 'salade', name: 'Original Burrata', has: ['burrata', 'huile d’olive', 'tomates cerises', 'olives de Ligurie', 'sauce basilic', 'crème balsamique'], hasNot: ['poulet'] },
   { id: 'salade-cesar', tab: 'salade', name: 'César', has: ['salade', 'poulet', 'croûtons', 'sauce César'], hasNot: ['burrata', 'tomate'] },
-  { id: 'dessert-fondant-chocolat', tab: 'dessert', name: 'Fondant au chocolat', has: ['glace vanille +2 €'] },
+  { id: 'dessert-fondant-chocolat', tab: 'dessert', name: 'Fondant au chocolat', has: ['glace vanille'] },
   { id: 'dessert-tiramisu-coffee', tab: 'dessert', name: 'Original Tiramisu Coffee', has: ['mascarpone', 'café', 'cacao'] },
   { id: 'dessert-tiramisu-nutella-speculoos', tab: 'dessert', name: 'Tiramisu Nutella-Spéculoos', has: ['mascarpone', 'Nutella', 'spéculoos'] },
   { id: 'dessert-tiramisu-pistachio', tab: 'dessert', name: 'Tiramisu Pistachio', has: ['mascarpone', 'pistache'] },
@@ -130,11 +128,26 @@ test('la carte n’a plus de barre de recherche', async ({ page }) => {
   await expect(page.locator('#dish-search, .menu-search')).toHaveCount(0);
 });
 
-test('les burgers sont regroupés en smash puis chicken, chacun par prix croissant', async ({ page }) => {
+test('les six burgers gardent un ordre clair et proposent les deux protéines', async ({ page }) => {
   await page.goto('/#carte');
-  await expect(page.locator('.dish-group')).toHaveText(['Smash burgers', 'Chicken burgers']);
+  await expect(page.locator('.dish-group')).toHaveCount(0);
   const order = await page.locator('.dish-card').evaluateAll(cards => cards.map(card => card.getAttribute('data-open')));
-  expect(order).toEqual(['burger-classic-smash', 'burger-original-smash', 'burger-biggie-smash', 'burger-smokey-beef-bacon', 'burger-chicken-biggie', 'burger-chicken-creamy', 'burger-bbq-raclette', 'burger-smokey-bacon']);
+  expect(order).toEqual(['burger-classic', 'burger-original', 'burger-biggie', 'burger-creamy', 'burger-tasty-bacon', 'burger-frenchy']);
+  await expect(page.locator('.protein-switch.is-compact')).toHaveCount(6);
+});
+
+test('le choix de protéine remplace la photo sur la carte et dans la fiche', async ({ page }) => {
+  await page.goto('/#carte');
+  const card = page.locator('.dish-card[data-open="burger-classic"]');
+  await expect(card.locator('[data-dish-image]')).toHaveAttribute('src', /burger-classic-smash\.webp$/);
+  await card.locator('[data-protein-choice="chicken"]').click();
+  await expect(card.locator('[data-dish-image]')).toHaveAttribute('src', /burger-classic-chicken\.webp$/);
+  await expect(card.locator('[data-protein-choice="chicken"]')).toHaveAttribute('aria-pressed', 'true');
+  await card.locator('.dish-visual').click();
+  const dialog = page.getByRole('dialog');
+  await expect(dialog.locator('.dialog-photo')).toHaveAttribute('src', /burger-classic-chicken\.webp$/);
+  await dialog.locator('[data-protein-choice="smash"]').click();
+  await expect(dialog.locator('.dialog-photo')).toHaveAttribute('src', /burger-classic-smash\.webp$/);
 });
 
 test('chaque catégorie liste ses plats du moins cher au plus cher', async ({ page }) => {
@@ -149,8 +162,8 @@ test('chaque catégorie liste ses plats du moins cher au plus cher', async ({ pa
 
 test('les burgers sont servis avec des frites, les panuozzos avec une salade et les salades avec des petits pains', async ({ page }) => {
   await page.goto('/#carte');
-  await expect(page.locator('.dish-card[data-open="burger-classic-smash"] .dish-served')).toHaveText('Servi avec frites');
-  await expect(page.locator('.dish-card[data-open^="burger-"] .dish-served')).toHaveCount(8);
+  await expect(page.locator('.dish-card[data-open="burger-classic"] .dish-served')).toHaveText('Servi avec frites');
+  await expect(page.locator('.dish-card[data-open^="burger-"] .dish-served')).toHaveCount(6);
   await page.locator('#tab-panuozzo').click();
   await expect(page.locator('.dish-card[data-open^="panuozzo-"] .dish-served')).toHaveCount(3);
   await page.locator('#tab-salade').click();
@@ -160,11 +173,21 @@ test('les burgers sont servis avec des frites, les panuozzos avec une salade et 
   await expect(page.getByRole('dialog').locator('.dialog-served')).toHaveText('Servi avec salade');
 });
 
-test('les prix de Bilal et les suppléments des smash burgers s’affichent', async ({ page }) => {
+test('les prix et les suppléments steak et bacon de la nouvelle carte s’affichent', async ({ page }) => {
   await page.goto('/#carte');
-  await expect(page.locator('.dish-card[data-open="burger-classic-smash"] .dish-title > span')).toHaveText('13€');
-  await expect(page.locator('.dish-card[data-open="burger-classic-smash"]')).toContainText(/Bacon de bœuf \+2 €\s*Version XL \(triple steak\) \+3 €/);
-  await expect(page.locator('.dish-card[data-open="burger-smokey-beef-bacon"] .dish-title > span')).toHaveText('14€');
+  await expect(page.locator('.dish-card[data-open="burger-classic"] .dish-title > span')).toHaveText('13€');
+  const supplements = page.locator('.dish-card[data-open="burger-classic"] .supplement');
+  await expect(supplements).toHaveText(['Steak supplémentaire (version XL)+3 €', 'Bacon de bœuf+2 €']);
+  await expect(supplements.locator('strong')).toHaveText(['+3 €', '+2 €']);
+  // Le steak XL et le choix du poulet n'existent que sur l'onglet de leur protéine.
+  await page.locator('.dish-card[data-open="burger-classic"] [data-protein-choice="chicken"]').click();
+  await expect(supplements).toHaveText(['Bacon de bœuf+2 €']);
+  await expect(page.locator('.dish-card[data-open="burger-classic"] .dish-copy > p')).toContainText('filet de poulet frit gourmand');
+  await expect(page.locator('.dish-card[data-open="burger-classic"] .dish-copy > p')).not.toContainText('double smash');
+  await expect(page.locator('.dish-card[data-open="burger-biggie"] .dish-title > span')).toHaveText('14€');
+  await expect(page.locator('.dish-card[data-open="burger-creamy"] .dish-title > span')).toHaveText('14€');
+  await expect(page.locator('.dish-card[data-open="burger-tasty-bacon"] .dish-title > span')).toHaveText('15€');
+  await expect(page.locator('.dish-card[data-open="burger-frenchy"] .dish-title > span')).toHaveText('15€');
   await page.locator('#tab-pizzas').click();
   await expect(page.locator('.dish-card[data-open="pizzas-burratella-lov"] .dish-title > span')).toHaveText('16€');
   await page.locator('#tab-milkshake').click();
@@ -174,7 +197,7 @@ test('les prix de Bilal et les suppléments des smash burgers s’affichent', as
 
 test('chaque fiche détaille ses allergènes', async ({ page }) => {
   await page.goto('/#carte');
-  await page.locator('.dish-card[data-open="burger-classic-smash"]').click();
+  await page.locator('.dish-card[data-open="burger-classic"]').click();
   const dialog = page.getByRole('dialog');
   await expect(dialog.locator('.dialog-price')).toHaveText('13 €');
   await expect(dialog.locator('.dialog-allergens li')).toHaveText(['Gluten', 'Œufs', 'Lait', 'Moutarde']);
@@ -188,7 +211,7 @@ test('chaque fiche détaille ses allergènes', async ({ page }) => {
 
 test('aucune description ne détaille la recette', async ({ page }) => {
   await page.goto('/#carte');
-  await expect(page.locator('.dish-card[data-open="burger-bbq-raclette"] img')).toHaveAttribute('src', /menu-v2\/sm\/burger-bbq-raclette\.webp$/);
+  await expect(page.locator('.dish-card[data-open="burger-classic"] img')).toHaveAttribute('src', /menu-v3\/sm\/burger-classic-smash\.webp$/);
   for (const tab of ['burger', 'pates', 'pizzas']) {
     await page.locator(`#tab-${tab}`).click();
     const text = (await page.locator('#menu-panel').textContent()) ?? '';
@@ -214,12 +237,12 @@ test('sur un petit téléphone, chaque fiche produit tient en entier sans défil
 test('la fiche du burger fonctionne sur mobile', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/#carte');
-  await page.locator('.dish-card[data-open="burger-bbq-raclette"]').click();
+  await page.locator('.dish-card[data-open="burger-frenchy"]').click();
   const dialog = page.getByRole('dialog');
   await expect(dialog).toBeVisible();
-  await expect(dialog).toContainText('BBQ’ Raclette');
-  await expect(dialog).not.toContainText('200 g de frites');
-  await expect(dialog.locator('.dialog-price')).toHaveText('14 €');
+  await expect(dialog).toContainText('Frenchy');
+  await expect(dialog).toContainText('Servi avec frites');
+  await expect(dialog.locator('.dialog-price')).toHaveText('15 €');
 });
 
 test('les desserts regroupent les six douceurs de la carte, sans les crêpes, avec prix et suppléments', async ({ page }) => {
@@ -231,9 +254,9 @@ test('les desserts regroupent les six douceurs de la carte, sans les crêpes, av
   await expect(page.locator('#dish-grid')).not.toContainText('Crêpe');
   const prices: [string, string][] = [['dessert-fondant-chocolat', '7€'], ['dessert-tiramisu-coffee', '8€'], ['dessert-tiramisu-nutella-speculoos', '9€'], ['dessert-tiramisu-pistachio', '9€'], ['dessert-bowl-fruits', '10€'], ['dessert-brioche-perdue', '11€']];
   for (const [id, price] of prices) await expect(page.locator(`.dish-card[data-open="${id}"] .dish-title > span`)).toHaveText(price);
-  await expect(page.locator('.dish-card[data-open="dessert-fondant-chocolat"]')).toContainText('Boule de glace vanille +2 €');
+  await expect(page.locator('.dish-card[data-open="dessert-fondant-chocolat"] .supplement')).toHaveText('Boule de glace vanille+2 €');
   await expect(page.locator('.dish-card[data-open="dessert-brioche-perdue"]')).toContainText('Nutella, spéculoos, crème Bueno ou caramel au beurre salé');
-  await expect(page.locator('.dish-card[data-open="dessert-brioche-perdue"]')).toContainText('Topping supplémentaire +2 €');
+  await expect(page.locator('.dish-card[data-open="dessert-brioche-perdue"] .supplement')).toHaveText('Topping+2 €');
   await expect(page.locator('#dish-grid')).not.toContainText('BIENTÔT');
 });
 
@@ -243,13 +266,13 @@ test('l’accueil montre un plat en plein cadre, avec son nom et son prix', asyn
   await expect(page.locator('.arrival h1')).toContainText('comme à la maison.');
   await expect(page.locator('#arrival-video, #assiettes, .dish3d-stage')).toHaveCount(0);
   await expect(page.locator('.hero-slides img')).toHaveCount(12);
-  await expect(page.locator('.hero-slides img.is-on')).toHaveAttribute('src', /menu-v2\/burger-smokey-beef-bacon\.webp$/);
+  await expect(page.locator('.hero-slides img.is-on')).toHaveAttribute('src', /menu-v3\/burger-tasty-bacon-smash\.webp$/);
   const now = page.locator('.hero-now');
-  await expect(now).toContainText('Smokey Beef Bacon');
-  await expect(page.locator('#hero-price')).toHaveText('14€');
+  await expect(now).toContainText('Tasty Bacon');
+  await expect(page.locator('#hero-price')).toHaveText('15€');
   await expect(page.locator('.hero-slides img.is-tall')).toHaveCount(3);
   await now.click();
-  await expect(page.getByRole('dialog')).toContainText('Smokey Beef Bacon');
+  await expect(page.getByRole('dialog')).toContainText('Tasty Bacon');
 });
 
 test('les plats de l’accueil se succèdent seuls, sans barre de progression', async ({ page }) => {
@@ -372,15 +395,16 @@ test('fermer la fiche d’un plat ne laisse pas de contour après un clic', asyn
   await page.goto('/#carte');
   await page.locator('#tab-pizzas').click();
   const card = page.locator('.dish-card[data-open="pizzas-malaga"]');
-  await card.click();
+  const cardButton = card.locator('.dish-visual');
+  await cardButton.click();
   await page.keyboard.press('Escape');
   await expect(page.getByRole('dialog')).toBeHidden();
-  expect(await card.evaluate(element => element === document.activeElement)).toBe(false);
-  await card.focus();
+  expect(await cardButton.evaluate(element => element === document.activeElement)).toBe(false);
+  await cardButton.focus();
   await page.keyboard.press('Enter');
   await expect(page.getByRole('dialog')).toBeVisible();
   await page.keyboard.press('Escape');
-  expect(await card.evaluate(element => element === document.activeElement)).toBe(true);
+  expect(await cardButton.evaluate(element => element === document.activeElement)).toBe(true);
 });
 
 test('les titres de section portent les mots-clés et le contact affiche la bonne adresse e-mail', async ({ page }) => {
@@ -414,7 +438,7 @@ test('changer de catégorie en bas de liste ramène au début de la nouvelle lis
   await page.locator('#tab-panuozzo').click();
   await page.locator('#tab-burger').click();
   await expect.poll(async () => page.evaluate(() => Math.round(document.querySelector('.menu-results')!.getBoundingClientRect().top))).toBe(24);
-  await expect(page.locator('#category-description')).toBeHidden();
+  await expect(page.locator('#category-description')).toContainText('double smash 130 g ou en filet de poulet frit');
   await expect(page.locator('.arrival-content')).not.toContainText('La soirée ne fait que commencer');
   await expect(page.locator('#menu-panel')).not.toContainText('200 g de frites');
 });

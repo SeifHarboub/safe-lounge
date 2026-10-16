@@ -5,7 +5,8 @@ import rawMenu from './menu.json';
 import { asset } from './asset';
 
 gsap.registerPlugin(ScrollTrigger);
-interface Dish { id: string; name: string; description: string; extra: string; served?: string; group?: string; price: number | null; image: string | null; sourceImage: string | null; allergens: string[] }
+interface Supplement { label: string; price: number; protein?: 'smash' | 'chicken' }
+interface Dish { id: string; name: string; description: string; extra: string; served?: string; group?: string; price: number | null; image: string | null; chickenImage?: string | null; proteins?: Record<'smash' | 'chicken', string>; supplements?: Supplement[]; sourceImage: string | null; allergens: string[] }
 interface Category { id: string; label: string; description: string; source: string; groups?: string[]; items: Dish[] }
 // Follow a meal: salads to start, main dishes, desserts and crêpes, then drinks,
 // from soft drinks to signature drinks, ending with hot drinks as after a meal.
@@ -20,8 +21,18 @@ const menu = (rawMenu as Category[]).slice().sort((a, b) => DISPLAY_ORDER.indexO
 const allDishes = menu.flatMap(category => category.items.map(dish => ({ ...dish, category: category.id })));
 const $ = <T extends Element = HTMLElement>(selector: string) => document.querySelector<T>(selector)!;
 // Menu cards use a 540 px copy of each photo; the dish sheet keeps the full 1080 px one.
-const small = (image: string) => image.replace('/menu-v2/', '/menu-v2/sm/');
+const small = (image: string) => image.replace(/\/(menu-v[23])\//, '/$1/sm/');
 const escape = (text: string) => text.replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]!));
+type Protein = 'smash' | 'chicken';
+const proteinByDish = new Map<string, Protein>();
+const selectedProtein = (dish: Dish) => proteinByDish.get(dish.id) ?? 'smash';
+const selectedImage = (dish: Dish) => selectedProtein(dish) === 'chicken' && dish.chickenImage ? dish.chickenImage : dish.image;
+// The description names the protein of the selected tab instead of "protéine au choix".
+const dishDescription = (dish: Dish) => dish.proteins ? dish.description.replace('protéine au choix', dish.proteins[selectedProtein(dish)]) : dish.description;
+// One supplement per line, price in bold; a supplement tied to a protein only shows on its tab.
+const supplementRows = (dish: Dish) => (dish.supplements ?? []).filter(item => !item.protein || item.protein === selectedProtein(dish)).map(item => `<span class="supplement"><span>${escape(item.label)}</span><strong>+${item.price} €</strong></span>`).join('');
+const supplementList = (dish: Dish, className: string) => dish.supplements?.length ? `<span class="${className}"><span class="supplements-title">Suppléments</span><span class="supplement-rows" data-dish-supplements="${dish.id}">${supplementRows(dish)}</span></span>` : '';
+const proteinSwitch = (dish: Dish, compact = false) => dish.chickenImage ? `<div class="protein-switch${compact ? ' is-compact' : ''}" role="group" aria-label="Choisir la viande pour ${escape(dish.name)}"><button type="button" data-protein-dish="${dish.id}" data-protein-choice="smash" aria-pressed="${selectedProtein(dish) === 'smash'}"><span>Smash</span></button><button type="button" data-protein-dish="${dish.id}" data-protein-choice="chicken" aria-pressed="${selectedProtein(dish) === 'chicken'}"><span>Chicken</span></button></div>` : '';
 let selectedCategory = 'burger';
 const grid = $('#dish-grid');
 const panel = $('#menu-panel');
@@ -36,11 +47,19 @@ function renderMenu(animate = true) {
   const category = menu.find(category => category.id === selectedCategory)!;
   const dishes = category.items;
   $('#category-title').textContent = category.label;
+  $('#category-description').textContent = category.description;
   // An empty category says so once, in the box below: no count, no second notice.
   $('#result-count').textContent = dishes.length ? `${dishes.length} choix` : '';
   tabs.forEach(tab => { const active = tab.dataset.category === category.id; tab.setAttribute('aria-selected',String(active)); tab.tabIndex = tab.dataset.category === category.id ? 0 : -1; });
   panel.setAttribute('aria-labelledby',`tab-${category.id}`);
-  grid.innerHTML = dishes.length ? dishes.map((dish, index) => { const heading = dish.group && dish.group !== dishes[index - 1]?.group ? `<h4 class="dish-group">${escape(dish.group)}</h4>` : ''; const label = menu.find(c => c.items.some(item => item.id === dish.id))!.label; return `${heading}<button class="dish-card" data-open="${dish.id}" aria-label="Voir ${escape(dish.name)}${dish.price === null ? '' : `, ${dish.price} euros`}"><div class="dish-frame"><div class="dish-photo">${dish.image ? `<img src="${asset(small(dish.image))}" srcset="${asset(small(dish.image))} 540w, ${asset(dish.image)} 1080w" sizes="(max-width: 760px) 46vw, (max-width: 1150px) 30vw, 24vw" alt="${escape(`${dish.name}, ${label.toLowerCase()} du Safe Lounge à Noisy-le-Sec`)}" width="1080" height="1080" loading="lazy" decoding="async" />` : `<div class="no-photo"><img src="${asset('/assets/symbol-lilac.svg')}" alt="" /></div>`}<span class="dish-open">↗︎</span></div></div><div class="dish-title"><h4>${escape(dish.name)}</h4>${dish.price === null ? '' : `<span>${dish.price}<small>€</small></span>`}</div><p>${escape(dish.description)}</p>${dish.served ? `<span class="dish-served">${escape(dish.served)}</span>` : ''}${dish.extra ? `<span class="dish-extra">${escape(dish.extra)}</span>` : ''}</button>`; }).join('') : '<div class="no-results"><span>Cette catégorie arrive bientôt.</span><p>Notre équipe finalise cette sélection. En attendant, demandez-nous ce qui est servi sur place.</p></div>';
+  grid.innerHTML = dishes.length ? dishes.map((dish, index) => {
+    const heading = dish.group && dish.group !== dishes[index - 1]?.group ? `<h4 class="dish-group">${escape(dish.group)}</h4>` : '';
+    const label = menu.find(c => c.items.some(item => item.id === dish.id))!.label;
+    const image = selectedImage(dish);
+    const protein = selectedProtein(dish) === 'chicken' ? 'poulet frit' : 'double smash';
+    const photo = image ? `<img data-dish-image="${dish.id}" src="${asset(small(image))}" srcset="${asset(small(image))} 540w, ${asset(image)} 1080w" sizes="(max-width: 760px) 46vw, (max-width: 1150px) 30vw, 24vw" alt="${escape(`${dish.name} en version ${protein}, ${label.toLowerCase()} du Safe Lounge à Noisy-le-Sec`)}" width="1080" height="1080" loading="lazy" decoding="async" />` : `<div class="no-photo"><img src="${asset('/assets/symbol-lilac.svg')}" alt="" /></div>`;
+    return `${heading}<article class="dish-card" data-open="${dish.id}"><button type="button" class="dish-visual" aria-label="Voir ${escape(dish.name)}${dish.price === null ? '' : `, ${dish.price} euros`}"><div class="dish-frame"><div class="dish-photo">${photo}<span class="dish-open">↗︎</span></div></div></button>${proteinSwitch(dish, true)}<button type="button" class="dish-copy" aria-label="Voir le détail de ${escape(dish.name)}"><div class="dish-title"><h4>${escape(dish.name)}</h4>${dish.price === null ? '' : `<span>${dish.price}<small>€</small></span>`}</div><p data-dish-description="${dish.id}">${escape(dishDescription(dish))}</p>${dish.served ? `<span class="dish-served">${escape(dish.served)}</span>` : ''}${dish.extra ? `<span class="dish-extra">${escape(dish.extra)}</span>` : ''}${supplementList(dish, 'dish-supplements')}</button></article>`;
+  }).join('') : '<div class="no-results"><span>Cette catégorie arrive bientôt.</span><p>Notre équipe finalise cette sélection. En attendant, demandez-nous ce qui est servi sur place.</p></div>';
   if (animate && canAnimate()) gsap.fromTo('.dish-card',{y:24,opacity:0},{y:0,opacity:1,duration:.45,stagger:.045,ease:'power2.out',clearProps:'transform,opacity'});
   requestAnimationFrame(() => ScrollTrigger.refresh());
 }
@@ -86,6 +105,25 @@ function goToSection(hash: string) {
 }
 document.addEventListener('click', event => {
   const target = event.target as Element;
+  const proteinChoice = target.closest<HTMLButtonElement>('[data-protein-choice]');
+  if (proteinChoice) {
+    const dish = allDishes.find(item => item.id === proteinChoice.dataset.proteinDish);
+    const protein = proteinChoice.dataset.proteinChoice as Protein;
+    if (dish?.chickenImage) {
+      proteinByDish.set(dish.id, protein);
+      const image = protein === 'chicken' ? dish.chickenImage : dish.image;
+      document.querySelectorAll<HTMLButtonElement>(`[data-protein-dish="${dish.id}"]`).forEach(button => button.setAttribute('aria-pressed', String(button.dataset.proteinChoice === protein)));
+      document.querySelectorAll<HTMLElement>(`[data-dish-description="${dish.id}"]`).forEach(text => { text.textContent = dishDescription(dish); });
+      document.querySelectorAll<HTMLElement>(`[data-dish-supplements="${dish.id}"]`).forEach(list => { list.innerHTML = supplementRows(dish); });
+      if (image) document.querySelectorAll<HTMLImageElement>(`[data-dish-image="${dish.id}"]`).forEach(photo => {
+        photo.src = asset(photo.classList.contains('dialog-photo') ? image : small(image));
+        if (!photo.classList.contains('dialog-photo')) photo.srcset = `${asset(small(image))} 540w, ${asset(image)} 1080w`;
+        photo.alt = `${dish.name} en version ${protein === 'chicken' ? 'poulet frit' : 'double smash'}, burger du Safe Lounge à Noisy-le-Sec`;
+        if (canAnimate()) photo.animate([{opacity:.35,transform:'scale(1.015)'},{opacity:1,transform:'scale(1)'}],{duration:320,easing:'ease-out'});
+      });
+    }
+    return;
+  }
   const categoryLink = target.closest<HTMLElement>('[data-go]');
   if (categoryLink) selectCategory(categoryLink.dataset.go!);
   const dishLink = target.closest<HTMLElement>('[data-open]');
@@ -108,7 +146,9 @@ function openDish(id: string, byPointer = false) {
   const dish = allDishes.find(dish => dish.id === id);
   if (!dish) return;
   const category = menu.find(category => category.id === dish.category)!;
-  $('#dialog-content').innerHTML = `${dish.image ? `<img class="dialog-photo" src="${asset(dish.image)}" alt="${escape(`${dish.name}, ${category.label.toLowerCase()} du Safe Lounge`)}" width="1080" height="1080" />` : `<div class="dialog-photo no-photo"><img src="${asset('/assets/symbol-lilac.svg')}" alt="" /></div>`}<div class="dialog-copy"><p class="eyebrow">${escape(category.label)}</p><h2 id="dialog-title">${escape(dish.name)}</h2>${dish.price === null ? '' : `<strong class="dialog-price">${dish.price} €</strong>`}<p>${escape(dish.description)}</p>${dish.served ? `<p class="dialog-served">${escape(dish.served)}</p>` : ''}${dish.extra ? `<p class="dialog-extra">${escape(dish.extra)}</p>` : ''}<div class="dialog-allergens"><h3>Allergènes</h3>${dish.allergens.length ? `<ul>${dish.allergens.map(allergen => `<li>${escape(allergen)}</li>`).join('')}</ul>` : '<p>Aucun des 14 allergènes majeurs.</p>'}</div></div>`;
+  const image = selectedImage(dish);
+  const protein = selectedProtein(dish) === 'chicken' ? 'poulet frit' : 'double smash';
+  $('#dialog-content').innerHTML = `${image ? `<img data-dish-image="${dish.id}" class="dialog-photo" src="${asset(image)}" alt="${escape(`${dish.name} en version ${protein}, ${category.label.toLowerCase()} du Safe Lounge`)}" width="1080" height="1080" />` : `<div class="dialog-photo no-photo"><img src="${asset('/assets/symbol-lilac.svg')}" alt="" /></div>`}<div class="dialog-copy"><p class="eyebrow">${escape(category.label)}</p><h2 id="dialog-title">${escape(dish.name)}</h2>${dish.price === null ? '' : `<strong class="dialog-price">${dish.price} €</strong>`}${proteinSwitch(dish)}<p data-dish-description="${dish.id}">${escape(dishDescription(dish))}</p>${dish.served ? `<p class="dialog-served">${escape(dish.served)}</p>` : ''}${dish.extra ? `<p class="dialog-extra">${escape(dish.extra)}</p>` : ''}${supplementList(dish, 'dialog-supplements')}<div class="dialog-allergens"><h3>Allergènes</h3>${dish.allergens.length ? `<ul>${dish.allergens.map(allergen => `<li>${escape(allergen)}</li>`).join('')}</ul>` : '<p>Aucun des 14 allergènes majeurs.</p>'}</div></div>`;
   dialog.showModal(); document.body.classList.add('dialog-open');
   if (canAnimate()) gsap.fromTo(dialog,{opacity:0,y:20,scale:.97},{opacity:1,y:0,scale:1,duration:.3,clearProps:'all'});
 }
@@ -137,7 +177,7 @@ document.addEventListener('click', () => requestAnimationFrame(refreshHolds));
 
 // The arrival fills its frame with one dish per craving, one after the other.
 // The photos share the arrival's dark green backdrop, so they melt into it.
-const HERO_PICKS = ['burger-smokey-beef-bacon','pizzas-burratella-lov','panuozzo-tartufo','pates-penne-saumon','salade-original-burrata','dessert-fondant-chocolat','dessert-tiramisu-coffee','crepe-nutella','dessert-brioche-perdue','milkshake-bueno','iced-latte-nocciola','mocktail-mojito-fraise'];
+const HERO_PICKS = ['burger-tasty-bacon','pizzas-burratella-lov','panuozzo-tartufo','pates-penne-saumon','salade-original-burrata','dessert-fondant-chocolat','dessert-tiramisu-coffee','crepe-nutella','dessert-brioche-perdue','milkshake-bueno','iced-latte-nocciola','mocktail-mojito-fraise'];
 const DRINK_CATEGORIES = ['milkshake','iced-latte','mocktail','frappuccino'];
 const heroDishes = HERO_PICKS.map(id => allDishes.find(dish => dish.id === id)!).filter(dish => dish?.image);
 const heroSlides = $('.hero-slides');

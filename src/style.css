@@ -94,7 +94,9 @@ h1 .italic{font-family:Fraunces,serif;font-style:italic;font-size:1.05em;font-we
 .dish-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 22px}
 .dish-group{grid-column:1/-1;font-family:Satoshi,sans-serif;font-size:12px;font-weight:650;letter-spacing:1.6px;text-transform:uppercase;color:var(--lilac);padding-bottom:12px;border-bottom:1px solid #e6e4d826;margin-bottom:-14px}
 .dish-group:not(:first-child){margin-top:18px}
-.dish-card{display:block;text-align:left;background:none;padding:0;border:0;min-width:0;align-self:start}
+.dish-card{display:flex;flex-direction:column;text-align:left;min-width:0;align-self:stretch}
+.dish-visual,.dish-copy{display:block;width:100%;text-align:left;background:none;padding:0;border:0;color:inherit}
+.dish-copy{display:flex;flex:1;flex-direction:column}
 .dish-photo{position:relative;aspect-ratio:1;overflow:hidden;border-radius:4px;background:#d7d3ca}
 .dish-photo>img{width:100%;height:100%;object-fit:cover}
 .dish-open{position:absolute;bottom:12px;right:12px;width:32px;height:32px;border-radius:50%;background:var(--cream);display:grid;place-items:center;font-size:19px;transition:background .3s,transform .3s}
@@ -103,10 +105,23 @@ h1 .italic{font-family:Fraunces,serif;font-style:italic;font-size:1.05em;font-we
 .dish-title h4{font-size:26px;line-height:1.12;letter-spacing:-.8px}
 .dish-title>span{font-family:Fraunces,serif;font-size:26px;font-weight:500;white-space:nowrap;line-height:1}
 .dish-title small{font-family:Satoshi,sans-serif;font-size:12px;margin-left:3px}
-.dish-card>p{font-size:14px;line-height:1.75;color:#625b61;margin-top:10px}
-.dish-served{display:inline-block;margin-top:10px;font-size:11px;font-weight:650;letter-spacing:1.2px;text-transform:uppercase;color:var(--jade)}
+.dish-copy>p{font-size:14px;line-height:1.75;color:#bdbcb4;margin-top:10px}
+.dish-served{display:inline-block;margin-top:auto;padding-top:10px;font-size:11px;font-weight:650;letter-spacing:1.2px;text-transform:uppercase;color:var(--jade)}
 .dish-served+.dish-extra{margin-top:6px}
 .dish-extra{display:block;font-size:13px;margin-top:10px;color:var(--green);white-space:pre-line}
+.dish-supplements{display:block;margin-top:12px}
+.supplements-title{display:block;font-size:11px;font-weight:650;letter-spacing:1.2px;text-transform:uppercase;color:var(--jade);margin-bottom:5px}
+.supplement-rows{display:block}
+.supplement{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:13px;line-height:1.55;color:var(--lilac)}
+.supplement strong{font-weight:700;white-space:nowrap}
+.protein-switch{display:grid;grid-template-columns:1fr 1fr;gap:3px;padding:4px;background:#150b1912;border:1px solid #150b1920;border-radius:5px;margin:18px 0}
+.protein-switch button{display:flex;align-items:center;justify-content:space-between;gap:7px;border:0;border-radius:3px;padding:10px 12px;background:transparent;color:inherit;font-size:12px;font-weight:650;transition:background .2s,color .2s,transform .2s}
+.protein-switch button small{font-size:9px;font-weight:650;letter-spacing:.6px;text-transform:uppercase;opacity:.65;white-space:nowrap}
+.protein-switch button[aria-pressed=true]{background:var(--green);color:var(--cream);box-shadow:0 4px 14px #150b1926}
+.protein-switch button:active{transform:scale(.98)}
+.protein-switch.is-compact{margin:17px 7px 2px;background:#091b114d;border-color:#e6e4d826}
+.protein-switch.is-compact button{padding:9px 8px;color:var(--cream)}
+.protein-switch.is-compact button[aria-pressed=true]{background:var(--lilac);color:var(--ink)}
 .menu-service{display:flex;justify-content:space-between;gap:20px;border-top:1px solid #150b1925;margin-top:35px;padding-top:20px;font-size:13px;color:#625b61;line-height:1.6}
 .menu-service a{white-space:nowrap;color:var(--ink);border-bottom:1px solid #150b1940}
 .no-photo{height:100%;background:var(--green);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;color:var(--cream)}
@@ -133,6 +148,7 @@ h1 .italic{font-family:Fraunces,serif;font-style:italic;font-size:1.05em;font-we
 .dish-card:hover .dish-frame:before{transform:translate(10px,-11px) rotate(3deg)}
 .dish-card:hover .dish-frame:after{transform:translate(-9px,12px) rotate(-3deg)}
 .menu-section .dish-open{color:var(--ink)}
+.menu-section .dish-extra{color:var(--lilac)}
 .menu-section .dish-photo{border-radius:4px 64px 4px 4px;background:#1a3327;border:1px solid #e6e4d826;box-shadow:0 18px 34px #091b1166}
 /* Late-night lounge */
 .lounge{display:grid;grid-template-columns:1fr 1fr;gap:9%;align-items:center;background:var(--ink);color:var(--cream);overflow:hidden;overflow:clip;padding-top:100px;padding-bottom:110px}
@@ -200,6 +216,11 @@ footer>span{color:#625b61}
 .dialog-copy>p:not(.eyebrow){font-size:16px;line-height:1.8;color:#625b61}
 .dialog-copy .dialog-served{margin-top:12px;font-size:12px!important;font-weight:650;letter-spacing:1.2px;text-transform:uppercase;color:var(--green)!important}
 .dialog-copy .dialog-extra{margin-top:14px;color:var(--green)!important;white-space:pre-line}
+.dialog-supplements{display:block;margin-top:18px}
+.dialog-supplements .supplements-title{font-size:12px;letter-spacing:1.5px;color:var(--green);margin-bottom:8px}
+.dialog-supplements .supplement{font-size:15px;color:var(--green);padding:8px 0;border-top:1px solid #22423324}
+.dialog-supplements .supplement:last-child{border-bottom:1px solid #22423324}
+.dialog-copy .protein-switch{margin:0 0 20px}
 .dialog-allergens{margin:22px 0 26px}
 .dialog-allergens h3{font-family:Satoshi,sans-serif;font-size:12px;font-weight:650;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);margin-bottom:12px}
 .dialog-allergens ul{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
@@ -272,9 +293,12 @@ h2{font-size:44px}
 .dish-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:27px 14px}
 .dish-title{padding-top:11px;gap:5px;flex-wrap:wrap}
 .dish-title h4{line-height:1.1;flex:1;min-width:90px}
-.dish-card>p{line-height:1.7;margin-top:8px}
+.dish-copy>p{line-height:1.7;margin-top:8px}
 .dish-open{width:28px;height:28px;bottom:9px;right:9px;font-size:16px}
 .dish-extra{line-height:1.5}
+.protein-switch.is-compact{margin-top:14px}
+.protein-switch.is-compact button{justify-content:center;text-align:center;padding:9px 5px;font-size:11px;line-height:1.2}
+.protein-switch.is-compact button small{display:none}
 .menu-service{gap:12px}
 .menu-service>span{max-width:200px}
 .lounge{grid-template-columns:1fr;gap:42px;padding-bottom:70px}
@@ -471,7 +495,7 @@ footer>span{width:50%;text-align:right}
 .arrival-place,.arrival-actions .button{font-size:13px}
 .dish-title h4{font-size:22px}
 .dish-title>span{font-size:22px}
-.dish-card>p{font-size:13px}
+.dish-copy>p{font-size:13px}
 .header nav{font-size:14px}
 }
 @media(max-width:760px){.eyebrow,.arrival h1 .h1-kicker{font-size:11px;letter-spacing:1.2px}
@@ -486,8 +510,9 @@ footer>span{width:50%;text-align:right}
 .results-heading>span{font-size:10px}
 .dish-title h4{font-size:19px}
 .dish-title>span{font-size:19px}
-.dish-card>p{font-size:12.5px}
+.dish-copy>p{font-size:12.5px}
 .dish-extra{font-size:12px}
+.supplement{font-size:12px}
 .menu-service{font-size:12px}
 .no-results p{font-size:14px}
 .lounge-intro{font-size:15px}
@@ -542,6 +567,8 @@ h2 .h2-kicker{display:block;margin-bottom:24px;font-family:Satoshi,sans-serif;fo
 .dialog-price{font-size:24px;margin:6px 0 8px}
 .dialog-copy>p:not(.eyebrow){font-size:14px;line-height:1.55}
 .dialog-copy .dialog-served,.dialog-copy .dialog-extra{margin-top:8px}
+.dialog-supplements{margin-top:12px}
+.dialog-supplements .supplement{font-size:14px;padding:6px 0}
 .dialog-allergens{margin:14px 0 0}
 .dialog-allergens h3{margin-bottom:8px}
 .dialog-allergens ul{gap:6px}

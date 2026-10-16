@@ -2,17 +2,106 @@
   {
     "id": "burger",
     "label": "Burgers",
-    "description": "Chicken burgers croustillants et smash burgers au bœuf.",
-    "source": "SAFE_LOUNGE_BBQ_RACLETTE_200G_FRITES_A4.pdf",
+    "description": "Six recettes, chacune au choix en double smash 130 g ou en filet de poulet frit gourmand.",
+    "source": "Nouvelle carte burgers Safe Lounge — octobre 2026",
     "items": [
       {
-        "id": "burger-bbq-raclette",
-        "name": "BBQ’ Raclette",
-        "description": "Potato bun moelleux, poulet frit gourmand, raclette fondante, salade iceberg croquante et sauce barbecue.",
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Lait",
+          "Moutarde"
+        ],
+        "served": "Servi avec frites",
         "extra": "",
+        "id": "burger-classic",
+        "name": "Classic",
+        "description": "Potato bun moelleux, protéine au choix, double cheddar fondant, pickles, salade, sauce ketchup et moutarde.",
+        "price": 13,
+        "image": "/assets/menu-v3/burger-classic-smash.webp",
+        "chickenImage": "/assets/menu-v3/burger-classic-chicken.webp",
+        "sourceImage": "SAFE_LOUNGE_CLASSIC_PROCESS_A4.pdf",
+        "proteins": {
+          "smash": "double smash 130 g",
+          "chicken": "filet de poulet frit gourmand"
+        },
+        "supplements": [
+          {
+            "label": "Steak supplémentaire (version XL)",
+            "price": 3,
+            "protein": "smash"
+          },
+          {
+            "label": "Bacon de bœuf",
+            "price": 2
+          }
+        ]
+      },
+      {
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Lait",
+          "Moutarde"
+        ],
+        "served": "Servi avec frites",
+        "extra": "",
+        "id": "burger-original",
+        "name": "Original",
+        "description": "Potato bun moelleux, protéine au choix, double cheddar fondant, salade et sauce original smash.",
+        "price": 13,
+        "image": "/assets/menu-v3/burger-original-smash.webp",
+        "chickenImage": "/assets/menu-v3/burger-original-chicken.webp",
+        "sourceImage": "SAFE_LOUNGE_ORIGINAL_PROCESS_A4.pdf",
+        "proteins": {
+          "smash": "double smash 130 g",
+          "chicken": "filet de poulet frit gourmand"
+        },
+        "supplements": [
+          {
+            "label": "Steak supplémentaire (version XL)",
+            "price": 3,
+            "protein": "smash"
+          },
+          {
+            "label": "Bacon de bœuf",
+            "price": 2
+          }
+        ]
+      },
+      {
+        "allergens": [
+          "Gluten",
+          "Œufs",
+          "Lait",
+          "Moutarde"
+        ],
+        "served": "Servi avec frites",
+        "extra": "",
+        "id": "burger-biggie",
+        "name": "Biggie",
+        "description": "Potato bun moelleux, protéine au choix, double cheddar fondant, pickles, salade et sauce biggie.",
         "price": 14,
-        "image": "/assets/menu-v2/burger-bbq-raclette.webp",
-        "sourceImage": "SAFE_LOUNGE_BBQ_RACLETTE_200G_FRITES_A4.pdf",
+        "image": "/assets/menu-v3/burger-biggie-smash.webp",
+        "chickenImage": "/assets/menu-v3/burger-biggie-chicken.webp",
+        "sourceImage": "SAFE_LOUNGE_BIGGIE_PROCESS_A4.pdf",
+        "proteins": {
+          "smash": "double smash 130 g",
+          "chicken": "filet de poulet frit gourmand"
+        },
+        "supplements": [
+          {
+            "label": "Steak supplémentaire (version XL)",
+            "price": 3,
+            "protein": "smash"
+          },
+          {
+            "label": "Bacon de bœuf",
+            "price": 2
+          }
+        ]
+      },
+      {
         "allergens": [
           "Gluten",
           "Œufs",
@@ -20,67 +109,31 @@
           "Moutarde"
         ],
         "served": "Servi avec frites",
-        "group": "Chicken burgers"
-      },
-      {
-        "id": "burger-chicken-biggie",
-        "name": "Chicken Biggie",
-        "description": "Potato bun moelleux, poulet frit gourmand, double cheddar fondant, salade iceberg croquante et sauce classic burger.",
         "extra": "",
-        "price": 13,
-        "image": "/assets/menu-v2/burger-chicken-biggie.webp",
-        "sourceImage": "SAFE_LOUNGE_CHICKEN_BIGGIE_200G_FRITES_A4.pdf",
-        "allergens": [
-          "Gluten",
-          "Œufs",
-          "Lait",
-          "Moutarde"
-        ],
-        "served": "Servi avec frites",
-        "group": "Chicken burgers"
-      },
-      {
-        "id": "burger-chicken-creamy",
-        "name": "Chicken Creamy",
-        "description": "Potato bun moelleux, poulet frit gourmand, double cheddar fondant, salade iceberg croquante et sauce mayonnaise.",
-        "extra": "",
-        "price": 13,
-        "image": "/assets/menu-v2/burger-chicken-creamy.webp",
-        "sourceImage": "SAFE_LOUNGE_CREAMY_200G_FRITES_A4.pdf",
-        "allergens": [
-          "Gluten",
-          "Œufs",
-          "Lait",
-          "Moutarde"
-        ],
-        "served": "Servi avec frites",
-        "group": "Chicken burgers"
-      },
-      {
-        "id": "burger-smokey-bacon",
-        "name": "Smokey Bacon",
-        "description": "Potato bun moelleux, poulet frit gourmand, bacon de bœuf snacké, double cheddar fondant, salade iceberg croquante et sauce smokey baconnaise.",
-        "extra": "",
+        "id": "burger-creamy",
+        "name": "Creamy",
+        "description": "Potato bun moelleux, protéine au choix, double cheddar fondant, salade et sauce mayonnaise.",
         "price": 14,
-        "image": "/assets/menu-v2/burger-smokey-bacon.webp",
-        "sourceImage": "SAFE_LOUNGE_SMOKEY_BACON_FINAL_200G_FRITES_A4.pdf",
-        "allergens": [
-          "Gluten",
-          "Œufs",
-          "Lait",
-          "Moutarde"
-        ],
-        "served": "Servi avec frites",
-        "group": "Chicken burgers"
+        "image": "/assets/menu-v3/burger-creamy-smash.webp",
+        "chickenImage": "/assets/menu-v3/burger-creamy-chicken.webp",
+        "sourceImage": "SAFE_LOUNGE_CREAMY_PROCESS_A4.pdf",
+        "proteins": {
+          "smash": "double smash 130 g",
+          "chicken": "filet de poulet frit gourmand"
+        },
+        "supplements": [
+          {
+            "label": "Steak supplémentaire (version XL)",
+            "price": 3,
+            "protein": "smash"
+          },
+          {
+            "label": "Bacon de bœuf",
+            "price": 2
+          }
+        ]
       },
       {
-        "id": "burger-classic-smash",
-        "name": "Classic Smash",
-        "description": "Potato bun moelleux, deux steaks smash, double cheddar fondant, salade iceberg croquante, ketchup et moutarde.",
-        "extra": "Bacon de bœuf +2 €\nVersion XL (triple steak) +3 €",
-        "price": 13,
-        "image": "/assets/menu-v2/burger-classic-smash.webp",
-        "sourceImage": "SAFE_LOUNGE_CLASSIC_SMASH_200G_FRITES_A4.pdf",
         "allergens": [
           "Gluten",
           "Œufs",
@@ -88,16 +141,31 @@
           "Moutarde"
         ],
         "served": "Servi avec frites",
-        "group": "Smash burgers"
+        "extra": "",
+        "id": "burger-tasty-bacon",
+        "name": "Tasty Bacon",
+        "description": "Potato bun moelleux, protéine au choix, double cheddar fondant, bacon de bœuf, oignons caramélisés, salade et sauce smoked beef.",
+        "price": 15,
+        "image": "/assets/menu-v3/burger-tasty-bacon-smash.webp",
+        "chickenImage": "/assets/menu-v3/burger-tasty-bacon-chicken.webp",
+        "sourceImage": "SAFE_LOUNGE_TASTY_BACON_PROCESS_A4.pdf",
+        "proteins": {
+          "smash": "double smash 130 g",
+          "chicken": "filet de poulet frit gourmand"
+        },
+        "supplements": [
+          {
+            "label": "Steak supplémentaire (version XL)",
+            "price": 3,
+            "protein": "smash"
+          },
+          {
+            "label": "Bacon de bœuf",
+            "price": 2
+          }
+        ]
       },
       {
-        "id": "burger-smokey-beef-bacon",
-        "name": "Smokey Beef Bacon",
-        "description": "Potato bun moelleux, deux steaks smash, bacon de bœuf snacké, double cheddar fondant, salade iceberg croquante et sauce smoked beef.",
-        "extra": "Version XL (triple steak) +3 €",
-        "price": 14,
-        "image": "/assets/menu-v2/burger-smokey-beef-bacon.webp",
-        "sourceImage": "SAFE_LOUNGE_SMOKEY_BEEF_BACON_200G_FRITES_A4.pdf",
         "allergens": [
           "Gluten",
           "Œufs",
@@ -105,46 +173,30 @@
           "Moutarde"
         ],
         "served": "Servi avec frites",
-        "group": "Smash burgers"
-      },
-      {
-        "id": "burger-original-smash",
-        "name": "Original Smash",
-        "description": "Potato bun moelleux, deux steaks smash, double cheddar fondant, salade iceberg croquante et sauce original smash.",
-        "extra": "Bacon de bœuf +2 €\nVersion XL (triple steak) +3 €",
-        "price": 13,
-        "image": "/assets/menu-v2/burger-original-smash.webp",
-        "sourceImage": "SAFE_LOUNGE_ORIGINAL_SMASH_200G_FRITES_A4.pdf",
-        "allergens": [
-          "Gluten",
-          "Œufs",
-          "Lait",
-          "Moutarde"
-        ],
-        "served": "Servi avec frites",
-        "group": "Smash burgers"
-      },
-      {
-        "id": "burger-biggie-smash",
-        "name": "Biggie Smash",
-        "description": "Potato bun moelleux, deux steaks smash, double cheddar fondant, salade iceberg croquante et sauce classic burger.",
-        "extra": "Bacon de bœuf +2 €\nVersion XL (triple steak) +3 €",
-        "price": 13,
-        "image": "/assets/menu-v2/burger-biggie-smash.webp",
-        "sourceImage": "SAFE_LOUNGE_BIGGIE_SMASH_200G_FRITES_A4.pdf",
-        "allergens": [
-          "Gluten",
-          "Œufs",
-          "Lait",
-          "Moutarde"
-        ],
-        "served": "Servi avec frites",
-        "group": "Smash burgers"
+        "extra": "",
+        "id": "burger-frenchy",
+        "name": "Frenchy",
+        "description": "Potato bun moelleux, protéine au choix, raclette fondante, bacon de bœuf, oignons caramélisés, salade et sauce barbecue.",
+        "price": 15,
+        "image": "/assets/menu-v3/burger-frenchy-smash.webp",
+        "chickenImage": "/assets/menu-v3/burger-frenchy-chicken.webp",
+        "sourceImage": "SAFE_LOUNGE_FRENCHY_PROCESS_A4.pdf",
+        "proteins": {
+          "smash": "double smash 130 g",
+          "chicken": "filet de poulet frit gourmand"
+        },
+        "supplements": [
+          {
+            "label": "Steak supplémentaire (version XL)",
+            "price": 3,
+            "protein": "smash"
+          },
+          {
+            "label": "Bacon de bœuf",
+            "price": 2
+          }
+        ]
       }
-    ],
-    "groups": [
-      "Smash burgers",
-      "Chicken burgers"
     ]
   },
   {
@@ -826,7 +878,7 @@
         "id": "dessert-fondant-chocolat",
         "name": "Fondant au chocolat",
         "description": "Fondant au chocolat fait maison, cœur coulant et texture délicieusement fondante.",
-        "extra": "Boule de glace vanille +2 €",
+        "extra": "",
         "price": 7,
         "image": "/assets/menu-v2/dessert-fondant-chocolat.webp",
         "sourceImage": "Création produit d’après la photo du fondant du restaurant",
@@ -834,6 +886,12 @@
           "Gluten",
           "Œufs",
           "Lait"
+        ],
+        "supplements": [
+          {
+            "label": "Boule de glace vanille",
+            "price": 2
+          }
         ]
       },
       {
@@ -895,7 +953,7 @@
         "id": "dessert-brioche-perdue",
         "name": "Brioche perdue",
         "description": "Brioche fondante façon pain perdu, accompagnée d’un topping au choix : Nutella, spéculoos, crème Bueno ou caramel au beurre salé.",
-        "extra": "Topping supplémentaire +2 €",
+        "extra": "",
         "price": 11,
         "image": "/assets/menu-v2/dessert-brioche-perdue.webp",
         "sourceImage": "Carte Safe Lounge",
@@ -905,6 +963,12 @@
           "Lait",
           "Fruits à coque",
           "Soja"
+        ],
+        "supplements": [
+          {
+            "label": "Topping",
+            "price": 2
+          }
         ]
       }
     ]
