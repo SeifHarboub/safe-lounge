@@ -83,7 +83,7 @@
         "description": "Potato bun moelleux, protéine au choix, double cheddar fondant, pickles, salade et sauce biggie.",
         "price": 14,
         "image": "/assets/menu-v3/burger-biggie-smash.webp",
-        "chickenImage": "/assets/menu-v3/burger-biggie-chicken.webp",
+        "chickenImage": "/assets/menu-v3/burger-biggie-chicken-cheddar-fondu.webp",
         "sourceImage": "SAFE_LOUNGE_BIGGIE_PROCESS_A4.pdf",
         "proteins": {
           "smash": "double smash 130 g",
