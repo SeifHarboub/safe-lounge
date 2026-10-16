@@ -25,7 +25,7 @@ const dishes: { id: string; tab?: string; name: string; has: string[]; hasNot?: 
   { id: 'burger-original', name: 'Original', has: ['double smash 130 g', 'sauce original smash'], hasNot: ['œuf au plat', 'orange'] },
   { id: 'burger-biggie', name: 'Biggie', has: ['double smash 130 g', 'pickles', 'sauce biggie'], hasNot: ['jaune orangé'] },
   { id: 'burger-creamy', name: 'Creamy', has: ['double smash 130 g', 'salade et sauce mayonnaise'], hasNot: ['blanche'] },
-  { id: 'burger-tasty-bacon', name: 'Tasty Bacon', has: ['bacon de bœuf', 'oignons caramélisés', 'sauce smoked beef'], hasNot: ['brune'] },
+  { id: 'burger-tasty-bacon', name: 'Tasty', has: ['bacon de bœuf', 'oignons caramélisés', 'sauce smoked beef'], hasNot: ['brune'] },
   { id: 'burger-frenchy', name: 'Frenchy', has: ['raclette fondante', 'bacon de bœuf', 'oignons caramélisés', 'sauce barbecue'], hasNot: ['acajou'] },
   { id: 'panuozzo-rosso', tab: 'panuozzo', name: 'Rosso', has: ['pain en pâte à pizza', 'crème de poivrons', 'roquette', 'jambon de dinde', 'chorizo finement tranché', 'stracciatella', 'poivrons', 'oignons confits', 'huile piquante'] },
   { id: 'panuozzo-tartufo', tab: 'panuozzo', name: 'Tartufo', has: ['pain en pâte à pizza', 'crème de truffe', 'roquette', 'jambon de dinde', 'jambon de bœuf', 'stracciatella', 'champignons poêlés', 'copeaux de fromage italien', 'poivre moulu'] },
@@ -87,7 +87,7 @@ const dishes: { id: string; tab?: string; name: string; has: string[]; hasNot?: 
   { id: 'dessert-tiramisu-pistachio', tab: 'dessert', name: 'Tiramisu Pistachio', has: ['mascarpone', 'pistache'] },
   { id: 'dessert-bowl-fruits', tab: 'dessert', name: 'Bowl de fruits', has: ['fruits frais de saison'] },
   { id: 'dessert-brioche-perdue', tab: 'dessert', name: 'Brioche perdue', has: ['pain perdu', 'topping au choix'] },
-  { id: 'crepe-beurre-sucre', tab: 'crepes', name: 'Crêpe beurre sucre', has: ['beurre et sucre'] },
+  { id: 'crepe-beurre-sucre', tab: 'crepes', name: 'Crêpe beurre sucre', has: ['au beurre et au sucre'] },
   { id: 'crepe-nutella', tab: 'crepes', name: 'Crêpe Nutella', has: ['Nutella'] },
   { id: 'crepe-speculoos', tab: 'crepes', name: 'Crêpe crème spéculoos', has: ['crème spéculoos'] },
   { id: 'crepe-caramel', tab: 'crepes', name: 'Crêpe caramel beurre salé', has: ['caramel au beurre salé'] },
@@ -268,11 +268,11 @@ test('l’accueil montre un plat en plein cadre, avec son nom et son prix', asyn
   await expect(page.locator('.hero-slides img')).toHaveCount(12);
   await expect(page.locator('.hero-slides img.is-on')).toHaveAttribute('src', /menu-v3\/burger-tasty-bacon-smash\.webp$/);
   const now = page.locator('.hero-now');
-  await expect(now).toContainText('Tasty Bacon');
+  await expect(now).toContainText('Tasty');
   await expect(page.locator('#hero-price')).toHaveText('15€');
   await expect(page.locator('.hero-slides img.is-tall')).toHaveCount(3);
   await now.click();
-  await expect(page.getByRole('dialog')).toContainText('Tasty Bacon');
+  await expect(page.getByRole('dialog')).toContainText('Tasty');
 });
 
 test('les plats de l’accueil se succèdent seuls, sans barre de progression', async ({ page }) => {

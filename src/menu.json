@@ -143,7 +143,7 @@
         "served": "Servi avec frites",
         "extra": "",
         "id": "burger-tasty-bacon",
-        "name": "Tasty Bacon",
+        "name": "Tasty",
         "description": "Potato bun moelleux, protéine au choix, double cheddar fondant, bacon de bœuf, oignons caramélisés, salade et sauce smoked beef.",
         "price": 15,
         "image": "/assets/menu-v3/burger-tasty-bacon-smash.webp",
@@ -202,13 +202,13 @@
   {
     "id": "frappuccino",
     "label": "Frappuccinos",
-    "description": "Des cafés glacés onctueux, mixés avec de la glace et couronnés de chantilly.",
+    "description": "Expresso, lait et une boule de glace vanille mixés, couronnés de chantilly.",
     "source": "SAFE_LOUNGE_FRAPPUCCINO_CARAMELLO_A4.pdf",
     "items": [
       {
         "id": "frappuccino-caramello",
         "name": "Caramello",
-        "description": "Expresso aux notes de caramel, glace vanille et lait mixés avec des glaçons, surmontés de chantilly et d’un coulis de caramel.",
+        "description": "Expresso aux notes de caramel, lait, glaçons et une boule de glace vanille mixés, chantilly et coulis de caramel.",
         "extra": "",
         "price": 9,
         "image": "/assets/menu-v2/frappuccino-caramello.webp",
@@ -220,7 +220,7 @@
       {
         "id": "frappuccino-coffee-latte",
         "name": "Coffee Latte",
-        "description": "Expresso, glace vanille et lait mixés avec des glaçons, le tout surmonté de chantilly.",
+        "description": "Expresso, lait, glaçons et une boule de glace vanille mixés, surmonté de chantilly.",
         "extra": "",
         "price": 8,
         "image": "/assets/menu-v2/frappuccino-coffee-latte.webp",
@@ -232,7 +232,7 @@
       {
         "id": "frappuccino-nocciola",
         "name": "Nocciola",
-        "description": "Expresso aux notes de noisette et de chocolat, glace vanille et lait mixés avec des glaçons, surmontés de chantilly et d’un filet de chocolat.",
+        "description": "Expresso aux notes de noisette et de chocolat, lait, glaçons et une boule de glace vanille mixés, chantilly et filet de chocolat.",
         "extra": "",
         "price": 9,
         "image": "/assets/menu-v2/frappuccino-nocciola.webp",
@@ -247,13 +247,13 @@
   {
     "id": "iced-latte",
     "label": "Iced lattes",
-    "description": "Des cafés glacés servis sur glaçons, avec du lait froid et des finitions gourmandes.",
+    "description": "L’expresso et le lait frais sur glaçons, avec une finition gourmande.",
     "source": "SAFE_LOUNGE_ICED_CARAMELLO_A4.pdf",
     "items": [
       {
         "id": "iced-latte-caramello",
         "name": "Iced Caramello",
-        "description": "Expresso aux notes de caramel et de vanille, accompagné de lait frais et de glaçons, surmonté de chantilly et d’un coulis de caramel.",
+        "description": "Expresso aux notes de caramel et de vanille, lait frais et glaçons, chantilly et coulis de caramel.",
         "extra": "",
         "price": 7,
         "image": "/assets/menu-v2/iced-latte-caramello.webp",
@@ -265,7 +265,7 @@
       {
         "id": "iced-latte-coffee-latte",
         "name": "Iced Coffee Latte",
-        "description": "Expresso, lait frais et glaçons, surmonté de chantilly pour une pause fraîche et onctueuse.",
+        "description": "Expresso et lait frais sur glaçons, surmonté de chantilly : la pause fraîche et onctueuse.",
         "extra": "",
         "price": 6,
         "image": "/assets/menu-v2/iced-latte-coffee-latte.webp",
@@ -277,7 +277,7 @@
       {
         "id": "iced-latte-nocciola",
         "name": "Iced Nocciola",
-        "description": "Expresso aux notes de noisette et de chocolat, associé au lait et aux glaçons, surmonté de chantilly et d’un filet de chocolat.",
+        "description": "Expresso aux notes de noisette et de chocolat, lait frais et glaçons, chantilly et filet de chocolat.",
         "extra": "",
         "price": 7,
         "image": "/assets/menu-v2/iced-latte-nocciola.webp",
@@ -292,13 +292,13 @@
   {
     "id": "milkshake",
     "label": "Milkshakes",
-    "description": "Des milkshakes généreux, mixés avec de la glace et servis avec une chantilly onctueuse.",
+    "description": "Des milkshakes onctueux à la glace vanille, gourmands à souhait et couronnés de chantilly.",
     "source": "SAFE_LOUNGE_MILKSHAKE_BUENO_FINAL_A4.pdf",
     "items": [
       {
         "id": "milkshake-bueno",
         "name": "Bueno",
-        "description": "Onctueux milk-shake au Bueno, surmonté de chantilly.",
+        "description": "Glace vanille et Bueno, surmonté d’une chantilly onctueuse.",
         "extra": "",
         "price": 9,
         "image": "/assets/menu-v2/milkshake-bueno.webp",
@@ -313,7 +313,7 @@
       {
         "id": "milkshake-cookies",
         "name": "Cookies",
-        "description": "Onctueux milk-shake aux cookies, surmonté de chantilly.",
+        "description": "Glace vanille et éclats de cookies, surmonté d’une chantilly onctueuse.",
         "extra": "",
         "price": 9,
         "image": "/assets/menu-v2/milkshake-cookies.webp",
@@ -328,7 +328,7 @@
       {
         "id": "milkshake-oreo",
         "name": "Oreo",
-        "description": "Onctueux milk-shake à l’Oreo, surmonté de chantilly.",
+        "description": "Glace vanille et biscuits Oreo, surmonté d’une chantilly onctueuse.",
         "extra": "",
         "price": 9,
         "image": "/assets/menu-v2/milkshake-oreo.webp",
@@ -342,7 +342,7 @@
       {
         "id": "milkshake-petit-beurre",
         "name": "Petit Beurre",
-        "description": "Onctueux milk-shake au petit beurre, surmonté de chantilly.",
+        "description": "Glace vanille et petit beurre, surmonté d’une chantilly onctueuse.",
         "extra": "",
         "price": 9,
         "image": "/assets/menu-v2/milkshake-petit-beurre.webp",
@@ -356,7 +356,7 @@
       {
         "id": "milkshake-speculoos",
         "name": "Spéculoos",
-        "description": "Onctueux milk-shake au spéculoos, surmonté de chantilly.",
+        "description": "Glace vanille et spéculoos, surmonté d’une chantilly onctueuse.",
         "extra": "",
         "price": 9,
         "image": "/assets/menu-v2/milkshake-speculoos.webp",
@@ -370,7 +370,7 @@
       {
         "id": "milkshake-vanille",
         "name": "Vanille",
-        "description": "Onctueux milk-shake à la glace vanille, surmonté de chantilly.",
+        "description": "Le classique : glace vanille onctueuse, surmonté d’une chantilly.",
         "extra": "",
         "price": 8,
         "image": "/assets/menu-v2/milkshake-vanille.webp",
@@ -384,7 +384,7 @@
   {
     "id": "mocktail",
     "label": "Mocktails",
-    "description": "Des créations sans alcool fraîches, fruitées et préparées sur glace.",
+    "description": "Des cocktails sans alcool, frais et fruités, préparés sur place à la minute.",
     "source": "SAFE_LOUNGE_MOCKTAIL_AMOR_AMOR_A4.pdf",
     "items": [
       {
@@ -452,7 +452,7 @@
   {
     "id": "panuozzo",
     "label": "Panuozzos",
-    "description": "Des pains en pâte à pizza légèrement cuits, généreusement garnis.",
+    "description": "Notre pâte à pizza faite maison, dorée au four et généreusement garnie, à la façon d’un sandwich italien.",
     "source": "SAFE_LOUNGE_PANUOZZO_ROSSO_A4 (1).pdf",
     "items": [
       {
@@ -504,7 +504,7 @@
   {
     "id": "pates",
     "label": "Pâtes",
-    "description": "Spaghetti, penne et rigatoni : sauce tomate, crème, gorgonzola ou truffe, dans l’esprit généreux du Safe.",
+    "description": "Des pâtes fraîches, faites à la minute et servies généreusement : sauce tomate, crème, gorgonzola ou truffe.",
     "source": "SAFE_LOUNGE_SPAGHETTI_SICILIENNE_A4.pdf",
     "items": [
       {
@@ -625,7 +625,7 @@
   {
     "id": "pizzas",
     "label": "Pizzas",
-    "description": "Des pizzas généreuses sur base tomate, crème ou curry : stracciatella, jambon de dinde, merguez, oignons confits… à chacun la sienne.",
+    "description": "Notre pâte à pizza faite maison, sur base tomate, crème ou curry, avec des garnitures généreuses : à chacun la sienne.",
     "source": "SAFE_LOUNGE_PIZZA_BOLLYWOOD_STYLE_A4.pdf",
     "items": [
       {
@@ -829,7 +829,7 @@
   {
     "id": "salade",
     "label": "Salades",
-    "description": "",
+    "description": "Des salades fraîches et copieuses, pour un repas léger qui reste gourmand.",
     "source": "",
     "items": [
       {
@@ -871,7 +871,7 @@
   {
     "id": "dessert",
     "label": "Desserts",
-    "description": "",
+    "description": "Des desserts faits maison, gourmands et généreux, pour finir en douceur.",
     "source": "Carte Safe Lounge",
     "items": [
       {
@@ -942,7 +942,7 @@
       {
         "id": "dessert-bowl-fruits",
         "name": "Bowl de fruits",
-        "description": "Fruits frais de saison.",
+        "description": "Un bowl de fruits frais de saison.",
         "extra": "",
         "price": 10,
         "image": "/assets/menu-v2/dessert-bowl-fruits.webp",
@@ -976,13 +976,13 @@
   {
     "id": "crepes",
     "label": "Crêpes",
-    "description": "",
+    "description": "Des crêpes chaudes, préparées à la minute, avec la garniture gourmande de ton choix.",
     "source": "Carte Safe Lounge",
     "items": [
       {
         "id": "crepe-beurre-sucre",
         "name": "Crêpe beurre sucre",
-        "description": "Crêpe chaude au beurre et sucre.",
+        "description": "Crêpe chaude au beurre et au sucre, la recette simple qu’on aime.",
         "extra": "",
         "price": 7,
         "image": "/assets/menu-v2/dessert-crepe-beurre-sucre.webp",
@@ -996,7 +996,7 @@
       {
         "id": "crepe-nutella",
         "name": "Crêpe Nutella",
-        "description": "Crêpe chaude nappée de Nutella.",
+        "description": "Crêpe chaude généreusement nappée de Nutella.",
         "extra": "",
         "price": 8,
         "image": "/assets/menu-v2/dessert-crepe-nutella.webp",
@@ -1012,7 +1012,7 @@
       {
         "id": "crepe-speculoos",
         "name": "Crêpe crème spéculoos",
-        "description": "Crêpe chaude nappée de crème spéculoos.",
+        "description": "Crêpe chaude généreusement nappée de crème spéculoos.",
         "extra": "",
         "price": 8,
         "image": "/assets/menu-v2/dessert-crepe-speculoos.webp",
@@ -1027,7 +1027,7 @@
       {
         "id": "crepe-caramel",
         "name": "Crêpe caramel beurre salé",
-        "description": "Crêpe chaude nappée de caramel au beurre salé.",
+        "description": "Crêpe chaude généreusement nappée de caramel au beurre salé.",
         "extra": "",
         "price": 8,
         "image": "/assets/menu-v2/dessert-crepe-caramel.webp",
@@ -1041,7 +1041,7 @@
       {
         "id": "crepe-bueno",
         "name": "Crêpe crème Bueno",
-        "description": "Crêpe chaude nappée de crème Bueno.",
+        "description": "Crêpe chaude généreusement nappée de crème Bueno.",
         "extra": "",
         "price": 8,
         "image": "/assets/menu-v2/dessert-crepe-bueno.webp",
@@ -1157,13 +1157,13 @@
   {
     "id": "boissons-chaudes",
     "label": "Boissons chaudes",
-    "description": "",
+    "description": "Expressos, café au lait, chocolat ou thé : une pause chaude, douce ou corsée.",
     "source": "Carte Safe Lounge",
     "items": [
       {
         "id": "chaud-expresso-leggero",
         "name": "Expresso Leggero",
-        "description": "Expresso, profil doux.",
+        "description": "Expresso au profil doux et rond.",
         "extra": "",
         "price": 3,
         "image": "/assets/menu-v2/chaud-expresso.webp",
@@ -1173,7 +1173,7 @@
       {
         "id": "chaud-expresso-forte",
         "name": "Expresso Forte",
-        "description": "Expresso, profil corsé.",
+        "description": "Expresso au profil corsé et intense.",
         "extra": "",
         "price": 3,
         "image": "/assets/menu-v2/chaud-expresso.webp",
@@ -1183,7 +1183,7 @@
       {
         "id": "chaud-expresso-caramello",
         "name": "Expresso Caramello",
-        "description": "Expresso aux notes de caramel.",
+        "description": "Expresso aux notes gourmandes de caramel.",
         "extra": "",
         "price": 4,
         "image": "/assets/menu-v2/chaud-expresso.webp",
@@ -1193,7 +1193,7 @@
       {
         "id": "chaud-expresso-nocciola",
         "name": "Expresso Nocciola",
-        "description": "Expresso aux notes de noisette.",
+        "description": "Expresso aux notes gourmandes de noisette.",
         "extra": "",
         "price": 4,
         "image": "/assets/menu-v2/chaud-expresso-nocciola.webp",
@@ -1203,7 +1203,7 @@
       {
         "id": "chaud-cafe-au-lait",
         "name": "Café au lait",
-        "description": "Expresso et lait chaud.",
+        "description": "Expresso allongé de lait chaud.",
         "extra": "",
         "price": 5,
         "image": "/assets/menu-v2/chaud-cafe-au-lait.webp",
@@ -1215,7 +1215,7 @@
       {
         "id": "chaud-chocolat-chaud",
         "name": "Chocolat chaud",
-        "description": "Chocolat et lait chaud.",
+        "description": "Chocolat onctueux au lait chaud.",
         "extra": "",
         "price": 5,
         "image": "/assets/menu-v2/chaud-chocolat-chaud.webp",
@@ -1227,7 +1227,7 @@
       {
         "id": "chaud-the",
         "name": "Thé",
-        "description": "Thé chaud.",
+        "description": "Une tasse de thé chaud.",
         "extra": "",
         "price": 5,
         "image": "/assets/menu-v2/chaud-the.webp",
