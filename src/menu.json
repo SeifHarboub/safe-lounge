@@ -19,7 +19,7 @@
         "description": "Potato bun moelleux, protéine au choix, double cheddar fondant, pickles, salade, sauce ketchup et moutarde.",
         "price": 13,
         "image": "/assets/menu-v3/burger-classic-smash.webp",
-        "chickenImage": "/assets/menu-v3/burger-classic-chicken.webp",
+        "chickenImage": "/assets/menu-v3/burger-classic-chicken-cheddar-fondu.webp",
         "sourceImage": "SAFE_LOUNGE_CLASSIC_PROCESS_A4.pdf",
         "proteins": {
           "smash": "double smash 130 g",
@@ -51,7 +51,7 @@
         "description": "Potato bun moelleux, protéine au choix, double cheddar fondant, salade et sauce original smash.",
         "price": 13,
         "image": "/assets/menu-v3/burger-original-smash.webp",
-        "chickenImage": "/assets/menu-v3/burger-original-chicken.webp",
+        "chickenImage": "/assets/menu-v3/burger-original-chicken-cheddar-fondu.webp",
         "sourceImage": "SAFE_LOUNGE_ORIGINAL_PROCESS_A4.pdf",
         "proteins": {
           "smash": "double smash 130 g",
@@ -115,7 +115,7 @@
         "description": "Potato bun moelleux, protéine au choix, double cheddar fondant, salade et sauce mayonnaise.",
         "price": 14,
         "image": "/assets/menu-v3/burger-creamy-smash.webp",
-        "chickenImage": "/assets/menu-v3/burger-creamy-chicken.webp",
+        "chickenImage": "/assets/menu-v3/burger-creamy-chicken-cheddar-fondu.webp",
         "sourceImage": "SAFE_LOUNGE_CREAMY_PROCESS_A4.pdf",
         "proteins": {
           "smash": "double smash 130 g",
@@ -147,7 +147,7 @@
         "description": "Potato bun moelleux, protéine au choix, double cheddar fondant, bacon de bœuf, oignons caramélisés, salade et sauce smoked beef.",
         "price": 15,
         "image": "/assets/menu-v3/burger-tasty-bacon-smash.webp",
-        "chickenImage": "/assets/menu-v3/burger-tasty-bacon-chicken.webp",
+        "chickenImage": "/assets/menu-v3/burger-tasty-bacon-chicken-cheddar-fondu.webp",
         "sourceImage": "SAFE_LOUNGE_TASTY_BACON_PROCESS_A4.pdf",
         "proteins": {
           "smash": "double smash 130 g",
